@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/loading.css" />
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script src="http://54.145.93.79:3000/socket.io/socket.io.js"></script>
+
+    <script>
+        var socketThongBao = io.connect("http://54.145.93.79:3000/header");
+
+        socketThongBao.on("nhan-thong-bao-bai-viet", function (data) {
+            let email = $("#email-dang-nhap").val();
+            if (email == data.emailBai) {
+                $("#xemThongBaoBaiViet").attr("src", "/images/cobaiviet.png");
+                $.ajax({
+                    url: '/taikhoan/changethongbao',
+                    type: 'get',
+                    processData: false,
+                    contentType: false,
+                    dataType: 'text',
+                }).done(function (ndThongBao) {
+                });
+            }
+        });
+
+        socketThongBao.on("nhan-thong-bao-tin-nhan", function (data) {
+            let email = $("#email-dang-nhap").val();
+            let emailNguoiChat = $("#chatVoiEmail").val();
+            if(email == undefined ||(email == data.emailNguoiNhan && emailNguoiChat != data.emailNguoiGui)){  
+                $("#xemThongBaoTinNhan").attr("src", "/images/cotinnhan.png");
+                $.ajax({
+                    url: '/taikhoan/updatethongbaotinnhan/' + data.emailNguoiGui + "/" + data.emailNguoiNhan + "/" + data.noiDung,
+                    type: 'get',
+                    dataType: 'text',
+                }).done(function (ndThongBao) {
+                    if (ndThongBao == "Gửi thông báo thành công") {
+                        $("#xemThongBaoTinNhan").attr("src", "/images/cotinnhan.png");
+                        $.ajax({
+                            url: '/taikhoan/changethongbao',
+                            type: 'get',
+                            processData: false,
+                            contentType: false,
+                            dataType: 'text',
+                        }).done(function (ndThongBao) {
+                        });
+                    }
+                });
+            
+            }
+        });
+
+        socketThongBao.on("nhan-thong-bao-xoa-bai", function (data) {
+            let email = $("#email-dang-nhap").val();
+            if (email == data.emailNguoiNhan) {
+                $("#xemThongBaoXoaBai").attr("src", "/images/coxoabai.png");
+                $.ajax({
+                    url: '/taikhoan/changethongbao',
+                    type: 'get',
+                    processData: false,
+                    contentType: false,
+                    dataType: 'text',
+                }).done(function (ndThongBao) {
+                });
+            }
+        });
+
+        socketThongBao.on("email-bi-khoa", function (data) {
+            let email = $("#email-dang-nhap").val();
+            if (email == data.emailBiKhoa) {
+                alert("Vì một số vi phạm nên tài khoản của bạn đã bị Admin xóa...Vui lòng liên hệ để mở tài khoản");
+                setTimeout($(location).attr('href', '/taikhoan/dangxuat'), 3000);
+                
+            }
+        });
+
+        $(document).ready(function () {
+            $("section").hide();
+            setTimeout(function() { 
+                $(".loading").hide();
+                $("section").show();
+            }, 1000);
+            $("#myModalThongBao").hide();
+            $("#xemThongBaoBaiViet").click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/taikhoan/xemthongbaobaiviet',
+                    type: 'get',
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                }).done(function (ndThongBao) {
+                    let arrTrung = [];
+                    $(".force-overflowheader").html("");
+                    $(".force-overflowheader").append(`<h3>Thông báo mới</h3>`);
+                    if (ndThongBao.listThongBao.length != 0) {
+                        ndThongBao.listThongBao.sort((a, b) => b.id - a.id);
+                        for (let i = 0; i < ndThongBao.listThongBao.length; i++) {
+                            for (let u = 0; u < ndThongBao.listUsers.length; u++) {
+                                if (ndThongBao.listThongBao[i].email == ndThongBao.listUsers[u].email) {
+                                    arrTrung.push(ndThongBao.listThongBao[i].id);
+                                    let themND = `<a href="/danhsachbaiviet/` + ndThongBao.listThongBao[i].idLoai + `/` + ndThongBao.listThongBao[i].idBai + `"><div class="chua-thongbao">
+                                        <img src="/images/`+ ndThongBao.listUsers[u].hinhDaiDien + `" width="80px" height="80px">
+                                        <div class="noi-dung-thong-bao">
+                                            <div class="nd-bai">`+ ndThongBao.listThongBao[i].noiDungBai + `</div>
+                                            <div class="boi-ai">Bởi `+ ndThongBao.listUsers[u].tenNguoiDung + ` vào ngày ` + ndThongBao.listThongBao[i].date + ` lúc ` + ndThongBao.listThongBao[i].time + ` </div>
+                                        </div>
+                                    </div></a>`;
+                                    $(".force-overflowheader").append(themND);
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        $(".force-overflowheader").append(`<div style="padding-left : 20px">Không có thông báo<div>`);
+                    }
+                    $(".force-overflowheader").append(`<h3>Thông báo đã đọc</h3>`);
+                    if (ndThongBao.listThongBaoDaDoc.length == 0) {
+                        $(".force-overflowheader").append(`<div style="padding-left : 20px">Không có thông báo<div>`);
+                    } else {
+                        ndThongBao.listThongBaoDaDoc.sort((a, b) => b.id - a.id);
+                        for (let i = 0; i < ndThongBao.listThongBaoDaDoc.length; i++) {
+                            for (let u = 0; u < ndThongBao.listUsers.length; u++) {
+                                if (ndThongBao.listThongBaoDaDoc[i].email == ndThongBao.listUsers[u].email) {
+                                    if (arrTrung.indexOf(ndThongBao.listThongBaoDaDoc[i].id) < 0) {
+                                        let themND = `<a href="/danhsachbaiviet/` + ndThongBao.listThongBaoDaDoc[i].idLoai + `/` + ndThongBao.listThongBaoDaDoc[i].idBai + `"><div class="thongbao-dadoc">
+                                        <img src="/images/`+ ndThongBao.listUsers[u].hinhDaiDien + `" width="80px" height="80px">
+                                        <div class="noi-dung-thong-bao">
+                                            <div class="nd-bai">`+ ndThongBao.listThongBaoDaDoc[i].noiDungBai + `</div>
+                                            <div class="boi-ai">Bởi `+ ndThongBao.listUsers[u].tenNguoiDung + ` vào ngày ` + ndThongBao.listThongBaoDaDoc[i].date + ` lúc ` + ndThongBao.listThongBaoDaDoc[i].time + ` </div>
+                                        </div>
+                                    </div></a>`;
+                                        $(".force-overflowheader").append(themND);
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                });
+                $("#tieude-thongbao").html("Thông báo bình luận");
+                $("#myModalThongBao").show();
+                $("#xemThongBaoBaiViet").attr("src", "/images/khongbaiviet.png");
+            });
+
+            $("#xemThongBaoTinNhan").click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/taikhoan/xemthongbaotinnhan',
+                    type: 'get',
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                }).done(function (ndThongBao) {
+                    let arrTrung = [];
+                    $(".force-overflowheader").html("");
+                    $(".force-overflowheader").append(`<h3>Thông báo mới</h3>`);
+                    if (ndThongBao.listThongBao.length != 0) {
+                        ndThongBao.listThongBao.sort((a, b) => b.id - a.id);
+                        for (let i = 0; i < ndThongBao.listThongBao.length; i++) {
+                            for (let u = 0; u < ndThongBao.listUsers.length; u++) {
+                                if (ndThongBao.listThongBao[i].email == ndThongBao.listUsers[u].email) {
+                                    arrTrung.push(ndThongBao.listThongBao[i].id);
+                                    let themND = `<div class="chua-thongbao">
+                                        <img src="/images/`+ ndThongBao.listUsers[u].hinhDaiDien + `" width="80px" height="80px">
+                                        <div class="noi-dung-thong-bao">
+                                            <div class="nd-bai">`+ ndThongBao.listThongBao[i].noiDung + `</div>
+                                            <div class="boi-ai">Bởi `+ ndThongBao.listUsers[u].tenNguoiDung + ` vào ngày ` + ndThongBao.listThongBao[i].date + ` lúc ` + ndThongBao.listThongBao[i].time + ` </div>
+                                        </div>
+                                    </div>`;
+                                    $(".force-overflowheader").append(themND);
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        $(".force-overflowheader").append(`<div style="padding-left : 20px">Không có thông báo<div>`);
+                    }
+                    $(".force-overflowheader").append(`<h3>Thông báo đã đọc</h3>`);
+                    if (ndThongBao.listThongBaoDaDoc.length == 0) {
+                        $(".force-overflowheader").append(`<div style="padding-left : 20px">Không có thông báo<div>`);
+                    } else {
+                        ndThongBao.listThongBaoDaDoc.sort((a, b) => b.id - a.id);
+                        for (let i = 0; i < ndThongBao.listThongBaoDaDoc.length; i++) {
+                            for (let u = 0; u < ndThongBao.listUsers.length; u++) {
+                                if (ndThongBao.listThongBaoDaDoc[i].email == ndThongBao.listUsers[u].email) {
+                                    if (arrTrung.indexOf(ndThongBao.listThongBaoDaDoc[i].id) < 0) {
+                                        let themND = `<div class="thongbao-dadoc">
+                                        <img src="/images/`+ ndThongBao.listUsers[u].hinhDaiDien + `" width="80px" height="80px">
+                                        <div class="noi-dung-thong-bao">
+                                            <div class="nd-bai">`+ ndThongBao.listThongBaoDaDoc[i].noiDung + `</div>
+                                            <div class="boi-ai">Bởi `+ ndThongBao.listUsers[u].tenNguoiDung + ` vào ngày ` + ndThongBao.listThongBaoDaDoc[i].date + ` lúc ` + ndThongBao.listThongBaoDaDoc[i].time + ` </div>
+                                        </div>
+                                    </div>`;
+                                        $(".force-overflowheader").append(themND);
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                });
+                $("#tieude-thongbao").html("Thông báo tin nhắn");
+                $("#myModalThongBao").show();
+                $("#xemThongBaoTinNhan").attr("src", "/images/khongtinnhan.png");
+            });
+
+            $("#xemThongBaoXoaBai").click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/taikhoan/xemthongbaoxoabai',
+                    type: 'get',
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                }).done(function (ndThongBao) {
+                    let arrTrung = [];
+                    $(".force-overflowheader").html("");
+                    $(".force-overflowheader").append(`<h3>Thông báo mới</h3>`);
+                    if (ndThongBao.listThongBao.length != 0) {
+                        ndThongBao.listThongBao.sort((a, b) => b.id - a.id);
+                        for (let i = 0; i < ndThongBao.listThongBao.length; i++) {
+                            arrTrung.push(ndThongBao.listThongBao[i].id);
+                            let themND = `<div class="chua-thongbao">
+                                        <img src="/images/logo.png` + `" width="80px" height="80px">
+                                        <div class="noi-dung-thong-bao">
+                                            <div class="nd-bai">`+ ndThongBao.listThongBao[i].noiDungBai + `</div>
+                                            <div class="boi-ai">Bởi Admin vào ngày `+ ndThongBao.listThongBao[i].date + ` lúc ` + ndThongBao.listThongBao[i].time + ` </div>
+                                        </div>
+                                    </div>`;
+                            $(".force-overflowheader").append(themND);
+                        }
+                    } else {
+                        $(".force-overflowheader").append(`<div style="padding-left : 20px">Không có thông báo<div>`);
+                    }
+                    $(".force-overflowheader").append(`<h3>Thông báo đã đọc</h3>`);
+                    if (ndThongBao.listThongBaoDaDoc.length == 0) {
+                        $(".force-overflowheader").append(`<div style="padding-left : 20px">Không có thông báo<div>`);
+                    } else {
+                        ndThongBao.listThongBaoDaDoc.sort((a, b) => b.id - a.id);
+                        for (let i = 0; i < ndThongBao.listThongBaoDaDoc.length; i++) {
+                            if (arrTrung.indexOf(ndThongBao.listThongBaoDaDoc[i].id) < 0) {
+                                let themND = `<div class="thongbao-dadoc">
+                                        <img src="/images/logo.png` + `" width="80px" height="80px">
+                                        <div class="noi-dung-thong-bao">
+                                            <div class="nd-bai">`+ ndThongBao.listThongBaoDaDoc[i].noiDungBai + `</div>
+                                            <div class="boi-ai">Bởi Admin vào ngày `+ ndThongBao.listThongBaoDaDoc[i].date + ` lúc ` + ndThongBao.listThongBaoDaDoc[i].time + ` </div>
+                                        </div>
+                                    </div>`;
+                                $(".force-overflowheader").append(themND);
+                            }
+                        }
+                    }
+                });
+                $("#tieude-thongbao").html("Thông báo bài viết Admin bị xóa");
+                $("#myModalThongBao").show();
+                $("#xemThongBaoXoaBai").attr("src", "/images/khongxoabai.png");
+            });
+
+
+            $("#tat-thongbao").click(function () {
+                $("#myModalThongBao").hide();
+                $(".force-overflowheader").html("");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="loading">
+        <img src="/images/loading.gif">
+    </div>
+    <header>
+        <div class="header-div">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.PNG" alt="logo" height="100px"></a>
+            </div>
+            <div class="taikhoan">
+                <% if(nd == undefined){%>
+                <input type="hidden" id="email" value="undefined">
+                <a href="/taikhoan"><img src="/images/icon-login.png" width="40px" title="Tài Khoản"></a>
+                <%}else{%>
+                <% if(nd.loaiTaiKhoan == 1 ){%>
+                <input type="hidden" id="email" value="<%= nd.email%>">
+                <a href="/taikhoan"><img src="/images/icon-login.png" width="40px" title="Tài Khoản"></a>
+                <a href="/taikhoan/dangxuat" id="dangXuat"><img src="/images/logout.png" width="40px"
+                        title="Đăng Xuất"></a>
+                <%}else{%>
+                <input type="hidden" id="email-dang-nhap" value="<%= nd.email%>">
+                <%if(nd.thongBaoTinNhan == 1){%>
+                <a><img id="xemThongBaoTinNhan" src="/images/cotinnhan.png" width="40px" title="Thông báo tin nhắn"></a>
+                <%}else{%>
+                <a><img id="xemThongBaoTinNhan" src="/images/khongtinnhan.png" width="40px"
+                        title="Thông báo tin nhắn"></a>
+                <%}%>
+                        
+                        <%if(nd.thongBaoBaiViet == 1){%>
+                <a><img id="xemThongBaoBaiViet" src="/images/cobaiviet.png" width="40px" title="Thông báo bài viết"></a>
+                <%}else{%>
+                <a><img id="xemThongBaoBaiViet" src="/images/khongbaiviet.png" width="40px"
+                        title="Thông báo bài viết"></a>
+                <%}%>
+
+                        <%if(nd.thongBaoXoaBai == 1){%>
+                <a><img id="xemThongBaoXoaBai" src="/images/coxoabai.png" width="40px" title="Thông báo xóa bài"></a>
+                <%}else{%>
+                <a><img id="xemThongBaoXoaBai" src="/images/khongxoabai.png" width="40px"
+                        title="Thông báo xóa bài"></a>
+                <%}%>
+
+                        <a href="/taikhoan"><img src="/images/icon-login.png" width="40px" title="Tài Khoản"></a>
+                        <a href="/taikhoan/dangxuat" id="dangXuat"><img src="/images/logout.png" width="40px" title="Đăng Xuất"></a>
+                    <%}%>
+                <%}%>
+            </div>
+        </div>
+
+        <!-- Modal Đăng Ký -->
+        <div id="myModalThongBao" class="modal">
+            <div class="khung-thong-bao">
+              <div class="khung-tieu-de-tb">
+                <span id="tieude-thongbao" style="float: left; font-size: 25px; padding: 3px;">Thông báo</span>
+                <span style="float: right;"><img id="tat-thongbao" src="/images/tatform.png" width="30px"></span>
+              </div>
+              <div class="nd-thongbao">
+                <div class="scrollbarheader" id="style-1">
+                    <div class="force-overflowheader">
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="ul-div">
+            <ul>
+                <li><a href="/user/diendan">Diễn Đàn Cha Mẹ Thông Thái</a></li>
+                <li><a href="/1">Sức Khỏe</a></li>
+                <li><a href="/2">Giáo Dục</a></li>
+                <li><a href="/3">Ăn Uống & Dinh Dưỡng</a></li>
+                <li><a href="/4">Kỹ Năng Sống</a></li>
+            </ul>
+        </div>
+    </header>
+</body>
+
+</html>

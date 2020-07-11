@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+    
+</head>
+
+<body>
+    <input type="hidden" id="soBaiViet" value="<%= listBaiViet.length%>">
+
+    <!--Sức Khỏe-->
+    <div class="muc">
+        <div class="widget-title suckhoe"><a>
+                <h2>Mục chia sẽ kinh nghiệm</h2>
+                <div class="sreach-button">
+                    <input id="thongTinTim" type="text" placeholder="Tìm bài viết của người nào đó..."/>
+                    <img id="timBai" src="/images/search.png" width="30px">
+                </div>
+            </a>
+        </div>
+        <div class="ndmuc">
+            <div class="comments" id="comments">
+                <%- include('listBaiViet',{listBaiViet : listBaiViet , listUsers : listUsers, nd : nd})%>
+            </div>​
+            <div id="divXemThemBaiViet" >
+                <%if(listBaiViet.length >= 5){%>
+                    <div id="xemThemBaiViet" style="text-align: center;"><a class="nd-read-more">Xem Thêm</a></div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+    <div class="ndquantam">
+        <div id="baivietquantam">Bài đăng liên quan </div>
+            
+        <div id="list-bai-dang">
+            <%
+            for(var m = 0 ; m < listBaiDang.length ; m++){
+        %>
+            <a href="/<%=listBaiDang[m].idLoai%>/<%=listBaiDang[m].idBai%>">
+                <div class="chua-nd-qt">
+                    <div class="qt-div">
+                        <img src="/images/<%=listBaiDang[m].hinhTieuDe%>" alt="baidang"/>
+                        <p><%=listBaiDang[m].tieuDe%></p>
+                        <div class="baidangadmin">
+                            <span style="float: left;">Ngày  <%=listBaiDang[m].date %> lúc <%=listBaiDang[m].time %></span>
+                            <span style="float: right;">Lượt thích : <%=listBaiDang[m].nguoiThich.length %> </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        <%        
+            }
+        %>
+        </div>
+        <div id="xemThemBaiDang">
+            <%if(listBaiDang.length > 2){%>
+                <div style="text-align: right;"><a href="/<%=listBaiDang[0].idLoai%>" style="color: white; font-weight: normal; text-transform: none;" >Xem Thêm ---></a></div>
+            <%}%>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tài Khoản</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dangbai-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footer-style.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <div class="top-section">
+            <span>Đăng Bài</span>
+        </div>
+        <form id="fileUploadForm" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td>Tiêu đề :</td>
+                    <td><input type="text" id="tieuDe" name="tieuDe"
+                            style="width: 800px; height: 30px; font-size: 20px;" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tóm tắt nội dung :</td>
+                    <td><textarea id="tomTatND" name="tomTatND" style="width: 800px; height: 100px; font-size: 20px;"
+                            ></textarea></td>
+                </tr>
+                <tr>
+                    <td>Chủ đề :</td>
+                    <td>
+                        <select id="chude" name="chuDe" style="width: 250px; height: 30px; font-size: 20px;">
+                            <option value="1">Sức khỏe</option>
+                            <option value="2">Giáo dục</option>
+                            <option value="3">Ăn uống & dinh dưỡng</option>
+                            <option value="4">Kỹ năng sống</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ảnh tiêu đề :</td>
+                    <td><input type="file" id="hinhTieuDe" name="file" value="Thêm ảnh"
+                            style="height: 30px; font-size: 20px;" onchange="ktHinhDaiDien('hinhTieuDe')" ></td>
+                </tr>
+                <tr>
+                    <td>Nội dung :</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div id="noiDung">
+                <table class="table-phan">
+                    <tr>
+                        <td rowspan="3" class="number-phan">1</td>
+                        <td>Tiêu đề phần :</td>
+                        <td colspan="2"><input class="input-tdp" type="text" id="tieuDeP1" name="tieuDeP1" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nội dung phần :</td>
+                        <td colspan="2"><textarea class="textarea-ndp" id="noiDungP1" name="noiDungP1"
+                                ></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Thêm ảnh :</td>
+                        <td><input class="input-img" type="file" multiple="multiple" id="imgP1" name="imgP1"></td>
+                    </tr>
+                </table>
+            </div>
+            <input type="hidden" id="soPhan" name="soPhan" value="1" />
+            <div class="top-section">
+                <img src="/images/tru-phan.png" onclick="removeItem()" width="50px" style="margin-right: 100px;" />
+                <img src="/images/add-phan.png" onclick="addItem()" width="50px" style="margin-left: 100px;" />
+            </div>
+            <div class="top-section">
+                <input id="dang-bai" type="button" value="Đăng Bài" />
+                <input id="lam-lai" onclick="againForm()" type="button" value="Soạn Lại" />
+            </div>
+        </form>
+
+    </section>
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '#dang-bai', function (event) {
+
+                if(ktAllDuLieuNhap() == true){
+                    $("section").hide();
+                    $(".loading").show();
+                    //stop submit the form, we will post it manually.
+                    event.preventDefault();
+
+                    // Get form
+                    var form = $('#fileUploadForm')[0];
+
+                    // Create an FormData object
+                    var data = new FormData(form);
+                    // If you want to add an extra field for the FormData
+
+                    // disabled the submit button
+                    $("#dang-bai").prop("disabled", true);
+
+                    $.ajax({
+                        type: "POST",
+                        enctype: 'multipart/form-data',
+                        url: "/admin/dangbai/" + $("#soPhan").val(),
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        timeout: 600000,
+                        success: function (data) {
+                            alert(data);
+                            $("#soPhan").val(1);
+                            $("#hinhTieuDe").val("");
+                            $("#tieuDe").val("");
+                            $("#tomTatND").val("");
+                            $("#tieuDeP1").val("");
+                            $("#noiDungP1").val("");
+                            $("#imgP1").val("");
+                    
+                            var tieuDePhan = document.getElementsByClassName("table-phan");
+
+                            for (let i = 1; i < tieuDePhan.length; i++) {
+                                tieuDePhan[i].remove();
+                            }
+                        },
+                        error: function (e) {
+
+                                alert(e);
+                            }
+                        });
+                        setTimeout(function() { 
+                            $(".loading").hide();
+                            $("section").show();
+                        }, 500);
+                    }
+                
+            });
+        });
+
+        function ktAllDuLieuNhap() {
+            let soPhan = $("#soPhan").val();
+            let tieuDe = $("#tieuDe").val();
+            let ktTieuDe = ktDuLieu(tieuDe, "Mục tiêu đề không được để trống !!!");
+            if (ktTieuDe == false ) {
+                return false;
+            }
+            let tomTatND = $("#tomTatND").val();
+            let ktTomTat = ktDuLieu(tomTatND, "Mục tóm tắt nội dung không được để trống !!!");
+            if (ktTomTat == false ) {
+                return false;
+            }
+            
+            let ktHinhTieuDe = ktHinhDaiDien('hinhTieuDe');
+            if ( ktHinhTieuDe == false) {
+                return false;
+            } else {
+                for (let i = 1; i <= soPhan; i++) {
+                    let vlTieuDe = $("#tieuDeP" + i).val();
+                    let vlnd = $("#noiDungP" + i).val();
+                    let ktvlTieuDe = ktDuLieu(vlTieuDe, "Mục tiêu đề phần " + i + " không được để trống !!!");
+                    if (ktvlTieuDe == false) {
+                        return false;
+                    }
+                    let ktvlnd = ktDuLieu(vlnd, "Mục nội dung phần " + i + " không được để trống !!!");
+                    if(ktvlnd == false){
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function ktDuLieu(txt, mess) {
+            if (txt == "" || txt == undefined) {
+                alert(mess);
+                return false;
+            }
+            return true;
+        }
+
+        var itemND = document.getElementById('noiDung');
+        var a = 1;
+        function addItem() {
+            a++;
+            var table = document.createElement("table");
+            table.className = "table-phan";
+            table.setAttribute("id", a);
+
+            //Dòng đầu
+            var trTDPhan1 = document.createElement("tr");
+
+            var td1TDPhan1 = document.createElement("td");
+            td1TDPhan1.innerText = "Tiêu đề phần :";
+
+            var td2TDPhan1 = document.createElement("td");
+            td2TDPhan1.setAttribute("colspan", "2");
+
+            var inputtd2Phan1 = document.createElement("input");
+            inputtd2Phan1.className = "input-tdp";
+            inputtd2Phan1.setAttribute("type", "text");
+            inputtd2Phan1.setAttribute("name", "tieuDeP" + a);
+            inputtd2Phan1.setAttribute("id", "tieuDeP" + a);
+
+            var td0TDPhan1 = document.createElement("td");
+            td0TDPhan1.setAttribute("rowspan", "3");
+            td0TDPhan1.innerText = a;
+            td0TDPhan1.setAttribute("class", "number-phan");
+
+            td2TDPhan1.appendChild(inputtd2Phan1);
+            trTDPhan1.appendChild(td0TDPhan1);
+            trTDPhan1.appendChild(td1TDPhan1);
+            trTDPhan1.appendChild(td2TDPhan1);
+
+
+            //Dòng thứ 2
+            var trTDPhan2 = document.createElement("tr");
+
+            var td1TDPhan2 = document.createElement("td");
+            td1TDPhan2.innerText = "Nội dung phần :";
+
+            var td2TDPhan2 = document.createElement("td");
+            td2TDPhan2.setAttribute("colspan", "2");
+
+            var textareaPhan2 = document.createElement("textarea");
+            textareaPhan2.className = "textarea-ndp";
+            textareaPhan2.setAttribute("name", "noiDungP" + a);
+            textareaPhan2.setAttribute("id", "noiDungP" + a);
+
+            td2TDPhan2.appendChild(textareaPhan2);
+            trTDPhan2.appendChild(td1TDPhan2);
+            trTDPhan2.appendChild(td2TDPhan2);
+
+            //Dòng thứ 3
+            var trTDPhan3 = document.createElement("tr");
+
+            var td1TDPhan3 = document.createElement("td");
+            td1TDPhan3.innerText = "Thêm ảnh :";
+
+            var td2TDPhan3 = document.createElement("td");
+
+            var inputPhan3 = document.createElement("input");
+            inputPhan3.className = "input-img";
+            inputPhan3.setAttribute("type", "file");
+            inputPhan3.setAttribute("multiple", "multiple");
+            inputPhan3.setAttribute("name", "imgP" + a);
+
+            td2TDPhan3.appendChild(inputPhan3);
+            trTDPhan3.appendChild(td1TDPhan3);
+            trTDPhan3.appendChild(td2TDPhan3);
+
+            //Add vào table
+            table.appendChild(trTDPhan1);
+            table.appendChild(trTDPhan2);
+            table.appendChild(trTDPhan3);
+
+            itemND.appendChild(table);
+
+            $("#soPhan").val(a);
+        }
+        function ktHinhDaiDien(id) {
+            let vl = document.getElementById(id).value.trim();
+            if(vl != undefined && vl != ""){
+                var reg = /\.(((jpg)|(png)|(jpeg)|(gif)))/i;
+                if (reg.test(vl)) {
+                    return true;
+                }
+                alert("Hình tiêu đề phải có đuôi .jpeg / .jpg / .png / .gif !!!");
+                return false;
+            }
+            alert("Hình tiêu đề không được bỏ trống !!!");
+            return false;
+           
+        }
+
+        function removeItem() {
+            if (a !== 1) {
+                if (confirm('Bạn có chắc muốn xóa?')) {
+                    var myobj = document.getElementById(a);
+                    myobj.remove();
+                    a--;
+                    $("#soPhan").val(a);
+                }
+            } else {
+                alert("Bài đăng phải có ít nhất một phần!!!");
+            }
+        }
+
+        function againForm() {
+            if (confirm('Bạn có chắc muốn soạn lại?')) {
+
+                $("#soPhan").val(1);
+                $("#hinhTieuDe").val("");
+                $("#tieuDe").val("");
+                $("#tomTatND").val("");
+                $("#tieuDeP1").val("");
+                $("#noiDungP1").val("");
+                $("#imgP1").val("");
+
+                var tieuDePhan = document.getElementsByClassName("table-phan");
+
+                for (let i = 1; i < tieuDePhan.length; i++) {
+                    tieuDePhan[i].remove();
+                }
+
+            }
+        }
+    </script>
+    <% include footer%>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    padding: 0 ;
+    margin: 0;
+    height: 140px;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+    text-align: center;
+    position: fixed;
+}
+.header-div{
+    width: 77%;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+.logo a img{
+    float: left;
+}
+.taikhoan{
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;    
+}
+.taikhoan a{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #3498db;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    padding-top: 10%; 
+}
+.taikhoan a:hover{
+    opacity: 0.7;
+}
+span{
+    margin-left: 10px;
+}
+
+.ul-div{
+    float: left;
+    width: 100%;
+    height: 56px;
+    background-color: white;
+    z-index: 1;
+    background-color:#74bff1;
+}
+ul {
+    clear: both;
+    list-style-type: none;
+    overflow: hidden;
+    width: 77%;
+    margin: 0 auto;
+    padding: 0;
+    margin-left:350px;
+    background-color:#74bff1;
+    height: 100%;
+    
+}
+li {
+    float: left;
+    margin-left: 10px;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+li a:hover {
+    opacity: 0.6;
+}
+
+.modal {
+    position: fixed; /* vị trí cố định */
+    z-index: 0; /* Ưu tiên hiển thị trên cùng */
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .khung-thong-bao{
+    margin: 0 auto;
+    width: 500px;
+    height: 700px;
+    background-color: white; 
+  }
+  
+  .khung-tieu-de-tb{
+    float: left;
+    width: 480px;
+    padding: 10px;
+  }
+  
+  .nd-thongbao{
+    float: left;
+    width: 500px;
+    height: 520px;
+  }
+
+  .scrollbarheader
+{
+	margin-left: 30px;
+    float: right;
+    height: 640px;
+	width: 500px;
+	overflow-y: scroll;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.force-overflowheader
+{
+	min-height: 450px;
+}
+
+/*
+ *  STYLE 1
+ */
+
+ #style-1::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+     background-color: rgb(240, 246, 247);
+ }
+ 
+ #style-1::-webkit-scrollbar
+ {
+     width: 12px;
+     background-color: rgb(240, 246, 247);
+ }
+ 
+ #style-1::-webkit-scrollbar-thumb
+ {
+     border-radius: 10px;
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+     background-color: #555;
+ }
+
+.chua-thongbao{
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 100px;
+    background-color: #ccc;
+}
+
+
+.thongbao-dadoc{
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 100px;
+}
+
+.force-overflowheader img{
+    margin-top: 10px;
+    margin-left: 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.noi-dung-thong-bao{
+    width: 380px;
+    height: 80px;
+    float: right;
+}
+.nd-bai{
+    height: 60px;
+    padding: 10px;
+    display: -webkit-box;
+    font-size: 25px;
+    font-weight: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 35px;
+    margin-bottom: 5px;
+}
+.boi-ai{
+    font-size: 12px;
+    float: right;
+    padding-right: 5px;
+}
+
+@media only screen and (max-width: 1700px ) {
+
+    ul {
+        clear: both;
+        list-style-type: none;
+        overflow: hidden;
+        width: 77%;
+        margin: 0 auto;
+        padding: 0;
+        margin-left:14%;
+        background-color:#74bff1;
+        height: 100%;
+        
+    }
+    
+  }
+
+@media only screen and (max-width: 1600px ) {
+    .ul-div{
+        float: left;
+        width: 100%;
+        height: 46px;
+        background-color: white;
+        z-index: 1;
+        background-color:#74bff1;
+    }
+    ul {
+        clear: both;
+        list-style-type: none;
+        overflow: hidden;
+        width: 77%;
+        margin: 0 auto;
+        padding: 0;
+        margin-left:10%;
+        background-color:#74bff1;
+        height: 100%;
+        
+    }
+    li {
+        float: left;
+        margin-left: 10px;
+    }
+      
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 12px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+      
+    li a:hover {
+        opacity: 0.6;
+    }
+    
+  }
+
+  @media only screen and (max-width: 1310px ) {
+    .ul-div{
+        float: left;
+        width: 100%;
+        height: 36px;
+        background-color: white;
+        z-index: 1;
+        background-color:#74bff1;
+    }
+    ul {
+        clear: both;
+        list-style-type: none;
+        overflow: hidden;
+        width: 77%;
+        margin: 0 auto;
+        padding: 0;
+        margin-left:10%;
+        background-color:#74bff1;
+        height: 100%;
+        
+    }
+    li {
+        float: left;
+        margin-left: 10px;
+    }
+      
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 6px 8px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+      
+    li a:hover {
+        opacity: 0.6;
+    }
+    
+  }
+  @media only screen and (max-width: 1310px ) {
+    .ul-div{
+        float: left;
+        width: 100%;
+        height: 36px;
+        background-color: white;
+        z-index: 1;
+        background-color:#74bff1;
+    }
+    ul {
+        clear: both;
+        list-style-type: none;
+        overflow: hidden;
+        width: 77%;
+        margin: 0 auto;
+        padding: 0;
+        margin-left:5%;
+        background-color:#74bff1;
+        height: 100%;
+        
+    }
+    li {
+        float: left;
+        margin-left: 10px;
+    }
+      
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 6px 8px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+      
+    li a:hover {
+        opacity: 0.6;
+    }
+    
+  }

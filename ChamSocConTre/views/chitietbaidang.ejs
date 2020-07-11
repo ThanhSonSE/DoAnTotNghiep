@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="og:image" content="http://54.145.93.79:3000/images/<%= bai.hinhTieuDe%>">
+    <title><%= bai.tieuDe%></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chitietbaidang-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footer-style.css" />
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script src="http://54.145.93.79:3000/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect("http://54.145.93.79:3000/chitietbaidang");
+        socket.on("nhan-so-like", function (data) {
+            let idLoai = Number($("#idLoai").val());
+            let idBai = Number($("#idBai").val());
+
+            if(idLoai == data.idLoai && idBai == data.idBai){
+                $("#soLike").html(data.soLike);
+            }
+        });
+
+        socket.on('nhan-binh-luan-moi',function(data){
+            let idLoai = $("#idLoai").val();
+            let idBai = $("#idBai").val();
+            if(idLoai == data.idLoai && idBai == data.idBai){
+                let idBL = data.idBL;
+                let ndBL = data.ndBL;
+                let hinhDaiDien = data.hinhDaiDien;
+                let tenNguoiDung = data.tenNguoiBL;
+
+                if(ndBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<article class="comment">
+                                <img src="/images/`+hinhDaiDien+`" class="anh-dai-dien">
+                                <div class="comment-body">
+                                    
+                                    <div class="text">
+                                      <p>`+ndBL+`</p>
+                                    </div>
+                                <p class="attribution">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+` <button style="float: right;" class="motlbl" id="tlbl-`+idBL+`">Trả lời</button></p>
+                                </div>
+                                
+                                <div class="comment-body traloibinhluan" id="traloibl`+idBL+`%>">
+                                    
+                                    <% if(nd !== undefined){%>
+                                        <img src="/images/`+hinhDaiDien+`" class="anh-dai-dien">
+                                        <textarea id="ndTLBL`+idBL+`" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                        <button class="btnTraLoiBL" id="btnTLBL-`+idBL+`">Đăng</button>
+                                    <%}%>
+
+                                    
+                                    <div id="khung-traloi-bl`+idBL+`">
+                                    </div>
+                                </div>
+                                </article>`;
+
+                                $("#noiDungBL").val("");
+                    $(".comments").prepend(ndThem);
+                    $("#traloibl"+idBL).hide();
+                }
+            }
+        });
+
+        socket.on('nhan-tl-binh-luan-moi',function(data){
+            
+            let idLoaiCuaUser = Number($("#idLoai").val());
+            let idBaiCuaUser = Number($("#idBai").val());
+            if(idLoaiCuaUser == data.idLoai && idBaiCuaUser == data.idBai){
+                let ndTLBL = data.ndTLBL;
+                let hinhDaiDien = data.hinhDaiDien;
+                let idLoai = data.idLoai;
+                let tenNguoiDung = data.tenNguoiTLBL;
+                let idBL = data.idBL;
+                let idTLBL = data.idTLBL;
+
+                if(ndTLBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<img class="anh-dai-dien" src="/images/`+hinhDaiDien+`">
+                                            <div class="text" style="margin-left: 70px;">
+                                                `+ndTLBL+`
+                                            </div>
+                                            <p class="attribution" style="padding: 10px;">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+`</p>`;
+                    
+                    $("#khung-traloi-bl"+idBL).prepend(ndThem);
+                }
+            }
+        });
+
+
+        $(document).ready(function () {
+            $("#chua-dang-nhap").hide();
+            $("#da-dang-nhap").hide();
+            $(".like").click(function () {
+                let id = this.id;
+                let soLike = Number($("#soLike").html());
+                let idLoai = Number($("#idLoai").val());
+                let idBai = Number($("#idBai").val());
+                if (id === 'like') {
+                    $(this).attr('id', "unlike");
+                    $(this).html("");
+                    $(this).html(`<img src="/images/unlike.png" width="40px"/><span id="soLike" style="font-size: 20px;">` + (soLike - 1) + `</span>`);
+
+                    var url = "/admin/likebaidang";
+                    var data = {
+                        idLoai: idLoai,
+                        idBai : idBai,
+                        isLike : Number(0)
+                    };
+                    var dataType = 'text';
+                    $.post(url, data, dataType);
+
+                    socket.emit('co-nguoi-like-bai-dang',{idLoai : idLoai,idBai : idBai, soLike : (soLike -1)});
+                } else if (id === 'unlike') {
+                    $(this).attr('id', "like");
+                    $(this).html("");
+                    $(this).html(`<img src="/images/like.png" width="40px"/><span id="soLike" style="font-size: 20px;">` + (soLike + 1) + `</span>`);
+
+                    var url = "/admin/likebaidang";
+                    var data = {
+                        idLoai: idLoai,
+                        idBai : idBai,
+                        isLike : Number(1)
+                    };
+                    var dataType = 'text';
+                    $.post(url, data, dataType);
+                    socket.emit('co-nguoi-like-bai-dang',{idLoai : idLoai,idBai : idBai, soLike : (soLike +1)});
+                }
+            });
+
+            $(".traloibinhluan").hide();
+            $(document).on('click','.motlbl',function(){
+                let idBL = this.id.split("-")[1];
+                let chedo = $(this).html();
+                if(chedo == "Trả lời"){
+                    $("#traloibl"+idBL).show();
+                    $(this).html("Đóng trả lời");
+                }else if( chedo == "Đóng trả lời"){
+                    $("#traloibl"+idBL).hide();
+                    $(this).html("Trả lời");
+                }
+            });
+
+            $(document).on('click','#btnBL',function (){
+                let email = $("#email").val();
+                let idBL = Date.now();
+                let idBai = $("#idBai").val();
+                let ndBL = $("#noiDungBL").val();
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                let idLoai = $("#idLoai").val();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+
+                if(ndBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<article class="comment">
+                                <img src="/images/`+hinhDaiDien+`" class="anh-dai-dien">
+                                <div class="comment-body">
+                                    
+                                    <div class="text">
+                                      <p>`+ndBL+`</p>
+                                    </div>
+                                <p class="attribution">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+` <button style="float: right;" class="motlbl" id="tlbl-`+idBL+`">Trả lời</button></p>
+                                </div>
+                                
+                                <div class="comment-body traloibinhluan" id="traloibl`+idBL+`%>">
+                                    
+                                    <% if(nd !== undefined){%>
+                                        <img src="/images/`+hinhDaiDien+`" class="anh-dai-dien">
+                                        <textarea id="ndTLBL`+idBL+`" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                        <button class="btnTraLoiBL" id="btnTLBL-`+idBL+`">Đăng</button>
+                                    <%}%>
+
+                                    
+                                    <div id="khung-traloi-bl`+idBL+`">
+                                    </div>
+                                </div>
+                                </article>`;
+                    
+                    var url = "/dangbinhluanbaidang";
+                    var data = {
+                        idBinhLuan: idBL,
+                        emailNguoiBinhLuan : email,
+                        anhDaiDienBinhLuan : hinhDaiDien,
+                        tenNguoiDungBinhLuan : tenNguoiDung,
+                        noiDungBinhLuan : ndBL,
+                        idBai : idBai,
+                        idLoai : idLoai
+                    };
+                    var dataType = 'text';
+                    $.post(url, data, dataType);
+
+                    $("#noiDungBL").val("");
+                    $(".comments").prepend(ndThem);
+                    $("#traloibl"+idBL).hide();
+                    socket.emit("co-nguoi-binh-luan",{hinhDaiDien : hinhDaiDien,tenNguoiBL : tenNguoiDung, ndBL : ndBL, idBL : idBL, idLoai : idLoai, idBai : idBai });
+                }else{
+                    alert("Bạn chưa nhập nội dung bình luận !!!");
+                }
+                
+            });
+
+            $(document).on('click','.btnTraLoiBL',function (){
+                let email = $("#email").val();
+                let idBtn = this.id.split("-");
+                let idBL = idBtn[1];
+                let ndTLBL = $("#ndTLBL"+idBL).val();
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                let idLoai = $("#idLoai").val();
+                let idBai = $("#idBai").val();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+                let idTLBL = Date.now();
+                if(ndTLBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<img class="anh-dai-dien" src="/images/`+hinhDaiDien+`">
+                                            <div class="text" style="margin-left: 70px;">
+                                                `+ndTLBL+`
+                                            </div>
+                                            <p class="attribution" style="padding: 10px;">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+`</p>`;
+                    
+
+                    $.ajax({
+                        url: '/dangtraloibinhluanbaidang',
+                        type: 'post',
+                        data : {
+                            idTraLoiBinhLuan : idTLBL,
+                            idBinhLuan: idBL,
+                            emailNguoiTraLoiBinhLuan : email,
+                            anhDaiDienTraLoiBinhLuan : hinhDaiDien,
+                            tenNguoiDungTraLoiBinhLuan : tenNguoiDung,
+                            noiDungTraLoiBinhLuan : ndTLBL,
+                            idBai : idBai,
+                            idLoai : idLoai
+                        },
+                        dataType: 'text'
+                    }).done(function (result) {
+                        if(result == "bình luận thành công"){
+                            $("#ndTLBL"+idBL).val("");
+                            $("#khung-traloi-bl"+idBL).prepend(ndThem);
+
+                            socket.emit("co-nguoi-tl-binh-luan",{hinhDaiDien : hinhDaiDien,tenNguoiTLBL : tenNguoiDung, ndTLBL : ndTLBL, idBL : idBL, idLoai : idLoai, idBai : idBai, idTLBL : idTLBL });
+                        }else{
+                            alert("Bài viết này đã bị xóa !!!");
+                            $("#baivietOfND"+idBai).remove();
+                        }
+                    }); 
+                } 
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <% include header %>
+    <section>
+        <input type="hidden" id="idLoai" value="<%= bai.idLoai%>">
+        <input type="hidden" id="idBai" value="<%= bai.idBai%>">
+        <div class="baonoidung">
+            <div class="tieude">
+                <p><%= bai.tieuDe%></p>
+                <img src="/images/<%= bai.hinhTieuDe%>">
+            </div>
+            <div class="chuaphan">
+                <%for(var i = 0; i < bai.noiDung.length ; i++){%>
+                <div class="phan">
+                    <div class="ndphan">
+                        <p class="tieudephan"><%=(bai.noiDung)[i].tieuDePhan%></p>
+                        <div class="ndchinhphan">
+                            <%=bai.noiDung[i].noiDungPhan%>
+                        </div>
+                    </div>
+
+                    <%if((bai.noiDung)[i].hinhAnh !== undefined){%>
+                    <%for(var j = 0; j < (bai.noiDung)[i].hinhAnh.length ; j++){%>
+                    <img src="/images/<%=((bai.noiDung)[i].hinhAnh)[j].hinh%>">
+                    <%}%>
+                    <%}%>
+                </div>
+                <%}%>
+            </div>
+        </div>
+            <% if(nd === undefined){%>
+                <div class="mucbinhluan" id="chua-dang-nhap"></div>
+            <%}else{%>
+                <input type="hidden" id="tenNguoiDung" value="<%= nd.tenNguoiDung%>">
+                <input type="hidden" id="email" value="<%= nd.email%>">
+                <input type="hidden" id="hinhNguoiDung" value="<%= nd.hinhDaiDien%>">
+                <input type="hidden" id="tenNguoiDung" value="<%= nd.tenNguoiDung%>">
+                <div class="mucbinhluan" id="da-dang-nhap"></div>
+            <%}%>
+        
+            <p id="muc-binh-luan">
+                Mục bình luận
+                <% if(nd !== undefined){
+                    if(bai.nguoiThich !== undefined){
+                        let dem = 0 ;
+                        for(let n = 0 ; n < bai.nguoiThich.length ; n++){
+                            if(bai.nguoiThich[n] == nd.email){
+                                dem =1;
+                %>
+                                <span id="like" class="like"><img src="/images/like.png" width="40px"/>
+                <%              break;
+                            }
+                        }
+                        if(dem === 0){
+                %>
+                            <span id="unlike" class="like"><img src="/images/unlike.png" width="40px"/>
+                        <%}%>
+                        <span id="soLike" style="font-size: 20px;"><%= bai.nguoiThich.length%></span></span>
+                        
+                    <%}else{%>
+                        <span id="unlike" class="like"><img src="/images/unlike.png" width="40px"/><span id="soLike" style="font-size: 20px;">0</span></span>
+                    <%}%>
+                <%}else{%>
+                    <a href="/taikhoan" style="float: right; font-size: 20px;">Đăng nhập để bình luận</a>
+                <%}%>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="9BeWUPtY"></script>
+                <div class="fb-share-button" data-href="http://54.145.93.79:3000/<%= bai.idLoai%>/<%= bai.idBai%>" data-layout="box_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F54.145.93.79%3A3000%2F<%= bai.idLoai%>%2F<%= bai.idBai%>&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+            </p>
+            <div class="binhluan">
+                <% if(nd !== undefined){%>
+                <div class="dangbinhluan">
+                    <img src="/images/<%=nd.hinhDaiDien%>" class="anh-dai-dien">
+                    <textarea style="width: 1000px; margin-left: 20px;" id="noiDungBL"></textarea>
+                    <button id="btnBL">Đăng</button>
+                </div>
+                <%}%>
+                <div class="comments">
+                    <%if(bai.binhLuan !== undefined){
+                        if(bai.binhLuan.length > 1){
+                            bai.binhLuan.sort((a,b)=>b.idBinhLuan - a.idBinhLuan);
+                        }%>
+                        <%
+                            for(let k = 0 ; k < bai.binhLuan.length ; k++){
+                                for(let d = 0 ; d < listUsers.length ; d++){
+                                    if(listUsers[d].email == bai.binhLuan[k].emailNguoiBinhLuan){
+                        %>
+                            <article class="comment">
+                                <img src="/images/<%= listUsers[d].hinhDaiDien%>" class="anh-dai-dien">
+                                <div class="comment-body">
+                                    
+                                    <div class="text">
+                                      <p><%=bai.binhLuan[k].noiDungBinhLuan%></p>
+                                    </div>
+                                <p class="attribution">Bởi <a href="#non"><%= listUsers[d].tenNguoiDung%></a> vào ngày <%=bai.binhLuan[k].dateBinhLuan%> lúc <%=bai.binhLuan[k].timeBinhLuan%> <button style="float: right;" class="motlbl" id="tlbl-<%=bai.binhLuan[k].idBinhLuan%>">Trả lời</button></p>
+                                </div>
+                                
+                                <div class="comment-body traloibinhluan" id="traloibl<%=bai.binhLuan[k].idBinhLuan%>">
+                                    
+                                    <% if(nd !== undefined){%>
+                                        <img src="/images/<%= nd.hinhDaiDien%>" class="anh-dai-dien">
+                                        <textarea id="ndTLBL<%=bai.binhLuan[k].idBinhLuan%>" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                        <button class="btnTraLoiBL" id="btnTLBL-<%=bai.binhLuan[k].idBinhLuan %>">Đăng</button>
+                                    <%}%>
+
+                                    
+                                    <div id="khung-traloi-bl<%=bai.binhLuan[k].idBinhLuan %>">
+                                        <% 
+                                            if(bai.binhLuan[k].traLoiBinhLuan !== undefined){
+                                                if(bai.binhLuan[k].traLoiBinhLuan.length > 1){
+                                                    bai.binhLuan[k].traLoiBinhLuan.sort((a,b)=>b.idTraLoiBinhLuan - a.idTraLoiBinhLuan);
+                                                }
+                                        %>
+                            
+                                        <%
+                                                for(var l = 0 ;l < bai.binhLuan[k].traLoiBinhLuan.length ; l++){
+                                                    for(let v = 0 ; v < listUsers.length ; v++){
+                                                        if(listUsers[v].email == (bai.binhLuan[k].traLoiBinhLuan)[l].emailNguoiTraLoiBinhLuan){
+                                        %>
+                                                    <img class="anh-dai-dien" src="/images/<%=listUsers[v].hinhDaiDien %>">
+                                                    <div class="text" style="margin-left: 70px;">
+                                                        <%=(bai.binhLuan[k].traLoiBinhLuan)[l].noiDungTraLoiBinhLuan %>
+                                                    </div>
+                                                    <p class="attribution" style="padding: 10px;">Bởi <a><%=listUsers[v].tenNguoiDung %></a> vào ngày <%=(bai.binhLuan[k].traLoiBinhLuan)[l].dateTraLoiBinhLuan %> lúc <%=(bai.binhLuan[k].traLoiBinhLuan)[l].timeTraLoiBinhLuan %></p>
+                                        <%
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        %>
+    
+                                    </div>
+                                </div>
+                            </article>
+                    <% 
+                                        break;
+                                    }      
+                                }
+                            }
+                        }else{%> 
+                        <span>Chưa có bình luận nào!!!</span>   
+                    <%}%>
+                    
+                </div>​
+            </div>
+        </div>
+        <div>
+            <p id="muc-quan-tam">Bài viết được quan tâm</p>
+            <div>
+                <div class="w3-content w3-display-container">
+                    <button class="w3-button w3-white w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <div class="cuon-img">
+                        <%for(let k = 0 ; k < listBaiDangThichNhieu.length ; k++ ){%>
+                            <a class="mySlides" href="/<%=listBaiDangThichNhieu[k].idLoai%>/<%=listBaiDangThichNhieu[k].idBai%>">
+                                <div class="chua-nd-qt">
+                                    <div class="qt-div">
+                                        <img src="/images/<%=listBaiDangThichNhieu[k].hinhTieuDe%>" >
+                                        <p><%=listBaiDangThichNhieu[k].tieuDe%></p>
+                                    </div>
+                                </div>
+                            </a>
+                        <%}%>
+                    </div>
+                    <button class="w3-button w3-white w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <footer><% include footer%></footer>
+    <script type="text/javascript" src="/javascripts/binhluanJS.js"></script>
+    <script>
+
+        
+        var list = [0, 1, 2, 3];
+        var x = document.getElementsByClassName("mySlides");
+        showDivs(list, 0, x);
+        function plusDivs(n) {
+            for (var i = 0; i < 4; i++) {
+                if ((list[i] + n) > (x.length - 1)) {
+                    list[i] = 0;
+                } else if ((list[i] + n) < 0) {
+                    list[i] = x.length - 1;
+                } else {
+                    list[i] += n;
+                }
+            }
+            showDivs(list, n, x);
+        }
+
+        function showDivs(list, n, x) {
+
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (var j = 0; j < 4; j++) {
+                x[list[j]].style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

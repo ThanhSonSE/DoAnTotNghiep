@@ -1,0 +1,230 @@
+section{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 auto;
+    padding-top: 200px;
+}
+.baonoidung{
+    text-align: center;
+}
+.tieude p{
+    font-size: 50px;
+    font-weight: bold;
+}
+.tieude img{
+    width: 100%;
+}
+.tieudephan{
+    font-size: 30px;
+    font-weight: bold;
+}
+.tieudephan p{
+    text-align: left;
+}
+.phan img{
+    margin-top: 20px;
+    width: 800px;
+}
+.phan{
+    
+    text-align: center;
+    line-height: 25px;
+}
+.ndchinhphan{
+    text-indent: 30px;
+}
+.ndphan{
+    text-align: left;
+}
+
+#muc-binh-luan{
+    padding-top: 50px;
+    font-size: 30px;
+}
+.binhluan{
+    width: 1200px;
+}
+.binhluan img{
+    float: left;
+}
+textarea{
+    width: 900px;
+    height: 100px;
+    font-size: 20px;
+    resize: none;
+}
+.dangbinhluan{
+    width: 1200px;
+    margin-top: 30px;
+}
+.dangbinhluan button{
+    font-size:20px;
+    background:orange;
+    padding:10px 5px;
+    border:none;
+    margin:5px;
+    border-radius:6px;
+    transition:0.5s;
+    float: right;
+    margin-left: 30px;
+}
+/*--Comment*/
+article, aside, figure, footer, header, hgroup, menu, nav, section { display: block }
+
+a {
+    color: #6d84b4;
+    text-decoration: none;
+}
+
+.comments {
+    background: rgba(255,255,255,0.9);
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.comment {
+    overflow: hidden;
+    padding: 0 0 1em;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 1em;
+    margin-left: 40px;
+    *zoom: 1;
+    width: 94%;
+}
+
+.comment-img {
+    float: left;
+    margin-right: 33px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.comment-img img { display: block }
+
+.comment-body { overflow: hidden }
+
+.comment .text {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.comment .text p:last-child { margin: 0 }
+
+.comment .attribution {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+.comment:hover:before { background: #3b5998 }
+
+.comment .text:before {
+    top: 18px;
+    left: 78px;
+    width: 9px;
+    height: 9px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+.traloibinhluan{
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 52px;
+}
+.dangbl{
+    display: none;
+}
+.traloibinhluan textarea{
+    width: 850px;
+    resize: none;
+}
+#muc-quan-tam{
+    font-size: 30px;
+    border-bottom: 2px solid #cccccc;
+}
+.mySlides {
+    display:none; 
+    width:220px;
+    float : left;
+    margin-left: 20px;
+}
+.like{
+    float: right; 
+    margin-bottom: 10px;
+}
+.anh-dai-dien{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.btnTraLoiBL{
+    font-size:20px;
+    background:orange;
+    padding:10px 5px;
+    border:none;
+    margin:5px;
+    border-radius:6px;
+    transition:0.5s;
+    float: right;
+    margin-left: 30px;
+}
+#xemThem{
+    text-decoration: none;
+    height: 20px;
+    padding: 10px;
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+}
+
+.qt-div img{
+    width: 220px;
+    height: 150px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.qt-div img:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.qt-div p{
+    display: block;
+    display: -webkit-box;
+    font-size: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    width: 220px;
+}
+.w3-button{
+    margin-top: 70px;
+}
+.w3-display-left{
+    float: left;
+    margin-left: 80px;
+}
+.w3-display-right{
+    float: left;
+    margin-left: 20px;
+}
+
+
+

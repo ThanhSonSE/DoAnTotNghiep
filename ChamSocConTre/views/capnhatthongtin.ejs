@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Cập nhật thông tin
+    </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/capnhatthongtin-style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <div class="section-form">
+            <form id="fileUploadForm"  method="post" enctype="multipart/form-data">
+            <div class="title-change">
+                <b class="ten-muc">Ảnh đại diện</b>
+                <input class="btn-update" type="submit" id="btn-luuAnh" value="Lưu ảnh">
+            </div>
+
+            <div class="fill-change">
+                <!-- table img -->
+                <div class="table-change-img">
+                    <table>
+                        <tbody>
+                                <tr class="txt-table-r avatar-circle avatar-120 mx__auto">
+                                    <td class="txt-table-img">
+                                        <div class="preview">
+                                            <img class="img-change" id="thumb" src="/images/<%= nd.hinhDaiDien %>"
+                                                alt="avatar">
+                                            <input type="hidden" id="thumbagain" value="/images/<%= nd.hinhDaiDien %>">
+                                        </div>
+                                    </td>
+                                    <td class="change-table-img">
+                                        <div>
+                                            <label>Thay đổi ảnh đại diện của bạn</label>
+                                            <input type="file" id="pimg" name="file">
+                                        </div>
+                                    </td>
+                                    <td class="change-table-img-btn">
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                </form>
+                <form >
+                    <table>
+                        <tr>
+                            <div class="title-change">
+                                <b class="ten-muc">Thông tin</b>
+                                <input type="button" id="btn-capnhatTT" value="Cập nhật">
+                            </div>
+                        </tr>
+                        <tr class="change-TT" >
+                            <td>
+                                <!-- table Email -->
+                                <div class="table-change-1">
+                                    <table>
+                                        <tbody>
+                                            <tr class="txt-table-r">
+                                                <td class="txt-table">
+                                                    <h4><b>Email</b></h4>
+                                                </td>
+                                                <td class="txt-table-c2" style="font-size: 20px;">
+                                                    <%= nd.email %>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Table Tên người dùng  -->
+                                <div class="table-change-2" id="table-change-2">
+                                    <table>
+                                        <tbody>
+
+                                            <tr class="txt-table-r">
+                                                <td class="txt-table">
+                                                    <h4><b>Tên người dùng</b></h4>
+                                                </td>
+                                                <td class="txt-table-c2">
+                                                    <input type="text" class="txt-c2-all" id="txt-c2-name" name="pname"
+                                                        value="<%= nd.tenNguoiDung %>" onchange="ktTenNguoiDung()">
+                                                </td>
+                                                <input type="hidden" id="tenND" value="<%= nd.tenNguoiDung %>">
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                                <!-- Table Số điện thoại -->
+                                <div class="table-change-3" id="table-change-3">
+                                    <table>
+                                        <tbody>
+
+                                            <tr class="txt-table-r">
+                                                <td class="txt-table">
+                                                    <h4><b>Số điện thoại</b></h4>
+                                                </td>
+                                                <td class="txt-table-c2">
+                                                    <input type="text" class="txt-c2-all" id="txt-c2-phone"
+                                                        name="pphone" value="<%= nd.soDienThoai %>" onchange="ktSDT()">
+                                                </td>
+                                                <input type="hidden" id="soDTND" value="<%= nd.soDienThoai %>">
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="change-TT">
+                            <td>
+                                <div class="table-change-3" style="height:70px;">
+                                    <table>
+                                        <tbody>
+    
+                                            <tr class="txt-table-r">
+                                                <td class="txt-table" colspan="2" style="padding-left: 270px;">
+                                                    <input class="btn-update" type="button" id="btn-luuform" value="Lưu">
+                                                </td>
+                                            </tr>
+    
+                                        </tbody>
+    
+                                    </table>
+                                </div>
+                            </td>
+                            
+                        </tr>
+                    </table>
+            </div>
+            </form>
+            <form >
+                <table>
+                    <tr>
+                        <div class="title-change">
+                            <b class="ten-muc">Mật khẩu</b>
+                            <input type="button" id="btn-capnhat" value="Cập nhật">
+                        </div>
+                    </tr>
+                    <tr class="change-password">
+                        <td>
+                            <div class="table-change-3">
+                                <table>
+                                    <tbody>
+
+                                        <tr class="txt-table-r">
+                                            <td class="txt-table">
+                                                <h4><b>Mật khẩu cũ</b></h4>
+                                            </td>
+                                            <td class="txt-table-c2">
+                                                <input type="password" class="txt-c2-all" id="password" name="hpass" onchange="ktMatKhau('password','Mật khẩu cũ')">
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                    <tr class="change-password">
+                        <td>
+                            <div class="table-change-3">
+                                <table>
+                                    <tbody>
+
+                                        <tr class="txt-table-r">
+                                            <td class="txt-table">
+                                                <h4><b>Mật khẩu mới</b></h4>
+                                            </td>
+                                            <td class="txt-table-c2">
+                                                <input type="password" class="txt-c2-all" id="passwordnew" name="passwordnew" onchange="ktMatKhau('passwordnew','Mật khẩu mới')">
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                    <tr class="change-password">
+                        <td>
+                            <div class="table-change-3" style="height:70px;">
+                                <table>
+                                    <tbody>
+
+                                        <tr class="txt-table-r">
+                                            <td class="txt-table">
+                                                <h4><b>Nhập lại mật khẩu mới</b></h4>
+                                            </td>
+                                            <td class="txt-table-c2">
+                                                <input type="password" class="txt-c2-all" id="passwordagain" onchange="ktNhapLaiMatKhau()">
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                    <tr class="change-password">
+                        <td>
+                            <div class="table-change-3" style="height:70px;">
+                                <table>
+                                    <tbody>
+
+                                        <tr class="txt-table-r">
+                                            <td class="txt-table" colspan="2" style="padding-left: 270px;">
+                                                <input class="btn-update" type="button" id="btn-luupass" value="Lưu">
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                </table>
+        </div>
+        </form>
+        </div>
+
+    </section>
+    <% include footer%>
+    <script type="text/javascript">
+    
+        $(document).ready(function () {
+            $("#btn-luuAnh").hide();
+            $(".change-password").hide();
+            $(".change-TT").hide();
+            
+            $("#pimg").change(function () {
+                let vl = $("#pimg").val();
+                if (vl != "" && vl != undefined) {
+                    if(ktHinhDaiDien()){
+                        $("#btn-luuAnh").show();
+                        $("#thumb").attr("src", vl);
+                    }else{
+                        $("#btn-luuAnh").hide();
+                        let img = $("#thumbagain").val();
+                        $("#thumb").attr("src", img);
+                        $("#pimg").val("");
+                    }
+                } else {
+                    $("#btn-luuAnh").hide();
+                    let img = $("#thumbagain").val();
+                    $("#thumb").attr("src", img);
+                }
+
+            });
+            
+            $("#btn-capnhatTT").click(function(){
+                if($("#btn-capnhatTT").val() == "Cập nhật"){
+                    $(".change-TT").show();
+                    $("#btn-capnhatTT").val("Đóng");
+                }else{
+                    $("#txt-c2-name").val($("#tenND").val());
+                    $("#txt-c2-phone").val($("#soDTND").val());
+                    $(".change-TT").hide();
+                    $("#btn-capnhatTT").val("Cập nhật");
+                }
+            });
+
+            $("#btn-capnhat").click(function(){
+                if($("#btn-capnhat").val() == "Cập nhật"){
+                    $(".change-password").show();
+                    $("#btn-capnhat").val("Đóng");
+                }else{
+                    $("#password").val("");
+                    $("#passwordnew").val("");
+                    $("#passwordagain").val("");
+                    $(".change-password").hide();
+                    $("#btn-capnhat").val("Cập nhật");
+                }
+            });
+
+            $(document).on('click','#btn-luuAnh',function (event) {
+
+                //stop submit the form, we will post it manually.
+                event.preventDefault();
+
+                // Get form
+                var form = $('#fileUploadForm')[0];
+
+                // Create an FormData object
+                var data = new FormData(form);
+                // If you want to add an extra field for the FormData
+
+                // disabled the submit button
+                //$("#btn-luuAnh").prop("disabled", true);
+
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: "/capnhatthongtin/editAnh",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 600000,
+                    success: function (data) {
+                        $("#thumb").attr("src", "/images/"+data);
+                        $("#thumbagain").val("/images/"+data);
+                        $("#pimg").val("");
+                        $("#btn-luuAnh").hide();
+                    },
+                    error: function (e) {
+
+                        alert(e);
+                    }
+                });
+
+            });
+
+            $(document).on('click','#btn-luuform',function () {
+                
+                if(ktLuuTT()){
+                    let tenND = $("#txt-c2-name").val();
+                    let sdt = $("#txt-c2-phone").val();
+                    $.ajax({
+                            url: '/capnhatthongtin/editThongTin',
+                            type: 'post',
+                            data : {
+                                tenNguoiDung : tenND,
+                                soDienThoai : sdt,
+                            },
+                            dataType: 'text',
+                        }).done(function (result) {
+                            alert(result);
+                            if(result == "Cập nhật thông tin thành công !!!"){
+                                $(".change-TT").hide();
+                                $("#btn-capnhatTT").val("Cập nhật");
+                            }
+                        });
+                }
+            });
+
+            $(document).on('click','#btn-luupass',function () {
+                
+                if(ktLuuMatKhau()){
+                    let passwordcu = $("#password").val();
+                    let passwordmoi = $("#passwordnew").val();
+                    $.ajax({
+                            url: '/capnhatthongtin/editMatKhau',
+                            type: 'post',
+                            data : {
+                                password : passwordcu,
+                                passwordmoi : passwordmoi
+                            },
+                            dataType: 'text',
+                        }).done(function (result) {
+                            alert(result);
+                            if(result == "Cập nhật mật khẩu thành công!!!"){
+                                $("#password").val("");
+                                $("#passwordnew").val("");
+                                $("#passwordagain").val("");
+                                $(".change-password").hide();
+                                $("#btn-capnhat").val("Cập nhật");
+                            }
+                        });
+                }
+            });
+        });
+
+    function ktTenNguoiDung() {
+        let vl = document.getElementById('txt-c2-name').value.trim();
+        let reg = /^.{3,}$/;
+      if (reg.test(vl)) {
+            return true;
+        }
+        alert("Tên người dùng phải có ít nhất 3 ký tự");
+        return false;
+    }
+
+    function ktMatKhau(id,title) {
+        let vl = document.getElementById(id).value.trim();
+        if (vl.length > 7) {
+            return true;
+        }
+        alert(title+" phải có ít nhất 8 ký tự !!!");
+        return false;
+    }
+
+    function ktNhapLaiMatKhau() {
+        let vl = document.getElementById('passwordagain').value.trim();
+        let vlNhapLai = document.getElementById('passwordnew').value.trim();
+        if (vl === vlNhapLai) {
+            return true;
+        }
+        alert("Nhập lại mật khẩu phải trùng khớp với mật khẩu !!!");
+        return false;
+    }
+
+        function ktSDT() {
+            let vl = document.getElementById('txt-c2-phone').value.trim();
+            var reg = new RegExp('^[0-9]{10}$');
+            if (reg.test(vl)) {
+                return true;
+            }
+            alert("Số điện thoại phải có 10 chữ số !!!");
+            return false;
+        }
+
+        function ktHinhDaiDien() {
+            let vl = document.getElementById('pimg').value.trim();
+            var reg = /\.(((jpg)|(png)|(jpeg)|(gif)))/i;
+            if (reg.test(vl)) {
+                return true;
+            }
+            alert("Hình đại diện phải có đuôi .jpeg / .jpg / .png / .gif !!!");
+            return false;
+        }
+
+        function ktLuuTT(){
+            if(ktTenNguoiDung() && ktSDT()){
+                return true;
+            }
+            return false;
+        }
+
+        function ktLuuMatKhau(){
+            if( ktMatKhau('password','Mật khẩu cũ')  && ktMatKhau('passwordnew','Mật khẩu mới')  && ktNhapLaiMatKhau()){
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

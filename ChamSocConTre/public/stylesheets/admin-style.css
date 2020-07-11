@@ -1,0 +1,296 @@
+
+.wrapper {
+    padding-top: 12%;
+    padding-left: 20%;
+    width:1200px;
+    margin: 0 auto;
+    height: 300px;
+  }
+
+  .icon {
+    width:305px;
+    height:305px;
+    float:left;
+    position:relative;
+    box-shadow: inset -1px -1px 0px 0px rgba(255,255,255,0.04);
+    border-left:0;
+    border-top:0;
+    margin-left: 100px;
+    text-align: center;
+  }
+
+  .no-img{
+      font-size: 20px;
+      font-weight: 800;
+      padding-top: 110px;
+      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #5cb3ee;
+  }
+  .have-img{
+    font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #5cb3ee;
+  }
+  .icon img{
+    width: 120px;
+  }
+  .icon img:hover{
+    opacity: 0.6;
+  }
+  /****************** file ****************/
+
+.file {
+    width:80px;
+    height:108px;
+    background:#9e99c4;
+    position:absolute;
+    left:50%;
+    margin-left:-40px;
+    border-radius:6px;
+    box-shadow: 0 2px 0 0px rgba(0,0,0,0.25), inset 0 1px 0 0 rgba(255,255,255,0.2);
+    text-align: left;
+  }
+  
+  .file:before{
+    content:"";
+    width:25px;
+    height:25px;
+    background:#ffffff;
+    position:absolute;
+    right:0;
+    top:0;
+  }
+  
+  .file .flip {
+    position:absolute;
+    right:0;
+    width: 0;
+      height: 0;
+      border-bottom: 25px solid #bbb7dc;
+      border-right: 25px solid transparent;
+  }
+  .file .flip:after {
+    content:"";
+    width:0;
+    height:0;
+    border-top: 25px solid rgba(0,0,0,0.3);
+    border-left: 25px solid transparent;
+    position:absolute;
+    top:25px;
+  }
+  
+  .file .holes {
+    width:8px;
+    height:8px;
+    background:#ffffff;
+    border-radius:50%;
+    box-shadow: inset 0 2px 0 0px rgba(0,0,0,0.25), 0 1px 0 0 rgba(255,255,255,0.2);
+    position:absolute;
+    left:10px;
+    top:50%;
+    margin-top:-4px;
+  }
+  
+  .file .holes:before {
+    content:"";
+    width:8px;
+    height:8px;
+    background:#ffffff;
+    border-radius:50%;
+    box-shadow: inset 0 2px 0 0px rgba(0,0,0,0.25), 0 1px 0 0 rgba(255,255,255,0.2);
+    position:absolute;
+    top:-30px;
+  }
+  
+  .file .holes:after {
+    content:"";
+    width:8px;
+    height:8px;
+    background:#ffffff;
+    border-radius:50%;
+    box-shadow: inset 0 2px 0 0px rgba(0,0,0,0.25), 0 1px 0 0 rgba(255,255,255,0.2);
+    position:absolute;
+    top:30px;
+  }
+  
+  .file .lines {
+    width:34px;
+    height:9px;
+    border-top: 5px solid rgba(255,255,255,0.5);
+    border-bottom: 5px solid rgba(255,255,255,0.5);
+    position:absolute;
+    left:28px;
+    top:30px;
+  }
+  
+  .file .lines:after {
+    content:"";
+    width:34px;
+    height:9px;
+    border-top: 5px solid rgba(255,255,255,0.5);
+    border-bottom: 5px solid rgba(255,255,255,0.5);
+    position:absolute;
+    top:23px;
+  }
+  
+  .file .lines:before{
+    content:"";
+    width:7px;
+    height:9px;
+    background:#9e99c4;
+    position:absolute;
+    top:35px;
+    z-index:2;
+    right:0;
+  }
+  .file:hover{
+    opacity: 0.6;
+  }
+  /****************** book ****************/
+
+@import url(https://fonts.googleapis.com/css?family=Headland+One);
+
+.book {
+  width:96px;
+  height:104px;
+  background:#73a0bd;
+  border-radius:6px;
+  box-shadow: 0 2px 0 0px rgba(0,0,0,0.25), inset 0 1px 0 0 rgba(255,255,255,0.2);
+  position:absolute;
+  left:50%;
+  margin-left:-48px;
+  font-size:50px;
+  color:#4b494f;
+  line-height:130px;
+  text-align:center;
+  font-family: 'Headland One', serif;
+  cursor:pointer;
+}
+
+.book .pages {
+  width:91px;
+  height:30px;
+  position:absolute;
+  top:5px;
+  right:0;
+  border-top-right-radius:5px;
+  border-top-left-radius:2px;
+  border-bottom-left-radius:2px;
+  overflow:hidden;
+  background:#73a0bd;
+}
+
+.book .pages .page {
+  width:91px;
+  height:91px;
+  position:absolute;
+  border-top-right-radius:6px;
+}
+.book .pages .page:nth-child(odd){
+  background:#eeecdf;
+}
+
+.book .pages .page:nth-child(even){
+  background:#d6d4c8;
+}
+
+.book .pages .page:nth-child(2){ top:2px; }
+.book .pages .page:nth-child(3){ top:4px; }
+.book .pages .page:nth-child(4){ top:6px; }
+.book .pages .page:nth-child(5){ top:8px; }
+.book .pages .page:nth-child(6){ top:10px; }
+.book .pages .page:nth-child(7){ top:12px; }
+.book .pages .page:nth-child(8){ top:14px; }
+.book .pages .page:nth-child(9){ top:16px; }
+.book .pages .page:nth-child(10){ 
+  top:18px;
+background-image: -webkit-linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #95b4c9 4px);
+background-image: -moz-linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #95b4c9 4px);
+background-image: -o-linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #95b4c9 4px);
+background-image: linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #95b4c9 4px);
+}
+
+.book .pages .page:nth-child(11){ 
+  top:23px;
+background-image: -webkit-linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #73a0bd 4px);
+background-image: -moz-linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #73a0bd 4px);
+background-image: -o-linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #73a0bd 4px);
+background-image: linear-gradient(left, #51768f 0px, #51768f 2px, #749cb5 2px, #749cb5 4px, #73a0bd 4px);
+}
+
+.book .top {
+  width:96px;
+  height:28px;
+  background:rgba(255,255,255,0.3);
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  position:absolute;
+}
+
+.book .top:after {
+  content:"";
+  width:2px;
+  height:73px;
+  background:#51768f;
+  position:absolute;
+  left:5px;
+  top:31px;
+}
+
+.book .top:before {
+  content:"";
+  width:2px;
+  height:73px;
+  background:#749cb5;
+  position:absolute;
+  left:7px;
+  top:31px;
+}
+
+.bookmark {
+  width:20px;
+  height:21px;
+  background:#d64646;
+  position:absolute;
+  top:-4px;
+  left:9px;
+}
+
+.bookmark:after {
+  content:"";
+  width:20px;
+  height:30px;
+  background:rgba(0,0,0,0.25);
+  position:absolute;
+  transform:skewX(-45deg);
+  top:21px;
+  left:-15px;
+}
+
+.bookmark:before{
+  content:"";
+  width:20px;
+  height:30px;
+  background:#37353a;;
+  position:absolute;
+  z-index:2;
+  left:-29px;
+  top:21px;
+}
+
+.book:hover .bookmark {
+  transform:translateY(2px);
+  height:19px;
+  opacity: 0.6;
+}
+.book:hover .bookmark:after {
+  transform:translateY(-2px) skewX(-45deg);
+  opacity: 0.6;
+}
+.book:hover{
+    opacity: 0.6;
+}

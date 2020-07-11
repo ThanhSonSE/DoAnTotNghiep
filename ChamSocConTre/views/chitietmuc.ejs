@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%=tenMuc%></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chitietmuc-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footer-style.css" />
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script type="javascript" src="/javascripts/trangchuJS.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#timBai").click(function () {
+                let idLoai = $("#loai-bai").val();
+                let thongTinTim = $("#thongTinTim").val();
+                $.ajax({
+                    url: '/timbaidang/'+thongTinTim + '/'+ idLoai+'/'+10,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $(".ndmuc").html("");
+                    if (result.length > 0) {
+                        for (let i = 0; i < result.length; i++) {
+                            let soLike = 0;
+                            if(result[i].nguoiThich != undefined){
+                                soLike = result[i].nguoiThich.length;
+                            }
+
+                            let themND = `<a href="/`+result[i].idLoai+`/`+result[i].idBai+`">
+                                            <div class="baidang">
+                                                <img src="/images/`+result[i].hinhTieuDe+`" alt="baidang"/>
+                                                <div class="chuand">
+                                                    <p class="title">`+result[i].tieuDe+`</p>
+                                                    <span class="tomtat">`+result[i].noiDungTomTat+`...</span>
+                                                    <br/><label style="font-weight: normal;">Ngày `+result[i].date+` </label><label style="font-weight: normal;">lúc `+result[i].time+`</label>
+                                                    <span style="float: right;font-weight: normal;">
+                                                        Lượt thích: `+soLike+`
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>`
+
+                            $(".ndmuc").append(themND);
+                        }
+
+                        if(result.length == 10){
+                            let xemThem = `<a class="nd-read-more">Xem Thêm</a>`;
+                            $(".ndmuc").append(xemThem);
+                        }
+
+                        $("#thongtindatim").val(thongTinTim);
+                        $("#soLuongTim").val(20);
+                    } else {
+                        let themND = `Không có bài đăng nào !!!`
+                        $(".ndmuc").append(themND);
+                    }
+                });
+            });
+
+            $("#thongTinTim").keypress(function (e) {
+                if (e.keyCode === 13) {
+                    let idLoai = $("#loai-bai").val();
+                    let thongTinTim = $("#thongTinTim").val();
+                    if(thongTinTim == ""){
+                        thongTinTim = " ";
+                    }
+                    $.ajax({
+                        url: '/timbaidang/'+thongTinTim + '/'+ idLoai+'/'+10,
+                        type: 'get',
+                        dataType: 'json',
+                    }).done(function (result) {
+                        $(".ndmuc").html("");
+                        if (result.length > 0) {
+                            for (let i = 0; i < result.length; i++) {
+                                let soLike = 0;
+                                if(result[i].nguoiThich != undefined){
+                                    soLike = result[i].nguoiThich.length;
+                                }
+
+                                let themND = `<a href="/`+result[i].idLoai+`/`+result[i].idBai+`">
+                                                <div class="baidang">
+                                                    <img src="/images/`+result[i].hinhTieuDe+`" alt="baidang"/>
+                                                    <div class="chuand">
+                                                        <p class="title">`+result[i].tieuDe+`</p>
+                                                        <span class="tomtat">`+result[i].noiDungTomTat+`...</span>
+                                                        <br/><label style="font-weight: normal;">Ngày `+result[i].date+` </label><label style="font-weight: normal;">lúc `+result[i].time+`</label>
+                                                        <span style="float: right;font-weight: normal;">
+                                                            Lượt thích: `+soLike+`
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>`
+                                
+                                $(".ndmuc").append(themND);
+                            }
+
+                            if(result.length == 10){
+                                let xemThem = `<a class="nd-read-more">Xem Thêm</a>`;
+                                $(".ndmuc").append(xemThem);
+                            }
+
+                            $("#thongtindatim").val(thongTinTim);
+                            $("#soLuongTim").val(20);
+                        } else {
+                            let themND = `Không có bài đăng nào !!!`
+                            $(".ndmuc").append(themND);
+                        }
+                    });
+                }
+            });
+
+            $(document).on('click','.nd-read-more',function () {
+                let idLoai = $("#loai-bai").val();
+                let thongTinTim = $("#thongtindatim").val();
+                if(thongTinTim == ""){
+                    thongTinTim = " ";
+                }
+                let soLuong = Number($("#soLuongTim").val());
+                $.ajax({
+                    url: '/timbaidang/'+thongTinTim + '/'+ idLoai+'/'+soLuong,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $(".ndmuc").html("");
+                    if (result.length > 0) {
+                        for (let i = 0; i < result.length; i++) {
+                            let soLike = 0;
+                            if(result[i].nguoiThich != undefined){
+                                soLike = result[i].nguoiThich.length;
+                            }
+
+                            let themND = `<a href="/`+result[i].idLoai+`/`+result[i].idBai+`">
+                                            <div class="baidang">
+                                                <img src="/images/`+result[i].hinhTieuDe+`" alt="baidang"/>
+                                                <div class="chuand">
+                                                    <p class="title">`+result[i].tieuDe+`</p>
+                                                    <span class="tomtat">`+result[i].noiDungTomTat+`...</span>
+                                                    <br/><label style="font-weight: normal;">Ngày `+result[i].date+` </label><label style="font-weight: normal;">lúc `+result[i].time+`</label>
+                                                    <span style="float: right;font-weight: normal;">
+                                                        Lượt thích: `+soLike+`
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>`
+
+                            $(".ndmuc").append(themND);
+                        }
+
+                        if(result.length == soLuong){
+                            let xemThem = `<a class="nd-read-more">Xem Thêm</a>`;
+                            $(".ndmuc").append(xemThem);
+                        }
+
+                        $("#thongtindatim").val(thongTinTim);
+                        $("#soLuongTim").val(soLuong+10);
+                    } else {
+                        let themND = `Không có bài đăng nào !!!`
+                        $(".ndmuc").append(themND);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <input type="hidden" id="loai-bai" value="<%= idLoai%>">
+        <input type="hidden" id="thongtindatim">
+        <input type="hidden" id="soLuongTim" value="20">
+        <div class="baonoidung">
+            <div class="noidung">
+                <div class="muc">
+                    <div class="widget-title suckhoe">
+                            <h2><%=tenMuc%></h2>
+                            <div class="sreach-button">
+                                <input id="thongTinTim" type="text" placeholder="Tìm bài đăng"/>
+                                <img id="timBai" src="/images/search.png" width="30px">
+                            </div>
+                        </div>
+                    <div class="ndmuc">
+                        <% for(var i = 0 ; i< list.length ; i++){%>
+                            <a href="/<%=list[i].idLoai%>/<%=list[i].idBai%>">
+                                <div class="baidang">
+                                    <img src="/images/<%=list[i].hinhTieuDe%>" alt="baidang"/>
+                                    <div class="chuand">
+                                        <p class="title"><%=list[i].tieuDe%></p>
+                                        <span class="tomtat"><%=list[i].noiDungTomTat%>...</span>
+                                        <br/><label style="font-weight: normal;">Ngày <%=list[i].date %> </label><label style="font-weight: normal;">lúc <%=list[i].time %></label>
+                                        <span style="float: right;font-weight: normal;">
+                                            Lượt thích: 
+                                            <%if(list[i].nguoiThich !== undefined){%>
+                                                <%=list[i].nguoiThich.length %>
+                                            <%}else{%>
+                                                0
+                                            <%}%>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <%}%>
+                        <%if(list.length == 10){%>
+                            <a class="nd-read-more">Xem Thêm</a>
+                        <%}else if(list.length == 0 || list == undefined){%>
+                            Không có bài đăng nào !!!
+                        <%}%>
+                    </div>
+                </div>
+            </div>    
+            <div class="ndquantam">
+                <div id="baivietquantam">Bài viết được quan tâm</div>
+                <%for(let k = 0 ; k < listBaiDangThichNhieu.length ; k++ ){%>
+                    <a href="/<%=listBaiDangThichNhieu[k].idLoai%>/<%=listBaiDangThichNhieu[k].idBai%>">
+                        <div class="chua-nd-qt">
+                            <div class="qt-div">
+                                <img src="/images/<%=listBaiDangThichNhieu[k].hinhTieuDe%>" >
+                                <p><%=listBaiDangThichNhieu[k].tieuDe%></p>
+                                <div class="baidangadmin">
+                                    <span style="float: left;">Ngày  <%=listBaiDangThichNhieu[k].date%> lúc <%=listBaiDangThichNhieu[k].time %></span>
+                                    <span style="float: right;">Lượt thích :<%= listBaiDangThichNhieu[k].nguoiThich.length%></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <%}%>
+                
+            </div>
+        </div>
+    </section>
+    <footer><% include footer%></footer>
+</body>
+
+</html>

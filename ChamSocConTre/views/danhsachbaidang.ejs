@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tài Khoản</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/danhsach-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footer-style.css" />
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#loai-bai").change(function () {
+                let idLoai = $("#loai-bai").val();
+                $.ajax({
+                    url: '/admin/baidangtheoloai/' + idLoai,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#tbList").html("");
+                    let trTh = `<tr class="thanh-th">
+                                <th>STT</th>
+                                <th style="width: 120px;">Ảnh tiêu đề</th>
+                                <th style="width: 800px;">Tiêu đề</th>
+                                <th>Ngày</th>
+                                <th>Giờ</th>
+                                <th>Cập nhật</th>
+                                <th>Xóa</th>
+                            </tr>`;
+                    $("#tbList").append(trTh);
+                    if (result.length > 0) {
+                        for (let i = 0; i < result.length; i++) {
+                            let themND = `<tr class="thanh-data" id="tr` + result[i].idLoai + result[i].idBai + `">
+                                            <td>`+ (i + 1) + `</td>
+                                            <td><img src="/images/`+ result[i].hinhTieuDe + `" width="100px"></td>
+                                            <td>`+ result[i].tieuDe + `</td>
+                                            <td>`+ result[i].date + `</td>
+                                            <td>`+ result[i].time + `</td>
+                                            <td><a href="/admin/viewcapnhat/` + result[i].idLoai + `/` + result[i].idBai + `"><img src="/images/update.png" width="30px"></a></td>
+                                            <td><img class="delete" id="delete-`+ result[i].idLoai + `-` + result[i].idBai + `" src="/images/delete.png" width="30px"></td>
+                                        </tr>`
+
+                            $("#tbList").append(themND);
+                        }
+                    } else {
+                        let themND = `<tr class="thanh-data">
+                                            <td colspan="7">Không có bài đăng nào !!!</td>
+                                        </tr>`
+                        $("#tbList").append(themND);
+                    }
+                });
+            });
+
+            $("#timBai").click(function () {
+                let idLoai = $("#loai-bai").val();
+                let thongTinTim = $("#thongTinTim").val();
+                if(thongTinTim == ""){
+                    thongTinTim = " "
+                }
+                $.ajax({
+                    url: '/admin/timbaidang/'+thongTinTim + '/'+ idLoai,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#tbList").html("");
+                    let trTh = `<tr class="thanh-th">
+                                <th>STT</th>
+                                <th style="width: 120px;">Ảnh tiêu đề</th>
+                                <th>Tiêu đề</th>
+                                <th>Ngày</th>
+                                <th>Giờ</th>
+                                <th>Cập nhật</th>
+                                <th>Xóa</th>
+                            </tr>`;
+                    $("#tbList").append(trTh);
+                    if (result.length > 0) {
+                        for (let i = 0; i < result.length; i++) {
+                            let themND = `<tr class="thanh-data" id="tr` + result[i].idLoai + result[i].idBai + `">
+                                            <td>`+ (i + 1) + `</td>
+                                            <td><img src="/images/`+ result[i].hinhTieuDe + `" width="100px"></td>
+                                            <td>`+ result[i].tieuDe + `</td>
+                                            <td>`+ result[i].date + `</td>
+                                            <td>`+ result[i].time + `</td>
+                                            <td><a href="/admin/viewcapnhat/` + result[i].idLoai + `/` + result[i].idBai + `"><img src="/images/update.png" width="30px"></a></td>
+                                            <td><img class="delete" id="delete-`+ result[i].idLoai + `-` + result[i].idBai + `" src="/images/delete.png" width="30px"></td>
+                                        </tr>`
+
+                            $("#tbList").append(themND);
+                        }
+                    } else {
+                        let themND = `<tr class="thanh-data">
+                                            <td colspan="7">Không có bài đăng nào !!!</td>
+                                        </tr>`
+                        $("#tbList").append(themND);
+                    }
+                    $("#thongTinTim").val("");
+                });
+            });
+
+            $("#thongTinTim").keypress(function (e) {
+                if (e.keyCode === 13) {
+                    let idLoai = $("#loai-bai").val();
+                let thongTinTim = $("#thongTinTim").val();
+                if(thongTinTim == ""){
+                    thongTinTim = " "
+                }
+                $.ajax({
+                    url: '/admin/timbaidang/'+thongTinTim + '/'+ idLoai,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#tbList").html("");
+                    let trTh = `<tr class="thanh-th">
+                                <th>STT</th>
+                                <th style="width: 120px;">Ảnh tiêu đề</th>
+                                <th>Tiêu đề</th>
+                                <th>Ngày</th>
+                                <th>Giờ</th>
+                                <th>Cập nhật</th>
+                                <th>Xóa</th>
+                            </tr>`;
+                    $("#tbList").append(trTh);
+                    if (result.length > 0) {
+                        for (let i = 0; i < result.length; i++) {
+                            let themND = `<tr class="thanh-data" id="tr` + result[i].idLoai + result[i].idBai + `">
+                                            <td>`+ (i + 1) + `</td>
+                                            <td><img src="/images/`+ result[i].hinhTieuDe + `" width="100px"></td>
+                                            <td>`+ result[i].tieuDe + `</td>
+                                            <td>`+ result[i].date + `</td>
+                                            <td>`+ result[i].time + `</td>
+                                            <td><a href="/admin/viewcapnhat/` + result[i].idLoai + `/` + result[i].idBai + `"><img src="/images/update.png" width="30px"></a></td>
+                                            <td><img class="delete" id="delete-`+ result[i].idLoai + `-` + result[i].idBai + `" src="/images/delete.png" width="30px"></td>
+                                        </tr>`
+
+                            $("#tbList").append(themND);
+                        }
+                    } else {
+                        let themND = `<tr class="thanh-data">
+                                            <td colspan="7">Không có bài đăng nào !!!</td>
+                                        </tr>`
+                        $("#tbList").append(themND);
+                    }
+                    $("#thongTinTim").val("");
+                });
+                }
+            });
+
+            $(document).on('click', '.delete', function () {
+                    let idAttr = this.id.split("-");
+                    let idLoai = idAttr[1];
+                    let idBai = idAttr[2];
+
+                    if (confirm('Bạn có chắn chắn muốn xóa bài đăng này?')) {
+                        $.ajax({
+                            url: '/admin/deleteBai/' + idLoai + '/' + idBai,
+                            type: 'get',
+                            dataType: 'text',
+                        }).done(function (result) {
+                            if (result == "xóa thành công") {
+                                $("#tr" + idLoai + idBai).remove();
+                            } else {
+                                alert("Xóa thất bại...vui lòng kiểu tra lại !!!");
+                            }
+                        });
+                    }
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <div class="top-section">
+            <a href="/admin/viewdangbai" id="dangbai-button"><img src="/images/add-bai.png" width="30px"></a>
+            <span>Danh sách bài đã đăng</span>
+            <div class="sreach-button">
+                <select id="loai-bai">
+                    <option value="1">Sức Khỏe</option>
+                    <option value="2">Giáo Dục</option>
+                    <option value="3">Ăn Uống & Dinh Dưỡng</option>
+                    <option value="4">Kỹ Năng Sống</option>
+                </select>
+                <input id="thongTinTim" type="text" placeholder="Tìm bài đăng theo tên hoặc ngày"/>
+                <img id="timBai" src="/images/search.png" width="40px">
+            </div>
+        </div>
+        <table id="tbList">
+            <tr class="thanh-th">
+                <th>STT</th>
+                <th style="width: 120px;">Ảnh tiêu đề</th>
+                <th>Tiêu đề</th>
+                <th>Ngày</th>
+                <th>Giờ</th>
+                <th>Cập nhật</th>
+                <th>Xóa</th>
+            </tr>
+
+            <% 
+                    let stt = 0;
+                    for( var i = 0; i < list.length ; i ++){
+                    
+                %>
+            <% if(list[i] !== undefined){%>
+            <%stt += 1;%>
+            <tr class="thanh-data" id="tr<%= list[i].idLoai%><%= list[i].idBai%>">
+                <td><%= stt %></td>
+                <td><img src="/images/<%= list[i].hinhTieuDe%>" width="100px"></td>
+                <td><%= list[i].tieuDe%></td>
+                <td><%= list[i].date%></td>
+                <td><%= list[i].time%></td>
+                <td><a href="/admin/viewcapnhat/<%= list[i].idLoai%>/<%= list[i].idBai%>"><img src="/images/update.png"
+                            width="30px"></a>
+                </td>
+                <td><img class="delete" id="delete-<%= list[i].idLoai%>-<%= list[i].idBai%>" src="/images/delete.png"
+                        width="30px">
+                </td>
+            </tr>
+            <%}%> 
+                <%}%>
+
+
+        </table>
+    </section>
+    <% include footer%>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+[
+	{
+        "emailNguoiChatA" : "changsusu@gmail.com",
+        "emailNguoiChatB": "tranquangthinhtk1997@gmail.com",
+		"noiDungChat" : [
+			{
+                "date":"2020-04-20",
+                "time":"10:10:10",
+                "emailNguoiGui" : "changsusu@gmail.com",
+                "noiDungGui" : "Hello anh Thịnh" 
+			},
+			{
+                "date":"2020-04-20",
+                "time":"10:11:10",
+                "emailNguoiGui" : "tranquangthinhtk1997@gmail.com",
+                "noiDungGui" : "Hello Chang" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"10:12:10",
+                "emailNguoiGui" : "changsusu@gmail.com",
+                "noiDungGui" : "Em đã xem rất nhiều bài của em và em thấy rất hay" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"10:13:20",
+                "emailNguoiGui" : "tranquangthinhtk1997@gmail.com",
+                "noiDungGui" : "Ời cảm ơn em...Anh chia sẽ những hiểu biết của bản thân anh thui à" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"10:15:30",
+                "emailNguoiGui" : "changsusu@gmail.com",
+                "noiDungGui" : "Gì anh biết hết...Anh giỏi thật" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"10:16:10",
+                "emailNguoiGui" : "tranquangthinhtk1997@gmail.com",
+                "noiDungGui" : "Cũng bình thường thui em...Kinh nghiệm cả...Thui anh bận lần sau nói chuyện nha" 
+			},
+            {
+                "date":"2020-04-20",
+                "time":"10:17:10",
+                "emailNguoiGui" : "changsusu@gmail.com",
+                "noiDungGui" : "Dạ chúc anh một ngày làm việc vui vẻ <3" 
+			}
+        ]
+	},
+	{
+        "emailNguoiChatA" : "nguyenthilanchi@gmail.com",
+        "emailNguoiChatB": "thanhson.official@gmail.com",
+		"noiDungChat" : [
+			{
+                "date":"2020-04-20",
+                "time":"10:33:10",
+                "emailNguoiGui" : "thanhson.official@gmail.com",
+                "noiDungGui" : "Hello Chi" 
+			},
+			{
+                "date":"2020-04-20",
+                "time":"10:50:10",
+                "emailNguoiGui" : "nguyenthilanchi@gmail.com",
+                "noiDungGui" : "Hello Sơn" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"11:10:10",
+                "emailNguoiGui" : "thanhson.official@gmail.com",
+                "noiDungGui" : "Dạo này khỏe không? Có làm ở công ty cũ" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"11:15:20",
+                "emailNguoiGui" : "nguyenthilanchi@gmail.com",
+                "noiDungGui" : "Thui đừng nhắc dùm...Đừng nhắc nữa buồn lắm" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"11:16:30",
+                "emailNguoiGui" : "thanhson.official@gmail.com",
+                "noiDungGui" : "Why?" 
+            },
+            {
+                "date":"2020-04-20",
+                "time":"10:30:10",
+                "emailNguoiGui" : "nguyenthilanchi@gmail.com",
+                "noiDungGui" : "Bị cảm hôm qua tới giờ..." 
+			}
+        ]
+    },
+    {
+        "emailNguoiChatA" : "thanhson.official@gmail.com",
+        "emailNguoiChatB": "phamcongloi@gmail.com",
+		"noiDungChat" : [
+			{
+                "date":"2020-04-20",
+                "time":"10:33:10",
+                "emailNguoiGui" : "thanhson.official@gmail.com",
+                "noiDungGui" : "Hello Lợi" 
+			},
+			{
+                "date" : "2020-05-19",
+				"time" : "11:50:10",
+                "emailNguoiGui" : "phamcongloi@gmail.com",
+                "noiDungGui" : "What" 
+            }
+        ]
+    },
+    {
+        "emailNguoiChatA" : "nguyenvanan@gmail.com",
+        "emailNguoiChatB": "thanhson.official@gmail.com",
+		"noiDungChat" : [
+			{
+                "date":"2020-04-20",
+                "time":"10:33:10",
+                "emailNguoiGui" : "nguyenvanan@gmail.com",
+                "noiDungGui" : "Hello Sơn" 
+			}
+        ]
+	}
+]

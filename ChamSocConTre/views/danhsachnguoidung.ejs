@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Danh sách người dùng</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/danhsach-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/danhsachnguoidung-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footer-style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".thaydoihoatdong").click(function () {
+                if (confirm('Bạn có chắc muốn thay đổi hoạt động không ?')) {
+                    var giaTri = $(this).val().split("-");
+                    if (giaTri[1] === "1") {
+                        $(this).val(giaTri[0] + "-0");
+                    } else if (giaTri[1] === "0") {
+                        $(this).val(giaTri[0] + "-1");
+                    }
+                    $.ajax({
+                        url: '/admin/updateTinhTrangNguoiDung/' + giaTri[0] + '/' + giaTri[1],
+                        type: 'get',
+                        dataType: 'text',
+                    }).done(function (result) {
+                        alert(result);
+                        if(result == "Thay đổi thành công !!!"){
+                            socketThongBao.emit("yeu-cau-dang-xuat",{emailBiKhoa : giaTri[0]});
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
+
+            $("#thongTinTim").change(function (e) {
+                    let idLoai = $("#loai-bai").val();
+                    let thongTinTim = $("#thongTinTim").val().trim();
+                    $.ajax({
+                        url: '/admin/timnguoidung',
+                        type: 'post',
+                        data : {
+                            thongTinTim : thongTinTim
+                        },
+                        dataType: 'json',
+                    }).done(function (listUsers) {
+                        $("#danh-sach-nguoi-dung").html("");
+                        $("#danh-sach-nguoi-dung").append(`<tr class="thanh-th">
+                                                                <th>STT</th>
+                                                                <th style="width: 120px;">Ảnh đại diện</th>
+                                                                <th>Tên Người Dùng</th>
+                                                                <th>Email</th>
+                                                                <th>Số diện Thoại</th>
+                                                                <th>Hoạt Động</th>
+                                                            </tr>`);
+                        if (listUsers.length > 0) {
+                            for (let i = 0; i < listUsers.length; i++) {
+                                let soLike = 0;
+
+                                let themND = `<tr class="thanh-data">
+                                                    <td>`+(i+1)+`</td>
+                                                    <td><img src="/images/`+listUsers[i].hinhDaiDien+`" width="100px"></td>
+                                                    <td>`+listUsers[i].tenNguoiDung+`</td>
+                                                    <td>`+ listUsers[i].email+`</td>
+                                                    <td>`+ listUsers[i].soDienThoai+`</td>
+                                                    <td>
+                                                        <label class="switch">`
+
+                                                            if(listUsers[i].tinhTrang === 1){
+                                                                themND += `<input class="thaydoihoatdong" type="checkbox" checked value="`+listUsers[i].email+`-1">`;
+                                                            }else{
+                                                                themND += `<input class="thaydoihoatdong" type="checkbox" value="`+listUsers[i].email+`-0">`
+                                                            }
+                                                            themND += `<span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    
+                                                </tr>`
+                                
+                                $("#danh-sach-nguoi-dung").append(themND);
+                            }
+                        }else {
+                                let themND = `Không có bài đăng nào !!!`
+                                $("#danh-sach-nguoi-dung").append(themND);
+                            }
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <div class="top-section">
+            <span>Danh sách người dùng</span>
+            <div class="sreach-button">
+                <input id="thongTinTim" type="text" placeholder="Tìm người dùng theo tên hoặc email" />
+                <a><img src="/images/search.png" width="40px"></a>
+            </div>
+        </div>
+       
+            
+                <table id="danh-sach-nguoi-dung">
+                    <tr class="thanh-th">
+                        <th>STT</th>
+                        <th style="width: 120px;">Ảnh đại diện</th>
+                        <th>Tên Người Dùng</th>
+                        <th>Email</th>
+                        <th>Số diện Thoại</th>
+                        <th>Hoạt Động</th>
+                    </tr>
+                    <% 
+                        let stt = 0;
+                        for( var i = 0; i < listUsers.length ; i ++){
+                        
+                    %>
+                    <%stt += 1;%>
+                    <tr class="thanh-data">
+                        <td><%= stt %></td>
+                        <td><img src="/images/<%= listUsers[i].hinhDaiDien%>" width="100px"></td>
+                        <td><%= listUsers[i].tenNguoiDung%></td>
+                        <td><%= listUsers[i].email%></td>
+                        <td><%= listUsers[i].soDienThoai%></td>
+                        <td>
+                            <label class="switch">
+
+                                <% if(listUsers[i].tinhTrang === 1){%>
+                                <input class="thaydoihoatdong" type="checkbox" checked value="<%= listUsers[i].email%>-1">
+                                <%}else{%>
+                                <input class="thaydoihoatdong" type="checkbox" value="<%= listUsers[i].email%>-0">
+                                <%}%>
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                        
+                    </tr>
+                    <%}%>
+                </table>
+            
+
+       
+    </section>
+    <% include footer%>
+</body>
+
+</html>

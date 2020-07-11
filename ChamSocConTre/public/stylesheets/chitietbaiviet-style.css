@@ -1,0 +1,535 @@
+section{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 auto;
+    padding-top: 200px;
+}
+.khungbinhluan{
+    width: 1200px;
+}
+.khungbinhluan img{
+    width: 100px;
+    float: left;
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+    height: 100px;
+}
+textarea{
+    width: 850px;
+    height: 200px;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 5px;
+    margin-left: 20px;
+    resize: none;
+}
+.dangbinhluan{
+    width: 1100px;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+.dangbinhluan .buttonDangBL{
+    font-size:20px;
+    background: #61717c;
+    color: white;
+    padding:5px 10px 5px 10px;
+    border:none;
+    margin:5px;
+    border-radius:6px;
+    transition:0.5s;
+    float: right;
+}
+
+.dangbinhluan .btnTraLoiBL{
+    font-size:20px;
+    background: #61717c;
+    color: white;
+    padding:5px 10px 5px 10px;
+    border:none;
+    margin:5px;
+    border-radius:6px;
+    transition:0.5s;
+    float: right;
+}
+
+#dangBaiViet{
+    font-size:20px;
+    background: #61717c;
+    color: white;
+    padding:5px 10px 5px 10px;
+    border:none;
+    margin:5px;
+    border-radius:6px;
+    transition:0.5s;
+    float: right;
+    margin-left: 30px;
+}
+.hinh-user{
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+    
+}
+
+.loai-bai  { 
+    width: 100%;
+    height: 50px;
+    border: 3px solid;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.loai-bai select {
+    font-size: 25px;
+    padding: 5px;
+    float: right;
+    border: none;
+    width: 100%;
+}
+
+/*=======================*/
+.baonoidung{
+    padding-top: 50px;
+    font-family: tahoma !important;
+    font-size: 17px;
+    padding-left: 20px;
+    font-weight: 800;
+}
+.noidung{
+    width: 100%;
+    float: left;
+}
+.widget-title{
+    text-align: center;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0px;
+    text-transform: uppercase;
+}
+.widget-title h2{
+    color: #ffffff;
+    font-size: 17px;
+    height: 33px;
+    line-height: 33px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    padding: 0px 15px 0px 9px;
+    margin-bottom: 0px;
+    float: left;
+    background-color: antiquewhite;
+    border-radius: 0px 20px 0px 0px;
+    opacity: 1;
+}
+.suckhoe{
+    border-bottom: 5px solid rgb(134, 132, 14);
+    opacity: 1;
+}
+.suckhoe h2{
+    background-color: rgb(134, 132, 14);
+}
+.baidang{
+    float: left;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.ndmuc{
+    text-align: left;   
+    font-weight: normal;
+}
+.ndmuc img{
+    float: left;
+}
+.anh-dai-dien{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+    object-fit: cover;
+    
+}
+/*--Comment*/
+article, aside, figure, footer, header, hgroup, menu, nav, section { display: block }
+
+a {
+    color: #6d84b4;
+    text-decoration: none;
+}
+
+.comments {
+    background: rgba(255,255,255,0.9);
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.comment {
+    overflow: hidden;
+    padding: 0 0 1em;
+    margin: 0 0 1em;
+    width: 1200px;
+}
+
+.comment-img {
+    float: left;
+    margin-right: 33px;
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+
+.comment-img img { display: block }
+
+.comment-body { 
+    overflow: hidden;
+}
+
+.comment .text {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+    width: 1000px;
+    font-size: 15px;
+}
+
+.comment .text p:last-child { 
+    font-size: 25px;
+    margin: 0 
+}
+
+.comment .attribution {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+    width: 1080px;
+}
+
+.comment .attribution-lon {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+.comment:hover:before { background: #3b5998 }
+
+.comment .text:before {
+    top: 18px;
+    left: 78px;
+    width: 9px;
+    height: 9px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.comment-body .baiVietNguoiDung{
+    border: 3px solid #ccc;
+    width: 1170px;
+    background-color: whitesmoke;
+}
+.binhluan{
+    margin-top: 10px;
+    width: 1100px;
+}
+
+.dangbl img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+.binhluan textarea{
+    width: 900px;
+    height: 100px;
+    resize: none;
+}
+
+.traloibinhluan{
+    margin-top: 10px;
+    width: 1000px;
+    margin-left: 70px;
+}
+
+.dangbl img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.traloibinhluan textarea{
+    width: 800px;
+    height: 100px;
+    resize: none;
+    margin-bottom: 20px;
+}
+.traloibinhluan .text{
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+    width: 900px;
+    font-size: 15px;
+}
+}
+
+/*===========================*/
+.nd-read-more{
+    text-decoration: none;
+    height: 20px;
+    padding: 10px;
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+}
+.nd-read-more:hover{
+    opacity: 0.6;
+}
+.muc{
+    padding-bottom: 20px;
+    width: 65%;
+    float: left;
+}
+.ndquantam{
+    width: 30%;
+    float: right;
+    text-transform: uppercase;
+    background-color: rgb(163, 162, 162);
+    text-align: center;
+}
+#baivietquantam{
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    border-bottom: 2px dashed white;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.85;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin: 0; 
+    color:white;
+}
+
+.qt-div{
+    text-align: center;
+}
+.qt-div img{
+    
+    width: 250px;
+    margin-top: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.qt-div img:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.qt-div p{
+    display: block;
+    display: -webkit-box;
+    font-size: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    color: white;
+    width: 100%;
+}
+.ndquantam a{
+    text-decoration: none;
+}
+.qt-div p:hover{
+    opacity: 0.6;
+}
+.baidangadmin{
+    font-size: 12px;
+    float: left;
+    width: 95%;
+    font-weight: 100;
+    font-family: initial;
+    color: white;
+    padding: 5px;
+}
+
+.khung-nd{
+	float: right;
+	height: 500px;
+	width: 300px;
+	background: rgb(240, 246, 247);
+    border-radius: 20px 0px 0px 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.ds-nd{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.noiung-table tr{
+    height: 100%;
+}
+
+.noiung-table tr:hover{
+    background-color: #ddf2ff;
+}
+
+.noiung-table tr td{
+    padding: 5px;
+}
+.tim-nguoi{
+    text-align: center;
+    margin-top: 20px;
+    background: rgb(240, 246, 247);
+    padding-bottom: 20px;
+}
+.tim-nguoi input{
+    height: 30px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #777777;
+    width: 90%;
+}
+
+.scrollbar
+{
+	margin-left: 30px;
+    float: right;
+    height: 350px;
+	width: 300px;
+	background: rgb(240, 246, 247);
+	overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 350px;
+}
+
+
+/*
+ *  STYLE 1
+ */
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: rgb(240, 246, 247);
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: rgb(240, 246, 247);
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+#khung-chat{
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    float: right;
+    margin-top: 250px;
+    border: 3px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    right: 320px;
+    z-index: 10;
+    border-radius: 10px;
+}
+.khung-chat-thong-tin{
+    height: 43px;
+    background-color: rgb(129, 169, 255);
+    border-radius: 5px;
+}
+#khung-chat-tenND{
+    float: left;
+    padding: 10px;
+    font-weight: 800;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+.khung-chat-thong-tin img{
+    padding: 5px;
+    width :30px; 
+    float: right;
+}
+#khung-chat-noi-dung{
+    height: 250px;
+    padding: 10px 10px 10px 0px;
+    overflow: auto;
+}
+.toi-chat{
+    float: right;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 70%;
+    margin-top: 5px;
+}
+.ban-chat{
+    float: left;
+    padding: 5px;
+    border: 1px solid;
+    background-color: rgb(129, 169, 255);
+    border-radius: 5px;
+    width: 70%;
+    margin-top: 5px;
+    color: white;
+}
+
+.khung-chat-nhap{
+    border-top: 3px solid #ccc;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+#nd-chat{
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+#btn-gui{
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+#xem-them-chat{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px 5px 0px;
+}
+.motlbl{
+    float: right;
+    font-size: 13px;
+    margin: 0px;
+    padding: 3px 5px 3px 5px;
+}

@@ -1,0 +1,186 @@
+
+
+.section-form {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 700px;
+    padding: 0 auto;
+    margin: 0 auto;
+    padding-top: 250px;
+    padding-bottom: 110px;
+}
+
+.form-change {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    background-color: #f5f6f7;
+    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.title-change {
+    height: 60px;
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.title-change h2 {
+    padding-left: 10px;
+}
+
+.fill-change {
+    height: auto;
+    width: 100%;
+    background-color: white;
+}
+
+.table-change-img {
+    border-bottom: 1px solid #d7d7d7;
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    height: 120px;
+    padding: 10px 5px 10px 5px;
+    font-family: inherit;
+}
+
+.table-change-1,
+.table-change-2,
+.table-change-3,
+.table-change-4 {
+    border-bottom: 1px solid #d7d7d7;
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    height: 60px;
+    width: 700px;
+    padding: 10px 10px 10px 40px;
+    font-family: inherit;
+}
+
+.table-change-4 {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.txt-table {
+    height: 39px;
+    width: 160px;
+}
+
+.txt-table-c2 {
+    height: 39px;
+    width: 330px;
+    padding-left: 20px;
+}
+
+.txt-c2-all {
+    height: 39px;
+    width: 380px;
+    font-size: large;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.txt-table-c3 {
+    text-align: right;
+}
+
+.btn-change {
+    border-radius: 3px;
+    border-color: #d7d7d7;
+    background-color: #d7d7d7;
+    padding: 5px 7px 5px 7px;
+}
+
+
+/* hidden Mật khẩu */
+
+#hidden-pass-4 {
+    display: none;
+    padding: 12px;
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.txt-table-c2-pass {
+    padding-left: 150px;
+    padding-right: 80px;
+}
+
+.pass-txt-c2-hidden {
+    font-size: large;
+    padding: 5px 0px 5px 5px;
+    border-radius: 5px;
+}
+
+.pass-pass {
+    margin-bottom: 25px;
+}
+
+.pass-repass {
+    margin-bottom: 15px;
+}
+
+.pass-btn-hidden {
+    float: right;
+}
+
+
+/* button 5*/
+
+.change-table-img {
+    padding-left: 50px;
+}
+
+.txt-table-img {
+    height: 100px;
+    width: 160px;
+    text-align: center;
+}
+
+.img-change {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    object-fit: cover;
+}
+.change-table-img-btn{
+    padding-left: 200px;
+}
+
+.ten-muc{
+    font-weight: 800;
+    font-size: 40px;
+    margin: 10px 0px 20px 20px;
+}
+.btn-update{
+    float: right;
+    padding: 5px 28px 5px 28px;
+    margin: 10px 10px 10px 20px;
+    font-size: large;
+    border-radius: 5px;
+    background-color: #1485e7;
+    border-color: #1485e7;
+    color: white;
+}
+
+#btn-capnhat{
+    float: right;
+    padding: 5px 28px 5px 28px;
+    margin: 10px 10px 10px 20px;
+    font-size: large;
+    border-radius: 5px;
+    background-color: white;
+}
+#btn-capnhatTT{
+    float: right;
+    padding: 5px 28px 5px 28px;
+    margin: 10px 10px 10px 20px;
+    font-size: large;
+    border-radius: 5px;
+    background-color: white;
+}

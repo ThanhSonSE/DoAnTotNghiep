@@ -1,0 +1,252 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('chamsoccontre:server');
+var http = require('http');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+var io = require("socket.io")(server);
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+
+var listUsers = [];
+
+/**
+ * Chạy socket
+ */
+io.of("/user/diendan").on("connection",function(socket){
+  console.log("Có người kết nối : " + socket.id);
+  
+  socket.on("dangnhap-thanhcong",function(data){
+
+    let dem = 0;
+    for(let i = 0 ; i < listUsers.length ; i++){
+      console.log("???????" + listUsers[i].email)
+      if(listUsers[i].email === data.email){
+        console.log("trùng email");
+        dem = 1;
+        break;
+      }
+    }
+
+    if(dem === 0){
+
+      var User = {
+        id : "",
+       email : ""
+     }
+
+      User.id = socket.id;
+      User.email = data.email;
+      console.log("User = " + User.email);
+      listUsers.push(User);
+      console.log("thêm mới");
+    }
+    console.log("List user = " + listUsers.length);
+    io.of( '/user/diendan' ).emit("co-nguoi-dangnhap",listUsers);
+  });
+
+  socket.on("co-nguoi-like",function(data){
+    console.log(data.soLike+"???SÓ like");
+    socket.broadcast.emit("co-nguoi-da-like-bai",data);
+  });
+  socket.on("toi-dang-go-chu",function(data){
+    for(let i = 0 ; i < listUsers.length ; i++){   
+      if(listUsers[i].email === data.guiChoEmail){
+        socket.to(listUsers[i].id).emit("ban-dang-nhap",{emailGui : data.emailGui , guiChoEmail : data.guiChoEmail});
+        break;
+      }
+    }
+  });
+  socket.on("toi-dung-go-chu",function(data){
+    for(let i = 0 ; i < listUsers.length ; i++){   
+      if(listUsers[i].email === data.guiChoEmail){
+        socket.to(listUsers[i].id).emit("ban-dung-nhap",{emailGui : data.emailGui , guiChoEmail : data.guiChoEmail});
+        break;
+      }
+    }
+  });
+
+  socket.on("gui-noi-dung-chat",function(data){
+    
+    for(let i = 0 ; i < listUsers.length ; i++){   
+      if(listUsers[i].email === data.guiChoEmail){
+        console.log("ĐÃ gửi");
+        socket.to(listUsers[i].id).emit("gui-chat-toi-email-ban",{noiDung : data.noiDung, emailGui : data.email , guiChoEmail : data.guiChoEmail});
+        break;
+      }
+    }
+
+    socket.emit("gui-chat-toi-email-toi",{guiChoEmail : data.guiChoEmail, noiDung : data.noiDung ,emailGui : data.email});
+
+  });
+
+
+  socket.on("co-bai-viet-moi",function(data){
+
+    console.log("email người đăng là " +data.emailNguoiDang);
+    socket.broadcast.emit("nhan-bai-viet-moi",{hinhNguoiDang : data.hinhNguoiDang, ndBaiViet : data.ndBaiViet ,emailNguoiDang: data.emailNguoiDang, tenNguoiDang : data.tenNguoiDang, idLoai : data.idLoai, idBai : data.idBai});
+
+  });
+
+  socket.on("co-nguoi-binh-luan",function(data){
+
+    socket.broadcast.emit("nhan-binh-luan-moi",{hinhDaiDien : data.hinhDaiDien, tenNguoiBL : data.tenNguoiBL, ndBL : data.ndBL, idBL : data.idBL, idLoai : data.idLoai, idBai : data.idBai, soBL : data.soBL});
+
+  });
+
+  socket.on("co-nguoi-tl-binh-luan",function(data){
+
+    socket.broadcast.emit("nhan-tl-binh-luan-moi",{hinhDaiDien : data.hinhDaiDien,tenNguoiTLBL : data.tenNguoiTLBL, ndTLBL : data.ndTLBL, idBL : data.idBL, idLoai : data.idLoai, idBai : data.idBai, soBL : data.soBL, idTLBL : data.idTLBL });
+
+  });
+
+  socket.on("xoa-bai-viet",function(data){
+    console.log("Xóa bài ?????????");
+    socket.broadcast.emit("nhan-xoa-bai-viet",{idLoai : data.idLoai, idBai : data.idBai});
+
+  });
+
+
+  socket.on("disconnect",function(){
+  
+    for(let i = 0 ; i < listUsers.length ; i++){
+      if(listUsers[i].id === socket.id){
+        listUsers.splice(i,1);
+        break;
+      }
+    }
+    socket.broadcast.emit("co-nguoi-dangnhap",listUsers);
+    console.log(socket.id + " : Ngắt kết nối");
+  });
+});
+
+io.of("/chitietbaidang").on("connection",function(socket){
+  console.log("Có người kết nối : " + socket.id);
+
+  socket.on('co-nguoi-like-bai-dang',function(data){
+    socket.broadcast.emit('nhan-so-like',data);
+  });
+
+  socket.on("co-nguoi-binh-luan",function(data){
+    socket.broadcast.emit("nhan-binh-luan-moi",{hinhDaiDien : data.hinhDaiDien, tenNguoiBL : data.tenNguoiBL, ndBL : data.ndBL, idBL : data.idBL, idLoai : data.idLoai, idBai : data.idBai});
+  });
+
+  socket.on("co-nguoi-tl-binh-luan",function(data){
+    socket.broadcast.emit("nhan-tl-binh-luan-moi",{hinhDaiDien : data.hinhDaiDien,tenNguoiTLBL : data.tenNguoiTLBL, ndTLBL : data.ndTLBL, idBL : data.idBL, idLoai : data.idLoai, idBai : data.idBai, idTLBL : data.idTLBL });
+  });
+});
+
+io.of("/header").on("connection",function(socket){
+  console.log("Có người kết nối : " + socket.id);
+
+  socket.on("co-thong-bao-bai-viet",function(data){
+    socket.broadcast.emit("nhan-thong-bao-bai-viet",{emailBai : data.emailBai});
+  });
+
+  socket.on("co-thong-bao-tin-nhan",function(data){
+    socket.broadcast.emit("nhan-thong-bao-tin-nhan",{emailNguoiGui : data.emailNguoiGui , emailNguoiNhan : data.emailNguoiNhan , noiDung : data.noiDung});
+  });
+
+  socket.on("co-thong-bao-xoa-bai",function(data){
+    socket.broadcast.emit("nhan-thong-bao-xoa-bai",{emailNguoiNhan : data.emailNguoiNhan});
+  });
+
+  socket.on("yeu-cau-dang-xuat",function(data){
+    socket.broadcast.emit("email-bi-khoa",{emailBiKhoa : data.emailBiKhoa});
+  });
+  
+});
+
+io.of("/danhsachkhieunai").on("connection",function(socket){
+  console.log("Có người kết nối : " + socket.id);
+
+  socket.on("tocao",function(data){
+    console.log("emailBaiViet là "+ data.emailBaiViet);
+    socket.broadcast.emit("gui-to-cao",{idLoai : data.idLoai, idBai : data.idBai, emailBaiViet : data.emailBaiViet, ndbv : data.ndbv});
+  });
+
+  socket.on("disconnect",function(){
+    console.log(socket.id + " : Ngắt kết nối");
+  });
+});
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

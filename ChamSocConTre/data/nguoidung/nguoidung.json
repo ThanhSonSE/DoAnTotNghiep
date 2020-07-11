@@ -1,0 +1,143 @@
+[
+	{
+		"loaiTaiKhoan" : 1,
+		"email" : "tranquangthinhtk@gmail.com",
+		"password" : "admin12345",
+		"soDienThoai" : "0123456789",
+		"tenNguoiDung" : "Admin",
+		"hinhDaiDien" : "logo.png",
+		"tinhTrang" : 1
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "thanhson.official@gmail.com",
+		"password" : "son12345",
+		"soDienThoai" : "0111222333",
+		"tenNguoiDung" : "Nguyễn Thanh Sơn",
+		"hinhDaiDien" : "son.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 1,
+		"thongBaoBaiViet" : 1,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "thanhson2903.official@gmail.com",
+		"password" : "son12345",
+		"soDienThoai" : "0222333444",
+		"tenNguoiDung" : "Nguyễn Văn Bá",
+		"hinhDaiDien" : "ba.jpg",
+		"tinhTrang" : 0,
+		"thongBaoTinNhan" : 1,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 1
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "thanhson02698@gmail.com",
+		"password" : "son12345",
+		"soDienThoai" : "0333444555",
+		"tenNguoiDung" : "Phạm Sơn Bắc",
+		"hinhDaiDien" : "bac.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"password" : "thinh12345",
+		"soDienThoai" : "0633655557",
+		"tenNguoiDung" : "Trần Quang Thịnh",
+		"hinhDaiDien" : "thinh.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 1,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "nguyenthilanchi@gmail.com",
+		"password" : "chi12345",
+		"soDienThoai" : "0933644557",
+		"tenNguoiDung" : "Nguyễn Thị Lan Chi",
+		"hinhDaiDien" : "chi.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "nguyenvanan@gmail.com",
+		"password" : "an123456",
+		"soDienThoai" : "0666655557",
+		"tenNguoiDung" : "Nguyễn Văn Ân",
+		"hinhDaiDien" : "an.jpg",
+		"tinhTrang" : 0,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "phamcongloi@gmail.com",
+		"password" : "loi12345",
+		"soDienThoai" : "0883655557",
+		"tenNguoiDung" : "Phạm Công Lợi",
+		"hinhDaiDien" : "loi.jpg",
+		"tinhTrang" : 0,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "nguyenanhduc@gmail.com",
+		"password" : "duc12345",
+		"soDienThoai" : "0677655557",
+		"tenNguoiDung" : "Nguyễn Anh Đức",
+		"hinhDaiDien" : "duc.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "buithithaolinh@gmail.com",
+		"password" : "linh12345",
+		"soDienThoai" : "0998735573",
+		"tenNguoiDung" : "Bùi Thị Thảo Linh",
+		"hinhDaiDien" : "linh.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "nguyenhuuquy@gmail.com",
+		"password" : "quy12345",
+		"soDienThoai" : "0635445557",
+		"tenNguoiDung" : "Nguyễn Hữu Quý",
+		"hinhDaiDien" : "quy.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	},
+	{
+		"loaiTaiKhoan" : 0,
+		"email" : "changsusu@gmail.com",
+		"password" : "chang12345",
+		"soDienThoai" : "0998445557",
+		"tenNguoiDung" : "Chang Su Su",
+		"hinhDaiDien" : "chang.jpg",
+		"tinhTrang" : 1,
+		"thongBaoTinNhan" : 0,
+		"thongBaoBaiViet" : 0,
+		"thongBaoXoaBai" : 0
+	}
+]

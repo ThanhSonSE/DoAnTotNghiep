@@ -1,0 +1,299 @@
+[
+	{
+		"email" : "thanhson.official@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [
+			{
+				"id" : 1,
+				"idLoai": 1,
+				"idBai" :1,
+				"email" : "thanhson2903.official@gmail.com",
+				"noiDungBai" :"Nếu trước đây bố mẹ thường đánh giá con trẻ qua những tiêu chí khuôn mẫu như biết vâng lời, ngoan ngoãn, “nói gì làm nấy”, thì ngày nay các bậc phụ huynh hiện đại lại tìm cách khuyến khích con tự do sáng tạo và tự tin nói lên chính kiến của riêng mình. Vì thực tế cho thấy, tư duy sáng tạo giúp trẻ rất nhiều trong cuộc sống hiện đại. Không những mang đến cho trẻ sự tự tin, bản lĩnh, tư duy sáng tạo còn phát huy tài năng thiên bẩm, góp phần giúp trẻ phát triển toàn diện và vượt trội hơn trong tương lai.",
+				"date" : "2020-04-15",
+				"time" : "11:20:10"
+			},
+			{
+				"id" : 2,
+				"idLoai": 1,
+				"idBai" :1,
+				"email" : "tranquangthinhtk1997@gmail.com",
+				"noiDungBai" :"Nếu trước đây bố mẹ thường đánh giá con trẻ qua những tiêu chí khuôn mẫu như biết vâng lời, ngoan ngoãn, “nói gì làm nấy”, thì ngày nay các bậc phụ huynh hiện đại lại tìm cách khuyến khích con tự do sáng tạo và tự tin nói lên chính kiến của riêng mình. Vì thực tế cho thấy, tư duy sáng tạo giúp trẻ rất nhiều trong cuộc sống hiện đại. Không những mang đến cho trẻ sự tự tin, bản lĩnh, tư duy sáng tạo còn phát huy tài năng thiên bẩm, góp phần giúp trẻ phát triển toàn diện và vượt trội hơn trong tương lai.",
+				"date" : "2020-04-15",
+				"time" : "11:40:10"
+			},
+			{
+				"id" : 183292223,
+				"idLoai": 1,
+				"idBai" :1,
+				"email" : "nguyenthilanchi@gmail.com",
+				"noiDungBai" :"Nếu trước đây bố mẹ thường đánh giá con trẻ qua những tiêu chí khuôn mẫu như biết vâng lời, ngoan ngoãn, “nói gì làm nấy”, thì ngày nay các bậc phụ huynh hiện đại lại tìm cách khuyến khích con tự do sáng tạo và tự tin nói lên chính kiến của riêng mình. Vì thực tế cho thấy, tư duy sáng tạo giúp trẻ rất nhiều trong cuộc sống hiện đại. Không những mang đến cho trẻ sự tự tin, bản lĩnh, tư duy sáng tạo còn phát huy tài năng thiên bẩm, góp phần giúp trẻ phát triển toàn diện và vượt trội hơn trong tương lai.",
+				"date" : "2020-05-09",
+				"time" : "10:50:10"
+			}
+		],
+		"thongBaoDaDoc" : [
+		]
+	},
+	{
+		"email" : "thanhson.official@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [
+			{
+				"id" : 183292111,
+				"email" : "nguyenvanan@gmail.com",
+				"noiDung" : "Hello Sơn",
+				"date":"2020-04-20",
+                "time":"10:33:10"
+			}
+		],
+		"thongBaoDaDoc" : [
+			{
+				"id" : 183292112,
+				"email" : "nguyenthilanchi@gmail.com",
+				"noiDung" : "Hello Sơn",
+				"date" : "2020-04-09",
+				"time" : "13:50:10"
+
+			},
+			{
+				"id" : 183292223,
+				"email" : "phamcongloi@gmail.com",
+				"noiDung" : "What",
+				"date" : "2020-05-19",
+				"time" : "11:50:10"
+			}
+		]
+	},
+	{
+		"email" : "thanhson.official@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [
+			{
+				"id" : 21,
+				"idLoai": 1,
+				"idBai" :8,
+				"email" : "nguyenhuuquy@gmail.com",
+				"noiDungBai" :"Mật ong chữa được khàn tiếng là nhờ nó chứa nhiều vitamin A, E, C, B,... Đồng thời bên trong mật ong nó cũng chứa nhiều các thành phần như là kháng sinh tự nhiên giúp kháng viêm, diệt khuẩn, làm diệu thanh quản, giúp giảm khàn tiếng một cách nhanh chóng.",
+				"date" : "2020-06-02",
+				"time" : "11:20:10"
+			},
+			{
+				"id" : 23,
+				"idLoai": 1,
+				"idBai" :8,
+				"email" : "buithithaolinh@gmail.com",
+				"noiDungBai" :"Mật ong chữa được khàn tiếng là nhờ nó chứa nhiều vitamin A, E, C, B,... Đồng thời bên trong mật ong nó cũng chứa nhiều các thành phần như là kháng sinh tự nhiên giúp kháng viêm, diệt khuẩn, làm diệu thanh quản, giúp giảm khàn tiếng một cách nhanh chóng.",
+				"date" : "2020-06-12",
+				"time" : "7:22:10"
+			}
+		],
+		"thongBaoDaDoc" : [
+			{
+				"id" : 11,
+				"idLoai": 1,
+				"idBai" :5,
+				"email" : "nguyenhuuquy@gmail.com",
+				"noiDungBai" :"Nuôi dạy trẻ an toàn và khỏe mạnh là mong muốn của tất cả ba mẹ, thế nhưng lại có rất nhiều yếu tố tác động ảnh hưởng đến sự phát triển của trẻ. Đối với trẻ nhỏ từ 2 - 5 tuổi, hay trẻ lớn từ 6-12 tuổi cần phải đảm bảo đủ các yếu tố về chăm sóc sức khỏe trẻ em. Vậy những yếu tố đó là gì, ba mẹ hãy cùng Jio Health tìm hiểu thông tin qua bài viết này nhé!",
+				"date" : "2020-05-15",
+				"time" : "11:20:10"
+			},
+			{
+				"id" : 13,
+				"idLoai": 1,
+				"idBai" :5,
+				"email" : "changsusu@gmail.com",
+				"noiDungBai" :"Nuôi dạy trẻ an toàn và khỏe mạnh là mong muốn của tất cả ba mẹ, thế nhưng lại có rất nhiều yếu tố tác động ảnh hưởng đến sự phát triển của trẻ. Đối với trẻ nhỏ từ 2 - 5 tuổi, hay trẻ lớn từ 6-12 tuổi cần phải đảm bảo đủ các yếu tố về chăm sóc sức khỏe trẻ em. Vậy những yếu tố đó là gì, ba mẹ hãy cùng Jio Health tìm hiểu thông tin qua bài viết này nhé!",
+				"date" : "2020-05-16",
+				"time" : "7:22:10"
+			}
+		]
+	},
+	{
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : [
+			{
+				"id" : 1,
+				"email" : "changsusu@gmail.com",
+				"noiDung" : "Hello anh Thịnh",
+				"date":"2020-04-20",
+                "time":"10:10:10"
+			}
+		]
+	},
+	{
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "thanhson2903.official@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "thanhson2903.official@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "thanhson2903.official@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "thanhson02698@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "thanhson02698@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "thanhson02698@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenthilanchi@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenthilanchi@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenthilanchi@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenvanan@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenvanan@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenvanan@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "phamcongloi@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "phamcongloi@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "phamcongloi@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenanhduc@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenanhduc@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenanhduc@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "buithithaolinh@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "buithithaolinh@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "buithithaolinh@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenhuuquy@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenhuuquy@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "nguyenhuuquy@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "changsusu@gmail.com",
+		"idLoaiThongBao" : 1,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "changsusu@gmail.com",
+		"idLoaiThongBao" : 2,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	},
+	{
+		"email" : "changsusu@gmail.com",
+		"idLoaiThongBao" : 3,
+		"thongBao" : [],
+		"thongBaoDaDoc" : []
+	}
+]

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+    <script>
+        $(document).ready(function(){
+            $(".dangbl").hide();
+            $(".traloibinhluan").hide();   
+            if($("#soBaiVietCanHienThi").val()<$("#soTinDangHien").val()){
+                $("#xemThemBaiViet").hide();
+            }else{
+                $("#xemThemBaiViet").show();
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <input type="hidden" id="soBaiViet" value="<%= listBaiViet.length%>">
+
+    <div id="khung-list-bai-viet">
+        <%
+            if(listBaiViet !== undefined && listBaiViet.length > 0){
+        %>
+        <% for(var i = 0 ; i < listBaiViet.length ; i++){%>
+            <article class="comment" id="baivietOfND<%= listBaiViet[i].idBai%>">
+                <% 
+                        for(var j = 0 ; j < listUsers.length ; j++){
+                            if(listUsers[j].email === listBaiViet[i].email){
+                    %>
+                <img src="/images/<%= listUsers[j].hinhDaiDien%>" class="anh-dai-dien">
+                <input type="hidden" id="emailBaiViet<%= listBaiViet[i].idBai%>" value="<%= listBaiViet[i].email%>">
+                <div class="comment-body">
+                    <div class="text baiVietNguoiDung">
+                        <p id="ndbv<%= listBaiViet[i].idBai%>"><%= listBaiViet[i].noiDung%></p>
+                    </div>
+                    <span style="float: right;">
+                        <p class="attribution">Bởi <a><%=listUsers[j].tenNguoiDung%></a> vào ngày
+                            <%= listBaiViet[i].date%> lúc <%= listBaiViet[i].time%> 
+                            <button class="mobl" id="mobl-<%= listBaiViet[i].idBai%>">Mở bình luận</button>
+                        </p>
+                    </span>
+                    <p class="attribution">
+                    
+                            <%if(listBaiViet[i].nguoiThich !== undefined){
+                                var daLike = 0;
+                                for(var m = 0 ; m < listBaiViet[i].nguoiThich.length ; m++){
+                                    if((listBaiViet[i].nguoiThich)[m] === nd.email){
+                                        daLike = 1;
+                            %>
+                            <div style="float: left; margin-right: 20px;" class="like" id="like-<%= listBaiViet[i].idBai%>">
+                                        <img src="/images/like.png" width="20px" />
+                            <%        
+                                        break;        
+                                    }
+                                }
+                                if(daLike === 0){
+                            %>
+                            <div style="float: left; margin-right: 20px;" class="like" id="unlike-<%= listBaiViet[i].idBai%>">
+                                    <img src="/images/unlike.png" width="20px" />
+                            <%
+                                }
+                            %>
+                                <span id="soLike<%= listBaiViet[i].idBai%>"><%= listBaiViet[i].nguoiThich.length%></span>
+                            <%
+                            }else{
+                            %>
+                            <div style="float: left; margin-right: 20px;" class="like" id="unlike-<%= listBaiViet[i].idBai%>">
+                                <img src="/images/unlike.png" width="20px" />
+                                <span id="soLike<%= listBaiViet[i].idBai%>">0</span>
+                            <%}%>
+                            </div>
+                            <div style="float: left; margin-right: 20px;">
+                                <img src="/images/binhluan.png" width="20px"/>
+                                <span id="soBinhLuan<%= listBaiViet[i].idBai%>">
+                            <% 
+                                        var soBinhLuan = 0; 
+                                        if(listBaiViet[i].binhLuan !== undefined){
+                                            soBinhLuan += listBaiViet[i].binhLuan.length;
+                                            for(var l = 0 ; l < listBaiViet[i].binhLuan.length ; l++){
+                                                if((listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined){
+                                                    soBinhLuan += (listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length;
+                                                }
+                                            }
+                                        }
+                                    %>
+                                    <span id="soBL<%= listBaiViet[i].idBai%>"><%= soBinhLuan%></span>
+                        </span>
+                    </div>
+                    <%if(listBaiViet[i].tinhTrang == 1){%>
+                        <%if(listBaiViet[i].soKhieuNai === undefined){%>
+                            <div>
+                                <img class="tocao" id="tocao-<%= listBaiViet[i].idBai%>" title="Tố cáo" src="/images/error.png" width="20px"/>
+                            </div>
+                        <%
+                            }else{
+                                let isKhieuNai = 0;
+                                for(let h = 0 ; h < listBaiViet[i].soKhieuNai.length ; h++){
+                                    if((listBaiViet[i].soKhieuNai)[h] === nd.email){
+                                        isKhieuNai = 1;
+                                        break;
+                                    }
+                                }
+                                if(isKhieuNai === 0){
+                        %>
+                            <div>
+                                <img class="tocao" id="tocao-<%= listBaiViet[i].idBai%>" title="Tố cáo" src="/images/error.png" width="20px"/>
+                            </div>
+                        <%
+                                }
+                            }
+                        %>
+                    <%}%>
+                    </p>
+                </div>
+                <div class="dangbinhluan binhluan dangbl" id="bl<%= listBaiViet[i].idBai%>">
+                    <img src="/images/<%= nd.hinhDaiDien%>">
+                    <textarea id="taDangBL<%= listBaiViet[i].idBai%>" placeholder="Nhập để bình luận nào..." required></textarea>
+                    <button class="buttonDangBL" id="buttonDangBL-<%= listBaiViet[i].idBai%>">Đăng</button>
+                    
+                    <div id="listBLBaiViet<%= listBaiViet[i].idBai%>">
+                        <% 
+                            if(listBaiViet[i].binhLuan !== undefined && listBaiViet[i].binhLuan.length > 0){
+                                if(listBaiViet[i].binhLuan.length > 1){
+                                    listBaiViet[i].binhLuan.sort((a,b)=>a.idBinhLuan - b.idBinhLuan);
+                                    listBaiViet[i].binhLuan.reverse();
+                                }
+                        %>
+                        <%
+                                for(var l = 0 ; l < listBaiViet[i].binhLuan.length ; l++){
+                                    for(let d = 0 ; d < listUsers.length ; d++){
+                                        if(listUsers[d].email == (listBaiViet[i].binhLuan)[l].emailNguoiBinhLuan){
+                        %>
+                        <input type="hidden" id="idBaiOf<%=(listBaiViet[i].binhLuan)[l].idBinhLuan %>" value="<%= listBaiViet[i].idBai%>">
+                        <div class="comment-body binhluan">
+                            <img class="anh-dai-dien" src="/images/<%=listUsers[d].hinhDaiDien %>">
+                            <div class="text" style="margin-left: 70px;">
+                                <%= (listBaiViet[i].binhLuan)[l].noiDungBinhLuan%>
+                            </div>
+                            <p class="attribution" style="padding: 10px;">Bởi <a><%=listUsers[d].tenNguoiDung%></a> vào ngày <%=(listBaiViet[i].binhLuan)[l].dateBinhLuan %> lúc <%=(listBaiViet[i].binhLuan)[l].timeBinhLuan %> 
+                                <button class="motlbl" style="float: right;" id="motlbl-<%= (listBaiViet[i].binhLuan)[l].idBinhLuan%>">Mở trả lời</button>
+                            </p>
+    
+                            <div class="comment-body traloibinhluan" id="traloibl<%=(listBaiViet[i].binhLuan)[l].idBinhLuan %>">
+    
+                                <img src="/images/<%= nd.hinhDaiDien%>">
+                                <textarea id="ndTLBL<%=(listBaiViet[i].binhLuan)[l].idBinhLuan %>" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                <button class="btnTraLoiBL" id="btnTLBL-<%=(listBaiViet[i].binhLuan)[l].idBinhLuan %>">Đăng</button>
+                                
+                                <div id="khung-traloi-bl<%=(listBaiViet[i].binhLuan)[l].idBinhLuan %>">
+                                    <% 
+                                        if((listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined){
+                                            if((listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length > 1){
+                                                (listBaiViet[i].binhLuan)[l].traLoiBinhLuan.sort((a,b)=>a.idTraLoiBinhLuan - b.idTraLoiBinhLuan);
+                                                (listBaiViet[i].binhLuan)[l].traLoiBinhLuan.reverse();
+                                            }
+                                    %>
+                                    <%
+                                            for(var k = 0 ;k < (listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length ; k++){
+                                                for(let m = 0 ; m < listUsers.length ; m++){
+                                                    if(listUsers[m].email == ((listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].emailNguoiTraLoiBinhLuan){
+                                    %>
+                                                        <img class="anh-dai-dien" src="/images/<%=listUsers[m].hinhDaiDien %>">
+                                                        <div class="text" style="margin-left: 70px;">
+                                                            <%=((listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].noiDungTraLoiBinhLuan %>
+                                                        </div>
+                                                        <p class="attribution" style="padding: 10px;">Bởi <a><%=listUsers[m].tenNguoiDung%></a> vào ngày <%=((listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].dateTraLoiBinhLuan %> lúc <%=((listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].timeTraLoiBinhLuan %></p>
+                                    <%
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                        <%       
+                                            break;
+                                        }
+                                    }        
+                                }
+                            }
+                        %>
+                    </div>
+                </div>
+                <%
+                            break;
+                        }
+                    }
+                %>
+            </article>
+            <%}%>
+        <%
+            }
+        %>
+        
+    </div>
+</body>
+
+</html>

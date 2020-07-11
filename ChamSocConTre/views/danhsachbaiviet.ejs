@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Danh sách bài viết
+    </title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/danhsachbaiviet-style.css" />
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <div class="dsbv-main-content">
+            <div class="dsbv-title">
+                <h2><b>Danh sách bài viết</b></h2>
+            </div>
+            <div class="dsbv-list-item">
+                <%if(bv.length == 0){%>
+                <div class="dsbv-empty">
+                    <p>Chưa có bài viết nào</p>
+                </div>
+                <%}else{%>
+                <% bv.sort((a, b) => b.idBai - a.idBai);%>
+                <% for( let i = 0 ; i < bv.length ; i++){%>
+                <div class="dsbv-item">
+                    <div class="dsbv-topic">
+                        <div class="dsbv-topic-title">
+                            <%if(bv[i].idLoai === 1) {%>
+                            <h4><b>Chủ đề: Sức khỏe</b></h4>
+                            <%} else if(bv[i].idLoai === 2){%>
+                            <h4><b>Chủ đề: Giáo dục</b></h4>
+                            <%} else if(bv[i].idLoai === 3){%>
+                            <h4><b>Chủ đề: Ăn uống và dinh dưỡng</b></h4>
+                            <%} else {%>
+                            <h4><b>Chủ đề: Phong cách sống</b></h4>
+                            <%}%>
+                                        </div>
+                                        <div class="dsbv-button-more">
+
+                                            <div class="btn-delete">
+                                                <a href="/danhsachbaiviet/<%= bv[i].idLoai %>/<%= bv[i].idBai %>">
+                                                    <img title="Chi tiết bài viết" class="ctbv-cmt-img" src="/images/chitiet.png" alt="Chi tiết bài viết" height="30px" width="30px">
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="dsbv-status">
+                                        <a 
+                            style="text-decoration: none;">
+                            <p>
+                                <%= bv[i].noiDung %>
+                            </p>
+                            </a>
+                        </div>
+                        <div class="dsbv-time">
+                            <div class="dsbv-view">
+                                <%if(bv[i].nguoiThich != undefined){%>
+                                <%= bv[i].nguoiThich.length %> Lượt thích
+                                <%} else {%>
+                                0 Lượt thích
+                                <%}%>
+                                        </div>
+                                        <div class="dsbv-comment">
+                                            <% var count = 0 %>
+                                <% if (bv[i].binhLuan != undefined && bv[i].binhLuan.length > 0) {%>
+                                    <%= bv[i].binhLuan.length %> Bình luận
+                                <% }else{%>
+                                    0 Bình luận
+                                <%}%>
+                            </div>
+                            <div class="dsbv-date">
+                                <%= bv[i].date %>
+                            </div>
+                            <div class="dsbv-oclock">
+                                lúc
+                                <%= bv[i].time %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dsbv-space">
+                    </div>
+                    <% }%>
+                    <%}%>
+
+
+                </div>
+            </div>
+        </section>
+        <% include footer%>
+
+</body>
+
+</html>

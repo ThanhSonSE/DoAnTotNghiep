@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tài Khoản</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/taikhoan-style.css" />
+  <script src="/javascripts/jqueryJS.js"></script>
+
+</head>
+
+<body>
+  <% include header %>
+  <% if(thongbao==="pass sai"){%>
+  <script>
+    alert("Mật khẩu không đúng !!!");
+  </script>
+  <% }else if(thongbao==="đăng ký thành công"){%>
+  <script>
+    alert("Đăng ký thành công");
+  </script>
+  <%}else if(thongbao === "Không có"){%>
+  <script>
+    alert("Email chưa tồn tại !!!");
+  </script>
+  <%}else if(thongbao === "email bị trùng"){%>
+  <script>
+    alert("Email đã được sử dụng !!!");
+  </script>
+  <%}else if(thongbao === "bị khóa"){%>
+  <script>
+    alert("Email đã bị khóa !!!");
+  </script>
+  <%}%>
+    <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">Bạn chưa có tài khoản?</h2>
+              <p class="user_unregistered-text">Hãy đăng ký tài khoản thôi nào!</p>
+              <button class="user_unregistered-signup" id="signup-button" >Đăng Ký</button>
+            </div>
+      
+            <div class="user_options-registered">
+              <h2 class="user_registered-title">Bạn đã có tài khoản?</h2>
+              <p class="user_registered-text">Hãy đăng nhập nào!</p>
+              <button class="user_registered-login" id="login-button" >Đăng Nhập</button>
+            </div>
+          </div>
+          
+          <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-login">
+              <h2 class="forms_title">Đăng Nhập</h2>
+              <form class="forms_form" action="/taikhoan/dangnhap" method="post">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input type="email" name="email" placeholder="Email" class="forms_field-input" required autofocus />
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" name="password" placeholder="Mật khẩu" class="forms_field-input" required />
+                  </div>
+                </fieldset>
+                <div class="forms_buttons">
+                  <!-- formaction="/taikhoan/quenmatkhau" formmethod="POST" -->
+                  <button type="button" id="quenmatkhau" class="forms_buttons-forgot">Quên mật khẩu?</button>
+                  <input type="submit" value="Đăng nhập" class="forms_buttons-action">
+                </div>
+              </form>
+            </div>
+            <div class="user_forms-signup">
+              <h2 class="forms_title">Đăng Ký</h2>
+              <form class="forms_form" onsubmit="return ktDangKy();">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field" >
+                    <input type="text" id="tenNguoiDung" name="tenNguoiDung" placeholder="Tên người dùng" class="forms_field-input" onchange="ktTenNguoiDung();"/>
+                    <img class="bao-loi" id="loiTenNguoiDung" src="/images/loinhap.png" width="20px" title="Tên người dùng không được để trống !!!">
+                  </div>
+                  <div class="forms_field">
+                    <input type="text" id="emailDK" name="email" placeholder="Email" class="forms_field-input" onchange="ktemail();"/>
+                    <img class="bao-loi" id="loiEmail" src="/images/loinhap.png" width="20px" title="Email phải có @ tuân thủ quy tắc vd: abcdef@gmail.com !!!">
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" class="forms_field-input" onchange="ktMatKhau();"/>
+                    <img class="bao-loi" id="loiPassword" src="/images/loinhap.png" width="20px" title="Password phải có ít nhất 8 ký tự !!!">
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" id="passwordagain" placeholder="Nhập lại mật khẩu" class="forms_field-input" onchange="ktNhapLaiMatKhau();"/>
+                    <img class="bao-loi" id="loiNhapLaiPassword" src="/images/loinhap.png" width="20px" title="Nhập lại password phải trùng khớp với password !!!">
+                  </div>
+                  <div class="forms_field">
+                    <input type="text" id="soDienThoai" name="soDienThoai" placeholder="Số điện thoại" class="forms_field-input" onchange="ktSDT();" />
+                    <img class="bao-loi" id="loiSoDienThoai" src="/images/loinhap.png" width="20px" title="Số điện thoại phải có 10 chữ số !!!">
+                  </div>
+                </fieldset>
+                <div class="forms_buttons">
+                  <input type="button" value="Đăng Ký" onclick="ktDangKy();" class="forms_buttons-action">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+          <div class="khung-chua-nd-qmk">
+            <div class="khung-tieu-de-qmk">
+              <span style="float: left; font-size: 25px; padding: 3px;">Quên Mật Khẩu</span>
+              <span style="float: right;"><img id="tat-qmk" src="/images/tatform.png" width="30px"></span>
+            </div>
+            <div class="nhap-email-qmk">
+              Bước 1:<br><br>
+              <input id="txtEmail" type="text" placeholder="Nhập email cần đổi mật khẩu ..." style="width: 70%; border: 2px solid #cccccc; padding: 5px; margin-left: 5%;">
+              <span style="float: right; margin-right: 5%;"><img id="gui-email-qmk" src="/images/guiemail.png" width="30px"></span>
+            </div>
+            <div class="xac-nhan-qmk" id = "xac-nhan-qmk">
+              Bước 2:<br><br>
+              <input id="txtMaXN" type="text" placeholder="Nhập mã xác nhận từ email vừa nhập ..." style="width: 70%; border: 2px solid #cccccc; padding: 5px; margin-left: 5%;">
+              <span style="float: right; margin-right: 5%;"><img id="xac-nhan-ma" src="/images/guixacnhan.png" width="30px"></span>
+            </div>
+            <span style="float: left; margin-top: 10px;"><img id="undo" src="/images/undo.png" width="30px"></span>
+            <div class="doi-mat-khau">
+              Bước 3:<br><br>
+              <input id="txtMatKhauMoi" type="password" placeholder="Nhập mật khẩu mới ..." style="width: 70%; border: 2px solid #cccccc; padding: 5px; margin-left: 5%;">
+              <span style="float: right; margin-right: 5%;"><img id="luu-mat-khau" src="/images/guixacnhan.png" width="30px"></span>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Đăng Ký -->
+        <div id="myModalDangKy" class="modal">
+
+          <div class="khung-chua-nd-qmk">
+            <div class="khung-tieu-de-qmk">
+              <span style="float: left; font-size: 25px; padding: 3px;">Xác Nhận Email</span>
+              <span style="float: right;"><img id="tat-xndk" src="/images/tatform.png" width="30px"></span>
+            </div>
+            <div class="xac-nhan-qmk">
+              <input id="txtMaXNDK" type="text" placeholder="Nhập mã xác nhận từ email muốn đăng ký ..." style="width: 70%; border: 2px solid #cccccc; padding: 5px; margin-left: 5%;">
+              <span style="float: right; margin-right: 5%;"><img id="xac-nhan-ma-dk" src="/images/guixacnhan.png" width="30px"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <% include footer%>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      $("#myModal").hide();
+      $(".nhap-email-qmk").hide();
+      $("#xac-nhan-qmk").hide();
+      $(".doi-mat-khau").hide();
+      $("#undo").hide();
+
+      $("#quenmatkhau").click(function () {
+        $("#myModal").show();
+        $(".nhap-email-qmk").show();
+      });
+
+      $("#gui-email-qmk").click(function (e) {
+        let email = $("#txtEmail").val().trim();
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!reg.test(email)) {
+          alert("Email phải có @ tuân thủ quy tắc vd: abcdef@gmail.com !!!");
+        } else {
+
+          e.preventDefault();
+          $.ajax({
+            url: '/taikhoan/ktemail/' + email,
+            type: 'get',
+            dataType: 'text',
+          }).done(function (bitrung) {
+            if (bitrung == "email bị trùng") {
+              e.preventDefault();
+              $.ajax({
+                url: '/taikhoan/guiemailquenmatkhau/',
+                data: {
+                  email: email
+                },
+                type: 'post',
+                dataType: 'text',
+              }).done(function (ma) {
+                alert(ma);
+              });
+
+              $("#xac-nhan-qmk").show();
+              $("#undo").show();
+              $(".nhap-email-qmk").hide();
+            } else {
+              alert("Email chưa được dùng để tạo tài khoản !!!");
+            }
+          });
+        }
+      });
+
+      $("#xac-nhan-ma").click(function (e) {
+
+        let ma = $("#txtMaXN").val().trim();
+        e.preventDefault();
+        $.ajax({
+          url: '/taikhoan/xacnhanma/',
+          data: {
+            ma: ma
+          },
+          type: 'post',
+          dataType: 'text',
+        }).done(function (result) {
+          if (result == "mã đúng") {
+            $(".doi-mat-khau").show();
+            $("#xac-nhan-qmk").hide();
+            $("#undo").hide();
+          } else {
+            alert("Mã xác nhận không đúng!!!");
+          }
+        });
+
+
+      });
+
+      $("#luu-mat-khau").click(function (e) {
+        let email = $("#txtEmail").val().trim();
+        let ma = $("#txtMaXN").val().trim();
+        let matkhaumoi = $("#txtMatKhauMoi").val().trim();
+        if (matkhaumoi.length < 7) {
+          alert("Mật khẩu mới phải có ít nhất 8 kí tự!!!");
+        } else {
+          e.preventDefault();
+          $.ajax({
+            url: '/taikhoan/doimatkhau/',
+            data: {
+              ma : ma,
+              email: email,
+              matkhaumoi: matkhaumoi
+            },
+            type: 'post',
+            dataType: 'text',
+          }).done(function (result) {
+            if(result == "lỗi"){
+              alert("Chức năng này đang bảo trì !!!");
+              $("#txtEmail").val("");
+              $("#txtMaXN").val("");
+              $("#txtMatKhauMoi").val("");
+              $(".nhap-email-qmk").hide();
+              $("#xac-nhan-qmk").hide();
+              $("#undo").hide();
+              $(".doi-mat-khau").hide();
+              $("#myModal").hide();
+            }else{
+              alert("Đổi mật khẩu thành công");
+              $("#txtEmail").val("");
+              $("#txtMaXN").val("");
+              $("#txtMatKhauMoi").val("");
+              $(".nhap-email-qmk").hide();
+              $("#xac-nhan-qmk").hide();
+              $("#undo").hide();
+              $(".doi-mat-khau").hide();
+              $("#myModal").hide();
+            }
+          });
+        }
+      });
+
+      $("#undo").click(function () {
+        $("#xac-nhan-qmk").hide();
+        $("#undo").hide();
+        $("#txtEmail").val("");
+        $("#txtMaXN").val("");
+        $(".nhap-email-qmk").show();
+      });
+
+      $("#tat-qmk").click(function () {
+        $("#txtEmail").val("");
+        $("#txtMaXN").val("");
+        $("#txtMatKhauMoi").val("");
+        $(".nhap-email-qmk").hide();
+        $("#xac-nhan-qmk").hide();
+        $("#undo").hide();
+        $(".doi-mat-khau").hide();
+        $("#myModal").hide();
+      });
+
+      $("#xac-nhan-ma-dk").click(function () {
+        let ma = Number($("#txtMaXNDK").val().trim());
+        $.ajax({
+            url: '/taikhoan/dangky',
+            type: 'post',
+            data: {
+              ma:ma,
+              tenNguoiDung: $("#tenNguoiDung").val().trim(),
+              email: $("#emailDK").val().trim(),
+              password: $("#password").val().trim(),
+              soDienThoai: $("#soDienThoai").val().trim()
+            },
+            dataType: 'text',
+          }).done(function (dangky) {
+            if(dangky == "mã sai"){
+              alert("Mã xác nhận không đúng !!!");
+            }else{
+              alert(dangky);
+              if (dangky == "Đăng ký thành công") {
+                $("#tenNguoiDung").val("");
+                $("#emailDK").val("");
+                $("#password").val("");
+                $("#passwordagain").val("");
+                $("#soDienThoai").val("");
+                $("#hinhDaiDien").val("");
+              }
+              $("#txtMaXNDK").val("");
+              $("#myModalDangKy").hide();
+            
+            }
+          });
+      });
+
+      $("#tat-xndk").click(function () {
+        $("#txtMaXNDK").val("");
+        $("#myModalDangKy").hide();
+      });
+    });
+    /**
+* Variables
+*/
+    const signupButton = document.getElementById('signup-button'),
+      loginButton = document.getElementById('login-button'),
+      userForms = document.getElementById('user_options-forms')
+
+    /**
+     * Add event listener to the "Sign Up" button
+     */
+    signupButton.addEventListener('click', () => {
+      userForms.classList.remove('bounceRight')
+      userForms.classList.add('bounceLeft')
+    }, false)
+
+    /**
+     * Add event listener to the "Login" button
+     */
+    loginButton.addEventListener('click', () => {
+      userForms.classList.remove('bounceLeft')
+      userForms.classList.add('bounceRight')
+    }, false)
+
+    $(".bao-loi").hide();
+    $("#myModalDangKy").hide();
+    function ktemail() {
+      var http = new XMLHttpRequest();
+      var email = document.getElementById('emailDK').value.trim();
+      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (reg.test(email)) {
+        return true;
+      }
+      alert("Email phải có @ tuân thủ quy tắc vd: abcdef@gmail.com !!!");
+      $("#loiEmail").attr('title', "Email phải có @ tuân thủ quy tắc vd: abcdef@gmail.com !!!");
+      $("#loiEmail").show();
+      return false;
+    }
+
+    function ktTenNguoiDung() {
+      let vl = document.getElementById('tenNguoiDung').value.trim();
+      let reg = /^.{3,}$/;
+      if (reg.test(vl)) {
+        $("#loiTenNguoiDung").hide();
+        return true;
+      }
+      alert("Tên người dùng phải có ít nhất 3 ký tự");
+      $("#loiTenNguoiDung").show();
+      return false;
+    }
+
+    function ktMatKhau() {
+      let vl = document.getElementById('password').value.trim();
+      if (vl.length > 7) {
+        $("#loiPassword").hide();
+        return true;
+      }
+      alert("Password phải có ít nhất 8 ký tự !!!");
+      $("#loiPassword").show();
+      return false;
+    }
+
+    function ktNhapLaiMatKhau() {
+      let vl = document.getElementById('passwordagain').value.trim();
+      let vlNhapLai = document.getElementById('password').value.trim();
+      if (vl === vlNhapLai) {
+        $("#loiNhapLaiPassword").hide();
+        return true;
+      }
+      alert("Nhập lại password phải trùng khớp với password !!!");
+      $("#loiNhapLaiPassword").show();
+      return false;
+    }
+
+    function ktSDT() {
+      let vl = document.getElementById('soDienThoai').value.trim();
+      var reg = new RegExp('^[0-9]{10}$');
+      if (reg.test(vl)) {
+        $("#loiSoDienThoai").hide();
+        return true;
+      }
+      alert("Số điện thoại phải có 10 chữ số !!!");
+      $("#loiSoDienThoai").show();
+      return false;
+    }
+
+    function ktHinhDaiDien() {
+      let vl = document.getElementById('hinhDaiDien').value.trim();
+      var reg = /\.(((jpg)|(png)|(jpeg)|(gif)))/i;
+      if (reg.test(vl)) {
+        $("#loiHinhDaiDien").hide();
+        return true;
+      }
+      alert("Hình đại diện phải có đuôi .jpeg / .jpg / .png / .gif !!!");
+      $("#loiHinhDaiDien").show();
+      return false;
+    }
+
+    function ktDangKy() {
+      if (ktTenNguoiDung() && ktemail() && ktMatKhau() && ktNhapLaiMatKhau() && ktSDT()) {
+        var http = new XMLHttpRequest();
+        var email = document.getElementById('emailDK').value.trim();
+        http.open('get', '/taikhoan/ktemail/' + email, true);
+        http.send();
+        http.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText === "0") {
+              $("#loiEmail").hide();
+              $("#myModalDangKy").show();
+
+              $.ajax({
+                url: '/taikhoan/guiemaildangky',
+                type: 'post',
+                data: {
+                  email: $("#emailDK").val().trim(),
+                },
+                dataType: 'text',
+              }).done(function (result) {
+                if (result == "lỗi email") {
+                  alert("Gửi mã xác nhận tới email lỗi ... Vui lòng kiểm tra lại email !!!");
+                  $("#txtMaXNDK").val("");
+                  $("#myModalDangKy").hide();
+                } else {
+                  alert(result);
+                  $("#myModalDangKy").show();
+                }
+              });
+              return true;
+            }
+            alert("Email đã được sử dụng");
+            $("#loiEmail").attr('title', "Email đã được sử dụng");
+            $("#loiEmail").show();
+            return false;
+          }
+        }
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>

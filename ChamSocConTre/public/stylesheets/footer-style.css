@@ -1,0 +1,140 @@
+.footer {
+    position: relative;
+    float: left;
+    clear: both;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(127, 138, 138);
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.f-fmain {
+    display: block;
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(127, 138, 138);
+}
+
+.f-fcontain {
+    display: block;
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    padding-top: 25px;
+}
+
+
+/* bottom */
+
+.f-fbottom {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(46, 43, 43);
+    color: white;
+    padding-top: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.f-box1 {
+    height: 200px;
+    width: 40%;
+    background-color: rgb(127, 138, 138);
+    float: left;
+}
+
+.f-box2 {
+    float: left;
+    height: 200px;
+    width: 25%;
+    background-color: rgb(127, 138, 138);
+}
+
+.f-box3 {
+    height: 200px;
+    width: 35%;
+    background-color: rgb(127, 138, 138);
+    float: right;
+}
+
+
+/* Logo */
+
+.f-logo {
+    margin-left: 60px;
+}
+
+.f-intro {
+    color: white;
+    margin-left: 60px;
+    margin-right: 40px;
+}
+
+
+/* box 2 */
+
+.f-box2-title {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(127, 138, 138);
+    font-size: x-large;
+}
+
+.f-box2-item ul {
+    font-size: small;
+    list-style: none;
+    background-color: rgb(127, 138, 138);
+    margin-left: 0%;
+    padding: 0;
+    width: 200px;
+}
+
+.f-box2-item ul li a {
+    color: white;
+    display: inline;
+    font-size: 17px;
+    padding: 0;
+    font-weight: normal;
+}
+
+
+/* box 3 */
+
+.f-box3-title {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(127, 138, 138);
+    font-size: x-large;
+}
+
+.f-box3-item {
+    height: 200px;
+    width: 100%;
+}
+
+.f-box3-item p {
+    margin: 0;
+    padding: 0;
+}
+
+.f-box3-contact {
+    color: white;
+    padding: 0;
+    margin: 0;
+    height: 70px;
+    width: 100%;
+}
+
+.f-box3-social {
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    width: 100%;
+    color: white;
+}

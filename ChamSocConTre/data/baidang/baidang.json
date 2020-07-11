@@ -1,0 +1,1572 @@
+[{
+	"idLoai": 1,
+	"idBai": 1,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-01-27",
+	"time": "10:10:10",
+	"hinhTieuDe": "suckhoe1.jpg",
+	"tieuDe": "Sức khỏe là gì ?",
+	"noiDungTomTat": "Càng hiểu biết về sự phát triển của bé, bạn sẽ càng cảm thấy tự tin hơn trong việc chăm sóc và đáp ứng những nhu cầu về chăm sóc sức khỏe cho bé.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Sức khỏe là gì",
+			"noiDungPhan": "Sức khỏe là trạng thái thoải mái toàn diện về thể chất, tinh thần và xã hội và không phải chỉ bao gồm có tình trạng không có bệnh hay thương tật (theo Tổ chức Y tế Thế giới)[1][2] Mặc dù định nghĩa này là chủ đề của nhiều cuộc tranh cãi, đặc biệt thiếu giá trị hoạt động và vì vấn đề được tạo ra bởi từ toàn diện, nên đây vẫn là vấn đề còn kéo dài.[3][4] Các định nghĩa khác cũng đã được đưa ra, trong số đó định nghĩa gần đây nhất là mối quan hệ giữa sức khỏe và sự thỏa mãn các nhu cầu cá nhân",
+			"hinhAnh": [
+				{ "hinh": "suckhoe1.jpg" },
+				{ "hinh": "suckhoe2.png" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": " Các yếu tố quyết định sức khỏe",
+			"noiDungPhan": "Nhìn chung, ngữ cảnh mà theo đó nhiều cá nhân xem trọng tình trạng sức khỏe và chất lượng của sống của họ. Người ta ngày càng nhận ra rằng sức khỏe được duy trì và cải thiện không chỉ qua những thành tựu và ứng dụng của khoa học y tế, mà còn qua những cố gắng và những lựa chọn cách sống thông thái của một cá nhân hay xã hội. Theo WHO, các yếu tố chính quyết định đến sức khỏe như môi trường kinh tế và xã hội, môi trường vật lý, và đặc điểm và ứng xử của mỗi cá nhân."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": " Tập luyện",
+			"noiDungPhan": "Tập luyện là việc thực hành các động tác nhằm phát triển và duy trì sức khỏe thể chất và sức khỏe toàn diện. Điều này có được nhờ việc rèn luyện các động tác thể dục. Tập luyện thường xuyên là thành phần rất quan trọng giúp ngăn ngừa bệnh tật, ngăn ngừa các bệnh người giàu như ung thư, bệnh tim, bệnh mạch vành, tiểu đường loại 2, béo phì và đau lưng.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe3.jpg" }
+
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"],
+	"binhLuan": [
+		{
+			"idBinhLuan": 1,
+			"emailNguoiBinhLuan": "buithithaolinh@gmail.com",
+			"noiDungBinhLuan": "Hợp lý thuyết thực",
+			"dateBinhLuan": "2020-04-15",
+			"timeBinhLuan": "11:20:10",
+			"traLoiBinhLuan": [
+				{
+					"idTraLoiBinhLuan": 1,
+					"emailNguoiTraLoiBinhLuan": "nguyenthanhson@gmail.com",
+					"noiDungTraLoiBinhLuan": "Ời đúng y",
+					"dateTraLoiBinhLuan": "2020-04-15",
+					"timeTraLoiBinhLuan": "11:30:10"
+				},
+				{
+					"idTraLoiBinhLuan": 2,
+					"emailNguoiTraLoiBinhLuan": "nguyenanhduc@gmail.com",
+					"noiDungTraLoiBinhLuan": "Ời",
+					"dateTraLoiBinhLuan": "2020-04-15",
+					"timeTraLoiBinhLuan": "11:31:10"
+				}
+			]
+		},
+		{
+			"idBinhLuan": 2,
+			"emailNguoiBinhLuan": "phamcongloi@gmail.com",
+			"noiDungBinhLuan": "Vấn đề này tôi cảm thấy rất hay",
+			"dateBinhLuan": "2020-04-15",
+			"timeBinhLuan": "11:40:10",
+			"traLoiBinhLuan": [
+				{
+					"idTraLoiBinhLuan": 1,
+					"emailNguoiTraLoiBinhLuan": "nguyenthilanchi@gmail.com",
+					"noiDungTraLoiBinhLuan": "Em cũng nghĩ vậy",
+					"dateTraLoiBinhLuan": "2020-04-15",
+					"timeTraLoiBinhLuan": "12:40:30"
+				},
+				{
+					"idTraLoiBinhLuan": 2,
+					"emailNguoiTraLoiBinhLuan": "phamcongloi@gmail.com",
+					"noiDungTraLoiBinhLuan": "Ời hay, bổ ích",
+					"dateTraLoiBinhLuan": "2020-04-15",
+					"timeTraLoiBinhLuan": "13:21:10"
+				}
+
+			]
+		}
+	]
+},
+{
+	"idLoai": 1,
+	"idBai": 2,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-02-15",
+	"time": "10:10:10",
+	"hinhTieuDe": "suckhoe4.jpg",
+	"tieuDe": "Sức khỏe cho trẻ em",
+	"noiDungTomTat": "Càng hiểu biết về sự phát triển của bé, bạn sẽ càng cảm thấy tự tin hơn trong việc chăm sóc và đáp ứng những nhu cầu về chăm sóc sức khỏe cho bé.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": " Hiểu bé",
+			"noiDungPhan": "Càng hiểu biết về sự phát triển của bé, bạn sẽ càng cảm thấy tự tin hơn trong việc chăm sóc và đáp ứng những nhu cầu về chăm sóc sức khỏe cho bé.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe4.jpg" },
+				{ "hinh": "suckhoe5.png" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": " Chăm sóc làn da em bé",
+			"noiDungPhan": "Da trẻ sơ sinh cực kì mịn màng và mỏng manh luôn cần được mẹ chăm sóc dịu nhẹ và cẩn thận. Da trẻ sơ sinh có thể dễ dàng bị tổn thương chỉ vì vì tiếp xúc quá lâu với ánh sáng mặt trờihoặc không khí quá khô. Các bà mẹ cần giữ thói quen chăm sóc da em bé hàng ngày vừa chống nắng cho bé vừa giữ cho làn da bé có độ ẩm vừa đủ.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe7.jpg" },
+				{ "hinh": "suckhoe8.png" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": " Bé quấy khóc",
+			"noiDungPhan": "Tại sao bé quấy khóc? Không phải lúc nào bạn cũng tìm được câu trả lời rõ ràng nhưng bạn có thể chắc chắn rằng bé khóc khi có chuyện gì đó không ổn. Đó là cách chủ yếu giúp bé giao tiếp với bạn. ",
+			"hinhAnh": [
+				{ "hinh": "suckhoe6.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"],
+	"binhLuan": [{
+			"idBinhLuan": 1,
+			"emailNguoiBinhLuan": "phamcongloi@gmail.com",
+			"noiDungBinhLuan": "Bài này hay quá",
+			"dateBinhLuan": "2020-02-17",
+			"timeBinhLuan": "11:21:10",
+			"traLoiBinhLuan": [{
+					"idTraLoiBinhLuan": 1,
+					"emailNguoiTraLoiBinhLuan": "nguyenthanhson@gmail.com",
+					"noiDungTraLoiBinhLuan": "Tôi nghĩ nó còn thiếu",
+					"dateTraLoiBinhLuan": "2020-02-17",
+					"timeTraLoiBinhLuan": "11:33:10"
+				},
+				{
+					"idTraLoiBinhLuan": 2,
+					"emailNguoiTraLoiBinhLuan": "phamcongloi@gmail.com",
+					"noiDungTraLoiBinhLuan": "Thiếu chỗ nào cơ",
+					"dateTraLoiBinhLuan": "2020-02-18",
+					"timeTraLoiBinhLuan": "10:31:10"
+				}
+			]
+		},
+		{
+			"idBinhLuan": 2,
+			"emailNguoiBinhLuan": "phamcongloi@gmail.com",
+			"noiDungBinhLuan": "Như Nào Hả Sơn",
+			"dateBinhLuan": "2020-02-17",
+			"timeBinhLuan": "11:40:10",
+			"traLoiBinhLuan": [{
+					"idTraLoiBinhLuan": 1,
+					"emailNguoiTraLoiBinhLuan": "nguyenthilanChi@gmail.com",
+					"noiDungTraLoiBinhLuan": "Không biết nữa",
+					"dateTraLoiBinhLuan": "2020-02-17",
+					"timeTraLoiBinhLuan": "11:45:30"
+				},
+				{
+					"idTraLoiBinhLuan": 2,
+					"emailNguoiTraLoiBinhLuan": "phamcongloi@gmail.com",
+					"noiDungTraLoiBinhLuan": "Rớ cũng hỏi",
+					"dateTraLoiBinhLuan": "2020-04-17",
+					"timeTraLoiBinhLuan": "14:20:10"
+				}
+
+			]
+		}
+	]
+},
+{
+	"idLoai": 1,
+	"idBai": 3,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-01",
+	"time": "10:10:10",
+	"hinhTieuDe": "suckhoe10.png",
+	"tieuDe": "6 nguy cơ đối với sức khỏe con trẻ cha mẹ hay bỏ qua",
+	"noiDungTomTat": "Tuổi thơ là một khoảng thời gian rất tuyệt vời của trẻ em, cha mẹ vẫn luôn sẵn sàng làm bất cứ điều tốt nhất cho những đứa con của mình. Tuy nhiên có những việc làm các bậc làm cha mẹ tưởng là tốt cho con nhưng lại gây tác hại ảnh hưởng đến sức khỏe của con.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Ngồi xe thay vì đẩy xe tập đi",
+			"noiDungPhan": "Tuổi thơ là một khoảng thời gian rất tuyệt vời của trẻ em, cha mẹ vẫn luôn sẵn sàng làm bất cứ điều tốt nhất cho những đứa con của mình. Tuy nhiên có những việc làm các bậc làm cha mẹ tưởng là tốt cho con nhưng lại gây tác hại ảnh hưởng đến sức khỏe của con.Những tổn hại đã được chứng minh, có ít hiệu quả tích cực mà chiếc xe tập đi có thể mang lại cho trẻ. Những xe tập này đã bị cấm ở Canada.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe10.png" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Nước trái cây và sữa",
+			"noiDungPhan": "Nước ép trái cây có chế phẩm khử trùng, có ít vitamin nhưng nhiều đường có thể gây ra vấn đề về răng và béo phì. Bác sĩ nhi khoa khuyên dùng nước quả tươi nguyên chất cho trẻ em trên một tuổi, thay thế các loại nước ép đã tiệt trùng.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe11.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Đồ chơi sáng màu",
+			"noiDungPhan": "Tại sao bé quấy khóc? Không phải lúc nào bạn cũng tìm được câu trả lời rõ ràng nhưng bạn có thể chắc chắn rằng bé khóc khi có chuyện gì đó không ổn. Đó là cách chủ yếu giúp bé giao tiếp với bạn. ",
+			"hinhAnh": [
+				{ "hinh": "suckhoe13.jpg" }
+
+			]
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "Quần áo ấm",
+			"noiDungPhan": "Mặc quá nhiều quần áo có thể ngăn cản cơ thể phát triển để phản ứng phòng vệ đối với sự thay đổi thời tiết, dẫn đến các bệnh liên quan đến nhiệt độ và miễn dịch thấp.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe14.jpg" }
+
+			]
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "Thiết bị điện tử và tiện ích",
+			"noiDungPhan": "Ánh sáng màu xanh lam từ màn hình LED gây tổn thương võng mạc, có thể dẫn đến thoái hóa điểm vàng. Điều này có thể dẫn đến đục thủy tinh thể và mù.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe15.jpg" }
+
+			]
+		},
+		{
+			"thuTuSapXep": 6,
+			"tieuDePhan": "Thắt dây an toàn khi đi xe",
+			"noiDungPhan": "Không nên để dây an toàn trên bụng khi mang thai vì có thể gây thương tích cho em bé trong trường hợp xảy ra tai nạn.",
+			"hinhAnh": [
+				{ "hinh": "suckhoe16.jpg" }
+
+			]
+		}
+	],
+	"nguoiThich": []
+},
+{
+	"idLoai": 2,
+	"idBai": 1,
+	"date": "2020-02-02",
+	"time": "10:10:10",
+	"email": "tranquangthinhtk@gmail.com",
+	"tieuDe": "Giáo dục là gì",
+	"hinhTieuDe": "giaoduc1.jpg",
+	"noiDungTomTat": "Giáo dục là gì là điều mà chúng ta sẽ đi tìm hiểu để nhận chân được rõ ràng nhất một từ tưởng như rất quen thuộc, đơn giản mà hàm chứa rất nhiều nội dung.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": " Giáo dục là gì ?",
+			"noiDungPhan": "Giáo dục (tiếng Anh: education) theo nghĩa chung là hình thức học tập theo đó kiến thức, kỹ năng, và thói quen của một nhóm người được trao truyền từ thế hệ này sang thế hệ khác thông qua giảng dạy",
+			"hinhAnh": [
+				{ "hinh": "giaoduc1.jpg" },
+				{ "hinh": "giaoduc2.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": " Giáo dục chính quy",
+			"noiDungPhan": "Hoạt động giáo dục chính quy liên quan đến việc dạy và học trong môi trường trường học và theo một chương trình học nhất định. Chương trình học này được thiết lập tùy theo mục đích đã được xác định trước của trường học trong hệ thống giáo dục.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc3.jpg" },
+				{ "hinh": "giaoduc4.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": " Những hình thức giáo dục khác",
+			"noiDungPhan": "Giáo dục mở (open education) là một thuật ngữ chung chỉ những tập quán của các cơ sở giáo dục hay những sáng kiến giáo dục nhằm tạo điều kiện cho nhiều người tiếp cận các chương trình giáo dục và đào tạo mà trước đây chỉ tiếp cận được thông qua hệ thống giáo dục chính quy. Tính từ mở nhằm chỉ việc loại trừ những rào cản đã tước đi ở một số người cơ hội tham gia vào hoạt động học tập trong các cơ sở giáo dục. Một khía cạnh của giáo dục mở là việc phát triển và sử dụng những tài nguyên giáo dục mở.Giáo dục trực tuyến (e-learning) là việc sử dụng công nghệ giáo dục dựa trên các phương tiện điện tử trong việc dạy và học. Bằng việc sử dung các công nghệ hiện đại trên chiếc máy tính mà người dùng có thể tham gia một khóa học dễ dàng",
+			"hinhAnh": [
+				{ "hinh": "giaoduc5.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 2,
+	"idBai": 2,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-02-03",
+	"time": "10:10:10",
+	"hinhTieuDe": "giaoduc6.jpg",
+	"tieuDe": "Chọn trường cho con: Sau cùng, đâu là điều quan trọng nhất?",
+	"noiDungTomTat": "Trong nhiều lý do chọn trường học cho con mình, các bậc cha mẹ thường dẫn ra vài lý do cơ bản: danh tiếng về chất lượng của trường, cơ sở vật chất, vị trí ngôi trường, điều kiện tài chính (học phí)…",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Các loại trường và ưu - nhược điểm",
+			"noiDungPhan": "Chi phí giáo dục là khoản đầu tư quan trọng nhất của đời người, mà sự lựa chọn đúng - sai đôi khi dẫn đến những hệ quả khó lòng sửa chữa được. Nó không chỉ là đầu tư về tiền bạc, mà còn là thời gian và nhất là những cơ hội duy nhất, khó mà làm lại cho con cái chúng ta.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc6.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Trường công lập:",
+			"noiDungPhan": "Học phí thấp, chỉ khoảng 150.000 đồng/tháng. Các chi phí ngoài học phí (tiền học thêm, quà cáp bồi dưỡng thầy cô…) khác nhau, tùy trường, tùy vùng miền, tùy hoàn cảnh. Nhược điểm của các trường công là chương trình học nhồi nhét và cứng nhắc, học thêm gần như không thể tránh, học chủ yếu để thi, nên học sinh học rất vất vả mà vẫn thiếu nhiều kỹ năng thực sự cần sau này trong đời thực."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Trường tư:",
+			"noiDungPhan": "Trường tư tồn tại nhờ học phí, vì thế xu hướng chung là học sinh/phụ huynh được coi như khách hàng, nhà trường là bên cung ứng dịch vụ giáo dục. Giáo dục trực tuyến (e-learning) là việc sử dụng công nghệ giáo dục dựa trên các phương tiện điện tử trong việc dạy và học. Bằng việc sử dung các công nghệ hiện đại trên chiếc máy tính mà người dùng có thể tham gia một khóa học dễ dàng"
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "Trường quốc tế:",
+			"noiDungPhan": "Những trường tư có yếu tố nước ngoài thường được gọi là trường quốc tế (luật Việt Nam không quy định loại trường nào là trường quốc tế, vì thế chữ quốc tế ở đây được hiểu phổ biến là chương trình và bằng cấp được công nhận ở các nước phát triển, giáo viên quốc tế, cơ sở vật chất hiện đại)."
+		}
+	],
+	"nguoiThich": ["phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 2,
+	"idBai": 3,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-02-04",
+	"time": "10:10:10",
+	"hinhTieuDe": "giaoduc7.jpg",
+	"tieuDe": "Mối quan hệ giữa giáo dục Tri thức và Đạo đức cho con",
+	"noiDungTomTat": "Mỗi đứa trẻ từ khi sinh ra đều được cha mẹ định hướng con đường tương lai học vấn để sau này có thể tự làm chủ cuộc đời.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Tổng quan về giáo dục tri thức",
+			"noiDungPhan": "Theo định nghĩa thì tri thức là các thông tin, các tài liệu, các hiểu biết về lý thuyết hay thực tế về một đối tượng, một vấn đề, có thể lý giải được về nó, là những gì đã biết, đã được hiểu biết trong một lĩnh vực cụ thể hay toàn bộ trong tổng thể. Tri thức là hiểu biết mà toàn thể nhân loại đã tích lũy liên tục trong lịch sử phát triển. Tri thức tồn tại lâu đời như chính con người, thời nào cũng thế và ở đâu cũng vậy con người không thể sống thiếu tri thức.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc7.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Tổng quan về giáo dục đạo đức",
+			"noiDungPhan": "Theo định nghĩ thì đạo đức là những tiêu chuẩn, nguyên tắc xử lý các mối quan hệ trong gia đình, cộng đồng hay xã hội được thừa nhận rộng rãi. Đạo đức quy định hành vi, quan hệ của con người đối với nhau và đối với xã hội nói chung, là những nguyên tắc phải tuân theo trong quan hệ giữa người với người, giữa cá nhân với xã hội, phù hợp với yêu cầu của mỗi chế độ chính trị và kinh tế xã hội nhất định. Nếu không tuân theo những “nguyên tắc” ấy thì được gọi là người vô đạo đức."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Mối quan hệ giữa giáo dục Tri thức và Đạo đức cho con trẻ",
+			"noiDungPhan": "Giá trị của một con người nói chung và một đứa trẻ nói riêng cần phải đảm bảo cả hai yếu tố tri thức và đạo đức mà chúng ta thường nói ngắn gọn là “tài” và “đức”. Ở đây “tài” được hiểu là tài năng, kiến thức, hiểu biết, kỹ năng giúp con trẻ hoàn thành tốt công việc, đem đến sự tiến bộ, thịnh vượng cho đất nước và nhân loại. Còn “đức” được hiểu là đạo đức, trách nhiệm, là nề nếp, thói quen, các cử chỉ hành vi thể hiện qua thái độ cư xử với ông bà, cha mẹ, anh chị em, bạn bè, thầy cô giáo…",
+			"hinhAnh": [
+				{ "hinh": "giaoduc8.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 2,
+	"idBai": 4,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-03-26",
+	"time": "11:10:10",
+	"hinhTieuDe": "giaoduc24.jpg",
+	"tieuDe": "Giáo dục giúp trẻ tự kỷ hòa nhập xã hội",
+	"noiDungTomTat": "Tự kỷ là một dạng rối loạn phát triển, xuất hiện ngay từ những năm đầu đời, thường trước 3 tuổi. Trẻ mắc chứng tự kỉ ít có sự giao tiếp, tương tác xã hội nên các mối quan hệ và các mặt tâm lý và xã hội đều hạn chế. Để trẻ tự kỉ trở thành những đứa bé bình thường thì những người xung quanh nên tránh sự kì thị với trẻ. Để giúp trẻ tự kỉ hòa nhập cộng đồng tốt hơn thì cần thiết phải có sự liên hệ mật thiết giữa phụ huynh và nhà trường về phương pháp và hướng tác động phù hợp với trẻ.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Biện pháp 1: Tìm hiểu sở thích",
+			"noiDungPhan": "Để trẻ tự kỷ và tăng động hòa nhập được với các bạn bình thường khác chúng ta cần phải tìm hiểu sở thích của trẻ, khi trẻ làm được tốt cần phải có sự khuyến khích động viên kịp thời, cần quan tâm chăm sóc trẻ nhiều hơn.</br>Giao viên và phụ huynh cần nắm rõ những gì khiến trẻ cảm thấy căng thẳng, bình tĩnh, khó chịu, hay thoải mái. Nếu nắm rõ được những gì thường ảnh hưởng đến  trẻ để giải quyết tốt hơn các vấn đề, tránh được những tình huống khó xử và tạo ra những trải nghiệm tích cực hơn cho trẻ.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc241.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Biện pháp 2: Gần gũi, khuyên bảo:",
+			"noiDungPhan": "Giáo viên và phụ huynh cần dành thời gian phân tích, nói cho các con hiểu bằng hành động nhẹ nhàng, có những phần thưởng nho nhỏ mỗi khi các trò trở nên ngoan hơn, hoặc hòa đồng cùng các bạn hơn. Bảo ban, khuyến khích trẻ chơi cùng các bạn và nhờ các bạn khác quan tâm tới trẻ hơn không phân biệt, kì thị nhau. <br>Buổi sinh hoạt cuối tuần nên chơi các trò chơi và hướng dẫn chi tiết trẻ tự kỉ về thể lệ chơi và theo dõi chặt chẽ để ý hành động của trẻ, tránh để cho trẻ bị rơi vào tình trạng cô lập hoặc gây những hành động ảnh hưởng đến các bạn khác. Để trẻ tự kỉ tham gia hoạt động chung, những nơi đông người, trẻ nhằm cải thiện khả năng hòa nhập xã hội và xây dựng mối quan hệ gần gũi hơn với bạn đồng trang lứa. Dạy trẻ biết cách chơi chung với các bạn bằng việc chia sẻ đồ chơi, yêu cầu được giúp đỡ."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Biện pháp 3: Quan tâm chăm sóc",
+			"noiDungPhan": " Dành thời gian cho những trẻ tự kỉ vào các giờ nghỉ cá nhân, chăm sóc, hỏi han, dạy dỗ, tạo điều kiện cho các con hòa nhập với các bạn, bổ sung thêm những kiến thức mà các con chưa nắm được do tiếp thu chậm. Thường xuyên gọi lên bảng, nếu trẻ sai thì khuyến khích các bạn khác giúp đỡ bạn, không phân biệt kì thị tạo cho trẻ cảm giác cô độc và bị",
+			"hinhAnh": [
+				{ "hinh": "giaoduc243.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "Biện pháp 4:Tuyên dương những hành vi tốt",
+			"noiDungPhan": "Tuyên dương có thể mang lại những tiến bộ đối với trẻ tự kỷ, vì vậy giáo viên và phụ huyng nên cố gắng động viên để trẻ tiếp tục phát huy những điều tốt đã làm được. Hãy tuyên dương trẻ khi chúng biết cách ứng xử hay học được 1 kĩ năng mới và nên chỉ ra một cách cụ thể hành vi nào của trẻ đang được khen. Bạn nên nghĩ ra những cách khác nhau để thưởng cho trẻ."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 2,
+	"idBai": 5,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-03-28",
+	"time": "12:10:10",
+	"hinhTieuDe": "giaoduc25.jpg",
+	"tieuDe": "DẠY TRẺ KĨ NĂNG THAM GIA GIAO THÔNG",
+	"noiDungTomTat": "Dạy trẻ kĩ năng tham gia giao thông là một trong những nhiệm vụ cần thiết mà nhiều bậc cha mẹ không thể lơ là. Công việc này giúp cho trẻ học tập được nhiều kĩ năng và kiến thức bổ ích. Quan trọng hơn là giúp con được an toàn khi tham gia giao thông trên đường. Đây vốn là những điều đơn giản trẻ sẽ được học khi vào mẫu giáo. Nhưng cha mẹ vẫn nên kết hợp để trẻ được thực hành một cách tốt nhất.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Giải thích cho trẻ về tại sao phải tuân thủ luật giao thông",
+			"noiDungPhan": "Để Dạy trẻ kĩ năng tham gia giao thông, đầu tiên bạn phải giải thích cho trẻ những thông tin cần thiết về giao thông đường bộ. Những rủi ro mà trẻ sẽ gặp phải nếu không tuân thủ luật giao thông. Hãy nói với trẻ rằng nếu không tuân thủ luật giao thông thì không chỉ có bản thân trẻ mà còn những người xung quanh cũng bị ảnh hưởng theo."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2: Dạy trẻ kĩ năng tham gia giao thông nếu trẻ đi bộ",
+			"noiDungPhan": "Chỉ băng qua đường khi đèn xanh dành cho người đi bộ bật lên.<br>Không được vừa đi vừa nghe nhạc, đọc truyện, chơi game.<br>Không nô đùa với bạn bè trên đường.<br>Không nên mang theo đồ chơi bên cạnh đặc biệt là trái bóng, bởi nếu trẻ làm rơi chúng và khi đuổi theo nhặt lại sẽ rất nguy hiểm.<br>Nếu trên đoạn đường có nhiều xe qua lại hãy đợi một ai đó cũng muốn sang đường để bé có thể đi bên cạnh họ.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc252.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3: Dạy trẻ kĩ năng tham gia giao thông nếu trẻ đi xe đạp",
+			"noiDungPhan": "Trước tiên hãy trang bị cho trẻ những vật dụng cần thiết như mũ bảo hiểm, bảo vệ cùi tay và đầu gối. Nên để con mặc quần áo thuận tiện không quá trận hoặc quá rộng để tiện di chuyển. Có thể chọn cho bé chiếc xe đạp nhỏ nhắn dễ thương và có chuông bấm và bộ phanh xe an toàn. Sau đó hãy hướng dẫn trẻ những kĩ năng cần thiết như: <br>Hướng dẫn bé cách qua đường và cách di chuyển chiếc xe sao cho khéo léo để bé được an toàn hơn khi di chuyển.<br>Cần bấm chuông khi đằng trước có chướng ngại vật.<br>Đi xe bên phải đường và khi dừng xe cũng nên dừng ở bên phải.<br>Khi thấy đèn đỏ thì phải dừng lại trước vạch chắn màu trắng.<br>Khi thấy đoạn đường nguy hiểm khó đi thì nên dừng lại dong xe qua rồi mới tiếp tục đi."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4: Dạy trẻ kĩ năng tham gia giao thông nếu trẻ ngồi ô tô",
+			"noiDungPhan": "Trong trường hợp bé đi du lịch cùng gia đình hoặc đi cùng lớp mà không có cha mẹ bên cạnh, bạn nên dặn dò bé cẩn thận những điều như:<br>Không nên thò đầu hoặc tay chân ra ngoài cửa sổ của xe.<br>Nên ngồi ngay ngắn và không nên dứng nhảy nhót trên xe để tránh trường hợp xe phanh gấp bé sẽ bị mất thăng bằng.<br>Chỉ nên xuống xe khi xe đã dừng hẳn.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc254.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 2,
+	"idBai": 6,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-03-29",
+	"time": "12:20:10",
+	"hinhTieuDe": "giaoduc26.jpg",
+	"tieuDe": "Dạy bé bảo vệ môi trường",
+	"noiDungTomTat": "Dạy bé bảo vệ môi trường là một điều vô cùng tốt từ khi bé còn nhỏ. Giáo dục bảo vệ môi trường cho trẻ mầm non là cung cấp những kiến thức sơ đẳng, cơ bản về môi trường phù hợp với khả năng nhận thức của trẻ, nhằm tạo ra thái độ và hành vi đúng của trẻ đối với môi trường xung quanh.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Dạy trẻ những khái niệm cơ bản",
+			"noiDungPhan": "Giúp trẻ phân biệt được những khái niệm cơ bản như: môi trường sạch, môi trường bẩn, vì sao không khí bị ô nhiễm, ô nhiễm môi trường sẽ gây ra những tác hại như thế nào, tại sao cần rửa tay sạch sẽ trước khi ăn và sau khi đi vệ sinh, tại sao cần bảo vệ và trồng cây xanh, …<br>Khuyến khích các bé tìm hiểu thông tin bằng những cuộc thi nho nhỏ như cùng cha mẹ tìm hiểu về chủ đề mình thích rồi lên thuyết trình trên lớp. Hoạt động này phù hợp cho các lớp 5 tuổi. Các bé được học hỏi, khám phá theo cách này sẽ rất hào hứng và ghi nhớ lâu hơn. Thậm chí có bé còn có nhiều ý tưởng rất để bảo vệ môi trường."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Cùng trẻ thực hiện các hành động thiết thực nhất ở trường mầm non",
+			"noiDungPhan": "Hướng dẫn trẻ hình thành các thói quen như lau dọn bàn ghế, sắp xếp đồ chơi, đồ dùng gọn gàng, tự gấp chăn sau khi ngủ dậy, xếp đặt ngăn tủ của mình ngăn nắp. Tuyệt đối không được vứt rác bừa bãi hay để lớp học bừa bộn. Sẽ có một nhóm bạn đi theo dõi các hoạt động này để các bạn cùng thi đua xem tổ nào gọn gàng sạch sẽ hơn.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong1.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Làm đồ tái chế tại lớp học",
+			"noiDungPhan": "Các cô sẽ tìm các mẫu đồ chơi, đồ dùng được làm từ vật liệu tái chế trên mạng internet, sách báo. Sau đó cùng các con thực hiện làm các mẫu trên lớp. Đồ tái chế có thể sử dụng nguyên liệu như vỏ lon bia, vỏ trứng, giấy báo, lõi giấy vệ sinh, bìa cứng, ống hút,…<br>Có những bé rất nhanh nhạy, có thể về nhà thực hiện cùng cha mẹ và mang những sản phẩm khá đẹp đến lớp."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "Tuyên truyền đến các phụ huynh",
+			"noiDungPhan": "Ngoài các giờ học trên lớp, các cô tin rằng trẻ em có thể học hỏi rất nhiều kiến thức bảo vệ môi trường từ gia đình của mình. Ở Worlkids, các cô trong Trường Mầm non Quốc tế  sẽ tuyên truyền đến phụ huynh các biện pháp đơn giản và hữu hiệu nhất để trẻ thực hiện khi ở nhà.<br>Các bé sẽ trở thành “những người giám sát” khi nhắc nhở ông bà cha mẹ phải tiết kiệm nước, tắt điện sau khi dùng xong, phân loại rác thích hợp, hoặc tích góp những đồ dùng không cần dùng nữa để làm kế hoạch nhỏ,.. Khi các bé trở thành người quan trọng sẽ thực hiện công việc rất tốt. Bài học về bảo vệ môi trường sẽ phát huy được những tác dụng và ý nghĩa của nó."
+		}
+	],
+	"nguoiThich": ["phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 2,
+	"idBai": 7,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-01",
+	"time": "12:20:10",
+	"hinhTieuDe": "giaoduc27.jpg",
+	"tieuDe": "3 khung giờ buổi tối là thời khắc hoàng kim để giáo dục trẻ, phụ huynh tận dụng tốt con sẽ thông minh, sáng dạ",
+	"noiDungTomTat": "3 khung giờ này được gọi là thời gian tốt nhất cho giáo dục gia đình. Nếu cha mẹ sử dụng tốt, trẻ sẽ trở nên thông minh, sáng dạ hơn nhiều.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Khung 18h - 19h: Ăn cùng",
+			"noiDungPhan": "Thực tế, có rất nhiều gia đình thường bắt đầu dùng bữa tối vào khung giờ này. Và tất nhiên, việc trò chuyện với nhau là không thể thiếu trên bàn ăn. Trong thời gian này, cha mẹ có thể hỏi han con cái về những gì đã xảy ra ở trường hoặc những gì khiến con cảm thấy vui vẻ...<br>Trong một bầu không khí thoải mái như vậy, phụ huynh không chỉ có thể hiểu được trải nghiệm của con suốt 1 ngày dài, mà còn thúc đẩy cảm xúc giữa các thành viên với nhau. Vì vậy, một giờ giao tiếp trên bàn là rất quan trọng, hãy tận dụng!",
+			"hinhAnh": [
+				{ "hinh": "giaoduc271.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Khung 19h - 20h: Học cùng",
+			"noiDungPhan": "Sau khi kết thúc bữa ăn, con trẻ thường sẽ phải làm bài tập về nhà. Còn nhiều cha mẹ lại tiếp tục tất bật với công việc mưu sinh. Tuy nhiên, đối với những trẻ nhỏ, việc học tập của các con trong những năm đầu đời là vô cùng quan trọng, cha mẹ hãy cố gắng dành thời gian ở bên cạnh hỗ trợ bé.<br>Trong khoảng thời gian này, phụ huynh không chỉ nắm bắt được kiến thức trẻ đang học ở trường mà còn tăng khả năng trao đổi giữa cha mẹ và con cái. Tâm lý các con cũng luôn mong muốn có cha mẹ quan tâm, ngồi học cùng, giúp các con cảm nhận được tình yêu thương từ đó.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc272.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Khung giờ 10h - 10h30: Ngủ cùng",
+			"noiDungPhan": "Khung giờ buổi tối, khi tất cả mọi thứ đã hoàn thành, không còn chút vướng bận nào nữa, trẻ sẽ dễ dàng mở lòng và chia sẻ với cha mẹ nhiều thứ. Trò chuyện với con giúp cha mẹ hiểu con hơn, cho bé cảm giác được quan tâm, yêu thương.<br>Đặc biệt điều này sẽ giúp trẻ hiểu và trân trọng tình cảm gia đình, hình thành nên thói quen luôn quan tâm và yêu thương những người xung quanh bé. Và đây cũng chính là cách đơn giản để giúp các con phát triển kỹ năng ngôn ngữ, thêm phần tự tin.<br>Đến Hằng Túi , 1 hotmom đình đám sở hữu 4 công ty, quản lý hàng trăm nhân viên nhưng cô chia sẻ rằng mình vẫn luôn dành thời gian trò chuyện cùng các con mỗi tối. Và đó cũng chính bằng cách đơn giản này, cả 4 bé nhà hotmom Hà thành đều có có khả năng ngôn ngữ phong phú, biết hát, đọc thơ và phân biệt được các màu sắc... từ sớm.",
+			"hinhAnh": [
+				{ "hinh": "giaoduc273.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 1,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-01",
+	"time": "20:10:10",
+	"hinhTieuDe": "dinhduong31.jpg",
+	"tieuDe": "4 nhóm dưỡng chất quan trọng: Chất bột đường, béo, protein, vitamin và khoáng chất",
+	"noiDungTomTat": "Cơ thể luôn cần cung cấp đầy đủ dưỡng chất giúp con người có thể duy trì sự sống, vận động và phát triển một cách toàn diện nhất. Dựa vào nguồn chất dinh dưỡng mà thực phẩm cung cấp thì người ta chia ra 4 nhóm chất dinh dưỡng quan trọng cần thiết cho cơ thể, mỗi giai đoạn phát triển hay mỗi người lại có nhu cầu cung cấp năng lượng khác nhau.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": " Carbohydrate (còn gọi là nhóm chất bột đường)",
+			"noiDungPhan": "Là nguồn cung cấp nhiên liệu chính cho hệ thống thần kinh trung ương và năng lượng cho các cơ quan trong cơ thể làm việc. Thành phần cấu tạo nên tế bào và các mô, điều hòa hoạt động của cơ thể, cung cấp chất xơ cần thiết."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": " Protein (hay chất đạm)",
+			"noiDungPhan": "Khi cơ thể tiêu thụ các thực phẩm có chứa protein tại đường tiêu hóa các men tiêu protein sẽ cắt ra thành các axit amin và hấp thụ. Trong số 20 loại axit amin mà cơ thể con người sử dụng thì có 9 loại được gọi là thiết yếu mà cơ thể không tự tổng hợp mà cần lấy từ thực phẩm, nếu thiếu các axit amin này thì cơ thể không tạo được đủ lượng protein cần thiết.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong312.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": " Chất béo",
+			"noiDungPhan": "Cấu tạo chất béo: Chất béo được tạo bởi các axit béo, bao gồm loại acid béo no (chủ yếu đến từ các chất béo động vật, dầu cọ, dầu dừa) và không no (có nhiều hơn trong dầu thực vật như olive, hướng dương, đậu nành, mỡ cá, mỡ gà...).",
+			"hinhAnh": [
+				{ "hinh": "dinhduong313.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": " Vitamin và khoáng chất",
+			"noiDungPhan": "Vitamin và khoáng chất còn gọi là các vi chất dinh dưỡng chất, nhóm chất này không sinh ra năng lượng. Vi chất dinh dưỡng là những chất mà cơ thể chỉ cần một lượng rất nhỏ nhưng lại có vai trò rất quan trọng, khi thiếu sẽ dẫn đến những ảnh hưởng nghiêm trọng cho cơ thể, đặc biệt là trẻ nhỏ. Cơ thể cần trên 20 loại vitamin và trên 20 loại khoáng chất cần thiết.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong314.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 2,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-02",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong32.jpg",
+	"tieuDe": "Lựa chọn thực phẩm bảo đảm an toàn trong mùa dịch Covid-19",
+	"noiDungTomTat": "Để tăng sức đề kháng trong mùa dịch, việc sử dụng các loại thực phẩm nên tránh hoặc cần bổ sung cho cơ thể là rất quan trọng.Để bảo vệ sức khỏe trong mùa dịch, người dân cần lưu ý lựa chọn thực phẩm để bảo đảm an toàn cho sức khỏe cho bản thân và gia đình.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Những thực phẩm chúng ta cần tránh",
+			"noiDungPhan": "Tổ chức Y tế thế giới (WHO) khuyến cáo người dân không nên ăn các loại động vật hoang dã, đặc biệt là rắn, dơi, chuột vốn rất được ưa thích nhiều quốc gia Đông Nam Á.Ngoài ra, các loại đồ ăn tươi sống như: tiết canh, hải sản sống, gỏi cá cũng không nên đưa vào bữa ăn trong mùa dịch vì chúng có thể mang mầm bệnh, ký sinh trùng lên bàn ăn của gia đình. Đơn cử, món tiết canh là một trong những món ăn được tiêu thụ ngay lập tức sau khi được lấy ra từ cơ thể động vật mà không qua bất kỳ bước sơ chế nào bởi vậy vi khuẩn, ký sinh trùng, thậm chí là vi rút có thể sẽ có trong máu của các loài động vật này.Trong khi đó, các loại gỏi cá, đặc biệt là cá nước ngọt, có thể khiến người ăn bị nhiễm các loại sán như sán ruột nhỏ, sán lá gan nếu không qua xử lý nhiệt. Còn các món hải sản như: hàu vắt chanh, hay sushi, sashimi, các loại hải sản có thể ăn sống như: mực, bạch tuộc dễ mang theo mầm bệnh lây nhiễm cho con người khi chỉ được sơ chế với nước hoặc muối."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Các lựa chọn thực phẩm thay thế đảm bảo dinh dưỡng",
+			"noiDungPhan": "Do vậy, để cung cấp đủ chất dinh dưỡng, tăng cường sức đề kháng cho cơ thể, chúng ta có thể lựa chọn các loại thực phẩm có hàm lượng chất dinh dưỡng tương đương như: hải sản cá béo, thịt bò, thịt lợn.Thịt bò chứa hàm lượng kẽm cao có lợi cho việc phòng chống một số chứng bệnh do vi rút gây ra. Kẽm hỗ trợ cơ thể tạo ra bạch cầu giúp hệ miễn dịch hoạt động tốt hơn."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 3,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-03",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong33.jpg",
+	"tieuDe": "Rối loạn tiêu hóa ở trẻ em nên ăn gì và kiêng ăn gì?",
+	"noiDungTomTat": "Rối loạn tiêu hóa ở trẻ em là một trong những nguyên nhân khiến trẻ biếng ăn, suy dinh dưỡng, chậm phát triển cả về thể chất lẫn trí tuệ. Vì thế, có một chế độ dinh dưỡng tốt sẽ giúp bé nhanh phục hồi sức khỏe và hỗ trợ điều trị bệnh mau khỏi. Vậy rối loạn tiêu hóa ở trẻ em nên ăn gì và kiêng gì?",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Trẻ bị rối loạn tiêu hóa nên kiêng ăn gì?",
+			"noiDungPhan": "Đồ ăn nhanh: Mẹ không nên cho bé ăn đồ ăn nhanh như xúc xích, lạp xường, pizza, thịt hộp, hamburger, thịt gà rán, các loại đồ chiên rán khác. Những món này khó tiêu, khiến hệ tiêu hóa của bé phải làm việc quá sức và bệnh rối loạn tiêu hóa càng trầm trọng hơn.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong331.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Rối loạn tiêu hóa ở trẻ em nên ăn gì?",
+			"noiDungPhan": "Dinh dưỡng bữa ăn: Bữa ăn của bé cần đầy đủ, cân đối 4 nhóm chất gồm chất đạm, chất béo, bột đường, chất xơ, vitamin và khoáng chất. Cần lựa chọn thực phẩm sạch, chế biến và bảo quản đúng cách bởi một trong những nguyên nhân gây rối loạn tiêu hóa là do lựa chọn, chế biến thực phẩm không đảm bảo vệ sinh.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong332.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 4,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-04",
+	"time": "11:10:10",
+	"hinhTieuDe": "dinhduong34.jpg",
+	"tieuDe": "Những lợi ích nuôi con từ sữa mẹ",
+	"noiDungTomTat": "Hiện nay, Tổ chức Y tế Thế giới và Quỹ Nhi đồng Liên hợp quốc đều khuyến nghị cần cho trẻ sơ sinh bú mẹ sớm. Cũng theo Ts.Bs Nguyễn Công Nghĩa, trưởng khoa sản phụ khoa Vinmec Times City:’’Trong 6 tháng đầu, chỉ cho trẻ bú hoàn toàn sữa mẹ mà không cần ăn uống gì thêm. Từ tháng thứ 7 bắt đầu cho trẻ ăn bổ sung đồng thời cho bú càng nhiều càng tốt. Nên cho trẻ bú kéo dài tới 24 tháng hoặc lâu hơn, không cai sữa cho trẻ trước 12 tháng tuổi.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Vì sao sữa mẹ là thức ăn tốt nhất cho trẻ em trong năm đầu cuộc đời?",
+			"noiDungPhan": "Sữa mẹ là thức ăn hoàn chỉnh nhất, thích hợp nhất đối với trẻ, vì trong sữa mẹ có đủ chất dinh dưỡng cần thiết như đạm, đường, mỡ, năng lượng, vitamin và muối khoáng với tỷ lệ thích hợp cho sự hấp thụ và phát triển cơ thể trẻ. Bú mẹ, trẻ sẽ lớn nhanh, phòng được suy dinh dưỡng.<br>Sữa mẹ là nguồn dinh dưỡng dễ tiêu hóa, hấp thu đối với trẻ.<br>Sữa mẹ có số lượng Protein (đạm) ít hơn sữa động vật nên rất phù hợp với chức năng đào thải khi thận của trẻ chưa trưởng thành. Bên cạnh đó, protein trong sữa mẹ chủ yếu là Protein dạng lỏng hòa tan, còn gọi là Protein sữa (Whey protein) nên phù hợp với khả năng tiêu hóa và hấp thu của trẻ. Whey Protein chứa các protein kháng khuẩn giúp trẻ có khả năng chống lại các bệnh nhiễm khuẩn. Trong khi đó, Protein ở sữa bò chủ yếu là casein (85%) nên khi vào dạ dày của trẻ nhỏ sẽ tạo thành các cục đông vón làm trẻ khó tiêu hóa và hấp thu, trẻ hay bị rối loạn tiêu hóa.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong341.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Bảo vệ trẻ chống nhiễm khuẩn",
+			"noiDungPhan": "Sữa mẹ chứa nhiều chất kháng khuẩn, tăng cường sức đề kháng cho trẻ, chống các bệnh nhiễm khuẩn, nhất là tiêu chảy và viêm đường hô hấp. Do tác dụng kháng khuẩn của sữa mẹ nên trẻ được bú sữa mẹ sẽ ít mắc bệnh. Trẻ bú mẹ ít bị dị ứng, chàm/eczema.<br>Khi bà mẹ bị nhiễm khuẩn, (1) các tế bào bạch cầu hoạt động và sản xuất kháng thể để bảo vệ người mẹ, (2) một số tế bào bạch cầu đi tới vú và sản xuất kháng thể tại đó, (3) các kháng thể này được tiết vào sữa để bảo vệ trẻ chống nhiễm khuẩn. Vì vậy khi mẹ bị bệnh nhiễm khuẩn thì vẫn có thể cho con bú, không nên cách ly mẹ và con.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong342.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Giúp cải thiện tâm lý cho bà mẹ và trẻ",
+			"noiDungPhan": "Khi cho con bú mẹ thường xuyên tiếp xúc, gần gũi con sẽ giúp gắn bó tình cảm mẹ và con. Bà mẹ cảm thấy thoải mái tinh thần, yên tâm và giảm được sự lo âu, trầm cảm sau sinh.<br>Trẻ được tiếp xúc gần gũi mẹ, được âu yếm sẽ ít khóc hơn, cảm giác an toàn hơn, tinh thần, trí tuệ trẻ phát triển tốt hơn."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 5,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-04",
+	"time": "13:10:10",
+	"hinhTieuDe": "dinhduong35.jpg",
+	"tieuDe": "Vì sao bạn ăn nhiều mà vẫn không tăng cân?",
+	"noiDungTomTat": "Tình trạng thiếu chất dinh dưỡng, ăn uống không điều độ, không chăm sóc hệ tiêu hóa khiến cơ thể tích tụ độc tố là những lý do chủ yếu khiến bạn dù ăn nhiều, ngủ nhiều vẫn không thể tăng cân được.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Ăn nhiều nhưng ít vận động",
+			"noiDungPhan": "Nghe có vẻ phi lý nhưng thực tế lười vận động là một trong những nguyên nhân khiến bạn không thể tăng cân theo ý muốn. Theo các chuyên gia, để tăng cân, người gầy cần bổ sung các chất dinh dưỡng, thực phẩm giúp tăng cân cũng như năng lượng nhiều hơn năng lượng mà họ tiêu hao trong các hoạt động hàng ngày. Nhiều người gầy rất hạn chế vận động để tránh tiêu hao năng lượng với mục đích béo nhanh. Tuy nhiên, việc ít hoạt động không có lợi như họ mong muốn mà còn khiến cơ thể uể oải, kém săn chắc, giảm cảm giác thèm ăn."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Sử dụng chất kích thích",
+			"noiDungPhan": "Hút thuốc lá, uống nhiều bia, rượu, không chỉ không có lợi cho quá trình tăng cân mà sử dụng quá nhiều những chất này còn gây hại cho sức khỏe. Vì thế nếu muốn tăng cân, bảo vệ sức khỏe của mình thì nên từ bỏ hoặc hạn chế chúng lại."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Hệ tiêu hóa khó hấp thu",
+			"noiDungPhan": "Người gầy dù ăn nhiều nhưng vẫn không tăng cân là do hệ tiêu hóa thiếu hụt lợi khuẩn nên không hấp thụ tốt chất dinh dưỡng từ thức ăn đưa vào. Lợi khuẩn sản xuất 75% kháng thể nên thiếu hụt lợi khuẩn hệ miễn dịch cũng kém đi nên người gầy thường hay ốm vặt, ăn uống không ngon miệng."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Nhiều độc tố tích tụ trong cơ thể",
+			"noiDungPhan": "Có rất nhiều chất hóa học tổng hợp được đưa vào cơ thể thông thức ăn, nước uống, không khí hàng ngày mà chúng ta không hề hay biết. Những chất độc này tích lũy lâu ngày làm cơ thể khó hấp thu chất dinh dưỡng, hệ miễn dịch suy giảm, khiến người gầy không tăng cân được."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Cơ thể thiếu chất dinh dưỡng",
+			"noiDungPhan": "Muốn tăng cân phải cung cấp đủ dinh dưỡng cả về mặt số lượng lẫn chất lượng. Nhiều người cứ nghĩ rằng chỉ cần ăn nhiều đồ ngọt và nạp nhiều chất béo là sẽ tăng cân. Thực tế, người gầy muốn tăng cân vẫn phải bổ sung đủ 4 nhóm chất dinh dưỡng: đạm, béo, tinh bột, vitamin và khoáng chất. Để đảm bảo cho chế độ dinh dưỡng này, người gầy nên ăn rất nhiều loại thực phẩm khác nhau trong bữa ăn từ thịt, cá, sữa, rau xanh, hoa quả…"
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 6,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-07",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong36.jpg",
+	"tieuDe": "Lời khuyên dinh dưỡng giúp tăng chiều cao",
+	"noiDungTomTat": "Có một bữa sáng khỏe mạnh mỗi ngày sẽ giúp thúc đẩy sự trao đổi chất trong cơ thể, chiều cao sẽ phát triển tốt hơn.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Uống nước",
+			"noiDungPhan": "Trên thực tế, đây cũng là một trong những cách tốt nhất để phát triển chiều cao ở nhà trong vòng một tháng."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Có bữa sáng lành mạnh",
+			"noiDungPhan": "Bữa sáng rất quan trọng nhất trong chế độ ăn uống hàng ngày, giúp bạn cảm thấy có năng lượng căng tràn hơn. Ngay cả khi bạn đang đi đến phòng tập, bạn cần mang theo một số loại thực phẩm lành mạnh. Bạn phải nhớ rằng không nên tập khi dạ dày trống rỗng, ít nhất bạn cần phải ăn một loại trái cây hoặc bổ sung thực phẩm có chứa protein trước khi tập luyện. Bỏ qua bữa ăn sáng không phải là lựa chọn sáng suốt cho sự tăng trưởng và phát triển toàn diện của cơ thể, thậm chí có thể ảnh hưởng tiêu cực đến chiều cao của bạn. Có một bữa sáng khỏe mạnh mỗi ngày sẽ giúp thúc đẩy sự trao đổi chất trong cơ thể, chiều cao sẽ phát triển tốt hơn."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Ăn đúng giờ",
+			"noiDungPhan": "Bên cạnh yếu tố di truyền có ảnh hưởng quyết định đến chiều cao của bạn, chế độ ăn uống hàng ngày cũng là một yếu tố quan trọng trong sự phát triển chiều cao. Vì vậy, bạn nên đảm bảo có đủ vitamin và khoáng chất mà cơ thể cần để phát triển chiều cao đầy đủ. Theo đó, chế độ ăn uống của bạn nên được cung cấp thực phẩm dinh dưỡng phù hợp với độ tuổi của bạn. Nhiều người ăn tùy tiện bất cứ khi nào và bất cứ thứ gì họ muốn. Họ có thể ăn trong xe hoặc trên vỉa hè, trong khi đi làm việc. Tuy nhiên, những người muốn cải thiện chiều cao nên có một lịch trình ăn uống thường xuyên và đúng đắn. Bạn nên lựa chọn bữa ăn phù hợp với sự cân bằng và đầy đủ dinh dưỡng."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Duy trì cân nặng ở mức lý tưởng",
+			"noiDungPhan": "Béo phì ảnh hưởng tiêu cực đến chiều cao của bạn và gây ra nhiều vấn đề về sức khỏe. Bởi vậy, bạn cần duy trì cân nặng ở mức lý tưởng bằng cách xây dựng một chế độ tập luyện thích hợp và ăn uống cân bằng.<br>Trọng lượng cơ thể quá nặng có thể gây áp lực lên các khớp và xương, khiến vóc dáng của bạn trông thấp hơn. Đây là lý do tại sao người cao tuổi trông thấp hơn so với chiều cao thực sự của họ. Tầm vóc của bạn sẽ thay đổi ở những tư thế khác nhau, do đó bạn nên đứng thẳng có ý thức."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 7,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-08",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong37.jpg",
+	"tieuDe": "Chăm sóc tại nhà và dinh dưỡng cho trẻ bị viêm đường hô hấp",
+	"noiDungTomTat": "Bài viết được tư vấn chuyên môn bởi Bác sĩ nội trú Dương Văn Sỹ - Bác sĩ Nội trú Nhi - Khoa Nhi - Sơ sinh - Bệnh viện Đa khoa Quốc tế Vinmec Hải Phòng. Bác đã có 09 năm kinh nghiệm trong lĩnh vực Nhi khoa với thế mạnh trong khám, tư vấn, điều trị các bệnh lý ở trẻ; Hồi sức cấp cứu, chống độc trẻ sơ sinh và trẻ em.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Viêm đường hô hấp ở trẻ là gì?",
+			"noiDungPhan": "Đường hô hấp trên bao gồm các cơ quan: Mũi, họng, hầu, xoang và thanh quản. Các cơ quan này có chức năng sàng lọc, làm ấm không khí trước khi đưa vào phổi. Chúng rất mẫn cảm với các yếu tố của môi trường xung quanh, đặc biệt là vi khuẩn, virus nên dễ bị viêm nhiễm.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong371.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Cách chăm sóc trẻ bị nhiễm khuẩn đường hô hấp tại nhà",
+			"noiDungPhan": "Hầu hết các trường hợp trẻ bị viêm đường hô hấp đều có thể tự khỏi nếu được chăm sóc và theo dõi tốt. Các công việc cần làm khi chăm sóc trẻ bị viêm đường hô hấp tại nhà bao gồm: <br>Chăm sóc cho trẻ bị sốt<br>Làm thông đường hô hấp cho trẻ<br>Chăm sóc khi trẻ bị ho<br>Chăm sóc khi trẻ bị nôn ói"
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 8,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-10",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong38.jpg",
+	"tieuDe": "Người bệnh cao huyết áp nên ăn gì?",
+	"noiDungTomTat": "Nếu có một chế độ ăn uống, sinh hoạt lành mạnh, kiểm soát tốt huyết áp, người bệnh vẫn có sức khỏe tốt và hầu như không ảnh hưởng đến tuổi thọ cũng như chất lượng cuộc sống vì vậy dinh dưỡng cho người tăng huyết áp cũng là mối quan tâm hàng đầu hiện nay.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Người cao huyết áp nên ăn gì?",
+			"noiDungPhan": "Chế độ dinh dưỡng đóng một vai trò rất lớn quyết định giúp kiểm soát huyết áp tốt hơn. Ngoài việc dùng thuốc kiểm soát huyết áp hàng ngày thì chế độ sinh dưỡng và tập luyện hàng ngày là cách tốt nhất giúp bạn giảm huyết áp. Vì vậy, trong khẩu phần ăn bạn nên giảm các loại thực phẩm chứa chất béo, natri, và hạn chế uống các đồ uống có cồn như rượu, bia."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Cao huyết áp nên ăn uống như thế nào?",
+			"noiDungPhan": "Rau lá màu xanh : Đó là những loại thực phẩm giàu kali sẽ giúp cơ thể bạn đạt tỷ lệ kali cao hơn so với natri, vì vậy giúp trung hòa natri trong cơ thể. Điều này cho phép cơ thể loại bỏ được natri trong thận thông qua đường nước tiểu, vì vậy mà huyết áp sẽ hạ.<br>Những loại quả mọng : Các loại quả mọng, đặc biệt là việt quất dồi dào một hợp chất tự nhiên có tên là flavonoids. Một nghiên cứu cho thấy việc tiêu thụ hợp chất flavonoids có thể ngăn ngừa huyết áp cao và hạ huyết áp.<br>Khoai tây : Trong thành phần của khoai tây có chứa hai loại khoáng chất là kali và magiê giúp hạ huyết áp. Ngoài ra, trong khoai tây giàu chất xơ rất cần trong khẩu phần mỗi bữa ăn của gia đình bạn.<br>Củ cải đường : Các nhà nghiên cứu đã chỉ ra sức khỏe của những người mắc bệnh cao huyết áp đều được cải thiện đáng kể sau khi uống nước ép từ củ cải đường. Ngoài ra, thành phần nitrat trong nước ép từ củ cải đường có thể giúp hạ huyết áp chỉ trong 24h.<br>Sữa không đường : Sữa không đường là một nguồn dinh dưỡng vô cùng tuyệt vời trong việc cung cấp canxi, ít chất béo rất cần thiết trong khẩu phần ăn hàng ngày của chúng ta, đều rất hữu ích trong hạ huyết áp.<br>Cháo bột yến mạch : Là loại thực phẩm giàu chất xơ, hàm lượng chất béo và natri thấp, và rất rẻ nên cháo bột yến mạch là một trong những loại thực phẩm rất phổ biến, cần thiết đối với những người huyết áp cao.<br>Chuối : Nếu muốn cung cấp kali cho cơ thể, bạn không thể bỏ qua quả chuối trong khẩu phần ăn hàng ngày. Ăn các loại thực phẩm giàu kali tự nhiên như chuối sẽ tốt hơn nhiều so với những thực phẩm chức năng."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 9,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-16",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong39.jpg",
+	"tieuDe": "Chế độ ăn cho người bệnh viêm loét dạ dày - tá tràng",
+	"noiDungTomTat": "Bệnh viêm loét dạ dày - tá tràng là bệnh phổ biến nhất của đường tiêu hoá, gia tăng đáng lo ngại tại Việt Nam, với tỷ lệ dân số mang yếu tố nguy cơ lên đến 70%. Bệnh có thể gây rối loạn tiêu hoá hấp thu nặng và dẫn đến các biến chứng nguy hiểm như xuất huyết tiêu hoá, thủng dạ dày hoặc hẹp môn vị. Chế độ ăn uống đóng vai trò quan trọng trong việc phối hợp với điều trị để giảm thiểu triệu chứng và cải thiện chức năng tiêu hoá, tình trạng dinh dưỡng người bệnh.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Dấu hiệu nhận biết bệnh viêm loét dạ dày - đại tràng",
+			"noiDungPhan": "Đau bụng vùng thượng vị: Là dấu hiệu thường gặp nhất, điển hình nhất, do niêm mạc đã bị tổn thương lại chịu thêm tác động của acid dạ dày. Thời gian đầu đau tăng lên khi quá đói hoặc quá no, sau đó có thể xuất hiện rất bất thường với tần suất dày hơn và mức độ nặng hơn.<br>Cảm giác chướng hơi hay đầy bụng khó tiêu: Thường xảy ra ở giai đoạn rất sớm nên thường bị bỏ qua.<br>Ợ chua hay ợ hơi.<br>Buồn nôn, nôn.<br>Chán ăn, sụt cân.<br>Nôn ra máu đỏ tươi hoặc màu đen, đi ngoài phân đen, các dấu hiệu thiếu máu, chóng mặt, choáng váng: xảy ra khi đã có biến chứng xuất huyết tiêu hoá."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Nguyên nhân gây bệnh viêm loét dạ dày - tá tràng",
+			"noiDungPhan": "Nhiễm khuẩn: Là nguyên nhân hay gặp nhất của loét dạ dày - tá tràng. Nhiễm vi khuẩn Helicobacter pylori (HP) rất phổ biến ở người Việt Nam (ước tính 70%) do dễ lây truyền từ người sang người qua tiếp xúc ăn uống, lây qua thức ăn và nước uống. Vi khuẩn HP có thể sống và sinh sôi ở trong lớp chất nhầy bao phủ niêm mạc dạ dày mà không gây bệnh, nhưng khi lớp nhầy bao phủ niêm mạc bị phá vỡ sẽ gây viêm và dẫn đến loét dạ dày.<br>Sử dụng thuốc: Các thuốc giảm đau kháng viêm như aspirin, ibuprofen, steroid,... sử dụng không đúng cách hoặc sử dụng thường xuyên do nhu cầu điều trị.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong392.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Chế độ ăn cho người bệnh viêm loét dạ dày – tá tràng",
+			"noiDungPhan": "Nên tăng cường các thực phẩm có tác dụng bảo vệ niêm mạc dạ dày, các thực phẩm giúp cho việc chữa lành các vết loét hoặc có khả năng giúp giảm tiết acid và các thực phẩm giàu vitamin, khoáng chất.<br><b>Chuối</b><br>Chuối được xếp đầu bảng trong nhóm thực phẩm thân thiện đối với dạ dày bởi khả năng trung hòa được nồng độ acid vượt ngưỡng trong dịch dạ dày và giảm viêm. Chuối là một trong số các trái cây có lượng đường bột cao giúp cung cấp năng lượng; hàm lượng kali cao giúp bù đắp tốt lượng thiếu hụt nếu người bệnh có tiêu chảy hoặc nôn ói; thành phần xơ hoà tan pectin có lợi với người rối loạn tiêu hóa, táo bón và tiêu chảy.<br><b>Cơm</b><br>Cơm mềm, dễ tiêu hóa, và tránh kích thích dạ dày tiết nhiều acid; có tác dụng làm giảm cơn đau dạ dày, có thể hấp thụ các chất lỏng bên trong dạ dày, giảm nguy cơ tiêu chảy. Tác dụng tương tự đối với xôi, bánh mì, bánh chưng, cháo, khoai... Lưu ý các thực phẩm thô chưa tinh chế như gạo lứt, bắp, nếp lức hay các loại đậu... giàu chất xơ, vitamin (đặc biệt nhóm B), khoáng chất và các chất chống oxy hoá dù rất tốt cho sức khoẻ, nhưng khó tiêu hoá khi người bệnh đang có bệnh lý dạ dày.<br><b>Nước ép táo</b><br>Nước ép táo dễ tiêu hoá và giàu dinh dưỡng, trong đó thành phần chất xơ hoà tan pectin thúc đẩy hoạt động của dạ dày và đường ruột, phòng ngừa tiêu chảy và táo bón.<br><b>Nước dừa</b><br>Nước dừa giàu điện giải natri, kali, canxi giúp bổ sung các thiếu hụt do ăn uống kém hoặc bù lượng mất sau tiêu chảy, nôn ói.<br><b>Sữa chua</b><br>Sữa chua có nhiều probiotic, enzyme có tác dụng hỗ trợ hệ tiêu hóa, nâng cao sức đề kháng. Có nhiều ý kiến trái chiều về việc dùng sữa chua trong bệnh lý đau dạ dày, thực tế là sữa chua không béo có thể giúp ích trong đa số trường hợp, làm lớp đệm trên niêm mạc và giảm kích thích dạ dày. Tuy nhiên, bạn nên bắt đầu lượng ít và theo dõi phản ứng của cơ thể khi ăn để điều chỉnh.<br><b>Gừng</b><br>Gừng có thể giúp cải thiện chức năng tiêu hóa, giảm các triệu chứng đau dạ dày, đầy hơi, khó tiêu. Có thể bổ sung gừng vào thực đơn hàng ngày như uống trà gừng hay nhấm nháp một vài lát gừng sống."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 10,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-21",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong310.jpg",
+	"tieuDe": "5 loại nước mát gan, thanh nhiệt hiệu quả dễ dàng làm tại nhà",
+	"noiDungTomTat": "Chức năng gan bị suy giảm là nguyên nhân dẫn đến rất nhiều các căn bệnh nguy hiểm khác nhau vì vậy cần thường xuyên thanh lọc, giải độc gan bằng những loại nguyên liệu tự nhiên sẵn có vừa an toàn lại hiệu quả.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Nước chanh tươi",
+			"noiDungPhan": "Loại nước uống này là một trong những loại nước mát gan, thanh nhiệt có thể sử dụng hằng ngày. Trong chanh có axit tự nhiên có tác dụng rất tốt trong việc đẩy nhanh tiết độ tiết ra nhiều dịch mật. Đồng thời làm tăng khả năng bài tiết các chất độc hại ra ngoài cơ thể. Nhờ vậy mà loại nước uống này có thể làm mát gan giải độc trị mụn mang lại cho bạn một làn da tươi sáng và một cơ thể khỏe mạnh.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong3101.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Sữa đậu nành",
+			"noiDungPhan": "Sữa đậu không chỉ bổ dưỡng, ít calo mà còn là nước uống mát gan giải độc trị mụn, đốt chất chất béo khá tốt đối với cơ thể. Hàm lượng protein, isoflavones, glycosides và các thành phần khác trong đậu nành kích thích việc đốt tế bào mỡ tích tụ trong gan trong cơ thể. Ngoài ra, đậu nành là thức uống dinh dưỡng giúp bạn bài trừ độc tố khỏi cơ thể một cách hiệu quả.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong3102.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Trà xanh",
+			"noiDungPhan": "Trà xanh là nước mát gan, thanh nhiệt rất hiệu quả. Bên cạnh đó, trong lá trà xanh chứa một hàm lượng lớn chất chống oxy hóa có nguồn gốc từ tự nhiên, điều này giúp cơ thể giải trừ mệt mỏi, căng thẳng khi làm việc ở cường độ cao. Hơn nữa trà xanh còn làm mát da, giúp loại bỏ độc tố và làm làn da tươi sáng hơn.<br>Theo nghiên cứu khoa học, nếu mỗi ngày uống 4-5 cốc trà xanh sẽ giúp phòng ngừa bệnh cao huyết áp, mỡ máu và xơ vữa động mạch. Tuy nhiên bạn cũng nên chú ý chỉ uống trà xanh vào ban ngày, tránh buổi tối để không gây trở ngại cho giấc ngủ."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Lá rau má",
+			"noiDungPhan": "Rau má sống vùng ẩm ướt, có thân bò trên mặt đất, vị đắng, tính mát, ngoài việc dùng để chế biến đồ ăn thì dùng để chữa bệnh nóng gan cũng cực kỳ hiệu quả.<br>Uống mỗi tuần 3-4 cốc nước rau má sẽ giúp thay thế các thuốc giải độc gan, giải nhiệt cơ thể. Để có một cốc nước rau má, bạn cần rửa sạch rau má sau đó cho vào cối giã nát, vắt kiệt lấy nước. Khi uống có thể bỏ thêm chút đường bạn sẽ thấy vị dễ uống hơn."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Bồ công anh",
+			"noiDungPhan": "Bồ công anh cũng có tác dụng làm mát gan, giải độc hiệu quả được nhiều người áp dụng. Theo Y học cổ truyền, Bồ công anh có vị đắng, tính mát, tác dụng thanh nhiệt giải độc, thông sữa, lợi tiểu, được dùng chữa tắc tia sữa, tiểu tiện khó khăn, mụn nhọt sưng mủ, bệnh đau dạ dày, bênh nóng gan và ăn uống kém tiêu...",
+			"hinhAnh": [
+				{ "hinh": "dinhduong3105.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 3,
+	"idBai": 11,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-03",
+	"time": "10:10:10",
+	"hinhTieuDe": "dinhduong311.jpg",
+	"tieuDe": "Bị mất ngủ nên ăn gì, uống gì để dễ ngủ hơn?",
+	"noiDungTomTat": "Mất ngủ là nỗi ám ảnh của rất nhiều người, nó gây ra ảnh hưởng không nhỏ đến sức khỏe cũng như chất lượng cuộc sống của người bệnh. Rất nhiều người rơi vào tình huống “tiến thoái lưỡng nan” vì không biết phải khắc phục chứng mất ngủ này bằng cách nào. Nhưng bạn biết không có những loại thực phẩm, đồ uống trị mất ngủ cũng rất “thần kỳ” đấy. Để biết thêm thông tin chi tiết hơn mời các bạn cùng tìm hiểu qua bài viết dưới đây!  ",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Sen",
+			"noiDungPhan": "Bạn cũng biết đấy sen là một trong những loại thực phẩm rất tốt đóng vai trò như một “vị thuốc an thần”, bên cạnh còn có tác dụng thư giãn đầu óc, dưỡng tâm, cố tinh,… Đối với sen, ta có thể sử dụng tất cả các bộ phận từ hạt sen, tim sen hay củ sen để điều trị chứng mất ngủ.<br>Củ sen có chứa nhiều vitamin B6 có tác dụng làm giảm các triệu chứng mệt mỏi, đau đầu. Bên cạnh còn giúp chống lại cảm giác hồi hộp, căng thẳng từ đó khiến người bệnh dễ chìm vào giấc ngủ hơn.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong3111.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Ăn trứng",
+			"noiDungPhan": "Lời khuyên cho những ai mất ngủ là nên dung nạp cho cơ thể đầy đủ lượng chất protein, và cách tốt nhất là hãy bổ sung một bữa ăn nhẹ trước khi đi ngủ bằng một quả trứng. Đừng lo lắng vì một quả trứng sẽ không khiến bạn cảm thấy nặng bụng hay gặp bất lợi gì, ngược lại nó có tác dụng cân bằng lại các hoạt chất trong cơ thể, làm tăng cường khả năng hoạt động của cơ thể. Đồng thời giúp bạn dễ chìm vào giấc ngủ và ngủ ngon hơn."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Cá",
+			"noiDungPhan": "Thịt cá là một trong những loại thực phẩm có hàm lượng chất dinh dưỡng khá cao. Trong đó phải kể đến là Tryptophan, đây là một hợp chất có tác dụng an thần tự nhiên khiến người bệnh dễ ngủ vào ban đêm. Vì thế người mất ngủ có thể tham khảo v2 áp dụng phương pháp này bằng cách thường xuyên ăn cá chứa nhiều Tryptohan như: cá ngừ, ác thu, cá hồi, cá thờn bơn,…"
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Đậu xanh",
+			"noiDungPhan": "Tương tự như sen, trong đậu xanh nguyên vỏ có chứa một lượng lớn các Vitamin B6 có tác dụng sản sinh Hormone melatonin_ một hoạt chất có tác dụng đem lại giấc ngủ sâu hơn."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Yến mạch",
+			"noiDungPhan": "Đây là một trong những loại thực phẩm giàu carbohydrate có tác dụng đem lại cho bạn giấc ngủ ngon hơn. Đặc biệt việc sử dụng yến mạch sẽ kích thích cơ thể bạn sản sinh ra Serotonin_ hoạt chất này giúp dẫn truyền thần kinh giúp cơ thể luôn được thư giãn.",
+			"hinhAnh": [
+				{ "hinh": "dinhduong3115.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 6,
+			"tieuDePhan": "6. Chuối ",
+			"noiDungPhan": "Mất ngủ cũng là nguyên nhân gây suy nhược cơ bắp, chính vì vậy mà chuối rất cần trong trường hợp này. Lý do chuối rất giàu các dưỡng chất như magie, kali có tác dụng giúp cơ bắp được thư giãn. Bên cạnh acid tryptophan trong quả chuối có tác dụng chuyển đổi thành các chất như Serotonin và Melatonin giúp điều chỉnh, cân bằng hormone gây ngủ cho cơ thể."
+		},
+		{
+			"thuTuSapXep": 7,
+			"tieuDePhan": "7. Sữa chua",
+			"noiDungPhan": "Thông thường trong sữa chua có chứa các acid tryptophan rất tốt để cải thiện chứng mất ngủ. Mặt khác, lượng canxi trong sữa chua cũng có tác dụng làm giảm căng thẳng, giúp ổn định tinh thần và thư giãn đầu óc. Vì thế nếu ai đang rơi vào tình trạng mất ngủ nên bổ sung cho cơ thể một hũ sữa chua trước khi đi ngủ để có thể giấc ngủ sâu và ngủ ngon hơn. "
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 1,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-02-08",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong1.jpg",
+	"tieuDe": "Phong cách sống của người đời",
+	"noiDungTomTat": "Trong cuộc sống, ai cũng mong tồn tại được lâu trên trần gian này. Gặp nhau chúc nhau, trong dịp Tết ai cũng không quên câu chúc sống lâu trăm tuổi. Ngành y tế và các cơ quan có liên quan đến chăm sóc cuộc sống của con người đều có ý thức, có kế hoạch làm sao cho sức khỏe của con người ngày càng tăng tiến, tuổi thọ được nâng cao.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Lãng phí thời gian là mất tuyệt đối",
+			"noiDungPhan": "Mất tiền có thể kiếm lại được tiền, mất xe có thể sắm lại được xe nhưng mất thời gian thì chịu, đố ai có thể tìm lại được. Lãng phí thời gian là mất tuyệt đối.Thời gian là một dòng chảy thẳng; không bao giờ dừng lại và cũng không bao giờ quay lui. Mọi cơ hội, nếu bỏ qua là mất."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Phong cách sống có khi không tương ứng với học vấn",
+			"noiDungPhan": "Thông thường phong cách sống tương ứng với trình độ học vấn. Ít thấy trường hợp người có trình độ văn hóa cao mà lại sống theo một phong cách thấp hèn hoặc ngược lại.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong1.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Mặc đẹp chưa hẳn thành người tử tế",
+			"noiDungPhan": "Một con người ăn mặc đẹp, sang trọng có khi là con người đứng đắn, tử tế. Nhưng cũng có người bề ngoài thì tuyệt diệu nhưng phẩm chất thì tầm thường thậm chí tồi tệ. Ông bà A có đứa con hư hỏng; đã bước vào tuổi trưởng thành mà nói năng xấc xược, tục tĩu, hay đánh mắng trẻ con, trêu ghẹo phụ nữ, chơi bời trác táng. Ông bà A thật là khổ sở, buồn bã mỗi khi họp tổ dân phố, nghe người ta nhận xét về con mình."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 2,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-02-10",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong2.jpg",
+	"tieuDe": "KỸ NĂNG SỐNG CHO TRẺ MẦM NON: DẠY CON KỸ NĂNG SỐNG MẦM NON TỰ LẬP",
+	"noiDungTomTat": "Trang bị kỹ năng sống cho trẻ mầm non là điều quan trọng, nhiều phụ huynh bảo bọc con quá kỹ, khiến con không thích nghi được với môi trường xung quanh, dẫn đến những sai lệch trong hành động. Bài viết dưới đây, trường mầm non quốc tế Việt Úc (VAS) sẽ hướng dẫn các bậc phụ huynh cách rèn luyện kỹ năng sống mầm non cho trẻ tự lập.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "DÀNH CHO HỌC SINH MẦM NON",
+			"noiDungPhan": "Cha mẹ nào cũng luôn mong muốn dành những điều tốt đẹp nhất cho con của mình từ miếng ăn cho đến giấc ngủ. Tuy nhiên, phụ huynh bảo bọc con mình quá kỹ, khiến bé không thích nghi được với môi trường xung quanh, khả năng tự lập thấp và dẫn đến những sai lệch trong nhận thức lẫn hành động. Vì thế nhà trường và gia đình cần phải tìm ra những phương pháp nuôi dạy trẻ từ 0 đến 6 tuổi phù hợp để trẻ rèn luyện kỹ năng sống mầm non tự lập.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong2.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Phương pháp dạy trẻ 2 tuổi: Rèn luyện các kỹ năng tự lập",
+			"noiDungPhan": "Đối với trẻ lúc lên 2 bắt đầu nhận thức được các vấn đề đơn giản xung quanh trong cuộc sống, lúc này phụ huynh nên rèn luyện bé các kỹ năng tự chăm sóc bản thân tự chơi, tự ăn, tự uống nước và thay áo quần khi bẩn…Bên cạnh đó các mẹ cũng nên tập cho con mình thói quen giữ gìn vệ sinh. Đây là phương pháp dạy trẻ 2 tuổi mà phụ huynh cần biết."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Phương pháp dạy trẻ 4 tuổi về kỹ năng tự lập",
+			"noiDungPhan": "Với những cách nuôi dạy trẻ 4 tuổi trong kỹ năng sống mầm non như phụ giúp bố mẹ làm việc như dọn dẹp đồ chơi sau khi chơi xong, tự bỏ áo quần bẩn của mình vào máy giặt…dù đây là những việc vặt nhưng sẽ giúp trẻ hình thành các thói quen và suy nghĩ tích cực ngay từ khi còn nhỏ."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 3,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-02-21",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong3.jpg",
+	"tieuDe": "KỸ NĂNG SỐNG LÀ GÌ? VAI TRÒ CỦA KỸ NĂNG SỐNG MÀ AI CŨNG CẦN",
+	"noiDungTomTat": "Kỹ năng sống được xem là một phần vô cùng quan trọng giúp mỗi cá nhân đạt được sự thành công trong công việc và cả đời sống cá nhân. Vậy kỹ năng sống là gì? Bao gồm những gì và có vai trò như thế nào? Hãy cùng CET khám phá ngay sau đây nhé!",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "Kỹ năng sống là gì?",
+			"noiDungPhan": "Nói một cách dễ hiểu, kỹ năng sống là tập hợp những hành vi tích cực và khả năng thích ứng với môi trường sống giúp cho mỗi nhân đối mặt và giải quyết những thách thức hằng ngày. Kỹ năng sống được hình thành từ quá trình giáo dục hay trải nghiệm trực tiếp trong đời sống. Ngày nay, có thể nói rằng, kỹ năng sống là tiêu chí mà bất kỳ bậc phụ huynh, nhà trường hay một tổ chức nào cũng mong muốn con em, học sinh, nhân viên của mình được trang bị tốt.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong3.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "Kỹ năng thoát hiểm",
+			"noiDungPhan": "Là một trong những kỹ năng sống được rất nhiều người quan tâm và muốn rèn luyện, kỹ năng thoát hiểm giúp bạn bình tĩnh đối mặt với các vấn đề và nhanh chóng tìm ra được cách xử lý phù hợp để bảo vệ cho tính mạng và tài sản không chỉ của bản thân mà còn mọi người xung quanh. Kỹ năng thoát hiểm bao gồm cả thoát khỏi tai nạn, thảm họa thiên nhiên hoặc xâm hại cơ thể, tài sản."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "Kỹ năng giải quyết vấn đề",
+			"noiDungPhan": "Trong cuộc sống, có rất nhiều tình huống xảy đến và tất nhiên, chúng không thể “xếp hàng” chờ đợi bạn ghé thăm lần lượt. Thậm chí, những vấn đề này còn ẩn chứa nhiều mối nguy hiểm có thể gây ra rắc rối cho công việc, mối quan hệ với mọi người và khiến cuộc sống của bạn trở nên khó khăn nếu bạn không biết cách xử lý. Đối với các bạn sinh viên, kỹ năng giải quyết vấn đề sẽ là một điểm cộng dành cho bạn khi tham gia vào quá trình tuyển dụng tại các công ty, doanh nghiệp.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 4,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-03-01",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong44.jpg",
+	"tieuDe": "Phong cách sống và làm việc của người Nhật Bản",
+	"noiDungTomTat": "Cũng như các quốc gia khác, Nhật Bản có những thói quen và văn hóa ứng xử nơi văn phòng mang đặc thù riêng biệt của mình. Phong cách làm việc của người Nhật toát lên phẩm chất lịch thiệp và nghiêm túc rất đúng với chất Nhật Bản.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Làm hết sức, chơi hết mình",
+			"noiDungPhan": "Sau những ngày làm việc căng thẳng, mệt nhoài, người Nhật luôn sẵn sàng “xả hơi” thoải mái tại các quán bar, karaoke… Ngoài ra các câu lạc bộ khiêu vũ, trung tâm mua sắm, khu vui chơi cũng là những điểm đến lý tưởng được nhiều người chọn lựa."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Yêu công việc",
+			"noiDungPhan": "Hết lòng với công việc chính là điểm đặc trưng dễ thấy trong phong cách làm việc của người Nhật. Người Nhật rất yêu công việc, họ coi công việc như cuộc sống của mình, và họ quan niệm rằng “sống để làm việc chứ không phải làm việc để sống”. Họ chăm chỉ làm việc suốt đời và hạnh phúc khi được làm việc."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Nỗ lực suốt đời",
+			"noiDungPhan": "Người Nhật coi trọng sự chăm chỉ nỗ lực từng chút một và lâu dài hơn là sự xuất sắc nhất thời. Nói chung, họ coi trọng địa vị xã hội, nể phục một người nào đó vì có nhiều đóng góp cho cộng đồng chứ không đơn thuần đánh giá qua hình thức bề ngoài."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Đúng giờ",
+			"noiDungPhan": "Giới công sở xứ hoa anh đào đặt nặng giá trị của “kao”, tức là thể diện. Khái niệm “thể diện” bao gồm niềm tự hào cá nhân, danh tiếng và địa vị xã hội. Nhắc tới phong cách làm việc của người Nhật, người ra dễ dàng nghĩ ngay đến đặc điểm này."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Học tập những người đi trước",
+			"noiDungPhan": "Trong những cuộc họp, người Nhật luôn trực tiếp đưa ý kiến của mình tới người có cấp bậc cao nhất để giải trình ý kiến. Văn hóa của người Nhật luôn coi trọng giá trị của những người đi trước vì sự hiểu biết, từng trải và cả những kinh nghiệm đáng quý mà họ để lại. Dù ở cấp bậc nghề nghiệp như nhau, nhưng đối với những người lớn tuổi hơn thì phải tôn trọng những ý kiến của họ."
+		},
+		{
+			"thuTuSapXep": 6,
+			"tieuDePhan": "6. Tôn trọng quyết định của nhóm",
+			"noiDungPhan": "Người Nhật quan niệm thành công là nỗ lực của cả nhóm và không ai có thể tự thành công. Họ nhấn mạnh giá trị của việc mọi người làm việc cùng nhau. Họ ưu tiên một quy trình thảo luận mang tính hợp tác mà đôi khi có thể chậm một chút, nhưng cuối cùng, vẫn đảm bảo được rằng tất cả mọi người đều có tiếng nói chung."
+		},
+		{
+			"thuTuSapXep": 7,
+			"tieuDePhan": "7. Tôn trọng kỷ luật, tuân thủ nguyên tắc",
+			"noiDungPhan": "Trong phong cách làm việc của người Nhật, sự nghiêm túc luôn được đặt nặng bởi tính kỷ luật của người Nhật rất cao, thể hiện qua việc tuân thủ quy tắc của công ty; bị khiển trách nếu như người cũ đã làm nhiều rồi mà vẫn sai; trong giờ làm việc, chỉ tập trung cao độ vào công việc, tuyệt đối không có kiểu vừa làm vừa chơi."
+		},
+		{
+			"thuTuSapXep": 8,
+			"tieuDePhan": "8. Nói giảm, nói tránh",
+			"noiDungPhan": "Người Nhật luôn chủ động hạn chế những tình huống đối đầu. Họ không thích và không bao giờ nói “Không”. Mọi lời nói và phép tắc giao tiếp của họ được phối hợp nhằm tránh gây hiềm khích nơi người nghe. Đôi lúc, họ nói một cách rõ ràng hơn nhưng rất cẩn trọng để không làm người khác bị phật ý hay tức giận."
+		}
+	],
+	"nguoiThich": []
+},
+{
+	"idLoai": 4,
+	"idBai": 5,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-03-09",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong45.jpg",
+	"tieuDe": "5 ĐẶC TRƯNG PHONG CÁCH SỐNG “CHUẨN VĂN HÓA MỸ”",
+	"noiDungTomTat": "Mỗi quốc gia đều mang đậm nét văn hóa riêng của họ. Và nước Mỹ là một trường hợp đặc biệt. Hằng năm, đất nước này đón nhận hàng triệu lượt nhập cư từ người ngoại quốc. Tuy vậy, văn hóa Mỹ và phong cách sống của người dân bản địa lại rất đặc trưng, khó nhầm lẫn. Dưới đây là tổng hợp 5 điểm nhấn mà bất kỳ người Mỹ nào cũng có. ",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. ĐỀ CAO TÍNH CÁ NHÂN",
+			"noiDungPhan": "Tính cá nhân và sự khác biệt là niềm tự hào của mọi công dân Hoa Kỳ. Khác với Á Đông, văn hóa Mỹ thường không đề cao lối sống thuận theo nguyên tắc của số đông hoặc cộng đồng. Thay vào đó, họ có xu hướng giáo dục trẻ em. Với chủ trương không theo xu hướng “làm theo số đông” và dạy cho chúng tính cá nhân và rèn luyện “cái tôi” từ rất sớm.<br>Phong cách sống của người Mỹ sống theo quan niệm “Nếu bạn muốn một việc gì đó được thực hiện tốt, bạn phải tự tay làm việc đó” hoặc “Về lâu dài, người duy nhất bạn có thể trông cậy được là bạn”. Do đó, người Mỹ thường rất mạnh dạn bày tỏ ý kiến. Dù có khác biệt hoàn toàn với đại đa số. Sự sáng tạo, khác biệt nhưng không dị biệt luôn được đánh giá cao tại đất nước này. Hoa Kỳ cũng là đất nước đề cao tự do dân quyền nổi tiếng khắp thế giới.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong451.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. ĐỘC LẬP",
+			"noiDungPhan": "Trong văn hóa châu Á, cha mẹ thường tích góp cho con cái và truyền giữ tài sản qua nhiều đời. Đối lập hoàn toàn với châu Á, văn hóa Mỹ hướng đến sự độc lập, tự chủ. Các ông bố, bà mẹ Mỹ đều cố gắng rèn cho con mình phong cách sống người Mỹ đặc trưng. Có trách nhiệm với bản thân ngay từ khi còn nhỏ. Rất khó để bắt gặp được hình ảnh người mẹ ẵm con chạy lòng vòng quanh xóm để đút cơm cho chúng.<br>Đa phần các bà mẹ sẽ tập cho con tự ăn, tập tành thảo luận và đưa ra ý kiến. Từ đó, những đứa trẻ dễ dàng biết được mình thật sự thích gì và có trách nhiệm với các quyết định của bản thân. Theo văn hóa Hoa Kỳ, thanh niên sống riêng, xa vòng tay bố mẹ sớm hơn những quốc gia khác. Họ có thể tự lo cho cuộc sống cá nhân và ý thức với mọi việc xảy ra trong cuộc đời.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong452.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. THẲNG THẮN",
+			"noiDungPhan": "Người Mỹ rất chuộng tính thật thà, thẳng thắn và dễ hiểu. Họ luôn đi thẳng vào vấn đề. Không mất thời gian để lòng vòng trước khi thảo luận. Phong cách làm việc của người Mỹ khuyến khích tự do đưa ra ý kiến, quan điểm cá nhân. Thế nên, họ sẽ nhanh chóng trực tiếp làm sáng tỏ các bất đồng, mâu thuẫn mà không cần đến đối tượng trung gian. ",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong453.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. THỂ HIỆN BẢN THÂN",
+			"noiDungPhan": "Người Mỹ rất giỏi tự giới thiệu, quảng bá hình ảnh cá nhân. Trong văn hóa Mỹ, mọi người quan niệm rằng thể hiện bản thân là yếu tố quan trọng để khẳng định khả năng thành công trong tương lai. Văn hóa người Mỹ không ưa chuộng sự hạ mình, nhún nhường, khiêm tốn như người châu Á vẫn hay thực hiện.<br>Người Mỹ có năng lực thường rất đề cao giá trị của bản thân và yêu thích sự cạnh tranh công bằng, lành mạnh. Tính cách đặc trưng này đã được thể hiện rõ nét bởi học sinh tại những trường tiểu học, trung học Mỹ. Với cách sống của người Mỹ, trước khi có ý định làm bất cứ điều gì, bạn phải tin tưởng vào khả năng của mình.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong454.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. ĐÚNG GIỜ",
+			"noiDungPhan": "Cách sống ở Mỹ thường gắn liền với các kế hoạch ngắn hạn, dài hạn và được sắp xếp theo một thời gian biểu chi tiết. Phong cách Mỹ thường nhật có phần năng động, bận rộn và vội vàng. Sự vội vàng giúp đa phần người Mỹ đạt được hiệu quả cao trong công việc, học tập và mọi mặt của cuộc sống. Đúng theo văn hóa Mỹ, khi bạn gặp trở ngại không mong đợi và có khả năng trễ hẹn, điều bạn nên làm là hãy gọi điện xin lỗi. Nếu không thể đến được ngay trong hôm đó, bạn nên thông báo với họ thời gian bạn sẽ đến. Hoặc hẹn gặp một ngày khác.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong455.jpg" }
+			]
+		}
+	],
+	"nguoiThich": []
+},
+{
+	"idLoai": 4,
+	"idBai": 6,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-03-09",
+	"time": "12:10:10",
+	"hinhTieuDe": "phongcachsong46.jpg",
+	"tieuDe": "NHỮNG NÉT ĐẶC TRƯNG VỀ VĂN HÓA VÀ CON NGƯỜI SINGAPORE",
+	"noiDungTomTat": "Nếu nói Mỹ là một quốc gia đa dạng nền văn hóa và màu da lớn nhất  thế giới, thì Singapore cũng có những nét tương đồng về sự đa dạng văn hóa, với nhiều quốc tịch của khu vực Đông Nam Á. Văn hóa Singapore có sự pha trộn rõ rệt giữa Hoa, Indo, Malay và cả phương Tây, tạo nên một thể thống nhất mà không hề bị tách biệt.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. NGUỒN GỐC HÌNH THÀNH NÊN SINGAPORE",
+			"noiDungPhan": "Được khai phá bởi Thomas Stamford Raffles vào năm 1819 và dần trở thành đầu mối giao thương, hải cảng sầm uất nhất lúc bấy giờ. Singapore từ một làng chài nhỏ bé không mấy ai biết đến và trở thành nơi cảng vận chuyển, giao thương giữa tàu thương nhân giữa các nước Trung Quốc, Ấn Độ, Indonesia, Malaysia - bán đảo Mã Lai và Trung Đông.<br>Vào thế kỷ 19, Singapore đã trở thành quốc gia có nhiều sự đa dạng văn hóa nhất, với sự có mặt của rất nhiều người dân có quốc tịch gốc ở các nước khác nhau. Từ đó cho đến nay, Singapore đã trở thành một quốc gia độc lập. Trong đó người Hoa chiếm nhiều nhất với 74,2% dân số, người Mã Lai hay Malay - những cư dân đầu tiên tại Singapore chỉ chiếm hơn 13%. Còn lại là dân số của người gốc Ấn, lai Á Âu, Peranakan và các dân tộc khác.<br>Hiện nay, Singapore cũng là điểm đến làm ăn, xây dựng sự nghiệp của nhiều người trên thế giới. Tạo nên một thể đa văn hóa, với nhiều màu da ở trên đường phố Singapore."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. CÁC SẮC TỘC TẠI SINGAPORE",
+			"noiDungPhan": "<b>Người Hoa</b><br>Người Hoa là nhóm dân tộc lớn nhất ở Singapore, chiếm gần ba phần tư dân số cả nước. Vì thế, không có gì ngạc nhiên khi văn hóa Trung Hoa - từ ngôn ngữ, món ăn, cho đến giải trí và các lễ hội luôn chiếm vị trí nổi bật ở Singapore.<br>Phần lớn trong số họ di cư đến đây từ các tỉnh phía Nam Trung Quốc, trong đó có Phúc Kiến và Quảng Đông. Nhóm người nói tiếng Phúc Kiến và Triều Châu chiếm số lượng đông đảo nhất, tiếp theo là nhóm người nói tiếng Quảng Đông, Hải Nam và các nhóm nhỏ hơn.<br><b>Người Âu-Á</b><br>Cộng đồng người Âu-Á (Eurasian) với số lượng ít, nhưng có tầm ảnh hưởng lớn ở Singapore, là biểu trưng cho sắc màu Đông Tây hội ngộ ở Singapore. Nhóm dân tộc này bao gồm những người lai giữa dòng máu Châu Âu và Châu Á, và họ đã có mặt ở Singapore kể từ đầu thế kỷ 19.<br>Phần lớn người Âu-Á ở Singapore có nguồn gốc tổ tiên Châu Âu từ Bồ Đào Nha, Hà Lan hoặc Anh, còn nguồn gốc Châu Á là từ các nhóm người Hoa, người Mã Lai hoặc người Ấn.<br><b>Người Peranakan</b><br>Nền ẩm thực Peranakan với hương vị cay đặc trưng do chịu ảnh hưởng từ văn hóa Mã Lai có lẽ là khía cạnh thường gặp nhất của nhóm dân tộc này.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong462.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. VĂN HÓA CỦA SINGAPORE",
+			"noiDungPhan": "<b>Ngôn ngữ</b><br>Tại Singapore, có 4 ngôn ngữ chính được chính phủ công nhận bao gồm tiếng Malay (được sử dụng bởi Malaysia và Indonesia), tiếng Trung, tiếng Tamil (cho cộng đồng người Ấn Độ) và tiếng Anh. Trong đó, tiếng Malay được công nhận là ngôn ngữ quốc gia.<br><b>Chào hỏi và giao tiếp</b><br>Giống như Việt nam, người Singapore có thể hỏi những câu hỏi riêng tư về hôn nhân hay thu nhập. Du kháchcó thể từ chối trả lời một cách lịch sự và nếu không trả lời những câu hỏi như vậy của người Singapore thì mối quan hệ có thể bị phá vỡ.<br><b>Hành động, cử chỉ và thói quen</b><br>Đối với người Singapore, dùng ngón tay trỏ chỉ người khác, nắm chặt nắm tay hoặc ngón tay giữa đều bị coi là những động tác cực kỳ vô lễ. Hai tay không được tùy tiện chắp vào sườn bởi vì đó là biểu hiện của sự bực tức.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong463.jpg" }
+			]
+		}
+	],
+	"nguoiThich": []
+},
+{
+	"idLoai": 4,
+	"idBai": 7,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-24",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong47.jpg",
+	"tieuDe": "Tìm hiểu về văn hóa Anh Quốc",
+	"noiDungTomTat": "Văn hóa Tây phương có rất nhiều khác biệt so với văn hóa châu Á, vì thế rất nhiều du học sinh đã bị sốc văn hóa khi vừa mới “chân ướt chân ráo” đến Anh. Dưới đây là một số điều Hotcourses đã lọc ra nhằm giúp bạn chuẩn bị thật tốt cho hành trình sắp tới.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Cách ăn mặc",
+			"noiDungPhan": "Có thể bạn sẽ rất ngạc nhiên với phong cách ăn mặc của sinh viên quốc tế tại trường Đại học. Ở Anh, mọi người coi trọng sự thoải mái hơn là những bộ đồ quá chỉn chu và cứng nhắc. Tuy nhiên, với một cuộc phỏng vấn xin việc hay với các vấn đề học tập thì bạn cũng cần phải ăn mặc sao cho “hợp không khí”."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Đời sống giảng đường",
+			"noiDungPhan": "Vương quốc Anh là quê hương của tiếng Anh vì thế hầu như tất cả các khóa học đều được giảng dạy bằng ngôn ngữ này, với các cấp độ khác nhau. Nếu có lấn cấn về chương trình học hay có bất kì thắc mắc gì, hãy tìm đến nhân viên trong trường để xin lời khuyên hay hỗ trợ từ họ. Một điều nữa cần lưu ý là bạn nên cố gắng dẹp bỏ sự e thẹn để thẳng thắn đặt câu hỏi khi có khúc mắc. Ngoài ra, bạn cũng nên tận hưởng mọi tiện ích, nhóm hội trong trường để đời sống du học càng thêm phong phú.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong472.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Chào hỏi",
+			"noiDungPhan": "Nếu bạn muốn chào hỏi ai đó vào lần đầu tiên thì cách thông dụng nhất là bắt tay. Đôi khi người Anh rất quan tâm đến các chi tiết nhỏ như là việc giao tiếp bằng mắt. Thường thì việc nhìn vào mắt người khác là rất cần thiết, để biểu lộ sự tôn trọng của bạn dành cho đối phương, nhưng điều này không có nghĩa là nên nhìn chằm chằm vào mắt và khiến họ bối rối. Khi trò chuyện, bạn cũng nên tránh hỏi tuổi tác hay thu nhập cũng như là tình trạng yêu đương của họ vào lần đầu mới gặp. Hãy chỉ hỏi họ tình hình chung với những câu đại loại “Mọi thứ ổn chứ”, hay học lỏm người Anh cách gợi chuyện bằng thời tiết chẳng hạn."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Bình đẳng giới",
+			"noiDungPhan": "Ở Anh, nam và nữ giới được đối xử bình đẳng và có thể bạn sẽ phát hiện ra những khác biệt trong xử sự giữa các mối quan hệ. Điều này đôi khi còn phụ thuộc vào mức độ thân thiết và vấn đề tuổi tác. Nếu không biết phải xử sự thế nào, tốt nhất là hãy quan sát những người xung quanh để bạn không trở nên lạc lõng với phong cách sống của người Anh.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong474.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Nghệ thuật và Sân khấu",
+			"noiDungPhan": "Người Anh rất đam mê kịch nghệ. Ở London có sân khấu West End trứ danh, nơi diễn ra hầu hết các sô diễn lớn nhỏ cho bạn lựa chọn. Nếu không thể lên London, bạn cũng có thể tham dự những tour lưu diễn vòng quanh nước Anh và đi xem ở thành phố gần nơi bạn học để thuận tiện cho việc di chuyển.<br>Nước Anh có một bề dày lịch sử đáng kinh ngạc cho nên sẽ là một thiếu sót vô cùng lớn nếu bạn không thử trải nghiệm và tìm hiểu về đất nước, quê hương của nền cách mạng công nghiệp và những vĩ nhân này. Với những tòa lâu đài tráng lệ, những nhà thờ đậm dấu ấn lịch sử và những tòa kiến trúc độc đáo, Vương Quốc Anh thực sự có quá nhiều thứ để khám phá. Bạn đã sẵn sàng chưa?"
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com", "phamcongloi@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 8,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-04-26",
+	"time": "12:10:10",
+	"hinhTieuDe": "phongcachsong48.jpg",
+	"tieuDe": "Những điều cần lưu ý khi đi lại tại Anh",
+	"noiDungTomTat": "Các phương tiện giao thông công cộng ở Anh có sự khác biệt giữa các địa phương và việc đi lại có thuận tiện hay khó khăn còn phụ thuộc nhiều vào nơi bạn học tập. Nếu bạn muốn đi “loanh quanh” thăm viếng, khám phá trong lòng nước Anh thì sẽ không có trở ngại nào có thể khiến bạn chùn chân được – trước hết là vì vẻ đẹp khó cưỡng của vẻ đẹp Anh quốc, nhưng quan trọng nữa là vì có rất nhiều phương tiện, thông tin hữu ích hỗ trợ bạn.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Đường bộ",
+			"noiDungPhan": "Mỗi thành phố sẽ có một hệ thống giao thông công cộng riêng biệt bằng đường bộ. Nếu mới đặt chân đến một thành phố xa lạ thì cách tốt nhất, nhanh nhất và dễ nhất là leo lên xe bus. Đi xe bus cũng là cách tiết kiệm tiền nhất trong các loại phương tiện khác, đặc biệt là taxi.<br>Hầu hết các trạm xe bus đều có thông tin về giá cả và giờ xe chạy và sinh viên thường được giảm giá. Ở các thành phố như London, bạn nên mua thẻ Oyster để được di chuyển không giới hạn cả xe bus lẫn tàu điện ngầm (tube). Nhưng cũng có những thành phố mà các phương tiện công cộng lại không cùng một công ty. Cách tốt nhất là bạn nên hỏi nhân viên của công ty đó."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Tàu điện ngầm",
+			"noiDungPhan": "Ở Anh, tàu điện ngầm London là nổi tiếng nhất nhưng cũng có hai thành phố sở hữu những hệ thống tàu điện ngầm được nhiều người biết đến là Glasgow và Newcastle."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Tàu liên thành phố (INTER-CITY)",
+			"noiDungPhan": "Hệ thống đường sắt ở Anh khá đắt đỏ nhưng đây lại là cách di chuyển phù hợp nhất cho những chuyến đi du lịch xuyên vùng. Bạn có thể dễ dàng lên kế hoạch cho hành trình của mình với tàu inter-city, rất thuận tiện và dễ dàng. Đây là phương tiện có thẻ “đương đầu” với bất kể thời tiết nào và bạn còn nhận được các dịch vụ hay ho mà những phương tiện khác không có. Chẳng hạn, hành khách sẽ được hoàn lại một số phần trăm tiền vé nếu tàu đến trễ hơn một tiếng so với kế hoạch. Điều này tất nhiên còn phụ thuộc vào chính sách của từng công ty.<br>Thông thường, những chuyến đi vào giữa chiều các ngày trong tuần sẽ rẻ hơn vé vào giờ cao điểm. Bạn cũng cần lưu ý là vé được phát hành 3 tháng trước giờ tàu chạy nên càng cận ngày đó thì giá vé sẽ càng tăng. Chính vì thế, hãy để ý mua vé 1, 2 tháng trước ngày lên đường để mua được giá rẻ và bạn cũng nên kiểm tra, đối chiếu xem liệu mua hai vé đơn đi/về có rẻ hơn vé khứ hồi hay không."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Lên kế hoạch cho chuyến đi từ trước",
+			"noiDungPhan": "Để lên kế hoạch cho chuyến đi của mình, bạn có thể sử dụng các tiện ích như Google Maps để xác định khoảng cách giữa điểm đi và điểm đến. Những bạn sống ở London thì có trang TFL Journey Planner với tiện ích lên sẵn cho bạn lịch trình cần thiết với những thao tác vô cùng dễ dàng và nhanh chóng."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 9,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-01",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong49.jpg",
+	"tieuDe": "Lựa chọn về nhà ở cho du học sinh",
+	"noiDungTomTat": "Việc tìm chỗ ở trong khoảng thời gian du học là điều bạn cần phải làm từ sớm, kể cả trước khi lên đường. Với sinh viên du học, việc chọn lựa cho mình một phương án ở trọ phù hợp là không hề dễ dàng, đặc biệt với những người không có kinh nghiệm. Hầu hết sinh viên năm một đều chọn ở Kí túc xá để kết bạn và thuận tiện hơn trong khâu làm thủ tục. Một số phương án chỗ ở cho bạn cân nhắc bao gồm:",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Ăn trong ký túc xá",
+			"noiDungPhan": "Hầu hết các trường Đại học đều có các khu kí túc riêng, cho phép cung cấp chỗ ở cho sinh viên trong nước cũng như quốc tế. Sinh viên năm nhất thường chọn các khu kí túc có phục vụ ăn uống để không phải bận tâm đến việc nấu nướng. Thường thì bạn sẽ được ăn ít nhất buổi tối tại đây, trong khi đó một số khu học xá lại bao gồm cả điểm tâm sáng.<br>Trong phòng ngủ, sinh viên còn có các tiện ích như đồ dùng trong nhà tắm, một số vật dụng nấu bếp trong khu vực chung và tivi. Tiêu chuẩn của mỗi khu nhà tất nhiên cũng còn phụ thuộc tùy theo trường Đại học cũng như mức phí lựa chọn. Ở những khu có mức phí rẻ, bạn có thể sẽ phải chia phòng ngủ với một sinh viên khác."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Ở kỹ túc xá, ăn uống tự túc",
+			"noiDungPhan": "Ngoài các khu kí túc có phục vụ ăn uống, cũng có những khu chỉ phục vụ chỗ ở. Tại đây, bạn sẽ phải tự nấu nướng. Sinh viên lựa chọn loại hình này sẽ chia nhà với những người bạn khác (khoảng 4 đến 5 người) và sử dụng chung với họ một số khu vực chung như phòng tắm, nhà bếp và phòng khách. Diện tích căn hộ và số phòng ở tất nhiên còn phụ thuộc vào giá thuê phòng và khu vực bạn sẽ sinh sống. Những bạn không muốn chia nhà chung với người lạ nên tìm cách thuê các căn hộ độc lập để khỏi phải sống “chung đụng”, nhưng điều này tất nhiên cũng đồng nghĩa với việc bạn phải đóng phí cao hơn."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Ở riêng",
+			"noiDungPhan": "Thật ra, số lượng sinh viên được cấp phòng trong khu học xá cũng bị giới hạn rất nhiều vì lí do nhà trường không đủ chỗ cho tất cả mọi người. Đây là lí do khiến nhiều bạn quyết định ra ngoài thuê riêng. Hầu hết các chủ nhà trọ đều yêu cầu một tháng tiền đặt cọc và bạn chỉ được trả lại khoản tiền này sau khi đã kết thúc hợp đồng (và đảm bảo căn hộ của họ không bị hư hại gì). Ngoài ra, bạn cũng cần phải có người bảo lãnh để được phép thuê nhà ở nước ngoài. Vì thế, trong trường hợp bạn muốn thuê nhà ngoài thì hãy liên hệ văn phòng cho thuê của nhà trường để xin lời khuyên về hợp đồng thuê nhà, hoặc ít nhất để xin thông tin liên hệ của các chủ nhà và công ty môi giới uy tín."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Tạm trú khi mới đến",
+			"noiDungPhan": "Nếu bạn chưa được cấp nhà và cũng chưa tìm được bạn thuê nhà chung thì cũng không nên quá lo lắng. Bạn có thể tìm tới các trang web như Spare Room hay Great Flatmate, hoặc đến văn phòng phụng sự vấn đề nhà ở của trường để đọc thông tin của những người cần tìm nhà như bạn. Nếu không muốn chia nhà với bạn bè đồng lứa, bạn cũng có lựa chọn sống với các gia đình bản địa. Phương án này thường ít tốn kém hơn thuê nhà riêng và cũng sẽ mang lại cho bạn cơ hội phát triển kĩ năng ngôn ngữ của mình."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Văn phòng nhà ở của trường",
+			"noiDungPhan": "Mỗi văn phòng chuyên về vấn đề nhà ở của sinh viên, đặt tại các trường Đại học, thường có trách nhiệm bảo đảm sinh viên của họ có được một chỗ ở an toàn. Đây là nơi bạn có thể tìm hiểu thông tin về các chỗ ở tại địa phương. Trong trường hợp gặp rắc rối về giấy tờ với chủ nhà, bạn cũng có thể tìm tới đây để xin trợ giúp."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 10,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-02",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong410.jpg",
+	"tieuDe": "Những Điều Bạn Có Thể Làm Trong Mùa Covid-19",
+	"noiDungTomTat": "Thay vì đến những nơi đông đúc để giảm thiểu nguy cơ nhiễm COVID-19, bạn có thể duy trì những hoạt động cá nhân. Bạn sẽ cảm thấy cuộc sống chẳng khác những ngày chưa có Corona virus là mấy, vẫn có thể đảm bảo cuộc sống tích cực, tinh thần vẫn được đảm bảo và sức khỏe vẫn được cải thiện mỗi ngày.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Duy trì các hoạt động thể dục một cách đều đặn",
+			"noiDungPhan": "Chẳng cần phải đi đâu xa, bạn có thể tập thể dục mỗi ngày trong khuôn viên nhà. Thay vì đến công viên để chạy bộ mỗi sáng, hay đến phòng tập thể hình để có một vóc dáng khỏe đẹp. Hãy tập luyện tại nhà bằng các bài tập như chạy bộ trên máy, dạo xung quanh nhà, thử các bài tập yoga hay thể dục nhịp điệu, thậm chí là tập tạ mỗi ngày.<br>Đừng quá lo sợ trong mùa dịch, hãy duy trì các vận động cá nhân để cải thiện sức khỏe và đời sống. Bạn sẽ cảm thấy Corona không đáng sợ bằng việc để bản thân ủ rũ và yếu ớt mỗi ngày. Đảm bảo sức khỏe và tăng cường đề kháng sẽ giúp bạn xây dựng bức tường ngăn chặn COVID-19 một cách đáng kể.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4101.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Bổ sung các dưỡng chất tăng cường hệ miễn dịch",
+			"noiDungPhan": "Trước diễn biến phức tạp của Corona virus, một số người dân có tâm lý lo sợ bệnh dịch khó kiểm soát nên đã dự trữ thực phẩm trong dài ngày. Ở một số siêu thị, tình trạng khan hiếm lương thực đã bắt đầu xuất hiện. Thế nhưng, liệu có cần thiết phải làm điều đó hay không? Đừng quá lo sợ về virus Vũ Hán, bạn hãy mua đủ thức ăn dùng cho 1 đến 2 ngày để đảm bảo sự tươi sống. Hàng hóa sẽ không khan hiếm nếu chúng ta không mua dự trữ quá nhiều, điều đó ảnh hưởng rất lớn đến thị trường và những người xung quanh.<br>Hãy bổ sung các dưỡng chất cần thiết để tăng cường hệ miễn dịch. Chẳng hạn như bổ sung vitamin mỗi ngày bằng cách uống nước cam đều đặn, ăn các loại thực phẩm tươi sống, ăn đúng bữa đủ bữa và hạn chế các loại thức ăn nhanh. Bông cải xanh, gừng, rau bina hay một hũ sữa chua cũng là gợi ý cho những bữa ăn hàng ngày của bạn.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4102.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Xử lý công việc một cách linh động",
+			"noiDungPhan": "Hãy đảm bảo an toàn cho bản thân và những người xung quanh để ngăn chặn virus Corona. Hiện tại, Việt Nam vẫn đang kiểm soát tốt tình hình dịch bệnh, thế nên chúng ta vẫn có thể yên tâm làm việc trong môi trường công sở. Tuy nhiên, đừng quên đeo khẩu trang khi cần thiết và rửa tay với dung dịch sát khuẩn thường xuyên. Nếu có triệu chứng của virus Vũ Hán, hãy đi kiểm tra ngay lập tức để tránh tình hình trở nên tồi tệ.<br>Các doanh nghiệp hiện nay rất linh động trong công việc, chẳng hạn như cho nghỉ phép trong trường hợp cần thiết, làm việc từ xa nếu cảm thấy bản thân không khỏe, thường xuyên cập nhật tình hình của các nhân viên để nắm bắt thông tin kịp thời. Bạn hãy nói chuyện với cấp trên của mình về tình trạng sức khỏe nếu có triệu chứng. Làm việc qua email hoặc họp trực tuyến nhiều hơn thay vì gặp mặt trực tiếp thường xuyên. Bằng những cách đó, bạn sẽ có thể tự bảo vệ chính mình và đồng nghiệp.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4103.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Học cùng con trẻ",
+			"noiDungPhan": "Nếu con bạn đang ở độ tuổi tới trường, đừng quên cùng con trau dồi kiến thức trong những kỳ nghỉ dài ngày. Bạn sẽ thấy việc học cùng con không có gì là mệt mỏi, mà còn giúp bạn có thêm nhiều kiến thức, biết được nhiều điều hay và gắn kết tình cảm gia đình.<br>Bên cạnh đó, hãy dạy cho trẻ những điều mới lạ trong cuộc sống cũng như một số kỹ năng cần thiết. Nói cho con về lối sống trách nhiệm và tự lập bằng cách nhắc con tự dọn dẹp phòng ngủ của mình, cất đồ chơi vào vị trí ban đầu một cách gọn gàng. Con bạn chắc chắn sẽ cảm thấy thích thú nếu biết được điều hay và kỳ nghỉ sẽ không còn nhàm chán nữa.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4104.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Vệ sinh nhà cửa sạch sẽ",
+			"noiDungPhan": "Trong thời điểm hiện nay, ngoài việc vệ sinh cá nhân và hạn chế tiếp xúc nơi đông người thì việc vệ sinh nhà cửa thường xuyên cũng là một trong những điều vô cùng cần thiết. Nếu có thể, hãy xịt sát khuẩn xung quanh nhà và dọn dẹp thường xuyên để tiêu diệt virus. Tắm rửa cho thú cưng và để ý hơn đến việc vệ sinh cho các vật nuôi trong nhà để hạn chế mầm bệnh.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4105.jpg" }
+			]
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 11,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-03",
+	"time": "14:10:10",
+	"hinhTieuDe": "phongcachsong411.jpg",
+	"tieuDe": "Sống xanh sống khỏe",
+	"noiDungTomTat": "Các tòa nhà, văn phòng làm việc thực hiện chủ trương nói không với đồ nhựa sử dụng một lần; nhân viên văn phòng chọn các vật dụng có thể tái sử dụng như chai lọ, hộp cơm thủy tinh; các siêu thị, cửa hàng tiện lợi sử dụng túi vải hoặc túi sinh học để giạm lượng rác thải ni lông,... là những điều mà chúng ta có thể thấy trong khoảng thời gian gần đây. ",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Chai lọ, hộp nhựa dùng một lần? Hãy tránh xa!",
+			"noiDungPhan": "Thay vì mua những chai nước nhựa sử dụng một lần, bạn hãy tìm những chai thủy tinh, kim loại hoặc chai nhựa không chứa BPA có thể tái sử dụng.<br>Bạn thường xuyên mang cơm đi làm và sử dụng những hộp nhựa để đựng các món ngon mỗi ngày. Hãy thay đổi thói quen này bằng cách dùng những hộp thủy tinh bắt mắt, vừa tạo cảm giác ngon miệng vừa có thể hâm nóng dễ dàng trong lò vi sóng. "
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Nói không với những tiệm cà phê sử dụng đồ nhựa một lần",
+			"noiDungPhan": "Thay vào đó, bạn hãy lựa chọn những cửa hàng cà phê sử dụng ly giấy, ống hút giấy hoặc các vật dụng bảo vệ môi trường khác. Hoặc để vừa bảo vệ môi trường, vừa tiết kiệm mà còn cải thiện đời sống tính thần, hãy tự pha cà phê ở nhà và thưởng thức nó cùng một bản nhạc nhẹ nhàng. Bạn còn có thể tận dụng bã cà phê để làm đẹp."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Chọn bột giặt và các chất tẩy rửa đậm đặc",
+			"noiDungPhan": "Hiện nay trên thị trường có rất nhiều loại bột giặt và chất tẩy rửa đậm đặc giúp chúng ta hạn chế các bao bì lớn. Ngoài ra, các nhà sản xuất còn đựng bột giặt trong những túi chống rò rỉ thay vì các chai nhựa lớn. Bạn có thể bảo quản chất tẩy rửa lỏng một cách hiệu quả bằng cách chiết vào những chai thủy tinh xinh xắn. "
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Hạn chế sử dụng giấy ",
+			"noiDungPhan": "Hãy chỉ in tài liệu một mặt khi cần thiết. Để giảm việc sử dụng giấy của bạn cũng như trong văn phòng, bạn nên tận dụng cả hai mặt giấy. Nháp trên các phần giấy thừa còn lại và nếu có thể, hãy gửi tài liệu qua email để vừa tiết kiệm giấy, vừa lưu giữ được lâu hơn. "
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Sử dụng túi vải và túi sinh học ",
+			"noiDungPhan": "Bạn thường xuyên đi siêu thị và mang rất nhiều bao bì ni lông về nhà sau đó? Tại sao không thử sử dụng các loại túi vải tiện dụng hoặc túi sinh học dễ phân hủy để bảo vệ môi trường hơn. Những chiếc túi vải không chỉ tiện dụng mà còn được thiết kế rất thời trang, vì vậy bạn có thể sử dụng nó trong nhiều trường hợp khác. "
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 12,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-03",
+	"time": "21:10:10",
+	"hinhTieuDe": "phongcachsong412.jpg",
+	"tieuDe": "Cải thiện sức khỏe tinh thần",
+	"noiDungTomTat": "Hãy giữ cho tinh thần của bạn luôn được thoải mái và cân bằng để vượt qua những thách thức của cuộc sống và sống khỏe mỗi ngày.<br>Tham khảo những lời khuyên dưới đây để cải thiện sức khỏe tinh thần của bạn.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Hạn chế rượu và cà phê",
+			"noiDungPhan": "Thói quen ăn uống lành mạnh không chỉ giúp bạn có một cơ thể khỏe mạnh mà còn làm tinh thẩn thoải mái hơn. Hạn chế sử dụng rượu và cà phê bởi chúng có thể ảnh hưởng đến giấc ngủ, kéo theo sự lo lắng và đôi khi còn là nguyên nhân gây ra trầm cảm."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Đừng quá căng thẳng khi làm việc",
+			"noiDungPhan": "Hãy giữ cân bằng giữa công việc và cuộc sống để có thể cảm thấy dễ chịu hơn. Đôi khi việc bạn quá ôm đồm công việc không giúp ích nhiều cho bản thân mà còn làm ảnh hưởng đến đời sống cá nhân và gia đình của bạn. Trò chuyện với đồng nghiệp, chia sẻ với người thân trong gia đình về những khó khăn và áp lực đôi khi sẽ giúp bạn thấy thoải mái hơn."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Sống chậm hơn",
+			"noiDungPhan": "Cuộc sống bận rộn khiến cho bộ não của bạn luôn trong tình trạng quá tải. Hãy tập cho mình thói quen sống chậm lại, tập trung vào hiện tại để tâm trí của bạn trở nên dễ chịu hơn. Thử các bài tập yoga hoặc thiền để bản thân thấy dễ chịu và thoải mái. Ngoài ra, bạn nên dẹp bỏ điện thoại để không cảm thấy phiền não bởi các cuộc gọi không cần thiết."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Giải trí nhiều hơn",
+			"noiDungPhan": "Một nụ cười bằng mười thang thuốc bổ. Đừng quên dành một chút thời gian để giải trí và gắn kết với mọi người xung quanh để có một cuộc sống luôn vui vẻ và tươi mới."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Ngủ đủ giấc",
+			"noiDungPhan": "Đôi khi việc thiếu ngủ khiến bạn cáu kỉnh và mệt mỏi, vậy nên hãy tận hưởng những giấc ngủ ngon mỗi ngày. Giấc ngủ sẽ giúp bạn tỉnh táo, tập trung và làm việc năng suất hơn."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 13,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-03",
+	"time": "21:16:10",
+	"hinhTieuDe": "phongcachsong413.jpg",
+	"tieuDe": "5 điều cha mẹ có thể làm để chắp cánh ước mơ cho con",
+	"noiDungTomTat": "“Cha mẹ luôn là người thầy đầu tiên của con” - bạn nghĩ gì về câu nói này?<br>Một điều đặc biệt ở những người thành công đó là cha mẹ chính là người truyền cảm hứng lớn lao trong cuộc đời họ! Vậy họ đã làm điều đó như thế nào?",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Dạy con biết sống tử tế và biết cho đi",
+			"noiDungPhan": "Tỷ phú nổi tiếng thế giới Bill Gates từng nói trong đám cưới của mình rằng, mẹ của ông từng viết lên một tấm thiệp và gửi cho con mình: 'Nếu chúng ta được nhận nhiều điều trong cuộc sống, hãy biết cho đi'.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4131.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Truyền cho con tinh thần “không bao giờ bỏ cuộc”",
+			"noiDungPhan": "Bị sinh thiếu tháng, Wilma Rudolph không có được may mắn như nhiều người khác khi sức khỏe không ổn định, phải dùng nạng khi còn nhỏ. “Bác sĩ bảo tôi sẽ không thể đi lại được bình thường. Nhưng mẹ tôi nói rằng tôi có thể và tôi có niềm tin vào mẹ mình”. Wilma đã vượt qua tất cả và trở thành nhà vô địch Thế vận hội với 3 huy chương vàng tại Olympic 1960.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4132.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Nói với con “Cứ dám mơ lớn đi!”",
+			"noiDungPhan": "Là một đứa trẻ lớn lên trong một thị trấn nhỏ tại Tamil Nadu, cựu Tổng thống Ấn Độ, A P J Abdul Kalam có một ước mơ mà bất cứ ai nghe thấy cũng cười cợt, trêu đùa: trở thành Tổng thống Ấn Độ. Tuy nhiên, mẹ của ông luôn nói rằng giấc mơ của con trai sẽ thành hiện thực.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4133.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Dạy con biết vươn lên trong cuộc sống",
+			"noiDungPhan": "Mẹ của cựu Tổng thống Mỹ Abraham Lincoln luôn luôn nói với con mình: “Người ta có thể móc mỉa con, nói xấu con nhưng đừng bao giờ để điều đó khiến con sợ hãi, nghi hoặc bản thân”.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4134.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Luôn là bạn của con",
+			"noiDungPhan": "Sử gia, tác giả nổi tiếng Washington Irving từng chia sẻ trong một bài phát biểu: “Mẹ của tôi là người bạn đáng tin cậy nhất mà tôi được may mắn gặp trong cuộc đời”.",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4135.jpg" }
+			]
+		}
+	],
+	"nguoiThich": []
+},
+{
+	"idLoai": 4,
+	"idBai": 14,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-23",
+	"time": "22:10:10",
+	"hinhTieuDe": "phongcachsong3.jpg",
+	"tieuDe": "5 phương pháp ngừa đau lưng hiệu quả",
+	"noiDungTomTat": "Để giữ cho lưng được khỏe mạnh và không đau nhức, hãy giữ thái độ tích cực và hoạt động thường xuyên.<br>Theo ước tính của Đại học Alberta cũng như nghiên cứu về người Canada ở Alberta và Saskatchewan, hơn 84% những người Canada luôn chịu ảnh hưởng bởi chứng đau lưng dưới tại một số thời điểm nhất định. Một số thống kê cho rằng đau lưng là là một trong những nguyên nhân hàng đầu gây ra các căn bệnh về xương khớp mãn tính ở độ tuổi từ 12 đến 44 tuổi.<br>Ngay từ bây giờ, bạn hãy dành một lượng thời gian nho nhỏ của mình để cải thiện sự dẻo dai của lưng, cũng như giảm thiểu những cơn đau xuyên suốt cả ngày dài.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Thường xuyên hoạt động suốt ngày dài.",
+			"noiDungPhan": "Khi chúng ta làm việc trong môi trường văn phòng, nhiều người không thể nào di chuyển và hoạt động thật nhiều. Chúng ta bù đầu trước màn hình vi tính, email, các cuộc họp và một danh sách dài dằng dặc các công việc cần làm. Theo thời gian, điều đó có thể gây tổn hại cho sức khỏe của bạn, đặc biệt là vùng lưng."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Chú ý đến tư thế ngồi của bạn",
+			"noiDungPhan": "Một tư thế tốt không có nghĩa là giữ cho lưng của bạn thẳng hoàn toàn mọi lúc, điều này có thể dẫn đến hiện tượng mỏi cơ bắp và đau nhức tạm thời.<br>Thay vào đó, hãy lưu ý đến chiếc bàn làm việc của bạn nhiều hơn: Giữ màn hình ngang tầm mắt và cách thân người khoảng một cánh tay. Đặt ghế ngồi ở độ cao sao cho đầu gối luôn vuông góc."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Thực hành các bài tập thân thiện với vùng lưng của bạn",
+			"noiDungPhan": "Hãy sử dụng một chiếc nịt để giữ cột sống của bạn luôn trong tư thế tốt nhất. Bác sĩ Tâm khuyến nghị, chúng ta nên thực hiện các bài tập chống đẩy để tăng cường sức khỏe xương khớp và chống lại chứng đau lưng.<br>Các bài tập nhằm kéo căng gân cũng là một trong những giải pháp nhằm giảm thiểu hiện tượng đau lưng. Để giảm bớt sự căng cứng ở gân, hãy ngồi ở mép ghế, một chân mở rộng về phía trước và gót chân nằm trên mặt đất. Hãy chắc chắn rằng đầu gối của bạn hơi cong, xoay về phía trước hông cho đến  khi bạn cảm thấy thoải mái, giữ tư thế đó trong vòng 15 đến 30 giây rồi lặp lại ở phía bên kia."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Giảm đau lưng khi mang thai",
+			"noiDungPhan": "Đau lưng đặc biệt phổ biến khi mang thai, bởi sự thay đổi nội tiết tố và trọng lượng cơ thể của bạn. Tuy nhiên, điều đó không có nghĩa là bạn không có cách nào có thể ngăn ngừa những cơn đau và giảm thiểu sự khó chịu. Cách tốt nhất là bạn cần duy trì hoạt động với các bài tập thân thiện với thai kỳ như đi bộ, bơi lội và đạp xe.<br>Hãy đặc biệt chú ý đến tư thế của bạn khi làm việc. Đặt một chiếc gối sau lưng và thường xuyên di chuyển cơ thể trên từng mép ghế sẽ khiến bạn thư giãn và giảm bớt sự đau nhức ở vùng lưng."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Duy trì thói quen ngăn ngừa đau lưng",
+			"noiDungPhan": "Khi nhắc đến việc ngăn ngừa đau lưng, bạn cần chú tâm đến những suy nghĩ tích cực để giảm thiểu tình trạng đau nhức. Khi đó, cơ bắp của bạn sẽ trở nên dẻo dai hơn và các bài tập sẽ được tiến hành một cách dễ dàng hơn. Tuy nhiên, nếu tình trạng đau nhức ngày một tăng lên, đừng ngại nhờ đến sự trợ giúp của các chuyên gia trong lĩnh vực này nhé.<br>Cuối cùng, bạn hãy tự biến mình thành một đại sứ về sức khỏe. Chẳng hạn như tự ý thức về việc thực hiện các bài tập một cách xuyên suốt tại chính bàn làm việc của mình và lan tỏa điều đó cho cả văn phòng nơi bạn đang làm việc."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 15,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-26",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong3.jpg",
+	"tieuDe": "4 rủi ro về sức khỏe khi đi công tác",
+	"noiDungTomTat": "Hãy cùng tìm hiểu những mối nguy về sức khỏe khi đi công tác mà bạn có thể chưa biết và cách để phòng tránh những hiểm hoạ này.<br>Đi công tác khắp thế giới có thể thú vị trên lý thuyết, nhưng thực tế thì không hẳn như vậy. Việc thường xuyên đi công tác, đặc biệt là những chuyến đi dài luôn kèm theo lắm rủi ro về sức khỏe.<br>May mắn thay, chỉ cần bạn biết những rủi ro phổ biến nhất và có kế hoạch chủ động đã có thể giúp bạn giảm thiểu hoặc phòng tránh. Dưới đây là 4 rủi ro về mặt sức khỏe mà mọi người thường gặp khi đi công tác:",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Nghẽn mạch máu",
+			"noiDungPhan": "Thường xuyên bay dài hơn 6 giờ có thể gây nguy hiểm cho sức khỏe. Những chuyến bay dài làm tăng nguy cơ nghẽn mạch máu, những cục máu đông sẽ hình thành trong tĩnh mạch của bạn - thường là tĩnh mạch ở chân – do tình trạng không hoạt động kéo dài. Nếu một cục máu đông vỡ ra, nó có thể di chuyển đến phổi của bạn, có khả năng ngăn lưu thông máu, và gây thuyên tắc động mạch phổi và đe dọa đến tính mạng.<br>Cách tốt nhất để phòng tránh nghẽn mạch máu là đi lại thường xuyên hoặc tập các bài tập chân ngay tại chỗ ngồi. Mang vớ trong chuyến bay của bạn cũng là 1 cách giúp giảm nguy cơ gây nên tình trạng tắc nghẽn mạch máu."
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Tiêu chảy",
+			"noiDungPhan": "Đi công tác đến một nơi xa lạ cũng đồng nghĩa với việc làm quen với nhiều nền văn hóa mới. Và bạn cũng phải làm quen với các vi trùng và ký sinh trùng mới, bao gồm cả những loại gây ảnh hưởng đến hệ tiêu hóa của bạn. Hãy chú ý đến những điều cơ bản về an toàn thực phẩm khi du lịch - tránh nước máy, nước đá, trái cây bóc vỏ và xà lách – và những thứ khác mà bạn cảm thấy không sạch sẽ. Dùng vắc-xin dạng uống trước hoặc trong khi đi công tác có thể giúp chống lại vi khuẩn E. Coli, loại khuẩn phổ biến liên quan đến tiêu chảy. Bạn cũng có thể mang theo các loại thuốc không cần kê đơn và hỏi ý kiến bác sĩ trước khi đi công tác."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Thiếu ngủ",
+			"noiDungPhan": "Mệt mỏi sau chuyến bay, chuyển lịch sinh hoạt và ngủ trong một chiếc giường hoặc phòng khách sạn không quen thuộc có thể phá hoại giấc ngủ của bạn. Thuốc ngủ theo toa có thể hữu ích, nhưng chúng có nhược điểm là có thể ảnh hưởng đến trí nhớ của bạn. Nếu điểm đến của bạn chênh lệch từ 3 múi giờ trở lên, hãy thử điều chỉnh lịch trình giấc ngủ thành múi giờ của nơi đến trong vài ngày và sau đó hãy ngủ theo lịch trình địa phương ngay khi bạn đến. Hãy tản bộ dưới ánh nắng mặt trời lúc bạn có thời gian rảnh để điều chỉnh lại đồng hồ sinh học của bản thân. Và nếu bạn vẫn gặp khó khăn, hãy gặp với bác sĩ để xin lời khuyên về các chất bổ sung, như melatonin, có thể chúng sẽ hữu ích."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Ăn uống không lành mạnh",
+			"noiDungPhan": "Ngay cả khi bạn là một người ăn uống lành mạnh ở nhà, thói quen tốt của bạn có thể sẽ bị gián đoạn trong các chuyến công tác. Khi bạn đi du lịch, các thực phẩm có sẵn thường ít có lợi cho sức khỏe hơn, khó để tìm thấy những loại rau củ quả sạch đặc biệt là sau giờ làm việc.<br>Hãy giữ cho sức khỏe của bạn đi đúng hướng bằng cách đưa ra một kế hoạch dinh dưỡng chủ động. Hãy yêu cầu nhân viên phục vụ nhà hàng chia bữa ăn của bạn ra làm 2 phần, một bên chứa nhiều calo như nước xốt, các loại hạt, phô mai, thịt, bên còn lại là rau củ quả. Nếu phải uống rượu bia, thì không nên dùng quá 1 ly mỗi ngày cho phụ nữ và không quá 2 ly mỗi ngày cho nam giới."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 16,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-27",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong416.jpg",
+	"tieuDe": "6 lợi ích bất ngờ từ những bữa cơm gia đình theo góc nhìn khoa học",
+	"noiDungTomTat": "Ngồi xuống và ăn tối cùng nhau, thói quen tưởng đơn giản nhưng mang lại rất nhiều lợi ích cho các thành viên trong gia đình. ",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Giúp trẻ có thói quen ăn uống lành mạnh",
+			"noiDungPhan": "Một nghiên cứu gần đây trên AMA Network Open cho thấy những người dùng bữa với gia đình thường có chế độ ăn lành mạnh hơn (đặc biệt là ở thanh thiếu niên).<br>Những bạn trẻ ăn cùng gia đình có xu hướng ăn nhiều rau và hoa qua, ít đồ ăn nhanh và đồ uống có đường. Theo nghiên cứu, điều này đúng với cả những gia đình hạnh phúc hoặc gia đình có mâu thuẫn trục trặc. "
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Giảm nguy cơ căng thẳng tâm lý",
+			"noiDungPhan": "Những thanh thiếu niên trong giai đoạn phát triển có thể sẽ gặp rất nhiều vấn đề về tâm lý. Dù chỉ là bị bạn chê bai hay lịch học căng thẳng ở trường cũng có thể tạo nên xáo trộn tâm lý đối với các em, vậy nên cùng cha mẹ dùng bữa là một cách tuyệt vời để giải tỏa stress hay chia sẻ những suy nghĩ và vấn đề của bản thân. ",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4162.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Giảm nguy cơ béo phì ",
+			"noiDungPhan": "Một nghiên cứu được công bố trên Tạp chí Nhi khoa (Journal of Pediatrics) cho thấy thanh thiếu niên (đặc biệt là ở thiếu niên da màu) thường xuyên dùng bữa cùng gia đình có xu hướng giảm nguy cơ béo phì và cân nặng trong 10 năm tiếp theo.<br>Nghiên cứu kết luận rằng các gia đình nên cố gắng duy trì ít nhất một hoặc hai bữa ăn cùng nhau mỗi tuần để bảo vệ con cái họ khỏi các vấn đề liên quan đến cân nặng trong cuộc sống sau này. "
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Bữa cơm gia đình giúp nâng cao lòng tự trọng ở trẻ",
+			"noiDungPhan": "Theo các chuyên gia tại Stanford Children Health, hệ thống chăm sóc sức khỏe nhi khoa liên kết với Trường Đại học Y Stanford và Đại học Stanford, thường xuyên dùng bữa với gia đình khiến trẻ cảm thấy an toàn và tự tin hơn.<br>Bằng cách khuyến khích con nói về những điều xảy ra trên trường và lắng nghe thực lòng, bạn cho con thấy bạn tôn trọng đứa trẻ. Bạn cũng nên khuyến khích trẻ tự chọn chỗ ngồi và giúp đỡ một số công việc như dọn cơm, bưng bê hoặc lau dọn."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Cải thiện kỹ năng giao tiếp ",
+			"noiDungPhan": "Bên cạnh lợi ích về sức khỏe và thể lực nói chung, sự tương tác và thảo luận về các vấn đề xã hội hiện tại trên bàn ăn giúp trẻ giao tiếp tốt hơn, theo giáo sư Linda Pagani, giám sát viên của nghiên cứu, chia sẻ trong một cuộc phỏng vấn với tờ Science Daily .",
+			"hinhAnh": [
+				{ "hinh": "phongcachsong4165.jpg" }
+			]
+		},
+		{
+			"thuTuSapXep": 6,
+			"tieuDePhan": "6. Giúp trẻ bảo vệ bản thân khi bị bắt nạt trên mạng",
+			"noiDungPhan": "Nghiên cứu được công bố trên JAMA Pediatrics, dựa trên khảo sát gần 19.000 sinh viên, cho thấy những lời thóa mạ, quấy rối và tấn công trên mạng có thể dẫn đến lo lắng, trầm cảm và lạm dụng chất gây nghiện.<br>Tuy nhiên, những bạn trẻ thường ăn tối với gia đình ghi nhận ít vấn đề hơn khi bị bắt nạt. Các tác giả nghiên cứu lưu ý rằng thường xuyên liên lạc, giao tiếp giúp cha mẹ hướng dẫn con cái nhiều hơn, con cái cũng dễ dàng cởi mở tâm sự với cha mẹ."
+		}
+	],
+	"nguoiThich": ["nguyenthanhson@gmail.com"]
+},
+{
+	"idLoai": 4,
+	"idBai": 17,
+	"email": "tranquangthinhtk@gmail.com",
+	"date": "2020-05-28",
+	"time": "10:10:10",
+	"hinhTieuDe": "phongcachsong417.jpg",
+	"tieuDe": "6 lời khuyên cho cuộc sống hôn nhân hạnh phúc viên mãn",
+	"noiDungTomTat": "Hôn nhân là bước ngoặt lớn trong đời của mỗi người, tình yêu là bước đầu tạo nên một mối quan hệ lâu dài nhưng chưa hẳn là mãi mãi. Cuộc sống có nhiều khó khăn và cạm bẫy, hy vọng với những lời khuyên dưới đây, cuộc sống sau cưới của các cặp vợ chồng trẻ ngày thêm tuyệt vời và hạnh phúc hơn.",
+	"tinhTrang": 1,
+	"noiDung": [{
+			"thuTuSapXep": 1,
+			"tieuDePhan": "1. Không vội kết hôn",
+			"noiDungPhan": "Đừng lo lắng hay để ý những lời đàm tiếu của mọi người xung quanh, Thượng Đế tạo ra bạn thì cũng sẽ tạo ra nửa còn lại đi bên bạn đến hết cuộc đời. Không chọn đại để vừa lòng người khác, hãy chờ đợi khi người thật lòng thương bạn, quan tâm, hết lòng vì bạn đến. Đó mới là hạnh phúc thực sự!"
+		},
+		{
+			"thuTuSapXep": 2,
+			"tieuDePhan": "2. Kinh tế ổn",
+			"noiDungPhan": "Là phụ nữ, bạn không cần phải kiếm được rất nhiều tiền hay nghe lời chồng rằng “ở nhà anh nuôi”. Đây là câu nói nhiều ông chồng nói với vợ mình, tuy nhiên nó chưa hẳn là phương án hay dành cho bạn.<br>Phụ nữ hiện đại họ vừa có thể chu toàn cuộc sống gia đình cũng như công việc ngoài xã hội. Nó cũng đòi hỏi sự cố gắng rất lớn từ bạn, hôn nhân là hai người phải cùng nhau làm việc và cùng đồng hành trước những thăng trầm cuộc sống."
+		},
+		{
+			"thuTuSapXep": 3,
+			"tieuDePhan": "3. Khoan dung và kiên nhẫn",
+			"noiDungPhan": "Không còn những ngày tháng rong chơi hẹn hò lãng mạn như thuở mới yêu, hôn nhân là ngày ngày chạm mặt ngày ngày bên nhau. Dù cuộc sống gia đình có hạnh phúc và chắc chắn đến đâu, nhưng mẫu thuẫn xảy ra là điều không thể tránh khỏi.<br>Khi cả hai đã quá quen, quá hiểu thì họ sẽ bộc lộ chính bản thân mình với nhau. Chỉ khi đứng trước người thân yêu nhất, con người sẽ cho phép mình nóng nảy, trẻ con. Đôi lúc giận hờn hay những cuộc cãi vã xảy ra, nhưng đó không phải là hết yêu mà chỉ để họ hiểu nhau sâu sắc hơn mà thôi."
+		},
+		{
+			"thuTuSapXep": 4,
+			"tieuDePhan": "4. Biết ơn và lắng nghe",
+			"noiDungPhan": "Đừng coi những cố gắng của người bạn đời là hiển nhiên. Vợ sinh ra không phải giữ trẻ miễn phí hay cỗ máy sinh sản, chồng cũng không phải một mình gánh trách nhiệm nuôi cả gia đình.<br>Gia đình này là của bạn, hãy nhớ là bạn đang vun đắp xây dựng nó ngày càng lớn lên. Không nên so sánh ai kiếm nhiều tiền, ai dành thời gian cho gia đình nhiều hơn. Hãy biết ơn nửa kia của mình vì những gì họ đã hy sinh, chỉ có vậy hôn nhân của bạn mới lâu dài và vững chắc."
+		},
+		{
+			"thuTuSapXep": 5,
+			"tieuDePhan": "5. Lãng mạn",
+			"noiDungPhan": "Tình yêu nó sẽ mờ nhạt và giảm dần theo năm tháng, đừng quên thắp lửa cho chúng sáng lên. Đơn giản là món quà nhỏ trong những ngày kỷ niệm đặc biệt của gia đình hay một bữa sáng thịnh soạn với những cử chỉ ấm áp. Vậy thôi cũng đủ sưởi ấm cho những trái tim nguội lạnh qua năm tháng."
+		},
+		{
+			"thuTuSapXep": 6,
+			"tieuDePhan": "6. Chăm sóc cho bản thân",
+			"noiDungPhan": "Chăm sóc bản thân tốt bạn mới đủ khả năng để chăm sóc cho gia đình tốt nhất. Có sức khoẻ trong tay thì mọi chuyện sẽ dễ dàng hơn bao giờ hết. Đừng bao giờ tự ti hay bỏ qua những cơ hội học hỏi để phát triển bản thân, như vậy hạnh phúc sẽ luôn mỉm cười với bạn."
+		}
+	],
+	"nguoiThich": []
+}
+]

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+</head>
+
+<body>
+    <%
+        if(noiDungChat === null || noiDungChat.length === 0){
+    %>
+    <%        
+        }else{
+            for(let i = 0; i< noiDungChat.length ; i++){
+                if(noiDungChat[i].emailNguoiGui === nd.email){
+    %>
+                    <span class="toi-chat"><%=noiDungChat[i].noiDungGui %></span>
+    <%
+                }else{
+    %>
+                    <span class="ban-chat"><%=noiDungChat[i].noiDungGui %></span>   
+    <%           }
+            }
+        }
+    %> 
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Danh sách bài viết khiếu nại</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/danhsach-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/danhsachnguoidung-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/footer-style.css" />
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script src="http://54.145.93.79:3000/socket.io/socket.io.js"></script>
+    <script>
+
+        var socket = io("http://54.145.93.79:3000/danhsachkhieunai");
+        var socketDienDan = io("http://54.145.93.79:3000/user/diendan");
+        socket.on("gui-to-cao", function (data) {
+            if($("#thanh-data"+data.idLoai+data.idBai).val() !== undefined){
+                $("#soKhieuNai"+data.idLoai+data.idBai).html(Number($("#soKhieuNai"+data.idLoai+data.idBai).html())+1);
+            }else{
+                let ndThem = `<tr class="thanh-data" id="thanh-data`+data.idLoai+data.idBai+`">
+                    <td id="ndBai`+data.idLoai+data.idBai+`">`+data.ndbv+`</td>
+                    <td id="email`+data.idLoai+data.idBai+`">`+data.emailBaiViet+`</td>
+                    <td id="soKhieuNai`+data.idLoai+data.idBai+`">`+1+`</td>
+                    <td><img class="duyetbai" id="xoabai-`+data.idLoai+`-`+data.idBai+`" src="/images/delete.png" width="40px"></td>
+                    <td><img class="duyetbai" id="boduyet-`+data.idLoai+`-`+data.idBai+`" src="/images/muiten.png" width="40px"></td>
+                </tr>`;
+                $("#danhsachbaivietbikhieunai").append(ndThem);
+
+            }
+        });
+
+        $(document).ready(function () {
+            $(document).on('click','.duyetbai',function(){
+                let chucnang = this.id.split("-")[0];
+                let idLoai = this.id.split("-")[1];
+                let idBai = this.id.split("-")[2];
+                let emailNguoiNhan = $("#email"+idLoai+idBai).html();
+                let ndBai = $("#ndBai"+idLoai+idBai).html();
+                if(chucnang == "xoabai"){
+                    if (confirm('Bạn có chắn chắn muốn xóa bài viết này?')) {
+                        $.ajax({
+                        url: '/admin/duyetbai/xoabai',
+                        type: 'post',
+                        data : {
+                            idBai : idBai,
+                            idLoai : idLoai,
+                            emailNguoiNhan : emailNguoiNhan,
+                            ndBai : ndBai
+                        },
+                        dataType: 'text'
+                    }).done(function (result) {
+                        if(result == "xóa thành công"){
+                            socketThongBao.emit("co-thong-bao-xoa-bai",{emailNguoiNhan : emailNguoiNhan});
+                        }
+                        alert("Xóa bài thành công !!!");
+                        $("#thanh-data"+idLoai+idBai).remove();
+                    });
+                    }
+                }else if(chucnang == "boduyet"){
+                    if (confirm('Bạn có chắn chắn muốn bỏ duyệt bài viết này?')) {
+                        var url = "/admin/duyetbai/boduyet";
+                        var data = {
+                            idBai : idBai,
+                            idLoai : idLoai
+                        };
+                        var dataType = 'text';
+                        $.post(url, data, dataType);
+                        $("#thanh-data"+idLoai+idBai).hide();
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <% include header%>
+    <section>
+        <div class="top-section">
+            <span>Danh sách bài viết bị khiếu nại</span>
+        </div>
+        <table id="danhsachbaivietbikhieunai">
+            <tr class="thanh-th">
+                <th>Nội dung</th>
+                <th>Email Người Đăng</th>
+                <th>Số tố cáo</th>
+                <th>Xóa</th>
+                <th>Bỏ duyệt</th>
+            </tr>
+            <%
+                if(listBaiViet.length > 0){
+
+                    for( var i = 0; i < listBaiViet.length ; i ++){    
+            %>
+                <tr class="thanh-data" id="thanh-data<%= listBaiViet[i].idLoai%><%= listBaiViet[i].idBai%>">
+                    <td id="ndBai<%= listBaiViet[i].idLoai%><%= listBaiViet[i].idBai%>"><%= listBaiViet[i].noiDung%></td>
+                    <td id="email<%= listBaiViet[i].idLoai%><%= listBaiViet[i].idBai%>"><%= listBaiViet[i].email%></td>
+                    <td id="soKhieuNai<%= listBaiViet[i].idLoai%><%= listBaiViet[i].idBai%>" ><%= listBaiViet[i].soKhieuNai.length%></td>
+                    <td><img class="duyetbai" id="xoabai-<%= listBaiViet[i].idLoai%>-<%= listBaiViet[i].idBai%>" src="/images/delete.png" width="40px"></td>
+                    <td><img class="duyetbai" id="boduyet-<%= listBaiViet[i].idLoai%>-<%= listBaiViet[i].idBai%>" src="/images/muiten.png" width="40px"></td>
+                </tr>
+            <%
+                    }
+                }else{
+            %>
+                   <tr> <td>Không có bài nào để duyệt !!!</td></tr>
+            <%}%>
+
+        </table>
+    </section>
+    <% include footer%>
+</body>
+
+</html>

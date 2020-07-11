@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+            Chi tiết bài viết
+    </title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chitietbaiviet-style.css" />
+    <script type="javascript" src="/javascripts/trangchuJS.js"></script>
+    <script type="text/javascript" src="/javascripts/binhluanJS.js"></script>
+
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script src="http://54.145.93.79:3000/socket.io/socket.io.js"></script>
+    <script src="/javascripts/ejs.min.js"></script>
+    <script src="/javascripts/ejs-render-remote.js"></script>
+    <script>
+        var socket = io.connect("http://54.145.93.79:3000/user/diendan");
+        var socketToCao = io("http://54.145.93.79:3000/danhsachkhieunai");
+
+
+        socket.on('co-nguoi-da-like-bai',function(data){
+            let idLoai = Number($("#idLoai").val());
+            let idBai = Number($("#idBai").val());
+            if(idLoai == data.idLoai && idBai == data.idBai){
+                $("#soLike").html(data.soLike);
+            }
+        });
+
+        socket.on('nhan-binh-luan-moi',function(data){
+            let idLoaiCuaUser = Number($("#idLoai").val());
+            if(idLoaiCuaUser == data.idLoai){
+                let idBai = data.idBai;
+                let taBL = data.ndBL;
+                let hinhDaiDien = data.hinhDaiDien;
+                let idLoai = data.idLoai;
+                let tenNguoiDung = data.tenNguoiBL;
+                let idBL = data.idBL;
+                if(taBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+                    let hinhND = $("#hinhNguoiDung").val();
+                    let ndThem = `<input type="hidden" id="idBaiOf`+idBL+`" value="`+idBai+`">
+                        <div class="comment-body binhluan">
+                            <img class="anh-dai-dien" src="/images/`+hinhDaiDien+`">
+                            <div class="text" style="margin-left: 70px;">
+                                `+taBL+`
+                            </div>
+                            <p class="attribution" style="padding: 10px;">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+` 
+                                <button class="motlbl" style="float: right;" id="motlbl-`+idBL+`">Mở trả lời</button>
+                            </p>
+
+                            <div class="comment-body traloibinhluan" id="traloibl`+idBL+`">
+                                <img src="/images/`+hinhND+`">
+                                <textarea id="ndTLBL`+idBL+`" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                <button class="btnTraLoiBL" id="btnTLBL-`+idBL+`">Đăng</button>
+                                <div id="khung-traloi-bl`+idBL+`"></div>
+                            </div>
+                        </div>`;
+
+                    $("#listBLBaiViet"+idBai).prepend(ndThem);
+                    $("#traloibl"+idBL).hide();
+                    $("#soBL"+idBai).html(data.soBL);
+                }
+            }
+        });
+
+        socket.on('nhan-tl-binh-luan-moi',function(data){
+            
+            let idLoaiCuaUser = Number($("#idLoai").val());
+            if(idLoaiCuaUser == data.idLoai){
+                let idBai = data.idBai;
+                let ndTLBL = data.ndTLBL;
+                let hinhDaiDien = data.hinhDaiDien;
+                let idLoai = data.idLoai;
+                let tenNguoiDung = data.tenNguoiTLBL;
+                let idBL = data.idBL;
+                let idTLBL = data.idTLBL;
+
+                if(ndTLBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<img class="anh-dai-dien" src="/images/`+hinhDaiDien+`">
+                                            <div class="text" style="margin-left: 70px;">
+                                                `+ndTLBL+`
+                                            </div>
+                                            <p class="attribution" style="padding: 10px;">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+`</p>`;
+                    
+                    $("#khung-traloi-bl"+idBL).prepend(ndThem);
+                    $("#soBL"+idBai).html(data.soBL);
+                }
+            }
+        });
+
+
+        $(document).ready(function () {
+
+            $(".traloibinhluan").hide();
+            
+            $(document).on('click','.like',function () {
+                let idAttr = this.id.split("-");
+                let id = idAttr[0];
+                let idBaiViet = idAttr[1];
+                let soLike = Number($("#soLike").html());
+                let idLoai = Number($("#idLoai").val());
+                if (id === 'like') {
+                    $(this).attr('id', "unlike-" + idBaiViet);
+                    $(this).html("");
+                    $(this).html(`<img src="/images/unlike.png" width="20px"/><span id="soLike">` + (soLike - 1) + `</span>`);
+
+                    $.ajax({
+                        url: '/user/likebaiviet',
+                        type: 'post',
+                        data : {
+                            idLoai: idLoai,
+                            idBaiViet : idBaiViet,
+                            isLike : Number(0)
+                        },
+                        dataType: 'text',
+                    }).done(function (result) {
+                        if(result == "like thành công"){
+                            socket.emit('co-nguoi-like', {idLoai : idLoai , idBai : idBaiViet,soLike : (soLike - 1) });
+                        }else{
+                            $("#baivietOfND"+idBai).remove();
+                            $(".btn-tuong-tac").html(`<h1>Bài viết đã bị Admin xóa !!!</h1>`);
+                            $(".chu-de").html(`<h1>
+                    <a href="/danhsachbaiviet"><img  src="/images/undo.png" width="30px" title="Danh sách bài viết" style="margin-left: 20px;"/></a>
+                </h1>`);
+                        }
+                    });
+                    
+
+                } else if (id === 'unlike') {
+                    $(this).attr('id', "like-" + idBaiViet);
+                    $(this).html("");
+                    $(this).html(`<img src="/images/like.png" width="20px"/><span id="soLike">` + (soLike + 1) + `</span>`);
+                    $.ajax({
+                        url: '/user/likebaiviet',
+                        type: 'post',
+                        data : {
+                            idLoai: idLoai,
+                            idBaiViet : idBaiViet,
+                            isLike : Number(1)
+                        },
+                        dataType: 'text',
+                    }).done(function (result) {
+                        if(result == "like thành công"){
+                            socket.emit('co-nguoi-like', {idLoai : idLoai , idBai : idBaiViet, soLike : (soLike +1)});
+                        }else{
+                            $("#baivietOfND"+idBai).remove();
+                            $(".btn-tuong-tac").html(`<h1>Bài viết đã bị Admin xóa !!!</h1>`);
+                            $(".chu-de").html(`<h1>
+                    <a href="/danhsachbaiviet"><img  src="/images/undo.png" width="30px" title="Danh sách bài viết" style="margin-left: 20px;"/></a>
+                </h1>`);
+                        }
+                    });
+
+                }    
+            });
+
+            $(document).on('click','.buttonDangBL',function (){
+                let email = $("#email").val();
+                let idBtn = this.id.split("-");
+                let idBai = idBtn[1];
+                let taBL = $("#taDangBL"+idBai).val();
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                let idLoai = $("#idLoai").val();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+                let idBL = Date.now();
+                let soBL = Number($("#soBL"+idBai).html())+1;
+                if(taBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<input type="hidden" id="idBaiOf`+idBL+`" value="`+idBai+`">
+                        <div class="comment-body binhluan">
+                            <img class="anh-dai-dien" src="/images/`+hinhDaiDien+`">
+                            <div class="text" style="margin-left: 70px;">
+                                `+taBL+`
+                            </div>
+                            <p class="attribution" style="padding: 10px;">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+` 
+                                <button class="motlbl" style="float: right;" id="motlbl-`+idBL+`">Mở trả lời</button>
+                            </p>
+
+                            <div class="comment-body traloibinhluan" id="traloibl`+idBL+`">
+                                <img src="/images/`+hinhDaiDien+`">
+                                <textarea id="ndTLBL`+idBL+`" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                <button class="btnTraLoiBL" id="btnTLBL-`+idBL+`">Đăng</button>
+                                <div id="khung-traloi-bl`+idBL+`"></div>
+                            </div>
+                        </div>`;
+
+                    $.ajax({
+                        url: '/user/diendan/dangbinhluan',
+                        type: 'post',
+                        data : {
+                            idBinhLuan: idBL,
+                            emailNguoiBinhLuan : email,
+                            noiDungBinhLuan : taBL,
+                            idBai : idBai,
+                            idLoai : idLoai
+                        },
+                        dataType: 'text'
+                    }).done(function (result) {
+                        if(result == "bình luận thành công"){
+                            $("#taDangBL"+idBai).val("");
+                            $("#listBLBaiViet"+idBai).prepend(ndThem);
+                            $("#traloibl"+idBL).hide();
+                            $("#soBL"+idBai).html(soBL);
+                            socket.emit("co-nguoi-binh-luan",{hinhDaiDien : hinhDaiDien,tenNguoiBL : tenNguoiDung, ndBL : taBL, idBL : idBL, idLoai : idLoai, idBai : idBai, soBL : soBL });
+                        }else{
+                            $("#baivietOfND"+idBai).remove();
+                            $(".btn-tuong-tac").html(`<h1>Bài viết đã bị Admin xóa !!!</h1>`);
+                            $(".chu-de").html(`<h1>
+                    <a href="/danhsachbaiviet"><img  src="/images/undo.png" width="30px" title="Danh sách bài viết" style="margin-left: 20px;"/></a>
+                </h1>`);
+                        }
+                    });
+
+                    
+                }
+                
+            })
+
+            $(document).on('click','.btnTraLoiBL',function (){
+                let email = $("#email").val();
+                let idBtn = this.id.split("-");
+                let idBL = idBtn[1];
+                let ndTLBL = $("#ndTLBL"+idBL).val();
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                let idLoai = $("#idLoai").val();
+                let idBai = $("#idBaiOf"+idBL).val();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+                let idTLBL = Date.now();
+                let soBL = Number($("#soBL"+idBai).html())+1;
+                if(ndTLBL !== ""){
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<img class="anh-dai-dien" src="/images/`+hinhDaiDien+`">
+                                            <div class="text" style="margin-left: 70px;">
+                                                `+ndTLBL+`
+                                            </div>
+                                            <p class="attribution" style="padding: 10px;">Bởi <a>`+tenNguoiDung+`</a> vào ngày `+ngayDang+` lúc `+gioDang+`</p>`;
+                    
+
+                    $.ajax({
+                        url: '/user/diendan/dangtraloibinhluan',
+                        type: 'post',
+                        data : {
+                            idTraLoiBinhLuan : idTLBL,
+                            idBinhLuan: idBL,
+                            emailNguoiTraLoiBinhLuan : email,
+                            noiDungTraLoiBinhLuan : ndTLBL,
+                            idBai : idBai,
+                            idLoai : idLoai
+                        },
+                        dataType: 'text'
+                    }).done(function (result) {
+                        if(result == "bình luận thành công"){
+                            $("#ndTLBL"+idBL).val("");
+                            $("#khung-traloi-bl"+idBL).prepend(ndThem);
+                            $("#soBL"+idBai).html(soBL);
+
+                            socket.emit("co-nguoi-tl-binh-luan",{hinhDaiDien : hinhDaiDien,tenNguoiTLBL : tenNguoiDung, ndTLBL : ndTLBL, idBL : idBL, idLoai : idLoai, idBai : idBai, soBL : soBL, idTLBL : idTLBL });
+                        }else{
+                            $("#baivietOfND"+idBai).remove();
+                            $(".btn-tuong-tac").html(`<h1>Bài viết đã bị Admin xóa !!!</h1>`);
+                            $(".chu-de").html(`<h1>
+                    <a href="/danhsachbaiviet"><img  src="/images/undo.png" width="30px" title="Danh sách bài viết" style="margin-left: 20px;"/></a>
+                </h1>`);
+                        }
+                    });
+
+                    
+                }
+                
+            });
+
+            $(document).on('click','.motlbl',function () {
+                let id = $(this).attr('id').split("-")[1];
+
+                    let tinhTrang = $(this).html();
+
+                    if (tinhTrang === "Mở trả lời") {
+                        $("#traloibl" + id).show();
+                        $(this).html("Đóng trả lời");
+                    } else if (tinhTrang === "Đóng trả lời") {
+                        $("#traloibl" + id).hide();
+                        $(this).html("Mở trả lời");
+                    }
+            
+            });
+
+            $(document).on('click','#delete',function () {
+                if(confirm('Bạn có chắn chắn muốn xóa bài viết này?')){
+                    let idLoai = $("#idLoai").val();
+                    let idBai = $("#idBai").val();
+                    $.ajax({
+                            url: '/chitietbaiviet/deleteBai/'+idLoai+'/'+idBai,
+                            type: 'get',
+                            dataType: 'text',
+                        }).done(function (result) {
+                            $("#baivietOfND"+idBai).remove();
+                            $(".btn-tuong-tac").html(`<h1>`+result+`</h1>`);
+                            $(".chu-de").html(`<h1>
+                    <a href="/danhsachbaiviet"><img  src="/images/undo.png" width="30px" title="Danh sách bài viết" style="margin-left: 20px;"/></a>
+                </h1>`);
+                        });
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <% include header%>
+    <input type="hidden" id="email" value="<%= nd.email%>">
+    <input type="hidden" id="loaiTaiKhoan" value="<%= nd.loaiTaiKhoan%>">
+    <input type="hidden" id="soUsers" value="<%= listUsers.length%>">
+    <input type="hidden" id="hinhNguoiDung" value="<%= nd.hinhDaiDien%>">
+    <input type="hidden" id="tenNguoiDung" value="<%= nd.tenNguoiDung%>">
+    <input type="hidden" id="soBaiVietCanHienThi" value="5">
+    <input type="hidden" id="soTinDangHien" value="5">
+    <section>
+        <%if(baiviet == undefined){%>
+            <div class="phan-dau">
+                <div class="chu-de" style="float: left;">
+                    <h1>
+                        <a href="/danhsachbaiviet"><img  src="/images/undo.png" width="30px" title="Danh sách bài viết" style="margin-left: 20px;"/></a>
+                    </h1>
+                </div>
+                <div class="btn-tuong-tac" style="float: right;">
+                    <h1>
+                        Bài viết đã bị xóa !!!
+                    </h1>
+                </div>
+            </div>
+        <%}else{%>
+            <input type="hidden" id="idLoai" value="<%=baiviet.idLoai%>">
+            <input type="hidden" id="idBai" value="<%=baiviet.idBai%>">
+            <div class="phan-dau">
+                <div class="chu-de" style="float: left;">
+                    <h1>Chủ đề :
+                        <%if(baiviet.idLoai === 1) {%>
+                        Sức khỏe
+                        <%} else if(baiviet.idLoai === 2){%>
+                        Giáo dục
+                        <%} else if(baiviet.idLoai === 3){%>
+                        Ăn uống và dinh dưỡng
+                        <%} else {%>
+                        Phong cách sống
+                        <%}%></h1>
+                </div>
+                <div class="btn-tuong-tac" style="float: right;">
+                    <h1>
+                        <img id="delete" src="/images/delete.png" width="30px" title="Xóa" style="margin-left: 20px;"/>
+                    </h1>
+                </div>
+            </div>
+            <article class="comment" id="baivietOfND<%= baiviet.idBai%>">
+                <% 
+                        for(var j = 0 ; j < listUsers.length ; j++){
+                            if(listUsers[j].email === baiviet.email){
+                    %>
+                <input type="hidden" id="emailBaiViet<%= baiviet.idBai%>" value="<%= baiviet.email%>">
+                <div class="comment-body">
+                    <div class="text baiVietNguoiDung">
+                        <p id="ndbv<%= baiviet.idBai%>"><%= baiviet.noiDung%></p>
+                    </div>
+                    <span style="float: right;">
+                        <p class="attribution-lon">
+                         Ngày viết
+                            <%= baiviet.date%> lúc <%= baiviet.time%> 
+                        </p>
+                    </span>
+                    <p class="attribution-lon">
+                    
+                            <%if(baiviet.nguoiThich !== undefined){
+                                var daLike = 0;
+                                for(var m = 0 ; m < baiviet.nguoiThich.length ; m++){
+                                    if((baiviet.nguoiThich)[m] === nd.email){
+                                        daLike = 1;
+                            %>
+                            <div style="float: left; margin-right: 20px;" class="like" id="like-<%= baiviet.idBai%>">
+                                        <img src="/images/like.png" width="20px" />
+                            <%        
+                                        break;        
+                                    }
+                                }
+                                if(daLike === 0){
+                            %>
+                            <div style="float: left; margin-right: 20px;" class="like" id="unlike-<%= baiviet.idBai%>">
+                                    <img src="/images/unlike.png" width="20px" />
+                            <%
+                                }
+                            %>
+                                <span id="soLike"><%= baiviet.nguoiThich.length%></span>
+                            <%
+                            }else{
+                            %>
+                            <div style="float: left; margin-right: 20px;" class="like" id="unlike-<%= baiviet.idBai%>">
+                                <img src="/images/unlike.png" width="20px" />
+                                <span id="soLike">0</span>
+                            <%}%>
+                            </div>
+                            <div style="float: left; margin-right: 20px;">
+                                <img src="/images/binhluan.png" width="20px"/>
+                                <span id="soBinhLuan<%= baiviet.idBai%>">
+                            <% 
+                                        var soBinhLuan = 0; 
+                                        if(baiviet.binhLuan !== undefined){
+                                            soBinhLuan += baiviet.binhLuan.length;
+                                            for(var l = 0 ; l < baiviet.binhLuan.length ; l++){
+                                                if((baiviet.binhLuan)[l].traLoiBinhLuan !== undefined){
+                                                    soBinhLuan += (baiviet.binhLuan)[l].traLoiBinhLuan.length;
+                                                }
+                                            }
+                                        }
+                                    %>
+                                    <span id="soBL<%= baiviet.idBai%>"><%= soBinhLuan%></span>
+                        </span>
+                    </div>
+                    
+                    </p>
+                </div>
+                <div class="dangbinhluan binhluan dangbl" id="bl<%= baiviet.idBai%>">
+                    <img src="/images/<%= nd.hinhDaiDien%>">
+                    <textarea id="taDangBL<%= baiviet.idBai%>" placeholder="Nhập để bình luận nào..." required></textarea>
+                    <button class="buttonDangBL" id="buttonDangBL-<%= baiviet.idBai%>">Đăng</button>
+                    
+                    <div id="listBLBaiViet<%= baiviet.idBai%>">
+                        <% 
+                            if(baiviet.binhLuan !== undefined && baiviet.binhLuan.length > 0){
+                                if(baiviet.binhLuan.length > 1){
+                                    baiviet.binhLuan.sort((a,b)=>a.idBinhLuan - b.idBinhLuan);
+                                    baiviet.binhLuan.reverse();
+                                }
+                        %>
+                        <%
+                                for(var l = 0 ; l < baiviet.binhLuan.length ; l++){
+                                    for(let d = 0 ; d < listUsers.length ; d++){
+                                        if(listUsers[d].email == (baiviet.binhLuan)[l].emailNguoiBinhLuan){
+                        %>
+                        <input type="hidden" id="idBaiOf<%=(baiviet.binhLuan)[l].idBinhLuan %>" value="<%= baiviet.idBai%>">
+                        <div class="comment-body binhluan">
+                            <img class="anh-dai-dien" src="/images/<%=listUsers[d].hinhDaiDien %>">
+                            <div class="text" style="margin-left: 70px;">
+                                <%= (baiviet.binhLuan)[l].noiDungBinhLuan%>
+                            </div>
+                            <p class="attribution" style="padding: 10px;">Bởi <a><%=listUsers[d].tenNguoiDung%></a> vào ngày <%=(baiviet.binhLuan)[l].dateBinhLuan %> lúc <%=(baiviet.binhLuan)[l].timeBinhLuan %> 
+                                <button class="motlbl" style="float: right;" id="motlbl-<%= (baiviet.binhLuan)[l].idBinhLuan%>">Mở trả lời</button>
+                            </p>
+        
+                            <div class="comment-body traloibinhluan" id="traloibl<%=(baiviet.binhLuan)[l].idBinhLuan %>">
+        
+                                <img src="/images/<%= nd.hinhDaiDien%>">
+                                <textarea id="ndTLBL<%=(baiviet.binhLuan)[l].idBinhLuan %>" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                <button class="btnTraLoiBL" id="btnTLBL-<%=(baiviet.binhLuan)[l].idBinhLuan %>">Đăng</button>
+                                
+                                <div id="khung-traloi-bl<%=(baiviet.binhLuan)[l].idBinhLuan %>">
+                                    <% 
+                                        if((baiviet.binhLuan)[l].traLoiBinhLuan !== undefined){
+                                            if((baiviet.binhLuan)[l].traLoiBinhLuan.length > 1){
+                                                (baiviet.binhLuan)[l].traLoiBinhLuan.sort((a,b)=>a.idTraLoiBinhLuan - b.idTraLoiBinhLuan);
+                                                (baiviet.binhLuan)[l].traLoiBinhLuan.reverse();
+                                            }
+                                    %>
+                                    <%
+                                            for(var k = 0 ;k < (baiviet.binhLuan)[l].traLoiBinhLuan.length ; k++){
+                                                for(let m = 0 ; m < listUsers.length ; m++){
+                                                    if(listUsers[m].email == ((baiviet.binhLuan)[l].traLoiBinhLuan)[k].emailNguoiTraLoiBinhLuan){
+                                    %>
+                                                        <img class="anh-dai-dien" src="/images/<%=listUsers[m].hinhDaiDien %>">
+                                                        <div class="text" style="margin-left: 70px;">
+                                                            <%=((baiviet.binhLuan)[l].traLoiBinhLuan)[k].noiDungTraLoiBinhLuan %>
+                                                        </div>
+                                                        <p class="attribution" style="padding: 10px;">Bởi <a><%=listUsers[m].tenNguoiDung%></a> vào ngày <%=((baiviet.binhLuan)[l].traLoiBinhLuan)[k].dateTraLoiBinhLuan %> lúc <%=((baiviet.binhLuan)[l].traLoiBinhLuan)[k].timeTraLoiBinhLuan %></p>
+                                    <%
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                        </div>
+                        <%       
+                                            break;
+                                        }
+                                    }        
+                                }
+                            }
+                        %>
+                    </div>
+                </div>
+                <%
+                            break;
+                        }
+                    }
+                %>
+            </article>
+        <%}%>
+    </section>
+    <footer><% include footer%></footer>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/trangchu-style.css" />
+    <script type="javascript" src="/javascripts/trangchuJS.js"></script>
+
+</head>
+
+<body>
+    <% include header %>
+    <section>
+        <div>
+            <figure class="snip1360"><img src="/images/chudesuckhoe.jpg" alt="sample43" />
+                <figcaption>
+                    <h2>Sức Khỏe</h2>
+                    <p>Càng hiểu biết về sự phát triển của bé, bạn sẽ càng cảm thấy tự tin hơn trong việc chăm sóc và
+                        đáp ứng những nhu cầu về chăm sóc sức khỏe cho bé.</p><a href="/1" class="read-more">Xem Thêm</a>
+                </figcaption>
+            </figure>
+            <figure class="snip1360"><img src="/images/chudegiaoduc.jpg" alt="sample43" />
+                <figcaption>
+                    <h2>Giáo Dục</h2>
+                    <p>Giáo dục sớm có ý nghĩa bồi dưỡng tố chất, qua đó giúp trẻ có sự phát triển nổi trội về cả phẩm
+                        chất trí tuệ và phi trí tuệ (tính cách, ý chí, nhân cách, thói quen sinh hoạt,…)</p><a href="/2"
+                        class="read-more">Xem Thêm</a>
+                </figcaption>
+            </figure>
+            <figure class="snip1360"><img src="/images/chudedinhduong.jpg" alt="sample43" />
+                <figcaption>
+                    <h2>Ăn Uống & Dinh Dưỡng</h2>
+                    <p>Bé cần một chế độ ăn uống cân bằng với thức ăn từ cả bốn nhóm thực phẩm-rau và trái cây, ngũ cốc,
+                        sữa và các sản phẩm thay thế, và thịt và các sản phẩm thay thế.</p><a href="/3"
+                        class="read-more">Xem Thêm</a>
+                </figcaption>
+            </figure>
+            <figure class="snip1360"><img src="/images/chudeloisong.jpg" alt="sample43" />
+                <figcaption>
+                    <h2>Kỹ Năng Sống</h2>
+                    <p>Cách tốt nhất mà bạn có thể làm để bảo vệ con chính là trang bị những kỹ năng sống cho trẻ ngay
+                        từ nhỏ chuẩn bị cho sự trưởng thành hoàn thiện.</p><a href="/4" class="read-more">Xem Thêm</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="baonoidung">
+            <div class="noidung">
+                <!--Sức Khỏe-->
+                <div class="muc">
+                    <div class="widget-title suckhoe"><a href="/1">
+                            <h2>Sức Khỏe</h2>
+                        </a></div>
+                    <div class="ndmuc">
+                        <% for(var i = 0 ; i< listSucKhoe.length ; i++){%>                            
+                        <a href="/1/<%=listSucKhoe[i].idBai%>">
+                            <div class="baidang">
+                                <img src="/images/<%=listSucKhoe[i].hinhTieuDe%>" alt="baidang"/>
+                                <div class="chuand">
+                                    <p class="title"><%=listSucKhoe[i].tieuDe%></p>
+                                    <span class="tomtat"><%=listSucKhoe[i].noiDungTomTat%>...</span>
+                                    <br/><label style="font-weight: normal;">Ngày <%=listSucKhoe[i].date %> </label><label style="font-weight: normal;">lúc <%=listSucKhoe[i].time %></label>
+                                    <span style="float: right;font-weight: normal;">
+                                        Lượt thích: 
+                                        <%if(listSucKhoe[i].nguoiThich !== undefined){%>
+                                            <%=listSucKhoe[i].nguoiThich.length %>
+                                        <%}else{%>
+                                            0
+                                        <%}%>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <%}%>
+                        <%if(listSucKhoe.length == 5){%>
+                            <a href="/1" class="nd-read-more" >Xem Thêm</a>
+                        <%}else if(listSucKhoe.length == 0 || listSucKhoe == undefined){%>
+                            Không có bài đăng nào !!!
+                        <%}%>
+                    </div>
+                </div>
+                <!--Giáo Dục-->
+                <div class="muc">
+                    <div class="widget-title giaoduc"><a href="/2">
+                            <h2>Giáo Dục</h2>
+                        </a></div>
+                    <div class="ndmuc">
+                        <% for(var i = 0 ; i< listGiaoDuc.length ; i++){%>
+                        <a href="/2/<%=listGiaoDuc[i].idBai%>">
+                            <div class="baidang">
+                                <img src="/images/<%=listGiaoDuc[i].hinhTieuDe%>" alt="baidang"/>
+                                <div class="chuand">
+                                    <p class="title"><%=listGiaoDuc[i].tieuDe%></p>
+                                    <span class="tomtat"><%=listGiaoDuc[i].noiDungTomTat%>...</span>
+                                    <br/><label style="font-weight: normal;">Ngày <%=listGiaoDuc[i].date %> </label><label style="font-weight: normal;">lúc <%=listGiaoDuc[i].time %></label>
+                                    <span style="float: right;font-weight: normal;">
+                                        Lượt thích: 
+                                        <%if(listGiaoDuc[i].nguoiThich !== undefined){%>
+                                            <%=listGiaoDuc[i].nguoiThich.length %>
+                                        <%}else{%>
+                                            0
+                                        <%}%>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <%}%>
+                        <%if(listGiaoDuc.length == 5){%>
+                            <a href="/2" class="nd-read-more" >Xem Thêm</a>
+                        <%}else if(listGiaoDuc.length == 0 || listGiaoDuc == undefined){%>
+                            Không có bài đăng nào !!!
+                        <%}%>
+                    </div>
+                </div>
+                <!--Dinh Dưỡng-->
+                <div class="muc">
+                    <div class="widget-title dinhduong"><a href="/3">
+                            <h2>Ăn Uống Và Dinh Dưỡng</h2>
+                        </a></div>
+                    <div class="ndmuc">
+                        <% for(var i = 0 ; i< listDinhDuong.length ; i++){%>
+                            <a href="/3/<%=listDinhDuong[i].idBai%>">
+                                <div class="baidang">
+                                    <img src="/images/<%=listDinhDuong[i].hinhTieuDe%>" alt="baidang"/>
+                                    <div class="chuand">
+                                        <p class="title"><%=listDinhDuong[i].tieuDe%></p>
+                                        <span class="tomtat"><%=listDinhDuong[i].noiDungTomTat%>...</span>
+                                    <br/><label style="font-weight: normal;">Ngày <%=listDinhDuong[i].date %> </label><label style="font-weight: normal;">lúc <%=listDinhDuong[i].time %></label>
+                                    <span style="float: right;font-weight: normal;">
+                                        Lượt thích: 
+                                        <%if(listDinhDuong[i].nguoiThich !== undefined){%>
+                                            <%=listDinhDuong[i].nguoiThich.length %>
+                                        <%}else{%>
+                                            0
+                                        <%}%>
+                                    </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <%}%>
+                            <%if(listDinhDuong.length == 5){%>
+                                <a href="/3" class="nd-read-more" >Xem Thêm</a>
+                            <%}else if(listDinhDuong.length == 0 || listDinhDuong == undefined){%>
+                                Không có bài đăng nào !!!
+                            <%}%>
+                    </div>
+                </div>
+                <!--Kỹ năng sống-->
+                <div class="muc">
+                    <div class="widget-title kynangsong"><a href="/4">
+                            <h2>Kỹ Năng Sống</h2>
+                        </a></div>
+                    <div class="ndmuc">
+                        <% for(var i = 0 ; i< listKyNang.length ; i++){%>
+                            <a href="/4/<%=listKyNang[i].idBai%>">
+                                <div class="baidang">
+                                    <img src="/images/<%=listKyNang[i].hinhTieuDe%>" alt="baidang"/>
+                                    <div class="chuand">
+                                        <p class="title"><%=listKyNang[i].tieuDe%></p>
+                                        <span class="tomtat"><%=listKyNang[i].noiDungTomTat%>...</span>
+                                    <br/><label style="font-weight: normal;">Ngày <%=listKyNang[i].date %> </label><label style="font-weight: normal;">lúc <%=listKyNang[i].time %></label>
+                                    <span style="float: right;font-weight: normal;">
+                                        Lượt thích: 
+                                        <%if(listKyNang[i].nguoiThich !== undefined){%>
+                                            <%=listKyNang[i].nguoiThich.length %>
+                                        <%}else{%>
+                                            0
+                                        <%}%>
+                                    </span>
+                                    </div>
+                                </div>
+                            </a>
+                            <%}%>
+                            <%if(listKyNang.length == 5){%>
+                                <a href="/4" class="nd-read-more" >Xem Thêm</a>
+                            <%}else if(listKyNang.length == 0 || listKyNang == undefined){%>
+                                Không có bài đăng nào !!!
+                            <%}%>
+                    </div>
+                </div>
+            </div>
+            <div class="ndquantam">
+                <div id="baivietquantam">Bài viết được quan tâm</div>
+                <%for(let k = 0 ; k < listBaiDangThichNhieu.length ; k++ ){%>
+                    <a href="/<%=listBaiDangThichNhieu[k].idLoai%>/<%=listBaiDangThichNhieu[k].idBai%>">
+                        <div class="chua-nd-qt">
+                            <div class="qt-div">
+                                <img src="/images/<%=listBaiDangThichNhieu[k].hinhTieuDe%>" >
+                                <p><%=listBaiDangThichNhieu[k].tieuDe%></p>
+                                <div class="baidangadmin">
+                                    <span style="float: left;">Ngày  <%=listBaiDangThichNhieu[k].date%> lúc <%=listBaiDangThichNhieu[k].time %></span>
+                                    <span style="float: right;">Lượt thích :<%if(listBaiDangThichNhieu[k].nguoiThich != undefined){%>
+                                                                                <%= listBaiDangThichNhieu[k].nguoiThich.length%>
+                                                                            <%}else{%>
+                                                                                0
+                                                                            <%}%></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <%}%>
+                
+            </div>
+        </div>
+    </section>
+    <footer><% include footer %></footer>
+</body>
+
+</html>

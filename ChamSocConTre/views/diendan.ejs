@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diễn đàn cha mẹ thông thái</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/header-style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/diendan-style.css" />
+    <script type="javascript" src="/javascripts/trangchuJS.js"></script>
+    <script type="text/javascript" src="/javascripts/binhluanJS.js"></script>
+
+    <script src="/javascripts/jqueryJS.js"></script>
+    <script src="http://54.145.93.79:3000/socket.io/socket.io.js"></script>
+    <script src="/javascripts/ejs.min.js"></script>
+    <script src="/javascripts/ejs-render-remote.js"></script>
+    <script>
+        var socket = io.connect("http://54.145.93.79:3000/user/diendan");
+        var socketToCao = io("http://54.145.93.79:3000/danhsachkhieunai");
+        socket.on("co-nguoi-dangnhap", function (data) {
+            $(".bao-online").hide();
+            let soUsers = $("#soUsers").val();
+            for (var i = 0; i < data.length; i++) {
+                for (var j = 0; j < soUsers; j++) {
+                    let tk = $("#emailThu" + j).val();
+                    if (data[i].email === tk) {
+                        $("#img" + j).show();
+                    }
+                }
+            }
+        });
+
+        socket.on("ban-dang-nhap", function (data) {
+            let tenUser = $("#khung-chat-tenND").html();
+            let guiChoEmail = $("#chatVoiEmail").val();
+            if (guiChoEmail === data.emailGui) {
+                $("#tennddangchat").html(tenUser);
+                $("#khung-nguoi-dang-nhap").show();
+            }
+        });
+        socket.on("ban-dung-nhap", function (data) {
+            let tenUser = $("#khung-chat-tenND").html();
+            let guiChoEmail = $("#chatVoiEmail").val();
+            if (guiChoEmail === data.emailGui) {
+                $("#tennddangchat").html(tenUser);
+                $("#khung-nguoi-dang-nhap").hide();
+            }
+        });
+
+        socket.on("gui-chat-toi-email-ban", function (data) {
+            let emailB = $("#chatVoiEmail").val();
+            if (emailB === data.emailGui) {
+                $("#khung-chat-noi-dung").append(`<span class="ban-chat">` + data.noiDung + `</span>`);
+            }
+        });
+        socket.on("gui-chat-toi-email-toi", function (data) {
+            $("#khung-chat-noi-dung").append(`<span class="toi-chat">` + data.noiDung + `</span>`);
+        });
+
+        socket.on('co-nguoi-da-like-bai', function (data) {
+            let idLoai = Number($("#loai-bai").val());
+            if (idLoai == data.idLoai) {
+                $("#soLike" + data.idBai).html(data.soLike);
+            }
+        });
+
+        socket.on('nhan-binh-luan-moi', function (data) {
+            let idLoaiCuaUser = Number($("#loai-bai").val());
+            if (idLoaiCuaUser == data.idLoai) {
+                let idBai = data.idBai;
+                let taBL = data.ndBL;
+                let hinhDaiDien = data.hinhDaiDien;
+                let idLoai = data.idLoai;
+                let tenNguoiDung = data.tenNguoiBL;
+                let idBL = data.idBL;
+                if (taBL !== "") {
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+                    let hinhND = $("#hinhNguoiDung").val();
+                    let ndThem = `<input type="hidden" id="idBaiOf` + idBL + `" value="` + idBai + `">
+                        <div class="comment-body binhluan">
+                            <img class="anh-dai-dien" src="/images/`+ hinhDaiDien + `">
+                            <div class="text" style="margin-left: 70px;">
+                                `+ taBL + `
+                            </div>
+                            <p class="attribution" style="padding: 10px;">Bởi <a>`+ tenNguoiDung + `</a> vào ngày ` + ngayDang + ` lúc ` + gioDang + ` 
+                                <button class="motlbl" style="float: right;" id="motlbl-`+ idBL + `">Mở trả lời</button>
+                            </p>
+
+                            <div class="comment-body traloibinhluan" id="traloibl`+ idBL + `">
+                                <img src="/images/`+ hinhND + `">
+                                <textarea id="ndTLBL`+ idBL + `" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                <button class="btnTraLoiBL" id="btnTLBL-`+ idBL + `">Đăng</button>
+                                <div id="khung-traloi-bl`+ idBL + `"></div>
+                            </div>
+                        </div>`;
+
+                    $("#listBLBaiViet" + idBai).prepend(ndThem);
+                    $("#traloibl" + idBL).hide();
+                    $("#soBL" + idBai).html(data.soBL);
+                }
+            }
+        });
+
+        socket.on('nhan-tl-binh-luan-moi', function (data) {
+
+            let idLoaiCuaUser = Number($("#loai-bai").val());
+            if (idLoaiCuaUser == data.idLoai) {
+                let idBai = data.idBai;
+                let ndTLBL = data.ndTLBL;
+                let hinhDaiDien = data.hinhDaiDien;
+                let idLoai = data.idLoai;
+                let tenNguoiDung = data.tenNguoiTLBL;
+                let idBL = data.idBL;
+                let idTLBL = data.idTLBL;
+
+                if (ndTLBL !== "") {
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<img class="anh-dai-dien" src="/images/` + hinhDaiDien + `">
+                                            <div class="text" style="margin-left: 70px;">
+                                                `+ ndTLBL + `
+                                            </div>
+                                            <p class="attribution" style="padding: 10px;">Bởi <a>`+ tenNguoiDung + `</a> vào ngày ` + ngayDang + ` lúc ` + gioDang + `</p>`;
+
+                    $("#khung-traloi-bl" + idBL).prepend(ndThem);
+                    $("#soBL" + idBai).html(data.soBL);
+                }
+            }
+        });
+
+        socket.on('nhan-bai-viet-moi', function (data) {
+
+            let idLoaiCuaUser = Number($("#loai-bai").val());
+            if (idLoaiCuaUser == data.idLoai) {
+                let idBai = data.idBai;
+                let ndBaiViet = data.ndBaiViet;
+                let hinhNguoiDang = data.hinhNguoiDang;
+                let tenNguoiDang = data.tenNguoiDang;
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                if (ndBaiViet !== "") {
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem =
+                        `<article class="comment" id="baivietOfND` + idBai + `">
+                            <img src="/images/`+ hinhNguoiDang + `" class="anh-dai-dien">
+                            <input type="hidden" id="emailBaiViet`+ idBai + `" value="` + data.emailNguoiDang + `">
+                            <div class="comment-body">
+                                <div class="text baiVietNguoiDung">
+                                    <p id="ndbv`+ idBai + `">` + ndBaiViet + `</p>
+                                </div>
+                            <span style="float: right;">
+                                <p class="attribution">Bởi <a>`+ tenNguoiDang + `</a> vào ngày
+                                    `+ ngayDang + ` lúc ` + gioDang + ` 
+                                    <button class="mobl" id="mobl-`+ idBai + `">Mở bình luận</button>
+                                </p>
+                            </span>
+                            <p class="attribution">                        
+                                    <div style="float: left; margin-right: 20px;" class="like" id="unlike-`+ idBai + `">
+                                            <img src="/images/unlike.png" width="20px" />
+                                        <span id="soLike`+ idBai + `">0</span>
+                                    </div>
+                                    <div style="float: left; margin-right: 20px;">
+                                        <img src="/images/binhluan.png" width="20px"/>
+                                        <span id="soBinhLuan`+ idBai + `">
+                                            <span id="soBL`+ idBai + `">0</span>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <img class="tocao" id="tocao-`+ idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                    </div>
+                                    
+                            </p>
+                        </div>
+                        <div class="dangbinhluan binhluan dangbl" id="bl`+ idBai + `">
+                            <img src="/images/`+ hinhDaiDien + `">
+                            <textarea id="taDangBL`+ idBai + `" placeholder="Nhập để bình luận nào..." required></textarea>
+                            <button class="buttonDangBL" id="buttonDangBL-`+ idBai + `">Đăng</button>
+                            
+                            <div id="listBLBaiViet`+ idBai + `">
+                            </div>
+                        </div>
+                        
+                    </article>`
+
+                    $("#khung-list-bai-viet").prepend(ndThem);
+                    $("#bl" + idBai).hide();
+                }
+            }
+        });
+
+        socket.on('nhan-xoa-bai-viet', function (data) {
+            var idLoai = Number($("#loai-bai").val());
+            if (idLoai == data.idLoai) {
+                $("#baivietOfND" + data.idBai).html(`<p>Bài viết này đã bị xóa<p>`);
+            }
+        });
+
+        $(document).ready(function () {
+
+            $(".bao-online").hide();
+            if ($("#loaiTaiKhoan").val() == 1) {
+                $("#dangBL").hide();
+                $(".khung-nd").hide();
+            }
+            socket.emit("dangnhap-thanhcong", { email: String($("#email").val()) });
+
+            $("#dangBaiViet").click(function () {
+                let email = String($("#email").val());
+                var idLoai = Number($("#loai-bai").val());
+                var soLuong = Number($("#soBaiVietCanHienThi").val());
+                var hinhNguoiDung = $("#hinhNguoiDung").val();
+                let nd = $("#noiDungBaiViet").val().trim();
+                let idBai = Date.now();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+                var d = new Date();
+                var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+                let reg = /^.{1,1000}$/;
+                if (!reg.test(nd)) {
+                    alert("Nội dung bài viết từ 1-1000 ký tự!!!");
+                    return false;
+                } else {
+                    var url = "/user/dangbaiviet";
+                    var data = {
+                        idLoai: idLoai,
+                        idBai: idBai,
+                        noiDungBaiViet: $('#noiDungBaiViet').val()
+                    };
+                    var dataType = 'text';
+                    $.post(url, data, dataType);
+
+                    let ndThem =
+                        `<article class="comment" id="baivietOfND` + idBai + `">
+                            <img src="/images/`+ hinhNguoiDung + `" class="anh-dai-dien">
+                            <input type="hidden" id="emailBaiViet`+ idBai + `" value="` + email + `">
+                            <div class="comment-body">
+                                <div class="text baiVietNguoiDung">
+                                    <p id="ndbv`+ idBai + `">` + nd + `</p>
+                                </div>
+                                <span style="float: right;">
+                                    <p class="attribution">Bởi <a>`+ tenNguoiDung + `</a> vào ngày
+                                        `+ ngayDang + ` lúc ` + gioDang + ` 
+                                        <button class="mobl" id="mobl-`+ idBai + `">Mở bình luận</button>
+                                    </p>
+                                </span>
+                                <p class="attribution">                        
+                                        <div style="float: left; margin-right: 20px;" class="like" id="unlike-`+ idBai + `">
+                                                <img src="/images/unlike.png" width="20px" />
+                                            <span id="soLike`+ idBai + `">0</span>
+                                        </div>
+                                        <div style="float: left; margin-right: 20px;">
+                                            <img src="/images/binhluan.png" width="20px"/>
+                                            <span id="soBinhLuan`+ idBai + `">
+                                                <span id="soBL`+ idBai + `">0</span>
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <img class="tocao" id="tocao-`+ idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                        </div>
+                                </p>
+                            </div>
+                        <div class="dangbinhluan binhluan dangbl" id="bl`+ idBai + `">
+                            <img src="/images/`+ hinhNguoiDung + `">
+                            <textarea id="taDangBL`+ idBai + `" placeholder="Nhập để bình luận nào..." required></textarea>
+                            <button class="buttonDangBL" id="buttonDangBL-`+ idBai + `">Đăng</button>
+                            
+                            <div id="listBLBaiViet`+ idBai + `">
+                            </div>
+                        </div>
+                        
+                    </article>`
+
+                    socket.emit('co-bai-viet-moi', { hinhNguoiDang: hinhNguoiDung, ndBaiViet: nd, emailNguoiDang: email, tenNguoiDang: tenNguoiDung, idLoai: idLoai, idBai: idBai });
+
+                    $("#khung-list-bai-viet").prepend(ndThem);
+                    $("#noiDungBaiViet").val("");
+                    $("#bl" + idBai).hide();
+                }
+
+
+            });
+
+            $("#loai-bai").change(function () {
+                var idLoai = Number($("#loai-bai").val());
+                var email = Number($("#email").val());
+                $("#soBaiVietCanHienThi").val(5);
+                var soLuong = Number($("#soBaiVietCanHienThi").val());
+                var hinhDaiDien = $("#hinhNguoiDung").val();
+                $("#thongTinTim").val("");
+
+                $.ajax({
+                    url: '/user/diendan/listbai/' + idLoai + '/' + 5,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#khung-list-bai-viet").html("");
+                    for (let i = 0; i < result.listBaiViet.length; i++) {
+                        let ndThem = "";
+                        for (let j = 0; j < result.listUsers.length; j++) {
+                            if (result.listBaiViet[i].email == result.listUsers[j].email) {
+                                ndThem += ` <article class="comment" id="baivietOfND` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/`+ result.listUsers[j].hinhDaiDien + `" class="anh-dai-dien">
+                                    <input type="hidden" id="emailBaiViet`+ result.listBaiViet[i].idBai + `" value="` + result.listBaiViet[i].email + `">
+                                    <div class="comment-body">
+                                        <div class="text baiVietNguoiDung">
+                                            <p id="ndbv`+ result.listBaiViet[i].idBai + `">` + result.listBaiViet[i].noiDung + `</p>
+                                        </div>
+                                        <span style="float: right;">
+                                            <p class="attribution">Bởi <a>`+ result.listUsers[j].tenNguoiDung + `</a> vào ngày
+                                                `+ result.listBaiViet[i].date + ` lúc ` + result.listBaiViet[i].time + ` 
+                                                <button class="mobl" id="mobl-`+ result.listBaiViet[i].idBai + `">Mở bình luận</button>
+                                            </p>
+                                        </span>
+                                        <p class="attribution">`;
+
+                                if (result.listBaiViet[i].nguoiThich !== undefined) {
+                                    var daLike = 0;
+                                    for (var m = 0; m < result.listBaiViet[i].nguoiThich.length; m++) {
+                                        if ((result.listBaiViet[i].nguoiThich)[m] === email) {
+                                            daLike = 1;
+                                            ndThem += ` <div style="float: left; margin-right: 20px;" class="like" id="like-` + result.listBaiViet[i].idBai + `">
+                                                    <img src="/images/like.png" width="20px" />`;
+                                            break;
+                                        }
+                                    }
+                                    if (daLike === 0) {
+
+                                        ndThem += `<div style="float: left; margin-right: 20px;" class="like" id="unlike-` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/unlike.png" width="20px" />`;
+                                    }
+
+                                    ndThem += `<span id="soLike` + result.listBaiViet[i].idBai + `">` + result.listBaiViet[i].nguoiThich.length + `</span>`
+                                } else {
+                                    ndThem += `<div style="float: left; margin-right: 20px;" class="like" id="unlike-` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/unlike.png" width="20px" />
+                                    <span id="soLike`+ result.listBaiViet[i].idBai + `">0</span>`
+                                }
+                                ndThem += `</div>
+                                <div style="float: left; margin-right: 20px;">
+                                    <img src="/images/binhluan.png" width="20px"/>
+                                    <span id="soBinhLuan`+ result.listBaiViet[i].idBai + `">`;
+
+                                var soBinhLuan = 0;
+                                if (result.listBaiViet[i].binhLuan !== undefined) {
+                                    soBinhLuan += result.listBaiViet[i].binhLuan.length;
+                                    for (var l = 0; l < result.listBaiViet[i].binhLuan.length; l++) {
+                                        if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined) {
+                                            soBinhLuan += (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length;
+                                        }
+                                    }
+                                }
+
+                                ndThem += `<span id="soBL` + result.listBaiViet[i].idBai + `">` + soBinhLuan + `</span>
+                                    </span>
+                                </div>`;
+
+                                if (result.listBaiViet[i].tinhTrang == 1) {
+                                    if (result.listBaiViet[i].soKhieuNai === undefined) {
+                                        ndThem += `<div>
+                                                <img class="tocao" id="tocao-`+ result.listBaiViet[i].idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                            </div>`;
+                                    } else {
+                                        let isKhieuNai = 0;
+                                        for (let h = 0; h < result.listBaiViet[i].soKhieuNai.length; h++) {
+                                            if ((result.listBaiViet[i].soKhieuNai)[h] === email) {
+                                                isKhieuNai = 1;
+                                                break;
+                                            }
+                                        }
+                                        if (isKhieuNai === 0) {
+
+                                            ndThem += `<div>
+                                                <img class="tocao" id="tocao-`+ result.listBaiViet[i].idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                            </div>`;
+                                        }
+                                    }
+                                }
+                                ndThem += `</p>
+                                            </div>
+                                            <div class="dangbinhluan binhluan dangbl" id="bl`+ result.listBaiViet[i].idBai + `">
+                                                <img src="/images/`+ hinhDaiDien + `">
+                                                <textarea id="taDangBL`+ result.listBaiViet[i].idBai + `" placeholder="Nhập để bình luận nào..." required></textarea>
+                                                <button class="buttonDangBL" id="buttonDangBL-`+ result.listBaiViet[i].idBai + `">Đăng</button>
+                                                
+                                                <div id="listBLBaiViet`+ result.listBaiViet[i].idBai + `">`;
+
+                                if (result.listBaiViet[i].binhLuan !== undefined && result.listBaiViet[i].binhLuan.length > 0) {
+                                    if (result.listBaiViet[i].binhLuan.length > 1) {
+                                        result.listBaiViet[i].binhLuan.sort((a, b) => a.idBinhLuan - b.idBinhLuan);
+                                        result.listBaiViet[i].binhLuan.reverse();
+                                    }
+
+
+                                    for (var l = 0; l < result.listBaiViet[i].binhLuan.length; l++) {
+                                        for (let d = 0; d < result.listUsers.length; d++) {
+                                            if (result.listUsers[d].email == (result.listBaiViet[i].binhLuan)[l].emailNguoiBinhLuan) {
+
+                                                ndThem += `<input type="hidden" id="idBaiOf` + (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `" value="` + result.listBaiViet[i].idBai + `">
+                                                <div class="comment-body binhluan">
+                                                    <img class="anh-dai-dien" src="/images/`+ result.listUsers[d].hinhDaiDien + `">
+                                                    <div class="text" style="margin-left: 70px;">
+                                                `+ (result.listBaiViet[i].binhLuan)[l].noiDungBinhLuan + `
+                                                </div>
+                                                <p class="attribution" style="padding: 10px;">Bởi <a>`+ result.listUsers[d].tenNguoiDung + `</a> vào ngày ` + (result.listBaiViet[i].binhLuan)[l].dateBinhLuan + ` lúc ` + (result.listBaiViet[i].binhLuan)[l].timeBinhLuan + ` 
+                                                    <button class="motlbl" style="float: right;" id="motlbl-`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">Mở trả lời</button>
+                                                </p>
+                        
+                                                <div class="comment-body traloibinhluan" id="traloibl`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">
+                        
+                                                    <img src="/images/`+ hinhDaiDien + `">
+                                                    <textarea id="ndTLBL`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                                    <button class="btnTraLoiBL" id="btnTLBL-`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">Đăng</button>
+                                                    
+                                                    <div id="khung-traloi-bl`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">`;
+
+                                                if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined) {
+                                                    if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length > 1) {
+                                                        (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.sort((a, b) => a.idTraLoiBinhLuan - b.idTraLoiBinhLuan);
+                                                        (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.reverse();
+                                                    }
+
+
+                                                    for (var k = 0; k < (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length; k++) {
+                                                        for (let m = 0; m < result.listUsers.length; m++) {
+                                                            if (result.listUsers[m].email == ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].emailNguoiTraLoiBinhLuan) {
+
+                                                                ndThem += `<img class="anh-dai-dien" src="/images/` + result.listUsers[m].hinhDaiDien + `">
+                                                                <div class="text" style="margin-left: 70px;">
+                                                                    `+ ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].noiDungTraLoiBinhLuan + `
+                                                                </div>
+                                                                <p class="attribution" style="padding: 10px;">Bởi <a>`+ result.listUsers[m].tenNguoiDung + `</a> vào ngày ` + ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].dateTraLoiBinhLuan + ` lúc ` + ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].timeTraLoiBinhLuan + `</p>`;
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                ndThem += `</div>
+                                                    </div>
+                                                </div>`;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                ndThem += `</div>
+                                </div>`;
+                                ndThem += `</article>`;
+                                break;
+                            }
+                        }
+                        $("#khung-list-bai-viet").append(ndThem);
+                    }
+                    $("#divXemThemBaiViet").html("");
+                    if (result.listBaiViet.length == 0) {
+                        $("#khung-list-bai-viet").append(`<div style="font-size : 30px; padding-left : 50px;">Không có bài viết nào !!!</div>`);
+                    } else if (result.listBaiViet.length > 4) {
+                        $("#divXemThemBaiViet").append(`<div id="xemThemBaiViet" style="text-align: center;"><a class="nd-read-more">Xem Thêm</a></div>`);
+                    }
+                    $(".dangbl").hide();
+                    $(".traloibinhluan").hide();
+                });
+
+                $.ajax({
+                    url: '/user/diendan/listbaidang/' + idLoai,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#list-bai-dang").html("");
+                    for (let i = 0; i < result.length; i++) {
+                        let themBaiDang = `<a href="/` + result[i].idLoai + `/` + result[i].idBai + `">
+                                                <div class="chua-nd-qt">
+                                                    <div class="qt-div">
+                                                        <img src="/images/`+ result[i].hinhTieuDe + `" alt="baidang"/>
+                                                        <p>`+ result[i].tieuDe + `</p>
+                                                        <div class="baidangadmin">
+                                                            <span style="float: left;">Ngày  `+ result[i].date + ` lúc ` + result[i].time + `</span>
+                                                            <span style="float: right;">Lượt thích : `+ result[i].nguoiThich.length + ` </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>`;
+                        $("#list-bai-dang").append(themBaiDang);
+                    }
+                    let xemThemBaiDang = `<div style="text-align: right;"><a href="/` + idLoai + `" style="color: white; font-weight: normal; text-transform: none;" >Xem Thêm ---></a></div>`
+                    $("#xemThemBaiDang").html("");
+                    if (result.length > 2) {
+                        $("#xemThemBaiDang").append(xemThemBaiDang);
+                    }
+                });
+
+            });
+
+            $("#thongTinTim").change(function () {
+                var idLoai = Number($("#loai-bai").val());
+                var email = Number($("#email").val());
+                $("#soBaiVietCanHienThi").val(5);
+                var soLuong = Number($("#soBaiVietCanHienThi").val());
+                var hinhDaiDien = $("#hinhNguoiDung").val();
+                let ndTim =  $("#thongTinTim").val();
+                $.ajax({
+                    url: '/user/diendan/timbaiviet',
+                    type: 'post',
+                    data: {
+                        idLoai: idLoai,
+                        soLuong: 5,
+                        ndTim: ndTim
+                    },
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#khung-list-bai-viet").html("");
+                    for (let i = 0; i < result.listBaiViet.length; i++) {
+                        let ndThem = "";
+                        for (let j = 0; j < result.listUsers.length; j++) {
+                            if (result.listBaiViet[i].email == result.listUsers[j].email) {
+
+                                ndThem += ` <article class="comment" id="baivietOfND` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/`+ result.listUsers[j].hinhDaiDien + `" class="anh-dai-dien">
+                                    <input type="hidden" id="emailBaiViet`+ result.listBaiViet[i].idBai + `" value="` + result.listBaiViet[i].email + `">
+                                    <div class="comment-body">
+                                        <div class="text baiVietNguoiDung">
+                                            <p id="ndbv`+ result.listBaiViet[i].idBai + `">` + result.listBaiViet[i].noiDung + `</p>
+                                        </div>
+                                        <span style="float: right;">
+                                            <p class="attribution">Bởi <a>`+ result.listUsers[j].tenNguoiDung + `</a> vào ngày
+                                                `+ result.listBaiViet[i].date + ` lúc ` + result.listBaiViet[i].time + ` 
+                                                <button class="mobl" id="mobl-`+ result.listBaiViet[i].idBai + `">Mở bình luận</button>
+                                            </p>
+                                        </span>
+                                        <p class="attribution">`;
+
+                                if (result.listBaiViet[i].nguoiThich !== undefined) {
+                                    var daLike = 0;
+                                    for (var m = 0; m < result.listBaiViet[i].nguoiThich.length; m++) {
+                                        if ((result.listBaiViet[i].nguoiThich)[m] === email) {
+                                            daLike = 1;
+                                            ndThem += ` <div style="float: left; margin-right: 20px;" class="like" id="like-` + result.listBaiViet[i].idBai + `">
+                                                    <img src="/images/like.png" width="20px" />`;
+                                            break;
+                                        }
+                                    }
+                                    if (daLike === 0) {
+
+                                        ndThem += `<div style="float: left; margin-right: 20px;" class="like" id="unlike-` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/unlike.png" width="20px" />`;
+                                    }
+
+                                    ndThem += `<span id="soLike` + result.listBaiViet[i].idBai + `">` + result.listBaiViet[i].nguoiThich.length + `</span>`
+                                } else {
+                                    ndThem += `<div style="float: left; margin-right: 20px;" class="like" id="unlike-` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/unlike.png" width="20px" />
+                                    <span id="soLike`+ result.listBaiViet[i].idBai + `">0</span>`
+                                }
+                                ndThem += `</div>
+                                <div style="float: left; margin-right: 20px;">
+                                    <img src="/images/binhluan.png" width="20px"/>
+                                    <span id="soBinhLuan`+ result.listBaiViet[i].idBai + `">`;
+
+                                var soBinhLuan = 0;
+                                if (result.listBaiViet[i].binhLuan !== undefined) {
+                                    soBinhLuan += result.listBaiViet[i].binhLuan.length;
+                                    for (var l = 0; l < result.listBaiViet[i].binhLuan.length; l++) {
+                                        if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined) {
+                                            soBinhLuan += (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length;
+                                        }
+                                    }
+                                }
+
+                                ndThem += `<span id="soBL` + result.listBaiViet[i].idBai + `">` + soBinhLuan + `</span>
+                                    </span>
+                                </div>`;
+
+                                if (result.listBaiViet[i].tinhTrang == 1) {
+                                    if (result.listBaiViet[i].soKhieuNai === undefined) {
+                                        ndThem += `<div>
+                                                <img class="tocao" id="tocao-`+ result.listBaiViet[i].idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                            </div>`;
+                                    } else {
+                                        let isKhieuNai = 0;
+                                        for (let h = 0; h < result.listBaiViet[i].soKhieuNai.length; h++) {
+                                            if ((result.listBaiViet[i].soKhieuNai)[h] === email) {
+                                                isKhieuNai = 1;
+                                                break;
+                                            }
+                                        }
+                                        if (isKhieuNai === 0) {
+
+                                            ndThem += `<div>
+                                                <img class="tocao" id="tocao-`+ result.listBaiViet[i].idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                            </div>`;
+                                        }
+                                    }
+                                }
+                                ndThem += `</p>
+                                            </div>
+                                            <div class="dangbinhluan binhluan dangbl" id="bl`+ result.listBaiViet[i].idBai + `">
+                                                <img src="/images/`+ hinhDaiDien + `">
+                                                <textarea id="taDangBL`+ result.listBaiViet[i].idBai + `" placeholder="Nhập để bình luận nào..." required></textarea>
+                                                <button class="buttonDangBL" id="buttonDangBL-`+ result.listBaiViet[i].idBai + `">Đăng</button>
+                                                
+                                                <div id="listBLBaiViet`+ result.listBaiViet[i].idBai + `">`;
+
+                                if (result.listBaiViet[i].binhLuan !== undefined && result.listBaiViet[i].binhLuan.length > 0) {
+                                    if (result.listBaiViet[i].binhLuan.length > 1) {
+                                        result.listBaiViet[i].binhLuan.sort((a, b) => a.idBinhLuan - b.idBinhLuan);
+                                        result.listBaiViet[i].binhLuan.reverse();
+                                    }
+
+
+                                    for (var l = 0; l < result.listBaiViet[i].binhLuan.length; l++) {
+                                        for (let d = 0; d < result.listUsers.length; d++) {
+                                            if (result.listUsers[d].email == (result.listBaiViet[i].binhLuan)[l].emailNguoiBinhLuan) {
+
+                                                ndThem += `<input type="hidden" id="idBaiOf` + (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `" value="` + result.listBaiViet[i].idBai + `">
+                                                <div class="comment-body binhluan">
+                                                    <img class="anh-dai-dien" src="/images/`+ result.listUsers[d].hinhDaiDien + `">
+                                                    <div class="text" style="margin-left: 70px;">
+                                                `+ (result.listBaiViet[i].binhLuan)[l].noiDungBinhLuan + `
+                                                </div>
+                                                <p class="attribution" style="padding: 10px;">Bởi <a>`+ result.listUsers[d].tenNguoiDung + `</a> vào ngày ` + (result.listBaiViet[i].binhLuan)[l].dateBinhLuan + ` lúc ` + (result.listBaiViet[i].binhLuan)[l].timeBinhLuan + ` 
+                                                    <button class="motlbl" style="float: right;" id="motlbl-`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">Mở trả lời</button>
+                                                </p>
+                        
+                                                <div class="comment-body traloibinhluan" id="traloibl`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">
+                        
+                                                    <img src="/images/`+ hinhDaiDien + `">
+                                                    <textarea id="ndTLBL`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                                    <button class="btnTraLoiBL" id="btnTLBL-`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">Đăng</button>
+                                                    
+                                                    <div id="khung-traloi-bl`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">`;
+
+                                                if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined) {
+                                                    if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length > 1) {
+                                                        (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.sort((a, b) => a.idTraLoiBinhLuan - b.idTraLoiBinhLuan);
+                                                        (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.reverse();
+                                                    }
+
+
+                                                    for (var k = 0; k < (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length; k++) {
+                                                        for (let m = 0; m < result.listUsers.length; m++) {
+                                                            if (result.listUsers[m].email == ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].emailNguoiTraLoiBinhLuan) {
+
+                                                                ndThem += `<img class="anh-dai-dien" src="/images/` + result.listUsers[m].hinhDaiDien + `">
+                                                                <div class="text" style="margin-left: 70px;">
+                                                                    `+ ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].noiDungTraLoiBinhLuan + `
+                                                                </div>
+                                                                <p class="attribution" style="padding: 10px;">Bởi <a>`+ result.listUsers[m].tenNguoiDung + `</a> vào ngày ` + ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].dateTraLoiBinhLuan + ` lúc ` + ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].timeTraLoiBinhLuan + `</p>`;
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                ndThem += `</div>
+                                                    </div>
+                                                </div>`;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                ndThem += `</div>
+                                </div>`;
+                                ndThem += `</article>`;
+                                break;
+                            }
+                        }
+                        $("#khung-list-bai-viet").append(ndThem);
+                    }
+                    $("#divXemThemBaiViet").html("");
+                    if (result.listBaiViet.length == 0) {
+                        $("#khung-list-bai-viet").append(`<div style="font-size : 30px; padding-left : 50px;">Không có bài viết nào !!!</div>`);
+                    } else if (result.listBaiViet.length > 4) {
+                        $("#divXemThemBaiViet").append(`<div id="xemThemBaiViet" style="text-align: center;"><a class="nd-read-more">Xem Thêm</a></div>`);
+                    }
+                    $(".dangbl").hide();
+                    $(".traloibinhluan").hide();
+                });
+
+            });
+
+            $("#khung-chat").hide();
+            $("#khung-nguoi-dang-nhap").hide();
+            $(".tr-user").click(function (e) {
+                $("#khung-chat").show();
+                $("#soTinDangHien").val(0);
+                let idTrUser = this.id.split("-");
+                let tenUser = $("#ten-user" + idTrUser[1]).html();
+                $("#khung-chat-tenND").html(tenUser);
+                $("#tennddangchat").html(tenUser);
+                $("#chatVoiEmail").val($("#emailThu" + idTrUser[1]).val());
+                let emailA = $("#email").val();
+                let emailB = $("#chatVoiEmail").val();
+                $("#nd-chat").val("");
+                let soLuong = 10;
+                e.preventDefault();
+                $.ajax({
+                    url: '/user/diendan/mochat/' + emailA + '/' + emailB + '/' + soLuong,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (noiDungChat) {
+                    let email = $("#email").val();
+                    $("#khung-chat-noi-dung").html("");
+                    if (noiDungChat === null || noiDungChat.length === 0) {
+                    } else {
+                        if (noiDungChat.length == soLuong) {
+                            $("#soTinDangHien").val(20);
+                            $("#xemthemChat").show();
+                        } else {
+                            $("#xemthemChat").hide();
+                        }
+                        for (let i = 0; i < noiDungChat.length; i++) {
+                            if (noiDungChat[i].emailNguoiGui === email) {
+                                $("#khung-chat-noi-dung").append(`<span class="toi-chat">` + noiDungChat[i].noiDungGui + `</span>`);
+                            } else {
+                                $("#khung-chat-noi-dung").append(`<span class="ban-chat">` + noiDungChat[i].noiDungGui + `</span>`);
+                            }
+                        }
+                    }
+                });
+
+                $("#khung-chat").show();
+
+            });
+            $("#nd-chat").focusin(function () {
+                let email = $("#email").val();
+                let guiChoEmail = $("#chatVoiEmail").val();
+                socket.emit("toi-dang-go-chu", { guiChoEmail: guiChoEmail, emailGui: email });
+            });
+            $("#nd-chat").focusout(function () {
+                let email = $("#email").val();
+                let guiChoEmail = $("#chatVoiEmail").val();
+                socket.emit("toi-dung-go-chu", { guiChoEmail: guiChoEmail, emailGui: email });
+            });
+
+            $("#off-form").click(function () {
+                $("#khung-chat").hide();
+                $("#chatVoiEmail").val("");
+            });
+
+            $("#nd-chat").keypress(function (e) {
+                if (e.keyCode === 13) {
+                    let noiDung = $("#nd-chat").val();
+                    if (noiDung !== "" && noiDung !== null) {
+                        let guiChoEmail = $("#chatVoiEmail").val();
+                        let email = $("#email").val();
+
+                        var url = "/user/diendan/guichat";
+                        var data = {
+                            noiDungGui: noiDung,
+                            email: email,
+                            guiChoEmail: guiChoEmail
+                        };
+                        var dataType = 'text';
+                        $.post(url, data, dataType);
+
+                        socket.emit("gui-noi-dung-chat", { noiDung: noiDung, guiChoEmail: guiChoEmail, email: email });
+                        socketThongBao.emit("co-thong-bao-tin-nhan", { noiDung: noiDung, emailNguoiNhan: guiChoEmail, emailNguoiGui: email });
+                        $("#nd-chat").val("");
+                    }
+                }
+            });
+
+            $("#khung-chat").keypress(function (e) {
+                if (e.keyCode === 27) {
+                    $("#khung-chat").hide();
+                }
+            });
+
+            $("#btn-gui").click(function () {
+                let noiDung = $("#nd-chat").val();
+                if (noiDung !== "" && noiDung !== null) {
+                    let guiChoEmail = $("#chatVoiEmail").val();
+                    let email = $("#email").val();
+
+                    var url = "/user/diendan/guichat";
+                    var data = {
+                        noiDungGui: noiDung,
+                        email: email,
+                        guiChoEmail: guiChoEmail
+                    };
+                    var dataType = 'text';
+                    $.post(url, data, dataType);
+
+                    socket.emit("gui-noi-dung-chat", { noiDung: noiDung, guiChoEmail: guiChoEmail, email: email });
+                    socketThongBao.emit("co-thong-bao-tin-nhan", { noiDung: noiDung, emailNguoiNhan: guiChoEmail, emailNguoiGui: email });
+                    $("#nd-chat").val("");
+                }
+            });
+
+            $(document).on('click', '.like', function () {
+                let idAttr = this.id.split("-");
+                let id = idAttr[0];
+                let idBaiViet = idAttr[1];
+                let soLike = Number($("#soLike" + idBaiViet).html());
+                let idLoai = Number($("#loai-bai").val());
+                if (id === 'like') {
+                    $(this).attr('id', "unlike-" + idBaiViet);
+                    $(this).html("");
+                    $(this).html(`<img src="/images/unlike.png" width="20px"/><span id="soLike` + idBaiViet + `">` + (soLike - 1) + `</span>`);
+
+                    $.ajax({
+                        url: '/user/likebaiviet',
+                        type: 'post',
+                        data: {
+                            idLoai: idLoai,
+                            idBaiViet: idBaiViet,
+                            isLike: Number(0)
+                        },
+                        dataType: 'text',
+                    }).done(function (result) {
+                        if (result == "like thành công") {
+                            socket.emit('co-nguoi-like', { idLoai: idLoai, idBai: idBaiViet, soLike: (soLike - 1) });
+                        } else {
+                            alert("Bài viết này đã bị xóa !!!");
+                            $("#baivietOfND" + idBaiViet).remove();
+                        }
+                    });
+
+
+                } else if (id === 'unlike') {
+                    $(this).attr('id', "like-" + idBaiViet);
+                    $(this).html("");
+                    $(this).html(`<img src="/images/like.png" width="20px"/><span id="soLike` + idBaiViet + `">` + (soLike + 1) + `</span>`);
+                    $.ajax({
+                        url: '/user/likebaiviet',
+                        type: 'post',
+                        data: {
+                            idLoai: idLoai,
+                            idBaiViet: idBaiViet,
+                            isLike: Number(1)
+                        },
+                        dataType: 'text',
+                    }).done(function (result) {
+                        if (result == "like thành công") {
+                            socket.emit('co-nguoi-like', { idLoai: idLoai, idBai: idBaiViet, soLike: (soLike + 1) });
+                        } else {
+                            alert("Bài viết này đã bị xóa !!!");
+                            $("#baivietOfND" + idBaiViet).remove();
+                        }
+                    });
+
+                }
+            });
+
+            $(document).on('click', '.buttonDangBL', function () {
+                let email = $("#email").val();
+                let idBtn = this.id.split("-");
+                let idBai = idBtn[1];
+                let taBL = $("#taDangBL" + idBai).val().trim();
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                let idLoai = $("#loai-bai").val();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+                let idBL = Date.now();
+                let soBL = Number($("#soBL" + idBai).html()) + 1;
+                let reg = /^.{1,300}$/;
+                if (reg.test(taBL)) {
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<input type="hidden" id="idBaiOf` + idBL + `" value="` + idBai + `">
+                        <div class="comment-body binhluan">
+                            <img class="anh-dai-dien" src="/images/`+ hinhDaiDien + `">
+                            <div class="text" style="margin-left: 70px;">
+                                `+ taBL + `
+                            </div>
+                            <p class="attribution" style="padding: 10px;">Bởi <a>`+ tenNguoiDung + `</a> vào ngày ` + ngayDang + ` lúc ` + gioDang + ` 
+                                <button class="motlbl" style="float: right;" id="motlbl-`+ idBL + `">Mở trả lời</button>
+                            </p>
+
+                            <div class="comment-body traloibinhluan" id="traloibl`+ idBL + `">
+                                <img src="/images/`+ hinhDaiDien + `">
+                                <textarea id="ndTLBL`+ idBL + `" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                <button class="btnTraLoiBL" id="btnTLBL-`+ idBL + `">Đăng</button>
+                                <div id="khung-traloi-bl`+ idBL + `"></div>
+                            </div>
+                        </div>`;
+
+                    $.ajax({
+                        url: '/user/diendan/dangbinhluan',
+                        type: 'post',
+                        data: {
+                            idBinhLuan: idBL,
+                            emailNguoiBinhLuan: email,
+                            noiDungBinhLuan: taBL,
+                            idBai: idBai,
+                            idLoai: idLoai
+                        },
+                        dataType: 'text'
+                    }).done(function (result) {
+                        if (result == "bình luận thành công") {
+                            $("#taDangBL" + idBai).val("");
+                            $("#listBLBaiViet" + idBai).prepend(ndThem);
+                            $("#traloibl" + idBL).hide();
+                            $("#soBL" + idBai).html(soBL);
+                            socket.emit("co-nguoi-binh-luan", { hinhDaiDien: hinhDaiDien, tenNguoiBL: tenNguoiDung, ndBL: taBL, idBL: idBL, idLoai: idLoai, idBai: idBai, soBL: soBL });
+                            let emailBai = $("#emailBaiViet" + idBai).val();
+                            socketThongBao.emit("co-thong-bao-bai-viet", { emailBai: emailBai });
+                        } else {
+                            alert("Bài viết này đã bị xóa !!!");
+                            $("#baivietOfND" + idBai).remove();
+                        }
+                    });
+
+
+                }else{
+                    alert("Nội dung bình luận phải từ 1-300 ký tự !!!");
+                }
+
+            })
+
+            $(document).on('click', '.btnTraLoiBL', function () {
+                let email = $("#email").val();
+                let idBtn = this.id.split("-");
+                let idBL = idBtn[1];
+                let ndTLBL = $("#ndTLBL" + idBL).val().trim();
+                let hinhDaiDien = $("#hinhNguoiDung").val();
+                let idLoai = $("#loai-bai").val();
+                let idBai = $("#idBaiOf" + idBL).val();
+                let tenNguoiDung = $("#tenNguoiDung").val();
+                let idTLBL = Date.now();
+                let reg = /^.{1,300}$/;
+                let soBL = Number($("#soBL" + idBai).html()) + 1;
+                if (reg.test(ndTLBL)) {
+                    var d = new Date();
+                    var ngayDang = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+                    var gioDang = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+                    let ndThem = `<img class="anh-dai-dien" src="/images/` + hinhDaiDien + `">
+                                            <div class="text" style="margin-left: 70px;">
+                                                `+ ndTLBL + `
+                                            </div>
+                                            <p class="attribution" style="padding: 10px;">Bởi <a>`+ tenNguoiDung + `</a> vào ngày ` + ngayDang + ` lúc ` + gioDang + `</p>`;
+
+
+                    $.ajax({
+                        url: '/user/diendan/dangtraloibinhluan',
+                        type: 'post',
+                        data: {
+                            idTraLoiBinhLuan: idTLBL,
+                            idBinhLuan: idBL,
+                            emailNguoiTraLoiBinhLuan: email,
+                            noiDungTraLoiBinhLuan: ndTLBL,
+                            idBai: idBai,
+                            idLoai: idLoai
+                        },
+                        dataType: 'text'
+                    }).done(function (result) {
+                        if (result == "bình luận thành công") {
+                            $("#ndTLBL" + idBL).val("");
+                            $("#khung-traloi-bl" + idBL).prepend(ndThem);
+                            $("#soBL" + idBai).html(soBL);
+
+                            socket.emit("co-nguoi-tl-binh-luan", { hinhDaiDien: hinhDaiDien, tenNguoiTLBL: tenNguoiDung, ndTLBL: ndTLBL, idBL: idBL, idLoai: idLoai, idBai: idBai, soBL: soBL, idTLBL: idTLBL });
+                        } else {
+                            alert("Bài viết này đã bị xóa !!!");
+                            $("#baivietOfND" + idBai).remove();
+                        }
+                    });
+                }else{
+                    alert("Nội dung bình luận từ 1-300 ký tự !!!");
+                }
+
+            });
+
+            $(document).on('click', '.mobl', function () {
+                let id = $(this).attr('id').split("-")[1];
+                let tinhTrang = $(this).html();
+                if (tinhTrang === "Mở bình luận") {
+                    $("#bl" + id).show();
+                    $(this).html("Đóng bình luận");
+                } else if (tinhTrang === "Đóng bình luận") {
+                    $("#bl" + id).hide();
+                    $(this).html("Mở bình luận");
+                }
+            });
+
+            $(document).on('click', '.motlbl', function () {
+                let id = $(this).attr('id').split("-")[1];
+
+                let tinhTrang = $(this).html();
+
+                if (tinhTrang === "Mở trả lời") {
+                    $("#traloibl" + id).show();
+                    $(this).html("Đóng trả lời");
+                } else if (tinhTrang === "Đóng trả lời") {
+                    $("#traloibl" + id).hide();
+                    $(this).html("Mở trả lời");
+                }
+
+            });
+
+            $(document).on('click', '#xemthemChat', function (e) {
+                e.preventDefault();
+                let soLuong = $("#soTinDangHien").val();
+                let emailA = $("#email").val();
+                let emailB = $("#chatVoiEmail").val();
+                $.ajax({
+                    url: '/user/diendan/mochat/' + emailA + '/' + emailB + '/' + soLuong,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (noiDungChat) {
+                    let email = $("#email").val();
+                    $("#khung-chat-noi-dung").html("");
+                    if (noiDungChat === null || noiDungChat.length === 0) {
+                    } else {
+                        if (noiDungChat.length == soLuong) {
+                            $("#soTinDangHien").val(Number(soLuong) + 10);
+                            $("#xemthemChat").show();
+                        } else {
+                            $("#xemthemChat").hide();
+                        }
+                        for (let i = 0; i < noiDungChat.length; i++) {
+                            if (noiDungChat[i].emailNguoiGui === email) {
+                                $("#khung-chat-noi-dung").append(`<span class="toi-chat">` + noiDungChat[i].noiDungGui + `</span>`);
+                            } else {
+                                $("#khung-chat-noi-dung").append(`<span class="ban-chat">` + noiDungChat[i].noiDungGui + `</span>`);
+                            }
+                        }
+                    }
+                });
+            });
+
+            $(document).on('click', '#xemThemBaiViet', function (e) {
+                e.preventDefault();
+                var idLoai = Number($("#loai-bai").val());
+                var soLuong = Number($("#soBaiVietCanHienThi").val()) + 5;
+                $("#soBaiVietCanHienThi").val(soLuong);
+                var soLuong = Number($("#soBaiVietCanHienThi").val());
+                var hinhDaiDien = $("#hinhNguoiDung").val();
+                let ndTim =  $("#thongTinTim").val();
+                $.ajax({
+                    url: '/user/diendan/timbaiviet',
+                    type: 'post',
+                    data: {
+                        idLoai: idLoai,
+                        soLuong: soLuong,
+                        ndTim: ndTim
+                    },
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#khung-list-bai-viet").html("");
+                    for (let i = 0; i < result.listBaiViet.length; i++) {
+                        let ndThem = "";
+                        for (let j = 0; j < result.listUsers.length; j++) {
+                            if (result.listBaiViet[i].email == result.listUsers[j].email) {
+                                ndThem += ` <article class="comment" id="baivietOfND` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/`+ result.listUsers[j].hinhDaiDien + `" class="anh-dai-dien">
+                                    <input type="hidden" id="emailBaiViet`+ result.listBaiViet[i].idBai + `" value="` + result.listBaiViet[i].email + `">
+                                    <div class="comment-body">
+                                        <div class="text baiVietNguoiDung">
+                                            <p id="ndbv`+ result.listBaiViet[i].idBai + `">` + result.listBaiViet[i].noiDung + `</p>
+                                        </div>
+                                        <span style="float: right;">
+                                            <p class="attribution">Bởi <a>`+ result.listUsers[j].tenNguoiDung + `</a> vào ngày
+                                                `+ result.listBaiViet[i].date + ` lúc ` + result.listBaiViet[i].time + ` 
+                                                <button class="mobl" id="mobl-`+ result.listBaiViet[i].idBai + `">Mở bình luận</button>
+                                            </p>
+                                        </span>
+                                        <p class="attribution">`;
+
+                                if (result.listBaiViet[i].nguoiThich !== undefined) {
+                                    var daLike = 0;
+                                    for (var m = 0; m < result.listBaiViet[i].nguoiThich.length; m++) {
+                                        if ((result.listBaiViet[i].nguoiThich)[m] === email) {
+                                            daLike = 1;
+                                            ndThem += ` <div style="float: left; margin-right: 20px;" class="like" id="like-` + result.listBaiViet[i].idBai + `">
+                                                    <img src="/images/like.png" width="20px" />`;
+                                            break;
+                                        }
+                                    }
+                                    if (daLike === 0) {
+
+                                        ndThem += `<div style="float: left; margin-right: 20px;" class="like" id="unlike-` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/unlike.png" width="20px" />`;
+                                    }
+
+                                    ndThem += `<span id="soLike` + result.listBaiViet[i].idBai + `">` + result.listBaiViet[i].nguoiThich.length + `</span>`
+                                } else {
+                                    ndThem += `<div style="float: left; margin-right: 20px;" class="like" id="unlike-` + result.listBaiViet[i].idBai + `">
+                                    <img src="/images/unlike.png" width="20px" />
+                                    <span id="soLike`+ result.listBaiViet[i].idBai + `">0</span>`
+                                }
+                                ndThem += `</div>
+                                <div style="float: left; margin-right: 20px;">
+                                    <img src="/images/binhluan.png" width="20px"/>
+                                    <span id="soBinhLuan`+ result.listBaiViet[i].idBai + `">`;
+
+                                var soBinhLuan = 0;
+                                if (result.listBaiViet[i].binhLuan !== undefined) {
+                                    soBinhLuan += result.listBaiViet[i].binhLuan.length;
+                                    for (var l = 0; l < result.listBaiViet[i].binhLuan.length; l++) {
+                                        if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined) {
+                                            soBinhLuan += (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length;
+                                        }
+                                    }
+                                }
+
+                                ndThem += `<span id="soBL` + result.listBaiViet[i].idBai + `">` + soBinhLuan + `</span>
+                                    </span>
+                                </div>`;
+
+                                if (result.listBaiViet[i].tinhTrang == 1) {
+                                    if (result.listBaiViet[i].soKhieuNai === undefined) {
+                                        ndThem += `<div>
+                                                <img class="tocao" id="tocao-`+ result.listBaiViet[i].idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                            </div>`;
+                                    } else {
+                                        let isKhieuNai = 0;
+                                        for (let h = 0; h < result.listBaiViet[i].soKhieuNai.length; h++) {
+                                            if ((result.listBaiViet[i].soKhieuNai)[h] === email) {
+                                                isKhieuNai = 1;
+                                                break;
+                                            }
+                                        }
+                                        if (isKhieuNai === 0) {
+
+                                            ndThem += `<div>
+                                                <img class="tocao" id="tocao-`+ result.listBaiViet[i].idBai + `" title="Tố cáo" src="/images/error.png" width="20px"/>
+                                            </div>`;
+                                        }
+                                    }
+                                }
+                                ndThem += `</p>
+                                            </div>
+                                            <div class="dangbinhluan binhluan dangbl" id="bl`+ result.listBaiViet[i].idBai + `">
+                                                <img src="/images/`+ hinhDaiDien + `">
+                                                <textarea id="taDangBL`+ result.listBaiViet[i].idBai + `" placeholder="Nhập để bình luận nào..." required></textarea>
+                                                <button class="buttonDangBL" id="buttonDangBL-`+ result.listBaiViet[i].idBai + `">Đăng</button>
+                                                
+                                                <div id="listBLBaiViet`+ result.listBaiViet[i].idBai + `">`;
+
+                                if (result.listBaiViet[i].binhLuan !== undefined && result.listBaiViet[i].binhLuan.length > 0) {
+                                    if (result.listBaiViet[i].binhLuan.length > 1) {
+                                        result.listBaiViet[i].binhLuan.sort((a, b) => a.idBinhLuan - b.idBinhLuan);
+                                        result.listBaiViet[i].binhLuan.reverse();
+                                    }
+
+
+                                    for (var l = 0; l < result.listBaiViet[i].binhLuan.length; l++) {
+                                        for (let d = 0; d < result.listUsers.length; d++) {
+                                            if (result.listUsers[d].email == (result.listBaiViet[i].binhLuan)[l].emailNguoiBinhLuan) {
+
+                                                ndThem += `<input type="hidden" id="idBaiOf` + (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `" value="` + result.listBaiViet[i].idBai + `">
+                                                <div class="comment-body binhluan">
+                                                    <img class="anh-dai-dien" src="/images/`+ result.listUsers[d].hinhDaiDien + `">
+                                                    <div class="text" style="margin-left: 70px;">
+                                                `+ (result.listBaiViet[i].binhLuan)[l].noiDungBinhLuan + `
+                                                </div>
+                                                <p class="attribution" style="padding: 10px;">Bởi <a>`+ result.listUsers[d].tenNguoiDung + `</a> vào ngày ` + (result.listBaiViet[i].binhLuan)[l].dateBinhLuan + ` lúc ` + (result.listBaiViet[i].binhLuan)[l].timeBinhLuan + ` 
+                                                    <button class="motlbl" style="float: right;" id="motlbl-`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">Mở trả lời</button>
+                                                </p>
+                        
+                                                <div class="comment-body traloibinhluan" id="traloibl`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">
+                        
+                                                    <img src="/images/`+ hinhDaiDien + `">
+                                                    <textarea id="ndTLBL`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `" required placeholder="Nhập trả lời bình luận nào..."></textarea>
+                                                    <button class="btnTraLoiBL" id="btnTLBL-`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">Đăng</button>
+                                                    
+                                                    <div id="khung-traloi-bl`+ (result.listBaiViet[i].binhLuan)[l].idBinhLuan + `">`;
+
+                                                if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan !== undefined) {
+                                                    if ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length > 1) {
+                                                        (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.sort((a, b) => a.idTraLoiBinhLuan - b.idTraLoiBinhLuan);
+                                                        (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.reverse();
+                                                    }
+
+
+                                                    for (var k = 0; k < (result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan.length; k++) {
+                                                        for (let m = 0; m < result.listUsers.length; m++) {
+                                                            if (result.listUsers[m].email == ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].emailNguoiTraLoiBinhLuan) {
+
+                                                                ndThem += `<img class="anh-dai-dien" src="/images/` + result.listUsers[m].hinhDaiDien + `">
+                                                                <div class="text" style="margin-left: 70px;">
+                                                                    `+ ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].noiDungTraLoiBinhLuan + `
+                                                                </div>
+                                                                <p class="attribution" style="padding: 10px;">Bởi <a>`+ result.listUsers[m].tenNguoiDung + `</a> vào ngày ` + ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].dateTraLoiBinhLuan + ` lúc ` + ((result.listBaiViet[i].binhLuan)[l].traLoiBinhLuan)[k].timeTraLoiBinhLuan + `</p>`;
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                ndThem += `</div>
+                                                    </div>
+                                                </div>`;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                ndThem += `</div>
+                                </div>`;
+                                ndThem += `</article>`;
+                                break;
+                            }
+                        }
+                        $("#khung-list-bai-viet").append(ndThem);
+                    }
+                    $("#divXemThemBaiViet").html("");
+                    if (result.listBaiViet.length == 0) {
+                        $("#khung-list-bai-viet").append(`<div style="font-size : 30px; padding-left : 50px;">Không có bài viết nào !!!</div>`);
+                    } else if (result.listBaiViet.length >= soLuong) {
+                        $("#divXemThemBaiViet").append(`<div id="xemThemBaiViet" style="text-align: center;"><a class="nd-read-more">Xem Thêm</a></div>`);
+                    }
+                    $(".dangbl").hide();
+                    $(".traloibinhluan").hide();
+                });
+
+                $.ajax({
+                    url: '/user/diendan/listbaidang/' + idLoai,
+                    type: 'get',
+                    dataType: 'json',
+                }).done(function (result) {
+                    $("#list-bai-dang").html("");
+                    for (let i = 0; i < result.length; i++) {
+                        let themBaiDang = `<a href="/` + result[i].idLoai + `/` + result[i].idBai + `">
+                                                <div class="chua-nd-qt">
+                                                    <div class="qt-div">
+                                                        <img src="/images/`+ result[i].hinhTieuDe + `" alt="baidang"/>
+                                                        <p>`+ result[i].tieuDe + `</p>
+                                                        <div class="baidangadmin">
+                                                            <span style="float: left;">Ngày  `+ result[i].date + ` lúc ` + result[i].time + `</span>
+                                                            <span style="float: right;">Lượt thích : `+ result[i].nguoiThich.length + ` </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>`;
+                        $("#list-bai-dang").append(themBaiDang);
+                    }
+                    let xemThemBaiDang = `<div style="text-align: right;"><a href="/` + idLoai + `" style="color: white; font-weight: normal; text-transform: none;" >Xem Thêm ---></a></div>`
+                    $("#xemThemBaiDang").html("");
+                    if (result.length > 2) {
+                        $("#xemThemBaiDang").append(xemThemBaiDang);
+                    }
+                });
+
+            });
+
+            $(document).on('click', '.tocao', function (e) {
+                if (confirm('Bạn có chắn chắn muốn tố cáo bài viết này?')) {
+                    $(this).hide();
+                    let idBai = this.id.split("-")[1];
+                    let email = $("#email").val();
+                    let idLoai = $("#loai-bai").val();
+                    let emailBaiViet = $("#emailBaiViet" + idBai).val();
+                    let ndbv = $("#ndbv" + idBai).html();
+
+                    $.ajax({
+                        url: '/user/diendan/tocao',
+                        type: 'post',
+                        data: {
+                            emailNguoiToCao: email,
+                            idBai: idBai,
+                            idLoai: idLoai
+                        },
+                        dataType: 'text',
+                    }).done(function (result) {
+                        if (result == "tố cáo thành công") {
+                            alert("Tố cáo thành công !!!")
+                            socketToCao.emit("tocao", { idLoai: idLoai, idBai: idBai, emailBaiViet: emailBaiViet, ndbv: ndbv });
+                        } else {
+                            alert("Bài viết này đã bị xóa !!!");
+                            $("#baivietOfND" + idBai).remove();
+                        }
+                    });
+                }
+            });
+
+            $("#nd-tim-user").keyup(function () {
+                let nd = $("#nd-tim-user").val();
+                let listUsers = $("#soUsers").val();
+                for (let i = 0; i < listUsers; i++) {
+                    let ten = $("#ten-user" + i).html();
+                    if (ten != undefined) {
+                        if (ten.toLowerCase().indexOf(nd.toLowerCase()) > -1) {
+                            $("#user-" + i).show();
+                        } else {
+                            $("#user-" + i).hide();
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <% include header%>
+    <input type="hidden" id="email" value="<%= nd.email%>">
+    <input type="hidden" id="loaiTaiKhoan" value="<%= nd.loaiTaiKhoan%>">
+    <input type="hidden" id="soUsers" value="<%= listUsers.length%>">
+    <input type="hidden" id="hinhNguoiDung" value="<%= nd.hinhDaiDien%>">
+    <input type="hidden" id="tenNguoiDung" value="<%= nd.tenNguoiDung%>">
+    <input type="hidden" id="soBaiVietCanHienThi" value="5">
+    <input type="hidden" id="soTinDangHien" value="5">
+    <div class="khung-nd">
+        <div style="border-bottom: 5px solid #ccc;">
+            <p class="ds-nd">Cha Mẹ Thông Thái</p>
+        </div>
+        <div class="scrollbar" id="style-1">
+            <div class="force-overflow">
+                <div class="chua-users">
+                    <table class="noiung-table">
+                        <% 
+                            for(var i = 0 ; i < listUsers.length; i++){
+                                if(listUsers[i].email !== nd.email && listUsers[i].email != "tranquangthinhtk@gmail.com" && listUsers[i].tinhTrang != 0){
+                        %>
+                        <div>
+                            <tr class="tr-user" id="user-<%=i%>">
+                                <td><img class="hinh-user" src="/images/<%= listUsers[i].hinhDaiDien%>" width="30px"
+                                        height="30px" />
+                                </td>
+                                <td style="width: 200px;" id="ten-user<%=i%>"><%= listUsers[i].tenNguoiDung%></td>
+                                <td id="img<%=i%>" class="bao-online"><img src="/images/online.png" width="20px" />
+                                </td>
+                                <input type="hidden" id="emailThu<%=i%>" value="<%= listUsers[i].email%>">
+                            </tr>
+                        </div>
+                        <%
+                                }
+                            }
+                        %>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tim-nguoi">
+            <input id="nd-tim-user" type="text" placeholder="Nhập tên người cần tìm">
+        </div>
+    </div>
+    <div id="khung-chat">
+        <div class="khung-chat-thong-tin">
+            <input type="hidden" id="chatVoiEmail">
+            <label id="khung-chat-tenND">Tên Người Dùng</label>
+            <img id="off-form" src="/images/tatform.png">
+        </div>
+        <div id="xemthemChat"><a href="#">Xem thêm</a></div>
+        <div class="khung-ndchat">
+            <div id="khung-chat-noi-dung">
+            </div>
+            <div style="width: 100%; text-align: center; padding: 2px; font-size: 10px;" id="khung-nguoi-dang-nhap">
+                <label id="tennddangchat"></label> đang nhập ...
+            </div>
+        </div>
+        <div class="khung-chat-nhap">
+            <input id="nd-chat" type="text" placeholder="Nhập nội dung ...">
+            <input id="btn-gui" type="submit" value="Gửi">
+        </div>
+    </div>
+    <section>
+        <div class="khungbinhluan" id="dangBL">
+            <div class="dangbinhluan">
+                <img src="/images/<%= nd.hinhDaiDien%>">
+                <textarea id="noiDungBaiViet" name="noiDungBaiViet"
+                    placeholder="Hãy cùng chia sẽ kinh nghiệm thắc mắc của bạn trong việc chăm sóc con trẻ nào..."></textarea>
+                <button id="dangBaiViet">Đăng</button>
+            </div>
+        </div>
+        <div class="loai-bai">
+            <select id="loai-bai">
+                <option value="1">Sức Khỏe</option>
+                <option value="2">Giáo Dục</option>
+                <option value="3">Ăn Uống & Dinh Dưỡng</option>
+                <option value="4">Kỹ Năng Sống</option>
+            </select>
+        </div>
+        <div class="baonoidung">
+            <div class="noidung" id="noidung">
+                <%- include('table-list',{listBaiViet : listBaiViet , listUsers : listUsers, nd : nd, listBaiDang : listBaiDang })%>
+            </div>
+        </div>
+    </section>
+    <footer><% include footer%></footer>
+</body>
+
+</html>

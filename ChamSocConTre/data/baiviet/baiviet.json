@@ -1,0 +1,235 @@
+[
+	{
+		"idLoai" : 1,
+		"idBai":1,
+		"email" : "thanhson.official@gmail.com",
+		"noiDung" : "Nếu trước đây bố mẹ thường đánh giá con trẻ qua những tiêu chí khuôn mẫu như biết vâng lời, ngoan ngoãn, “nói gì làm nấy”, thì ngày nay các bậc phụ huynh hiện đại lại tìm cách khuyến khích con tự do sáng tạo và tự tin nói lên chính kiến của riêng mình. Vì thực tế cho thấy, tư duy sáng tạo giúp trẻ rất nhiều trong cuộc sống hiện đại. Không những mang đến cho trẻ sự tự tin, bản lĩnh, tư duy sáng tạo còn phát huy tài năng thiên bẩm, góp phần giúp trẻ phát triển toàn diện và vượt trội hơn trong tương lai.",
+		"soKhieuNai" : ["thanhson02698@gmail.com"],
+		"date" : "2020-04-15",
+		"time" : "10:10:10",
+		"tinhTrang" : 1,
+		"nguoiThich" : ["thanhson.official@gmail.com","thanhson2903.official@gmail.com","tranquangthinhtk1997@gmail.com"],
+		"binhLuan" : [
+			{
+				"idBinhLuan" : 1,
+				"emailNguoiBinhLuan" : "thanhson2903.official@gmail.com",
+				"noiDungBinhLuan" : "Hay, hợp lý",
+				"dateBinhLuan" : "2020-04-15",
+				"timeBinhLuan" : "11:20:10",
+				"traLoiBinhLuan" : [
+					{
+						"idTraLoiBinhLuan" : 1,
+						"emailNguoiTraLoiBinhLuan" : "thanhson.official@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Cảm ơn...Đó là suy nghĩ của tôi",
+						"dateTraLoiBinhLuan" : "2020-04-15",
+						"timeTraLoiBinhLuan" : "11:30:10"
+					},
+					{
+						"idTraLoiBinhLuan" : 2,
+						"emailNguoiTraLoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Tôi cũng thấy vậy",
+						"dateTraLoiBinhLuan" : "2020-04-15",
+						"timeTraLoiBinhLuan" : "11:31:10"
+					}
+				] 
+			},
+			{
+				"idBinhLuan" : 2,
+				"emailNguoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+				"noiDungBinhLuan" : "Cách nghĩ thật lạ !!!",
+				"dateBinhLuan" : "2020-04-15",
+				"timeBinhLuan" : "11:40:10",
+				"traLoiBinhLuan" : [
+					{
+						"idTraLoiBinhLuan" : 1,
+						"emailNguoiTraLoiBinhLuan" : "thanhson.official@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Cảm ơn bạn",
+						"dateTraLoiBinhLuan" : "2020-04-15",
+						"timeTraLoiBinhLuan" : "11:40:30"
+					},
+					{
+						"idTraLoiBinhLuan" : 2,
+						"emailNguoiTraLoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Tôi thấy hay lắm",
+						"dateTraLoiBinhLuan" : "2020-04-15",
+						"timeTraLoiBinhLuan" : "11:41:10"
+					}
+					
+				] 
+			}
+		]
+	},
+	{
+		"idLoai" : 1,
+		"idBai":5,
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"noiDung" : "Nuôi dạy trẻ an toàn và khỏe mạnh là mong muốn của tất cả ba mẹ, thế nhưng lại có rất nhiều yếu tố tác động ảnh hưởng đến sự phát triển của trẻ. Đối với trẻ nhỏ từ 2 - 5 tuổi, hay trẻ lớn từ 6-12 tuổi cần phải đảm bảo đủ các yếu tố về chăm sóc sức khỏe trẻ em. Vậy những yếu tố đó là gì, ba mẹ hãy cùng Jio Health tìm hiểu thông tin qua bài viết này nhé!",
+		"date" : "2020-05-15",
+		"time" : "8:10:10",
+		"tinhTrang" : 1,
+		"nguoiThich" : ["nguyenanhduc@gmail.com","buithithaolinh@gmail.com","nguyenhuuquy@gmail.com","changsusu@gmail.com"],
+		"binhLuan" : [
+			{
+				"idBinhLuan" : 4,
+				"emailNguoiBinhLuan" : "nguyenhuuquy@gmail.com",
+				"noiDungBinhLuan" : "Cảm ơn đã chia sẽ thông tin",
+				"dateBinhLuan" : "2020-05-15",
+				"timeBinhLuan" : "11:20:10",
+				"traLoiBinhLuan" : [
+					{
+						"idTraLoiBinhLuan" : 1,
+						"emailNguoiTraLoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Không có gì",
+						"dateTraLoiBinhLuan" : "2020-05-15",
+						"timeTraLoiBinhLuan" : "13:30:10"
+					}
+				] 
+			},
+			{
+				"idBinhLuan" : 5,
+				"emailNguoiBinhLuan" : "changsusu@gmail.com",
+				"noiDungBinhLuan" : "Cảm ơn Anh...Em luôn theo dõi bài viết của Anh !!!",
+				"dateBinhLuan" : "2020-05-16",
+				"timeBinhLuan" : "7:22:10",
+				"traLoiBinhLuan" : [
+					{
+						"idTraLoiBinhLuan" : 1,
+						"emailNguoiTraLoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Cảm ơn bạn",
+						"dateTraLoiBinhLuan" : "2020-05-16",
+						"timeTraLoiBinhLuan" : "11:40:30"
+					}	
+				] 
+			}
+		]
+	},
+	{
+		"idLoai" : 1,
+		"idBai":8,
+		"soKhieuNai" : ["nguyenvanan@gmail.com","phamcongloi@gmail.com"],
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"noiDung" : "Mật ong chữa được khàn tiếng là nhờ nó chứa nhiều vitamin A, E, C, B,... Đồng thời bên trong mật ong nó cũng chứa nhiều các thành phần như là kháng sinh tự nhiên giúp kháng viêm, diệt khuẩn, làm diệu thanh quản, giúp giảm khàn tiếng một cách nhanh chóng.",
+		"date" : "2020-06-01",
+		"time" : "10:10:10",
+		"nguoiThich" : ["nguyenanhduc@gmail.com","buithithaolinh@gmail.com","nguyenhuuquy@gmail.com","changsusu@gmail.com"],
+		"tinhTrang" : 0,
+		"binhLuan" : [
+			{
+				"idBinhLuan" : 7,
+				"emailNguoiBinhLuan" : "nguyenhuuquy@gmail.com",
+				"noiDungBinhLuan" : "Cảm ơn đã chia sẽ thông tin",
+				"dateBinhLuan" : "2020-06-02",
+				"timeBinhLuan" : "11:20:10",
+				"traLoiBinhLuan" : [
+					{
+						"idTraLoiBinhLuan" : 1,
+						"emailNguoiTraLoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Không có gì",
+						"dateTraLoiBinhLuan" : "2020-06-12",
+						"timeTraLoiBinhLuan" : "13:30:10"
+					}
+				] 
+			},
+			{
+				"idBinhLuan" : 8,
+				"emailNguoiBinhLuan" : "buithithaolinh@gmail.com",
+				"noiDungBinhLuan" : "Cảm ơn Anh",
+				"dateBinhLuan" : "2020-06-12",
+				"timeBinhLuan" : "14:22:10",
+				"traLoiBinhLuan" : [
+					{
+						"idTraLoiBinhLuan" : 1,
+						"emailNguoiTraLoiBinhLuan" : "tranquangthinhtk1997@gmail.com",
+						"noiDungTraLoiBinhLuan" : "Không có gì",
+						"dateTraLoiBinhLuan" : "2020-06-12",
+						"timeTraLoiBinhLuan" : "14:40:30"
+					}	
+				] 
+			}
+		]
+	},
+	{
+		"idLoai" : 2,
+		"idBai":10,
+		"soKhieuNai" : ["nguyenvanan@gmail.com","phamcongloi@gmail.com"],
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"noiDung" : "Theo Bác sĩ Lê Hữu Tuấn - Nguyên Phó giám đốc phụ trách chuyên môn bệnh viện YHCT Trung ương, Mã đề là cây thuốc Nam rất quý đối với người Việt. Tuy mọc hoang dại khắp nơi nhưng trong Đông y, nó có tính lạnh, vị ngọt , có tác dụng dưỡng thận, lọc sạch thận rất hiệu quả!",
+		"date" : "2020-06-02",
+		"time" : "15:10:10",
+		"nguoiThich" : ["buithithaolinh@gmail.com","nguyenhuuquy@gmail.com","changsusu@gmail.com"],
+		"tinhTrang" : 0
+	},
+	{
+		"idLoai" : 1,
+		"idBai":11,
+		"email" : "thanhson2903.official@gmail.com",
+		"noiDung" : "Mật ong rất tốt cho con người, tuy nhiên bạn KHÔNG NÊN CHO TRẺ DƯỚI 1 TUỔI ĂN MẬT. Trường hợp này ít xảy ra nhưng nếu nặng sẽ ảnh hưởng đến hệ thần kinh và có thể gây tử vong cho trẻ. Thấy ghê chưa",
+		"date" : "2020-06-02",
+		"time" : "20:10:10",
+		"nguoiThich" : ["buithithaolinh@gmail.com"],
+		"tinhTrang" : 1
+	},
+	{
+		"idLoai" : 1,
+		"idBai":14,
+		"soKhieuNai" : ["nguyenvanan@gmail.com","phamcongloi@gmail.com"],
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"noiDung" : "Ăn Ngũ Cốc Giúp Giảm Cân Siêu Tốc Có Đúng Không?",
+		"date" : "2020-06-06",
+		"time" : "15:30:10",
+		"nguoiThich" : ["changsusu@gmail.com"],
+		"tinhTrang" : 0
+	},
+	{
+		"idLoai" : 3,
+		"idBai":9,
+		"soKhieuNai" : ["nguyenvanan@gmail.com","phamcongloi@gmail.com"],
+		"email" : "tranquangthinhtk1997@gmail.com",
+		"noiDung" : "Theo Bác sĩ Lê Hữu Tuấn - Nguyên Phó giám đốc phụ trách chuyên môn bệnh viện YHCT Trung ương, Mã đề là cây thuốc Nam rất quý đối với người Việt. Tuy mọc hoang dại khắp nơi nhưng trong Đông y, nó có tính lạnh, vị ngọt , có tác dụng dưỡng thận, lọc sạch thận rất hiệu quả!",
+		"date" : "2020-06-01",
+		"time" : "20:40:10",
+		"nguoiThich" : ["buithithaolinh@gmail.com","nguyenhuuquy@gmail.com","changsusu@gmail.com"],
+		"tinhTrang" : 0
+	},
+	{
+		"idLoai" : 1,
+		"idBai":7,
+		"soKhieuNai" : ["nguyenvanan@gmail.com","phamcongloi@gmail.com"],
+		"email" : "changsusu@gmail.com",
+		"noiDung" : "Cha mẹ và người chăm sóc đóng vai trò quan trọng trong việc dạy trẻ rửa tay. Giải thích rằng việc rửa tay có thể giúp chúng khỏe mạnh và ngăn chặn vi-rút lây lan sang người khác.",
+		"date" : "2020-05-20",
+		"time" : "10:10:10",
+		"tinhTrang" : 1
+	},
+	{
+		"idLoai" : 2,
+		"idBai":2,
+		"email" : "phamcongloi@gmail.com",
+		"noiDung" : "Bước vào mùa này, trong thời gian ở Sài Gòn trời đang rất nắng nóng, đi ra ngoài đường dù che kín mít áo gió, áo chống nắng, khẩu trang, kiếng mắt nhưng làn da vẫn bị mất nước một cách trầm trọng.",
+		"soKhieuNai" : ["nguyenthilanchi@gmail.com"],
+		"date" : "2020-04-22",
+		"time" : "15:10:10",
+		"tinhTrang" : 1,
+		"nguoiThich" : ["tranquangthinhtk1997@gmail.com","nguyenthilanchi@gmail.com"]
+	},
+	
+	{
+		"idLoai" : 3,
+		"idBai":3,
+		"email" : "buithithaolinh@gmail.com",
+		"noiDung" : "Da em không hiểu bị sao mà không ngứa gì hết, không mụn mà hay bị mấy sẹo rỗ  không biết do nguyên nhân gì ?",
+		"date" : "2020-04-22",
+		"time" : "20:10:10",
+		"tinhTrang" : 1
+	},
+	{
+		"idLoai" : 4,
+		"idBai":4,
+		"email" : "nguyenthilanchi@gmail.com",
+		"noiDung" : "Kiểm tra với trường con cái quý vị về kế hoạch tiếp tục dịch vụ bữa ăn trong thời gian nghỉ học tại trường. Nhiều trường học vẫn duy trì mở cửa các cơ sở dịch vụ trong trường để các gia đình đến lấy đồ ăn hoặc cung cấp các bữa ăn sẵn để mọi người mang đi từ một địa điểm trung tâm.",
+		"date" : "2020-04-25",
+		"time" : "10:10:10",
+		"tinhTrang" : 1,
+		"nguoiThich" : ["phamcongloi@gmail.com","buithithaolinh@gmail.com","nguyenthilanchi@gmail.com"]
+	}
+]

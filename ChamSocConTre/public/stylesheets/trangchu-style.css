@@ -1,0 +1,280 @@
+section{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 auto;
+    padding-top: 200px;
+}
+
+.snip1360 {
+  font-family: 'Quattrocento', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  padding-left: 10px;
+  min-width: 200px;
+  max-width: 270px;
+  width: 100%;
+  color: #141414;
+  text-align: left;
+  line-height: 1.4em;
+  font-size: 16px;
+  background-color: #ffffff;
+  float: left;
+}
+.snip1360 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.snip1360 img {
+  max-width: 100%;
+  height: 180px;
+  vertical-align: top;
+}
+.snip1360 figcaption {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 25px 55px;
+  position: relative;
+}
+.snip1360 figcaption:before {
+  position: absolute;
+  content: '';
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+}
+.snip1360 figcaption a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: #cccccc;
+  color: #000000;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.snip1360 figcaption a:hover {
+  opacity: 1;
+}
+.snip1360 h2 {
+  margin: 0 0 10px;
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  font-family: 'Oswald', Arial, sans-serif;
+  text-transform: uppercase;
+  height: 50px;
+}
+.snip1360 p {
+  margin: 0 0 10px;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  height: 120px;
+}
+/*=======================*/
+.baonoidung{
+    padding-top: 400px;
+    font-family: tahoma !important;
+    font-size: 15px;
+    padding-left: 20px;
+    font-weight: 800;
+}
+.noidung{
+    width: 870px;
+    float: left;
+}
+.widget-title{
+    text-align: center;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0px;
+    text-transform: uppercase;
+}
+.widget-title h2{
+    color: #ffffff;
+    font-size: 17px;
+    height: 33px;
+    line-height: 33px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    padding: 0px 15px 0px 9px;
+    margin-bottom: 0px;
+    float: left;
+    background-color: antiquewhite;
+    border-radius: 0px 20px 0px 0px;
+    opacity: 1;
+}
+.suckhoe{
+    border-bottom: 5px solid rgb(134, 132, 14);
+    opacity: 1;
+}
+.suckhoe h2{
+    background-color: rgb(134, 132, 14);
+}
+.giaoduc{
+    border-bottom: 5px solid rgb(255, 136, 0);
+    opacity: 1;
+}
+.giaoduc h2{
+    background-color: rgb(255, 136, 0);
+}
+.dinhduong{
+    border-bottom: 5px solid rgb(0, 3, 167);
+    opacity: 1;
+}
+.dinhduong h2{
+    background-color: rgb(0, 3, 167);
+    opacity: 1;
+}
+.kynangsong{
+    border-bottom: 5px solid rgb(255, 0, 0);
+    opacity: 1;
+}
+.kynangsong h2{
+    background-color: red;
+}
+.widget-title a h2:hover{
+    opacity: 0.6;
+}
+.baidang{
+    float: left;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.baidang img{
+    width: 250px;
+    height: 150px;
+    float: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.baidang img:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.baidang .chuand{
+    float: right;
+    width: 600px;
+    color: black;
+    padding-left: 20px;
+}
+
+.baidang .title{
+    display: block;
+    display: -webkit-box;
+    font-size: 20px;
+    line-height: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 30px;
+    line-height: 30px;
+}
+
+.baidang .tomtat{
+    display: block;
+    display: -webkit-box;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1;
+ -webkit-line-clamp: 2;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ height: 40px;
+ line-height: 20px;
+}
+.baidang .chuand:hover{
+    opacity: 0.6;
+}
+.ndmuc{
+    text-align: center;
+}
+.nd-read-more{
+    text-decoration: none;
+    height: 20px;
+    padding: 10px;
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+}
+.nd-read-more:hover{
+    opacity: 0.6;
+}
+.muc{
+    padding-bottom: 20px;
+}
+.ndquantam{
+    width: 280px;
+    float: right;
+    text-transform: uppercase;
+    background-color: rgb(153, 152, 152);
+    text-align: center;
+}
+#baivietquantam{
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    border-bottom: 2px dashed white;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0.85;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin: 0; 
+    color:white;
+}
+.baidangadmin{
+    font-size: 10px;
+    float: left;
+    width: 95%;
+    font-weight: 100;
+    font-family: initial;
+    color: white;
+    padding: 5px;
+}
+.qt-div{
+    text-align: center;
+}
+.qt-div img{
+    width: 250px;
+    margin-top: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.qt-div img:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.qt-div p{
+    padding-left: 10px;
+    display: block;
+    display: -webkit-box;
+    font-size: 15px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    color: white;
+    width: 250px;
+}
+.ndquantam a{
+    text-decoration: none;
+}
+.qt-div p:hover{
+    opacity: 0.6;
+}
